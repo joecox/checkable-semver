@@ -1,0 +1,122 @@
+1..62
+ok 1 async hooks one
+ok 2 async hooks two
+ok 3 async hooks three
+ok 4 serial hooks one
+ok 5 serial hooks two
+ok 6 serial hooks three
+ok 7 serial nested foo
+ok 8 serial nested bar
+ok 9 serial nested hooks one
+ok 10 serial nested hooks two
+not ok 11 http server GET / should respond with "hello"
+  TypeError: res.should.have.status is not a function
+      at ClientRequest.<anonymous> (test/http.meta.2.js:32:23)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:415:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:88:23)
+      at Socket.socketOnData (_http_client.js:305:20)
+      at readableAddChunk (_stream_readable.js:146:16)
+      at Socket.Readable.push (_stream_readable.js:110:10)
+      at TCP.onread (net.js:523:20)
+not ok 12 http server GET /users should respond with "tobi, loki, jane"
+  TypeError: res.should.have.status is not a function
+      at ClientRequest.<anonymous> (test/http.meta.2.js:32:23)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:415:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:88:23)
+      at Socket.socketOnData (_http_client.js:305:20)
+      at readableAddChunk (_stream_readable.js:146:16)
+      at Socket.Readable.push (_stream_readable.js:110:10)
+      at TCP.onread (net.js:523:20)
+not ok 13 http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]"
+  TypeError: res.should.have.status is not a function
+      at ClientRequest.<anonymous> (test/http.meta.2.js:32:23)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:415:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:88:23)
+      at Socket.socketOnData (_http_client.js:305:20)
+      at readableAddChunk (_stream_readable.js:146:16)
+      at Socket.Readable.push (_stream_readable.js:110:10)
+      at TCP.onread (net.js:523:20)
+not ok 14 http requests GET / should respond with hello
+  TypeError: res.should.have.status is not a function
+      at ClientRequest.<anonymous> (test/http.meta.js:28:23)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:415:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:88:23)
+      at Socket.socketOnData (_http_client.js:305:20)
+      at readableAddChunk (_stream_readable.js:146:16)
+      at Socket.Readable.push (_stream_readable.js:110:10)
+      at TCP.onread (net.js:523:20)
+not ok 15 http requests GET /users should respond with users
+  TypeError: res.should.have.status is not a function
+      at ClientRequest.<anonymous> (test/http.meta.js:28:23)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:415:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:88:23)
+      at Socket.socketOnData (_http_client.js:305:20)
+      at readableAddChunk (_stream_readable.js:146:16)
+      at Socket.Readable.push (_stream_readable.js:110:10)
+      at TCP.onread (net.js:523:20)
+not ok 16 http requests GET /users should respond with users
+  TypeError: res.should.have.status is not a function
+      at ClientRequest.<anonymous> (test/http.meta.js:28:23)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:415:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:88:23)
+      at Socket.socketOnData (_http_client.js:305:20)
+      at readableAddChunk (_stream_readable.js:146:16)
+      at Socket.Readable.push (_stream_readable.js:110:10)
+      at TCP.onread (net.js:523:20)
+ok 17 Runnable(title, fn) timeout(ms) should set the timeout
+ok 18 Runnable(title, fn) .title should be present
+ok 19 Runnable(title, fn) when arity >= 1 should be .async
+ok 20 Runnable(title, fn) when arity == 0 should be .sync
+ok 21 Runnable(title, fn) .run(fn) when .pending should not invoke the callback
+not ok 22 Runnable(title, fn) .run(fn) when sync without error should invoke the callback
+  TypeError: test.duration.should.be.a is not a function
+      at test/runnable.js:59:37
+      at Runnable.run (lib/runnable.js:215:5)
+      at Context.<anonymous> (test/runnable.js:57:16)
+ok 23 Runnable(title, fn) .run(fn) when sync when an exception is thrown should invoke the callback
+ok 24 Runnable(title, fn) .run(fn) when async without error should invoke the callback
+ok 25 Runnable(title, fn) .run(fn) when async when the callback is invoked several times without an error should emit a single "error" event
+not ok 26 Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+  Error: timeout of 200ms exceeded. Ensure the done() callback is being called in this test.
+ok 27 Runnable(title, fn) .run(fn) when async when an exception is thrown should invoke the callback
+ok 28 Runnable(title, fn) .run(fn) when async when an error is passed should invoke the callback
+ok 29 Runner .globals() should default to the known globals
+not ok 30 Runner .globals() should white-list globals
+  TypeError: runner.globals(...).should.include is not a function
+      at Context.<anonymous> (test/runner.js:21:31)
+ok 31 Runner .checkGlobals(test) should emit "fail" when a new global is introduced
+ok 32 Runner .checkGlobals(test) should pluralize the error message when several are introduced
+ok 33 Runner .fail(test, err) should increment .failures
+ok 34 Runner .fail(test, err) should set test.state to "failed"
+ok 35 Runner .fail(test, err) should emit "fail"
+ok 36 Runner .failHook(hoot, err) should increment .failures
+ok 37 Runner .failHook(hoot, err) should emit "fail"
+not ok 38 Runner .failHook(hoot, err) should emit "end"
+  Error: timeout of 200ms exceeded. Ensure the done() callback is being called in this test.
+ok 39 Suite .clone() should copy the title
+ok 40 Suite .clone() should copy the timeout value
+ok 41 Suite .clone() should copy the bail value
+ok 42 Suite .clone() should not copy the values from the suites array
+ok 43 Suite .clone() should not copy the values from the tests array
+ok 44 Suite .clone() should not copy the values from the _beforeEach array
+ok 45 Suite .clone() should not copy the values from the _beforeAll array
+ok 46 Suite .clone() should not copy the values from the _afterEach array
+ok 47 Suite .clone() should not copy the values from the _afterAll array
+ok 48 Suite .timeout() when no argument is passed should return the timeout value
+ok 49 Suite .timeout() when argument is passed should return the Suite object
+ok 50 Suite .bail() when no argument is passed should return the bail value
+ok 51 Suite .bail() when argument is passed should return the Suite object
+ok 52 Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll
+ok 53 Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll
+ok 54 Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach
+ok 55 Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach
+ok 56 Suite .addSuite() sets the parent on the added Suite
+ok 57 Suite .addSuite() copies the timeout value
+ok 58 Suite .addSuite() adds the suite to the suites collection
+ok 59 Suite .fullTitle() when there is no parent returns the suite title
+ok 60 Suite .fullTitle() when there is a parent returns the combination of parent's and suite's title
+ok 61 Suite .total() when there are no nested suites or tests should return 0
+ok 62 Suite .total() when there are several tests in the suite should return the number
+# tests 62
+# pass 52
+# fail 10
