@@ -1,0 +1,703 @@
+--------------------------------------------------
+Testing version 1.0.0
+--------------------------------------------------
+--------------------------------------------------
+Testing version 1.0.1
+--------------------------------------------------
+--------------------------------------------------
+Testing version 1.0.2
+--------------------------------------------------
+--------------------------------------------------
+Testing version 1.0.3
+--------------------------------------------------
+--------------------------------------------------
+Testing version 1.1.0
+--------------------------------------------------
+--------------------------------------------------
+Testing version 1.2.0
+--------------------------------------------------
+--------------------------------------------------
+Testing version 1.2.1
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.2.2
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.3.0
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.3.1
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.3.2
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.4.0
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.4.1
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.4.2
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.5.0
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.6.0
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.7.0
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.7.1
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.7.2
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.7.3
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.7.4
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.8.0
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.8.1
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.8.2
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.9.0
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.10.0
+--------------------------------------------------
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.11.0
+--------------------------------------------------
+  76 passing (827 ms)
+  10 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.12.0
+--------------------------------------------------
+  79 passing (837 ms)
+  10 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.12.1
+--------------------------------------------------
+  79 passing (826ms)
+  10 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.13.0
+--------------------------------------------------
+  79 passing (830ms)
+  10 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.14.0
+--------------------------------------------------
+  79 passing (822ms)
+  10 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+--------------------------------------------------
+Testing version 1.15.0
+--------------------------------------------------
+  99 passing (1s)
+  11 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+--------------------------------------------------
+Testing version 1.15.1
+--------------------------------------------------
+  99 passing (1s)
+  11 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+--------------------------------------------------
+Testing version 1.16.0
+--------------------------------------------------
+  104 passing (1s)
+  11 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+--------------------------------------------------
+Testing version 1.16.1
+--------------------------------------------------
+  104 passing (1s)
+  11 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+--------------------------------------------------
+Testing version 1.16.2
+--------------------------------------------------
+  104 passing (1s)
+  11 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+--------------------------------------------------
+Testing version 1.17.0
+--------------------------------------------------
+  105 passing (1s)
+  11 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+--------------------------------------------------
+Testing version 1.17.1
+--------------------------------------------------
+  105 passing (1s)
+  11 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+--------------------------------------------------
+Testing version 1.18.0
+--------------------------------------------------
+  101 passing (1s)
+  15 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll:
+Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll:
+Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach:
+Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach:
+--------------------------------------------------
+Testing version 1.18.1
+--------------------------------------------------
+  101 passing (1s)
+  15 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll:
+Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll:
+Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach:
+Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach:
+--------------------------------------------------
+Testing version 1.18.2
+--------------------------------------------------
+  101 passing (1s)
+  15 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll:
+Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll:
+Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach:
+Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach:
+--------------------------------------------------
+Testing version 1.19.0
+--------------------------------------------------
+  101 passing (1s)
+  15 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll:
+Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll:
+Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach:
+Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach:
+--------------------------------------------------
+Testing version 1.20.0
+--------------------------------------------------
+  101 passing (1s)
+  15 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll:
+Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll:
+Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach:
+Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach:
+--------------------------------------------------
+Testing version 1.20.1
+--------------------------------------------------
+  101 passing (1s)
+  15 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll:
+Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll:
+Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach:
+Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach:
+--------------------------------------------------
+Testing version 1.21.0
+--------------------------------------------------
+  105 passing (1s)
+  15 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll:
+Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll:
+Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach:
+Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach:
+--------------------------------------------------
+Testing version 1.21.1
+--------------------------------------------------
+  105 passing (1s)
+  15 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll:
+Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll:
+Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach:
+Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach:
+--------------------------------------------------
+Testing version 1.21.2
+--------------------------------------------------
+  105 passing (1s)
+  15 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll:
+Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll:
+Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach:
+Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach:
+--------------------------------------------------
+Testing version 1.21.3
+--------------------------------------------------
+  105 passing (1s)
+  15 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll:
+Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll:
+Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach:
+Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach:
+--------------------------------------------------
+Testing version 1.21.4
+--------------------------------------------------
+  105 passing (1s)
+  15 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll:
+Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll:
+Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach:
+Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach:
+--------------------------------------------------
+Testing version 1.21.5
+--------------------------------------------------
+  106 passing (1s)
+  15 failing
+http should provide an example:
+http server GET / should respond with "hello":
+http server GET /users should respond with "tobi, loki, jane":
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]":
+http requests GET / should respond with hello:
+http requests GET /users should respond with users:
+http requests GET /users should respond with users:
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback:
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
+Runner .globals() should white-list globals:
+Runner .failHook(hoot, err) should emit "end":
+Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll:
+Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll:
+Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach:
+Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach:
