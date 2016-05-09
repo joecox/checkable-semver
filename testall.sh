@@ -9,23 +9,28 @@ mkdir -p "${outfolder}"
 
 tags=`git tag --list`
 
-base=1.0.0
+versions=`semver -r "1" $tags`
 
-for tag in $(semver -r "1" $tags)
+for tag in $versions 
 do
+    tagfolder="${outfolder}/${tag}"
+    mkdir -p "${tagfolder}"
     echo "Running on version: ${tag}"
     git reset --hard "${tag}"
-    
+
     echo "Clean repository"
     git clean -dxf 
-    
+
     echo "Installing packages" 
     npm install 
 
-    echo "Checking out ${testfolder} at ${base}"
-    rm -r "${testfolder}"
-    git checkout ${base} -- "${testfolder}"
+    for testv in $versions
+    do
+        echo "Checking out ${testfolder} at ${testv}"
+        rm -r "${testfolder}"
+        git checkout ${testv} -- "${testfolder}"
 
-    echo "Running tests" 
-    mocha --reporter=tap ${testfolder} | tee "${outfolder}/${tag}" | sed -n '/^#/p'
+        echo "Running tests" 
+        mocha --reporter=tap ${testfolder} | tee "${tagfolder}/${testv}" | sed -n '/^#/p'
+    done
 done
