@@ -1,1 +1,39 @@
 \section{Motivation}
+
+It has always been difficult to rigorously specify library interfaces.
+Interfaces are often defined with text, which is often incomplete and not
+machine checkable,  or,  for some programming languages, with types, which are
+often incomplete. Machine checkability is important as it prevents
+documentation to go stale. Completeness is important if the API is the only
+means of communication between the library and the client. And this is only for
+one version of the API. When looking at the evolution of an API. It is harder
+still to ensure that the API does not introduce a breaking change unexpectedly.
+Semantic Version, or SemVer, helps library authors define the scope of their
+changes solely through the version number.  However, authors can and often do
+violate SemVer. For example, an author may make a backwards incompatible change
+but only increment the minor version.  Library consumers observing the version
+number will not expect the change and systems will break.
+
+In this paper we define the scope of an interface test, and describe a
+discipline for how to write and maintain the tests. We have designed a tool
+that using these tests we will detect violations to SemVer, which will allow
+library developers to give stronger guarantees to their clients. 
+
+Many libraries have unit tests, regression tests, integration tests, and more.
+However, any given test may test the library interface, internal
+implementation, or both.  The tests that test only the library interface are
+interface tests.  In most libraries, they will be hiding among other tests.
+
+We will create a tool that can identify SemVer violations given a code
+repository, its testing framework, and a version history.  Our tool will apply
+tests appearing in each version of a repository to later versions of the code.
+Tests that succeed in an earlier version but fail in a later version are
+candidates for SemVer violations.  We will manually identify tests that are
+interface tests and the tool will further compare test behavior against
+versioning.  For example, if an interface test succeeds in an earlier version
+but fails in a subsequent minor update, then SemVer has been violated.  
+
+Thus, a library author can use our tool to detect potential SemVer violations
+by testing previous versions tests against the code the author is about to
+commit. Our tool will detect any SemVer violations and give the author the
+choice to either revert the API changes or push a major update.
