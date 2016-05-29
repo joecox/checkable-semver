@@ -2,8 +2,14 @@
 
 % \usepackage{amsthm}
 
-\newtheorem{definition}{Definition}
+\newdef{definition}{Definition}
 \newtheorem{theorem}{Theorem}
+
+\usepackage[svgnames,rgb]{xcolor}
+\usepackage{pdfcomment}
+
+\newcommand{\todo}[1]{\pdfmargincomment[color=red, icon=Help]{#1}} 
+\newcommand{\marktodo}[2]{\pdfmarkupcomment[color=yellow]{#1}{#2}} 
 
 \setcopyright{rightsretained}
 % DOI

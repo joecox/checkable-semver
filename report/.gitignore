@@ -13,3 +13,6 @@ report.pdf
 *.fdb_latexmk
 *.fls
 *.run.xml
+*.lpc
+*.upa
+*.upb
