@@ -1,5 +1,5 @@
 
-LATEX=pdflatex
+LATEX=pdflatex -file-line-error -interaction=nonstopmode
 
 .PHONY: all
 all: report.tex
