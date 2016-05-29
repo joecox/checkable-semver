@@ -1,0 +1,148 @@
+\section{Approach}
+
+Our approach consists of defining an interface specification, which is a
+special kind of tests, and a new discipline for writing these tests, and a tool
+that is able to detect SemVer violations in a library.
+
+\subsection{Interface specifications}
+
+\begin{definition}\textit{Interface Specification.}
+An interface specification is a collection of tests that given an
+implementation and returns a list of interface violations. 
+$$\text{Spec} : \text{Impl} \to [\text{Violation}]$$
+A violation is a identifier of a failed test. A specification
+\begin{enumerate}
+    \item does not test anything secret, e.i.\ something that is subject to change,
+    \item and do test everything that a client can rely on.  
+\end{enumerate}
+\end{definition}
+
+The interface is a two sided contract. The library, denotes clearly what can be
+relied upon, but by using a library a client, commits to never rely on anything
+that is not tested.  Our interface specification is both sound and complete by
+definition.  Following the definition we have created a discipline of interface
+specification using tests. We use the RFC 2119\footnote{The key words ``MUST'', ``MUST NOT'', ``REQUIRED'', ``SHALL'', ``SHALL NOT'', ``SHOULD'',
+``SHOULD NOT'', ``RECOMMENDED'',  ``MAY'', and ``OPTIONAL'' in this document are to be
+interpreted as described in RFC 2119\cite{rfc2119}.} standard to describe the
+discipline.
+
+\begin{enumerate}
+    \item The library MUST clearly separate implementation specifications from
+    other tests.
+    \item Any released library version MUST be tested against the corresponding
+    specification, and have no interface violations.
+    \item Any feature exposed by the library, but not tested, SHOULD be
+    considered a secret, and not be used by a client.
+    \item A client MAY rely on any feature tested by the specification.
+\end{enumerate}
+
+This definition and discipline is flexible enough that can describe an
+interface, while still being machine checkable. Any specification is a trade
+between machine power and API expressed. This definition of cause has some
+limitations. A test \texttt{assert add (2, 3) == 5}, only provides the existence proof,
+that adding 2 and 3 equates 5. The client, can then violate our discipline and
+assume that 2 and 3 are representative for all integers or be safe and only use
+it with the arguments 2 and 3. Of cause different techniques as concolic
+testing~\cite{sen05-cute} or random testing might improve the expressiveness of test. The
+advantage of this approach is that the interface and its guarantees are
+concretely described. 
+
+\subsection{Semantic Versioning using Interface Specifications}
+
+To show that the technique is useful in practice, we have chosen to implement
+semantic versioning based of our interface specifications.
+
+\begin{definition}\textit{Semantic Versioning} (SemVer) is a way of describing
+intention, and giving guarantees using version numbers\cite{semver}.
+Related to to the last version $X.Y.Z$, the next version has to
+monotonically increasing, meaning that it has to satisfy one of the
+following rules.
+
+\begin{enumerate}
+    \item A patch release has number $X.Y.Z’$, where $Z < Z’$. It may include
+    bug fixes only, no new features or breaking changes.
+    
+    \item A minor release has number $X.Y’.Z’$, where $Y < Y’$. It may include
+    bug fixes or new features, but no breaking changes.
+    
+    \item A major release has number $X’.Y’.Z’$, where $X < X’$. It may include
+    bug fixes, new features, and breaking changes.
+    
+    \item Any releases in the range $0.Y’.Z’$, where $X = 0$ and $Y < Y’$ or $Z
+    < Z’$ is unstable and the interface can change without warning.
+\end{enumerate}
+
+\end{definition}
+
+We have chosen semantic versioning, because it is widely used in \emph{npm}, and
+\emph{bower} to describe package dependencies. \marktodo{Both package managers depend 
+heavily that dependencies follow the SemVer policy}{check this}. The problem is that
+currently is semantic versioning, based solely on the intuition of the library
+developers.  But developers can be wrong, and not assume that changes they have
+made is violating the interface. We can give some guarantees, that the
+implementation is following an interface which in turn is related to a semantic
+version. 
+
+Semantic versions talk about the relations between different releases of the
+same library. So to verify a semantic version, we have to associate it with an
+implementation and a specification. A release is  a tuple of a semantic
+version, an implementation and a specification.
+$$ \text{Release} : \text{Ver} \times \text{Impl} \times \text{Spec} $$
+
+A release can only be validated in the context of the a release history. A
+release can only be accepted if our tool finds no violations. The violations
+can be described like this; given a new release with major version greater than
+0 and a list of previous releases, the release has to pass the following
+checks.
+
+\begin{enumerate}
+    \item The new release specs has to have no violations on the new
+    implementation;
+    \item the new release version must be greater than all previous versions, as
+    described in the semantic versions;
+    \item all previous implementations with versions in same minor version as the
+    new release, must run on the new specification without violations;
+    \item and all previous specifications in the same major version as the new
+    release, must run the new implementation without violations.
+\end{enumerate}
+
+If all the steps are passed, the release is following SemVer. 
+
+\begin{theorem}[Soundness]
+Given a release and a release history, our algorithm will reject the release if
+and if it violates SemVer in relation to the release history.
+\end{theorem}
+
+\begin{proof}
+If a release is rejected, it must have failed in one of the 4 conditions. 
+\begin{itemize}
+  \item If the first condition failed, the release is invalid, and semantic
+      version does not apply to broken releases. 
+  \item If the second condition failed, then the patch did not follow the
+      monotonic requirement of SemVer. 
+  \item If the third requirement failed, some previous release, in the same
+      minor version, have an implementation which violates something the specs
+      of the current version. This means that the specs must be testing a new
+      feature or have a breaking change, and this violates the first rule of
+      SemVer.
+  \item If the third requirement failed, some previous release, in the same
+      major version,  must have a spec which is violated by the current
+      implementation. This means that something which was guaranteed has been
+      broken; which makes this a breaking change. Since the new release is at
+      most a minor release compared, this violates the second rule of SemVer.
+\end{itemize}
+Because all possible failed cases is the result of a SemVer violation, the
+algorithm is guaranteed to only reject a release if SemVer is violated.
+\end{proof}
+
+\begin{theorem}[Completness]
+Given a release and a release history, our algorithm will accept the release if
+and if adheed to SemVer in relation to the release history.
+\end{theorem}
+
+\begin{proof}
+If a release is wrongly accepted it must have not satisfied all of the SemVer
+rules. If the new release is a major release, there is no way to violate the
+SemVer rules. If the new release is a minor release, it must contain a breaking
+change to violate SemVer. This is impossible because 
+\end{proof}

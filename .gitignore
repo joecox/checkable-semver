@@ -1,3 +1,4 @@
 out
 mocha
 .DS_Store
+*.pyc
