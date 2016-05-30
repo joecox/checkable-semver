@@ -1,20 +1,29 @@
 \section{Results}
-
-In this section, we report on the evaluation of the practicality of
-our discipline.
+In this section, we report on our evaluation of the practicality of
+our discipline. We focus on two research questions:
 
 {\bf RQ1.} How hard is it to adhere to the discipline of writing API tests?
 
 {\bf RQ2.} Given our idealized API tests, does our tool detect SemVer violations?
 
-We used the test suite of mocha as our starting point. The developers
-identify the ‘jsapi’ test suite as their interface tests. This
-consists of 66 tests. According to our discipline (assuming the mocha
-developers had adopted our discipline), the tests included with mocha
-version 1.0.0 would pass when run against every version in the 1.X.Y
-range. There are 50 versions in this range. We found that 10\% of the
-jsapi tests from version 1.0.0 (7 out of the 66) failed on subsequent
-versions.
+We used the test suite of mocha as our subject program. The developers
+identify the 'jsapi' test suite, comprising 66 tests, as their
+``interface tests''. Some of these test methods that are annotated
+{\tt @api private}, which might indicate that these methods are not
+part of the client-facing API. However, judging from the
+documentation, it seems that these are treated more as advanced
+features that clients may want to use in rare cases, but most of the
+time can safely ignore. We decided to use all the 'jsapi' tests as the
+interface spec because 1) it is unclear which of the {\tt @api
+  private} methods are truly ``secrets'', and 2) inferring which
+method(s) an API test is intended to describe is often difficult and
+outside the scope of this work.
+
+According to our discipline (assuming the mocha developers had adopted
+our discipline), the tests included with mocha version 1.0.0 would
+pass when run against every version in the 1.X.Y range. There are 50
+versions in this range. We found that 9\% of the jsapi tests from
+version 1.0.0 (6 out of the 66) failed on subsequent versions.
 
 Since mocha developers are not using our discipline, we expect some of
 these failures to be due to not following the discipline; the test
@@ -22,78 +31,117 @@ depends (either explicitly or implicitly) upon API secrets. These
 cases do not necessarily indicate SemVer violations, as long as the
 removing the dependence on API secrets makes the tests pass. We
 manually inspected each failing jsapi test for API secrets, and
-refactored the test to remove the secret.
-
-We found that 4 of the 7 failures were due to dependence on API
-secrets. The failure in each case was similar, and it was possible to
-remove the API secrets so that the test conformed with our discipline.
-
-We found that in one case, the failure was due to inconsistent
-dependencies between different versions of our subject
-program. Fortunately, in this case the dependency was used only by the
-test suite, so we could change it without affecting the
-library. Lesson learned: in order for our cross-version testing to
-work, a library should only migrate to new major versions of its
-dependencies at major version releases. This would also eliminate a
-major cause of “dependency hell”.  We found that in one case, the test
-failed was a real SemVer violation.
+refactored the test to remove the secret. {\bf Failure 1} below gives
+an example of this.
 
 The manual inspection of the failing jsapi tests to identify and
-remove API secrets required 4 hours of effort by a developer
-unfamiliar with mocha.
+remove API secrets required 4 hours of effort by Matt, who was
+unfamiliar with mocha's internals.
 
 We summarize the 6 failing jsapi tests, our diagnosis of the cause of
 the failure (SemVer violation or exposed secret), and in the cases of
 exposed secrets, the fix required for the test to conform to our
 discipline.
 
-\subsection{Failure 1: Console output format changes.}
-@api private.
+\subsection{Failure 1: API test makes assertions about API secrets.}
+{\bf Test description: }
+\begin{verbatim}
+Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll:
+Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll:
+Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach:
+Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach:
+\end{verbatim}
 
-\subsection{Failure 2: Incompatible dependency versions.}
-@api public
+These four tests describe the behavoir of event hook registration
+functions. The {\tt Suite} class signals events at different stages of
+executing a test suite: before running any tests (beforeAll), after
+all tests have been run (afterAll), just before each test is run
+(beforeEach), and just after each test is run (afterEach). Each event
+has its corresponding event hook registration method, and each
+registration method has its corresponding test case. The test case
+ensures that the correct metadata is created for each event hook, that
+the events are emitted in the correct order, etc.
 
-\subsection{Failure 3: Error message changes.}
-@api private
+Part of the metadata for an event hook is a title used in mocha's
+output to the user. Each test asserts that the title is a particular
+string.
 
+\begin{verbatim}
+beforeAllItem.title.should.equal('"before all" hook');
+\end{verbatim}
+
+Starting in version 1.15.0, mocha added a feature that allows the test
+writer to optionally give a name to the hook, which is then included
+in the title. If a title is not given, the default is to use the name
+of the hook function. The test fails because the new default behavior
+is not consistent with the old behavior.
+
+We judge this not to be a SemVer violation, but rather a violation of
+our testing discipline. The title of the hook is not meant to be part
+of the client interface, just part of the report
+formatting. Therefore, our discipline dictates that such an assertion
+should not be made in an interface test, and should instead be moved
+to an internal test.
+
+In order to adopt our discipline, the mocha developers could duplicate
+the test in two places, first in the API specification test suite, and
+second in the internal test suite to check secrets like that the title
+is constructed correctly. This would either require some code
+duplication, or some refactoring of the test in order to reuse
+code. There are the usual risks associated with each option:
+duplicating code means that as the API evolves, the same changes must
+be applied in two places; refactoring test code can make it more
+complex, which might limit its benefit as a specification to client
+developers.
+
+\subsection{Failure 2: Error changes.}
 {\bf Test description: }
 \begin{verbatim}
 Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
 \end{verbatim}
+This test defines part of the behavior of mocha's asynchronous test
+runner, that when two asyncronous error events are triggered, only one
+is delivered to the error callback. This is important in tests that
+allocate resources like database connections that need to be released
+exactly once.
 
-In addition to testing that only a single error event is emitted,
-version 1.0.0 also tests which error event it is. The error event
-changes at version 1.3.0, from being an error created by mocha
-indicating improper usage of its API, to one of the errors passed by
-the client to the callback. This is a borderline case: we might
-consider that the exceptions thrown by mocha to its clients are part
-of the API, so this change might be considered a violation. However,
-the test description mentions only the number of error events that
-should be omitted, so we considered the actual error event to be
-secret, and removed it from the test.
+In addition to testing that only a single error event is delivered,
+the version 1.0.0 test also tests {\em which} error event is
+delivered. The behavior changes at version 1.3.0, from delivering an
+error created by mocha that indicates improper usage of its API, to
+one of the errors passed by the client to the callback.  
 
-\subsection{Failure 4: SemVer violation.}
-@api private
+It is this case a breaking change, a new feature, or something else?
+We might consider that the exceptions thrown by mocha to its clients
+are part of the API, and so this should be considered a breaking
+change.  Given that the test author's intent is unclear, we follow the
+test description, which mentions only the number of error events that
+should be delivered. Therefore, we considered {\em which} error event
+is delivered to be secret information, and removed it from the test.
+
+\subsection{Failure 3: SemVer violation.}
 
 {\bf Test description:}
 \begin{verbatim}
 Runner .failHook(hoot, err) should emit "end":
 \end{verbatim}
 
-In version 1.21.5, this test is changed to:
+The method {\tt Runner.failHook} calls a failure hook, and after that
+hook runs, emits an ``end'' event to allow test clean up to occur. In
+version 1.21.5, whether the ``end'' event should be emitted became
+configurable by setting the property {\tt suite.bail}.  The
+description of this test was changed to reflect this:
+
 \begin{verbatim}
 Runner .failHook(hoot, err) should emit "end" if suite bail is true
 \end{verbatim}
 
-The property suite.bail was added to the runner object, allowing
-clients to optionally allow the test to continue after the failHook is
-called. In previous versions, the failHook always exits
-immediately. The test fails because the default value of suite.bail is
-“false”, so if a client upgrades mocha to version 1.21.5, the “end”
-event will no longer be emitted. This is a breaking change in a patch
-version, and thus would be a SemVer violation, except the docstring
-for the method annotates the method as “@api private”, so this test
-should not actually be part of the API specification.
+The original test fails because the default value of suite.bail is
+{\tt false}, so if a client upgrades mocha to version 1.21.5, the
+``end'' event will no longer be emitted. This is a breaking change in
+a patch version, and thus is a SemVer violation. We note that the {\tt
+  Runner.failHook} method is annotated ``@api private'', so this test
+may not actually be part of the API specification.
 
 \subsection{Confounding Factors}
 \begin{itemize}
@@ -101,6 +149,5 @@ should not actually be part of the API specification.
   ``Javascript API tests''. We assume that this consistently means the
   API between mocha and its client. However, this may not always be
   the case. In practice, this test suite tests internal interfaces as
-  well as the external client-facing interface.
-\item 
+  well as the external client-facing interface. 
 \end{itemize}
