@@ -35,3 +35,17 @@ SEMVER; or It's DDD's fault: DDD unwittingly relied on (unspecified) secrets of
 GDB. In either case, our tool would detect who was at fault and localize the
 error. Further, it would help the GDB developers avoid releasing breaking
 changes, and would help the DDD developers avoid relying on the secrets of GDB.
+
+When our cross-version testing approach detects a SemVer violation,
+the library authors will need to know which change(s) caused the
+violation. In such cases, we can apply change-impact analysis
+\cite{Stoerzer} to detect which changes from library version A induced
+failures in the cross-version tests. Stoerzer et al. \cite{Stoerzer}
+developed a change classification technique that classifies changes
+that affect a failing test by their likelyhood to have induced the
+failure. This would help developers focus their attention on the
+changes most likely to have caused the SemVer
+violation. Alternatively, it could help developers quickly factor out
+a SemVer-compliant release within their deadline.
+
+
