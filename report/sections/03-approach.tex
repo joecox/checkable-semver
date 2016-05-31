@@ -21,8 +21,9 @@ The interface is a two sided contract. The library, denotes clearly what can be
 relied upon, but by using a library a client, commits to never rely on anything
 that is not tested.  Our interface specification is both sound and complete by
 definition.  Following the definition we have created a discipline of interface
-specification using tests. We use the RFC 2119\footnote{The key words ``MUST'', ``MUST NOT'', ``REQUIRED'', ``SHALL'', ``SHALL NOT'', ``SHOULD'',
-``SHOULD NOT'', ``RECOMMENDED'',  ``MAY'', and ``OPTIONAL'' in this document are to be
+specification using tests. We use the RFC 2119\footnote{The key words ``MUST'',
+``MUST NOT'', ``REQUIRED'', ``SHALL'', ``SHALL NOT'', ``SHOULD'', ``SHOULD
+NOT'', ``RECOMMENDED'',  ``MAY'', and ``OPTIONAL'' in this document are to be
 interpreted as described in RFC 2119\cite{rfc2119}.} standard to describe the
 discipline.
 
@@ -113,7 +114,7 @@ Given a release and a release history, our algorithm will reject the release if
 and if it violates SemVer in relation to the release history.
 \end{theorem}
 
-\begin{proof}
+\begin{proof}[sketch]
 If a release is rejected, it must have failed in one of the 4 conditions. 
 \begin{itemize}
   \item If the first condition failed, the release is invalid, and semantic
@@ -140,9 +141,28 @@ Given a release and a release history, our algorithm will accept the release if
 and if adheed to SemVer in relation to the release history.
 \end{theorem}
 
-\begin{proof}
-If a release is wrongly accepted it must have not satisfied all of the SemVer
-rules. If the new release is a major release, there is no way to violate the
-SemVer rules. If the new release is a minor release, it must contain a breaking
-change to violate SemVer. This is impossible because 
+\begin{proof}[sketch]
+If a release is wrongly accepted it must have not satisfied any of the SemVer
+rules. 
+
+\begin{itemize}
+    \item If the new release is a major release, there is no way to violate the
+    SemVer rules. If the new release is a minor release, it must contain a breaking
+    change to violate SemVer. 
+    \item If the new release is a minor release it would have been checked against all
+    previous specifications in the major version, and passed without violations.
+    This means that in respect to any previous version there is no breaking
+    changes. So the new release does not violate SemVer.\
+    \item If the new release is a patch release it would both have been checked against all 
+    previous specifications and run the current new specification on each
+    implementation with the same minor version. Nothing new has been added to the
+    specification, so no (documented) features has been added. This release has not
+    violated SemVer.
+\end{itemize}
+
+Because any version release accepted, whether it is patch, minor, major will all be according to 
+SemVer, our tool can not accept a wrong release.
 \end{proof}
+
+\subsection{Building a tool}
+
