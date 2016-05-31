@@ -5,6 +5,9 @@ VALID_SEMVER_RE = re.compile("v?(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?
 def trim_version(v):
     return v.strip("v")
 
+def sort(versions):
+    return sorted(versions, cmp=cmp)
+
 def cmp(v1, v2):
     # Assuming 'nat.nat.nat' at the moment
     if not valid(v1):
