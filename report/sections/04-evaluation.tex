@@ -13,3 +13,43 @@ that is inline}
 \caption{A sample black and white graphic
 that needs to span two columns of text.}
 \end{figure*}
+
+In this section, we report on our evaluation of the practicality of
+our discipline. 
+
+\subsection{Quantitative Evaluation}
+
+{\bf RQ1.} Under the assumption of an idealized API test suite, does
+our tool detect SemVer violations?
+
+\subsection{User Study Evaluation}
+Our second evaluation is a user study of the efficacy of our
+approach. We focus on 
+
+{\bf RQ2.} Without any assumptions about the test suite, does our tool
+detect SemVer violations?
+
+{\bf RQ3.} How difficult is it to adopt our discipline of writing API
+tests?
+
+To answer {\bf RQ2}, we manually inspected the {\em possible} SemVer
+violations reported by our tool, in order to determine whether any of
+them represent true violations. In particular, we ask whether the test
+failure was due to an illegal change in the interface (in which case
+the failure is a true violation), due to non-adherence to our
+discipline, or for some other reason.
+
+While reviewing the violations for {\bf RQ2}, we refactored failing
+tests to adhere to our discipline whenever possible. To answer {\bf
+  RQ3}, we recorded the time required for the refactoring. We also
+looked for any inherent limitations of our approach that may make
+adherence more difficult.
+
+This study was conducted by the authors, who had no prior knowledge of
+the internals of Mocha. Lacking ground truth for what the ``true''
+interface is, we consulted the Mocha documentation, source code and
+comments, and version history to make the best determination
+possible. Whenever multiple interpretations were possible, we gave
+Mocha developers the benefit of the doubt, choosing the interpretation
+that would minimize SemVer violations.
+
