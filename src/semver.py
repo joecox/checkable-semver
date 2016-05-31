@@ -61,7 +61,7 @@ def diff(v1, v2):
 def get_prev(prev_v, cur_v, level):
     vs = []
     for v in prev_v:
-        if diff(v, cur_v) <= level:
+        if diff(v, cur_v) <= level and cmp(v, cur_v) == -1:
             vs.append(v)
 
     return vs
