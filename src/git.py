@@ -13,7 +13,7 @@ def is_repo():
                         stdout=FNULL, stderr=FNULL)
 
 def get_previous_tag():
-    p = Popen(["git", "describe", "--abbrev=0"], stdout=PIPE, stderr=PIPE)
+    p = Popen(["git", "describe", "--abbrev=0", "--tags"], stdout=PIPE, stderr=PIPE)
     t, _ = p.communicate()
     t = t.strip()
 
@@ -51,4 +51,4 @@ def get_current_branch():
 def get_tags():
     p = Popen(["git", "tag", "-l"], stdout=PIPE, stderr=PIPE)
     tags, _ = p.communicate()
-    return tags.strip().split("\n")
+    return semver.sort(tags.strip().split("\n"))
