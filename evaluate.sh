@@ -86,8 +86,14 @@ v2.5.1 \
 v2.5.2 \
 v2.5.3"
 
-mkdir -p results/eval
-touch results/eval/tags.txt
+outdir=results/eval
+mkdir -p $outdir
+touch $tooldir/$outdir/tags.txt
+touch $tooldir/$outdir/violations.txt
+touch $tooldir/$outdir/violations-verbose.txt
+
+echo "" > $tooldir/$outdir/violations.txt
+echo "" > $tooldir/$outdir/violations-verbose.txt
 
 for tag in $versions
 do
@@ -97,13 +103,18 @@ do
 
     cd $tmpdir
 
-    suggested_tag=`$tooldir/bump -d test --test-script "make test-jsapi" --test-version $tag -o $tooldir/results/eval/test-$tag.log`
+    $tooldir/bump -d test --test-script "make test-jsapi" $tag -o $tooldir/$outdir/ --report-violations -v
 
-    echo "" > $tooldir/results/eval/tags.txt
-    echo "Actual tag: $tag, suggested tag: $suggested_tag" >> $tooldir/results/eval/tags.txt
+    cat $tooldir/$outdir/violations-short.txt >> $tooldir/$outdir/violations.txt
+    cat $tooldir/$outdir/violations-long.txt >> $tooldir/$outdir/violations-verbose.txt
+    
+#    echo "" > $tooldir/$outdir/tags.txt
+#    echo "Actual tag: $tag, suggested tag: $suggested_tag" >> $tooldir/$outdir/tags.txt
 
-    echo "is: $tag should: $suggested_tag"
+#    echo "is: $tag should: $suggested_tag"
 done
+
+rm $tooldir/$outdir/violations-short.txt
 
 
     
