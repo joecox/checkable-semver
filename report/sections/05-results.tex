@@ -37,15 +37,11 @@ exposed secrets, the fix required for the test to conform to our
 discipline.
 
 \subsection{Failure 1: API test makes assertions about API secrets.}
-{\bf Test description: }
-\begin{verbatim}
-Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll:
-Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll:
-Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach:
-Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach:
-\end{verbatim}
+{\bf Test description: } {\em Suite .beforeAll() wraps the passed in
+function in a Hook adds it to \_beforeAll}
 
-These four tests describe the behavoir of event hook registration
+There are three other tests that are very similar. Together, these
+four tests describe the behavoir of event hook registration
 functions. The {\tt Suite} class signals events at different stages of
 executing a test suite: before running any tests (beforeAll), after
 all tests have been run (afterAll), just before each test is run
@@ -59,9 +55,11 @@ Part of the metadata for an event hook is a title used in mocha's
 output to the user. Each test asserts that the title is a particular
 string.
 
+{\small
 \begin{verbatim}
 beforeAllItem.title.should.equal('"before all" hook');
 \end{verbatim}
+}
 
 Starting in version 1.15.0, mocha added a feature that allows the test
 writer to optionally give a name to the hook, which is then included
@@ -89,9 +87,11 @@ developers.
 
 \subsection{Failure 2: Error changes.}
 {\bf Test description: }
-\begin{verbatim}
-Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
-\end{verbatim}
+%
+{\em Runnable(title, fn) .run(fn) when async when the callback is
+  invoked several times with an error should emit a single "error"
+  event }
+
 This test defines part of the behavior of mocha's asynchronous test
 runner, that when two asyncronous error events are triggered, only one
 is delivered to the error callback. This is important in tests that
@@ -115,9 +115,8 @@ is delivered to be secret information, and removed it from the test.
 \subsection{Failure 3: SemVer violation.}
 
 {\bf Test description:}
-\begin{verbatim}
-Runner .failHook(hoot, err) should emit "end":
-\end{verbatim}
+%
+{\em Runner .failHook(hoot, err) should emit "end" }
 
 The method {\tt Runner.failHook} calls a failure hook, and after that
 hook runs, emits an ``end'' event to allow test clean up to occur. In
@@ -125,9 +124,8 @@ version 1.21.5, whether the ``end'' event should be emitted became
 configurable by setting the property {\tt suite.bail}.  The
 description of this test was changed to reflect this:
 
-\begin{verbatim}
-Runner .failHook(hoot, err) should emit "end" if suite bail is true
-\end{verbatim}
+{\em Runner .failHook(hoot, err) should emit "end" if suite bail is
+  true }
 
 The original test fails because the default value of suite.bail is
 {\tt false}, so if a client upgrades mocha to version 1.21.5, the
