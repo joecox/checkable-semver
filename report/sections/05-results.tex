@@ -27,11 +27,16 @@ manually inspected each failing jsapi test for API secrets, and
 refactored the test to remove the secret. {\bf Failure 1} below gives
 an example of this.
 
-The manual inspection of the failing jsapi tests to identify and
-remove API secrets required 4 hours of effort by Matt, who was
+We manually inspected of the 6 failing jsapi tests to identify the
+cause of the failure and remove any API secrets. We found that 4 of
+the 6 test failures were multiple instances of a single problem, so
+there were 3 types of failure. Of the 3 failure types, 2 failed due to
+testing secrets as well as the API, and the tests succeeded after
+removing the exposed secrets. Altogether, the classification and
+refactoring of these tests required 4 hours of effort by Matt, who was
 unfamiliar with mocha's internals.
 
-We summarize the 6 failing jsapi tests, our diagnosis of the cause of
+We summarize the 3 failing jsapi tests, our diagnosis of the cause of
 the failure (SemVer violation or exposed secret), and in the cases of
 exposed secrets, the fix required for the test to conform to our
 discipline.
