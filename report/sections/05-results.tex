@@ -34,7 +34,9 @@ there were 3 types of failure. Of the 3 failure types, 2 failed due to
 testing secrets as well as the API, and the tests succeeded after
 removing the exposed secrets. Altogether, the classification and
 refactoring of these tests required 4 hours of effort by Matt, who was
-unfamiliar with mocha's internals.
+unfamiliar with mocha's internals. We did not find any instances in
+which a test could not be refactored. This experience demonstrates
+that that adopting our discipline may not be too difficult.
 
 We summarize the 3 failing jsapi tests, our diagnosis of the cause of
 the failure (SemVer violation or exposed secret), and in the cases of
@@ -146,4 +148,11 @@ may not actually be part of the API specification.
   API between mocha and its client. However, this may not always be
   the case. In practice, this test suite tests internal interfaces as
   well as the external client-facing interface. 
+\item Small sample size: only refactored one test suite version of one
+  library. Mocha's test suite may not be representative of other test
+  suites.
+\item Refactoring assertions about API secrets out of API tests can
+  result in duplicated testing code. This might be avoided by using a
+  more complex test design, but that could reducing the readability of
+  test, making them less useful as specifications.
 \end{itemize}
