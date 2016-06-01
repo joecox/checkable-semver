@@ -110,12 +110,12 @@ to pass the following checks.
     \begin{align*}
         \forall r' \in rs. & ((x,y,z), \_,\_) = r \\ 
                            & \land ((x',y',z'), \_, \_) = r' \\ 
-                           & \land \bigvee\left\{ 
-        \begin{matrix}
+                           & \land \bigvee
+        \begin{cases}
             x' < x \\
             x' = x \land y' < y \\
             x' = x \land y = y' \land z' < z
-        \end{matrix}
+        \end{cases}
     \end{align*}
     \item all previous implementations with versions in same minor version as the
     new release, must run on the new specification without violations;

@@ -1,13 +1,20 @@
 
-LATEX=pdflatex -file-line-error -interaction=nonstopmode
+LATEX=pdflatex -file-line-error -interaction=nonstopmode 
 
 .PHONY: all
-all: report.tex
+all: report.tex graphics 
 	latexmk -pdf -pdflatex="$(LATEX)" -use-make report.tex
 
 .PHONY: auto
 auto: report.tex
 	latexmk -pdf -pdflatex="$(LATEX)" -use-make -pvc report.tex
+
+.PHONY: graphics
+graphics: graphics/violations.pdf
+
+graphics/violations.pdf: graphics/violations.gnuplt graphics/violations.txt 
+	gnuplot graphics/violations.gnuplt 
+
 
 .PHONY: clean clean-aux
 clean:
@@ -17,3 +24,4 @@ clean:
 clean-aux:
 	rm -f *.aux *.bbl *bcf *.blg *.log *.out *.tdo *.toc *.xdv *.synctex.gz *.fdb_latexmk *.fls *.run.xml *.lpc *.upa *.upb; \
 	rm -f **/*.aux
+
