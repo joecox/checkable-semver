@@ -1,11 +1,4 @@
 \section{Results}
-In this section, we report on our evaluation of the practicality of
-our discipline. We focus on two research questions:
-
-{\bf RQ1.} How hard is it to adhere to the discipline of writing API tests?
-
-{\bf RQ2.} Given our idealized API tests, does our tool detect SemVer violations?
-
 We used the test suite of mocha as our subject program. The developers
 identify the 'jsapi' test suite, comprising 66 tests, as their
 ``interface tests''. Some of these test methods that are annotated
@@ -34,25 +27,28 @@ manually inspected each failing jsapi test for API secrets, and
 refactored the test to remove the secret. {\bf Failure 1} below gives
 an example of this.
 
-The manual inspection of the failing jsapi tests to identify and
-remove API secrets required 4 hours of effort by Matt, who was
-unfamiliar with mocha's internals.
+We manually inspected of the 6 failing jsapi tests to identify the
+cause of the failure and remove any API secrets. We found that 4 of
+the 6 test failures were multiple instances of a single problem, so
+there were 3 types of failure. Of the 3 failure types, 2 failed due to
+testing secrets as well as the API, and the tests succeeded after
+removing the exposed secrets. Altogether, the classification and
+refactoring of these tests required 4 hours of effort by Matt, who was
+unfamiliar with mocha's internals. We did not find any instances in
+which a test could not be refactored. This experience demonstrates
+that that adopting our discipline may not be too difficult.
 
-We summarize the 6 failing jsapi tests, our diagnosis of the cause of
+We summarize the 3 failing jsapi tests, our diagnosis of the cause of
 the failure (SemVer violation or exposed secret), and in the cases of
 exposed secrets, the fix required for the test to conform to our
 discipline.
 
 \subsection{Failure 1: API test makes assertions about API secrets.}
-{\bf Test description: }
-\begin{verbatim}
-Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll:
-Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll:
-Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach:
-Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach:
-\end{verbatim}
+{\bf Test description: } {\em Suite .beforeAll() wraps the passed in
+function in a Hook adds it to \_beforeAll}
 
-These four tests describe the behavoir of event hook registration
+There are three other tests that are very similar. Together, these
+four tests describe the behavoir of event hook registration
 functions. The {\tt Suite} class signals events at different stages of
 executing a test suite: before running any tests (beforeAll), after
 all tests have been run (afterAll), just before each test is run
@@ -66,9 +62,11 @@ Part of the metadata for an event hook is a title used in mocha's
 output to the user. Each test asserts that the title is a particular
 string.
 
+{\small
 \begin{verbatim}
 beforeAllItem.title.should.equal('"before all" hook');
 \end{verbatim}
+}
 
 Starting in version 1.15.0, mocha added a feature that allows the test
 writer to optionally give a name to the hook, which is then included
@@ -96,9 +94,11 @@ developers.
 
 \subsection{Failure 2: Error changes.}
 {\bf Test description: }
-\begin{verbatim}
-Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event:
-\end{verbatim}
+%
+{\em Runnable(title, fn) .run(fn) when async when the callback is
+  invoked several times with an error should emit a single "error"
+  event }
+
 This test defines part of the behavior of mocha's asynchronous test
 runner, that when two asyncronous error events are triggered, only one
 is delivered to the error callback. This is important in tests that
@@ -122,9 +122,8 @@ is delivered to be secret information, and removed it from the test.
 \subsection{Failure 3: SemVer violation.}
 
 {\bf Test description:}
-\begin{verbatim}
-Runner .failHook(hoot, err) should emit "end":
-\end{verbatim}
+%
+{\em Runner .failHook(hoot, err) should emit "end" }
 
 The method {\tt Runner.failHook} calls a failure hook, and after that
 hook runs, emits an ``end'' event to allow test clean up to occur. In
@@ -132,9 +131,8 @@ version 1.21.5, whether the ``end'' event should be emitted became
 configurable by setting the property {\tt suite.bail}.  The
 description of this test was changed to reflect this:
 
-\begin{verbatim}
-Runner .failHook(hoot, err) should emit "end" if suite bail is true
-\end{verbatim}
+{\em Runner .failHook(hoot, err) should emit "end" if suite bail is
+  true }
 
 The original test fails because the default value of suite.bail is
 {\tt false}, so if a client upgrades mocha to version 1.21.5, the
@@ -150,4 +148,11 @@ may not actually be part of the API specification.
   API between mocha and its client. However, this may not always be
   the case. In practice, this test suite tests internal interfaces as
   well as the external client-facing interface. 
+\item Small sample size: only refactored one test suite version of one
+  library. Mocha's test suite may not be representative of other test
+  suites.
+\item Refactoring assertions about API secrets out of API tests can
+  result in duplicated testing code. This might be avoided by using a
+  more complex test design, but that could reducing the readability of
+  test, making them less useful as specifications.
 \end{itemize}
