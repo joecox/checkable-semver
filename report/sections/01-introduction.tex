@@ -1,22 +1,22 @@
-\section{Motivation}
+\section{Introduction}
 
 It has always been difficult to rigorously specify library interfaces.
 Interfaces are often defined with text, which is often incomplete and not
-machine checkable,  or,  for some programming languages, with types, which are
+machine checkable, or, for some programming languages, with types, which are
 often incomplete. Machine checkability is important as it prevents
-documentation to go stale. Completeness is important if the API is the only
-means of communication between the library and the client. And this is only for
-one version of the API. When looking at the evolution of an API. It is harder
-still to ensure that the API does not introduce a breaking change unexpectedly.
-Semantic Version, or SemVer, helps library authors define the scope of their
-changes solely through the version number.  However, authors can and often do
-violate SemVer. For example, an author may make a backwards incompatible change
-but only increment the minor version.  Library consumers observing the version
-number will not expect the change and systems will break.
+documentation from going stale. Completeness is important if the API is the
+only means of communication between the library and the client. And this is
+only for one version of the API. When looking at the evolution of an API, it is
+harder still to ensure that the API does not introduce a breaking change
+unexpectedly.  Semantic Version, or SemVer, helps library authors define the
+scope of their changes solely through the version number.  However, authors can
+and often do violate SemVer. For example, an author may make a backwards
+incompatible change but only increment the minor version.  Library consumers
+observing the version number will not expect the change and systems will break.
 
 In this paper we define the scope of an interface test, and describe a
 discipline for how to write and maintain the tests. We have designed a tool
-that using these tests we will detect violations to SemVer, which will allow
+that will use these tests to detect violations to SemVer, which will allow
 library developers to give stronger guarantees to their clients. 
 
 Many libraries have unit tests, regression tests, integration tests, and more.
