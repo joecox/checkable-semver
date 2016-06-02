@@ -1,5 +1,5 @@
 report.pdf
-graphics/violations.pdf
+graphics/*-plt.pdf
 **/*.aux
 *.aux
 *.bbl

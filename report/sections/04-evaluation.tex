@@ -2,9 +2,15 @@
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{violations}
+\includegraphics[width=\linewidth]{wisdom_of_the_ancients}
 \caption{Violations per version}
 \end{figure}
+
+\begin{figure*}
+\centering
+\includegraphics[height=50ex]{violations-plt}
+\caption{Violations per version}
+\end{figure*}
 
 \begin{figure*}
 \centering
@@ -31,7 +37,7 @@ detect SemVer violations?
 {\bf RQ3.} How difficult is it to adopt our discipline of writing API
 tests?
 
-To answer {\bf RQ2}, we manually inspected the {\em possible} SemVer
+To answer {\bf RQ2}, we manually inspected the {\em possible\/} SemVer
 violations reported by our tool, in order to determine whether any of
 them represent true violations. In particular, we ask whether the test
 failure was due to an illegal change in the interface (in which case

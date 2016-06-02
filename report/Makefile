@@ -9,12 +9,14 @@ all: report.tex graphics
 auto: report.tex
 	latexmk -pdf -pdflatex="$(LATEX)" -use-make -pvc report.tex
 
+plots := $(patsubst %.gnuplot,%-plt.pdf,$(wildcard graphics/*.gnuplot))
+
 .PHONY: graphics
-graphics: graphics/violations.pdf
+graphics: $(plots)
+	@echo $(plots)
 
-graphics/violations.pdf: graphics/violations.gnuplt graphics/violations.txt 
-	gnuplot graphics/violations.gnuplt 
-
+%-plt.pdf: %.gnuplot %.txt 
+	gnuplot $< > $@
 
 .PHONY: clean clean-aux
 clean:
