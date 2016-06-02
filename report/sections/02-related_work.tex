@@ -9,16 +9,26 @@ concludes that tools has to be created that are able to, more concisely, inform
 developers about breaking changes, and let them reason about the stability of a
 library.
 
-Automatic semantic versioning has been efficiently used in Elm. Elm is a
-functional and static typed language which makes semantic versioning simple. In
-Elm the version numbers is defined like this: a patch is never changing the
-API, a minor version added stuff to the API, and major version changed or
-removed values in the API. The API in Elm is defined as all exposed values,
-which is both constants and functions, in all exposed modules. In Elm,
-everything not specified by the type is considered a secret.  That could be an
-under approximation because some behavior might be expected, but is not
-specified in the types. 
- 
+Automatic semantic versioning has been efficiently used in Elm. Elm is
+a functional and static typed language which makes semantic versioning
+simple. In Elm the version numbers is defined like this: a patch is
+never changing the API, a minor version added stuff to the API, and
+major version changed or removed values in the API. API specifications
+in Elm are implicitly defined by the types of all exposed values,
+which includes both constants and functions, in all exposed
+modules. This provides some nice guarantees, for example that a
+dependency to a particular version will not introduce any type
+errors. However, using types alone as API specifications has limited
+expressiveness: any behavior not reflected by the types alone is
+automatically considered an API secret. To cope with this limitation,
+the library authors often define a more complete API specification in
+documentation. The rules of Semantic Versioning should be followed
+with respect to the complete API specification including this
+documentation, but Elm's tool cannot enforce this. Users should not
+blindly trust Elm to enforce semantic versioning without some
+additional check of SemVer compliance. Our approach is one such
+additional check, and is complimentary to Elm's approach.
+
 In his seminal work on Delta Debugging, Zeller writes ``The GDB people have done
 it again. The new release 4.17 of the GNU debugger brings several new features,
 languages, and platforms, but for some reason, it no longer integrates properly
@@ -36,6 +46,12 @@ GDB. In either case, our tool would detect who was at fault and localize the
 error. Further, it would help the GDB developers avoid releasing breaking
 changes, and would help the DDD developers avoid relying on the secrets of GDB.
 
+Change-impact analysis (CIA) \cite{Chianti,FaultTracer,Stoerzer} can
+be used for regression-test selection or to help isolate the cause of
+a regression test failure.
+%
+CIA can compliment our cross-version testing technique.
+%
 When our cross-version testing approach detects a SemVer violation,
 the library authors will need to know which change(s) caused the
 violation. In such cases, we can apply change-impact analysis
