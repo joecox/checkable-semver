@@ -65,8 +65,8 @@ def main():
             error('Version ' + args.test_version + ' not in history')
 
     # If args.test_version has been set, reset to it
-    if args.test_version:
-        git.reset_hard(args.test_version)
+    # if args.test_version:
+    #     git.reset_hard(args.test_version)
     # Else continue on current commit
     
     last_t = git.get_previous_tag()
@@ -75,10 +75,10 @@ def main():
     for violation in dv(tags, args.test_version):
         print "V{},{},{},{!r}".format(args.test_version, *violation)
     
-    if args.report_violations:
-        report_file = open(os.path.join(args.outdir, "violations-short.txt"), 'w')
-        viol_long_f = open(os.path.join(args.outdir, "violations-long.txt"), 'w')
-        report_file.write(args.test_version + "," + str(len(f_viol) + len(b_viol)) + '\n')
+    # if args.report_violations:
+    #     report_file = open(os.path.join(args.outdir, "violations-short.txt"), 'w')
+    #     viol_long_f = open(os.path.join(args.outdir, "violations-long.txt"), 'w')
+    #     report_file.write(args.test_version + "," + str(len(f_viol) + len(b_viol)) + '\n')
     # else:
     #     # First try bumping patch
 
@@ -122,12 +122,12 @@ def dv(prev_v, v):
     runner = runtests.TestRunner(args.dir, repodir=repo_dir, verbose=args.verbose)
     for patch_v in in_minor_v:
         with runner:
-            for violation in runner.run(v, patch_v):
+            for violation in runner.run(patch_v, v):
                 yield violation
    
     for minor_v in in_major_v:
         with runner:
-            for violation in runner.run(minor_v, v):
+            for violation in runner.run(v, minor_v):
                 yield violation
 
 

@@ -1,6 +1,42 @@
 \section{Related Work}
 
-\todo{Parnas paper} \cite{Parnas}.
+Parnas\cite{Parnas} proposed that systems should be decomposed into
+modules that support parallel development. This is counter to the
+intuitive idea of decomposing the system using ``separation of
+concerns'' as the only consideration (the so-called ``functional
+decomposition''). The guiding principle developers should use in
+modularizing their code is to separate the module interface, which
+other modules can rely on behaving a particular way, from
+implementation ``secrets'', which the module author has the freedom
+the change. 
+
+\todo{rewrite} 
+%
+Semantic Versioning\cite{semver} is complementary to the ideas
+proposed by Parnas.
+%
+Problem semver solves: one module may change in a way that breaks its
+client modules.
+%
+SemVer accounts for time and change in the modularization of a
+programs. This is particularly important when the program relies on
+libraries or modules developed by independent teams with separate
+goals and timelines. This is much more the state of the practice in
+today's era of open source libraries, package managers, etc. Parnas
+did not have to deal with this stuff.
+%
+Semantic versioning strengthens Parnas' ideas by establishing a
+contract between the authors and clients of a module, which governs
+the evolution of the module. 
+%
+It allows clients to safely incorporate new upgrades to their
+dependencies that may improve performance, fix bugs, or add new
+features, without worrying about whether the upgrade will break their
+code.
+%
+Our project aims to strengthen this even further, by supporting SemVer
+with a testing discipline and tool support.
+
 
 A recent study from Carnegie Mellon University\cite{bogart15-break}, consists of seven interviews
 with package maintainers of packages in CRAN (R) and Node.js (Javascript). A
@@ -29,7 +65,7 @@ with respect to the complete API specification including this
 documentation, but Elm's tool cannot enforce this. Users should not
 blindly trust Elm to enforce semantic versioning without some
 additional check of SemVer compliance. Our approach is one such
-additional check, and is complimentary to Elm's approach.
+additional check, and is complementary to Elm's approach.
 
 In his seminal work on Delta Debugging, Zeller writes ``The GDB people have done
 it again. The new release 4.17 of the GNU debugger brings several new features,
