@@ -92,7 +92,7 @@ outdir=results/eval
 mkdir -p $outdir
 
 violations=$tooldir/$outdir/violations.txt
-echo "" > $violations
+rm -f $violations
 
 for tag in $versions
 do
