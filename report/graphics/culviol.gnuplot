@@ -21,7 +21,7 @@ set style line 2 lc rgb '#5e9c36' pt 6 ps 1 lt 1 lw 2 # --- green
 
 set style fill solid 0.2
 
-set ylabel 'Culmuliative Violations' font "Times,10"
+set ylabel 'Cumulative Violations' font "Times,10"
 set xlabel 'Version'  font "Times,10"
 
 plot "graphics/culviol.txt" using 4:xticlabel(1) with filledcurves above x1 linestyle 1
