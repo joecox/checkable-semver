@@ -105,8 +105,9 @@ to pass the following checks.
     \item The new release specs has to have no violations on the new
     implementation;
     $$ Refl(r) = \{(s, i)\} \text{ where } ((x,y,z), i, s) = r $$
+    
     \item the new release version must be greater than all previous versions, as
-    described in the semantic versioning;
+    described in the semantic versioning (Reflective Test);
     \begin{align*}
         \forall r' \in rs. & ((x,y,z), \_,\_) = r \\ 
                            & \land ((x',y',z'), \_, \_) = r' \\ 
@@ -117,9 +118,11 @@ to pass the following checks.
             x' = x \land y = y' \land z' < z
         \end{cases}
     \end{align*}
+    
     \item all previous implementations with versions in same minor version as the
-    new release, must run on the new specification without violations;
-    $$FT(r, rs) = \left\{ (s, i')\ \vline\ 
+    new release, must meet new specification without violations (Added Feature
+    Test);
+    $$AFT(r, rs) = \left\{ (s, i')\ \vline\ 
         \begin{matrix}
             r' \in rs \\
         ((x,y,z), \_, s) = r \\ 
@@ -127,9 +130,10 @@ to pass the following checks.
         z' < z \\
         \end{matrix}
     \right\}$$
-    \item and all previous specifications in the same major version as the new
-    release, must run the new implementation without violations.
-    $$BT(r, rs) = \left\{ (s', i)\ \vline\ 
+
+    \item and the new implementation must meet all previous specifications in the same major version as the new
+        release, without violations (Breaking Change Test).
+    $$BCT(r, rs) = \left\{ (s', i)\ \vline\ 
         \begin{matrix}
             r' \in rs \\
         ((x, y, z), i, \_) = r \\ 
@@ -141,7 +145,7 @@ to pass the following checks.
 
 If all the steps are passed, the release is following SemVer. Assuming that the 
 second point is uphold, we can write down the expression for cross version testing. 
-$$ CVT(r, rs) = Refl(r) \cup BT(r, rs) \cup FT(r, rs) $$
+$$ CVT(r, rs) = Refl(r) \cup BCT(r, rs) \cup AFT(r, rs) $$
 
 \begin{theorem}[Soundness]
 Given a release and a release history, our algorithm will reject the release if
