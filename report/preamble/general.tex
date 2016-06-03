@@ -8,12 +8,12 @@
 \usepackage[svgnames,rgb]{xcolor}
 \usepackage{pdfcomment}
 
-\newcommand{\todo}[1]{\pdfmargincomment[color=red, icon=Help]{#1}} 
+\newcommand{\todo}[1]{{\color{red} (TODO)}\pdfmargincomment[color=red, icon=Help]{#1}} 
 \newcommand{\marktodo}[2]{\pdfmarkupcomment[color=yellow]{#1}{#2}} 
 
 \setcopyright{rightsretained}
 % DOI
-\doi{XX.YYY/ZZZ_Z}
+\doi{XX.YYY/ZZZ\_Z}
 
 % ISBN
 \isbn{123-4567-24-567/08/06}
