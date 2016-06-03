@@ -86,9 +86,13 @@ then
     runner="parallel"
 fi
 
+N=0
 for tag in $versions
 do
-    echo $tag
-done | $runner -n1 ./evaluate1.sh $tooldir/$outdir {}
+    # append sequence number so we can aggregate results in
+    # the right order
+    echo "$N,$tag"
+    N=$((N+1))
+done | $runner -n1 ./evaluate1.sh $tooldir/$outdir 
 
-cat $tooldir/$outdir/violations-tag-*.txt > $tooldir/$outdir/violations.txt
+cat $tooldir/$outdir/violations-seq-*.txt > $tooldir/$outdir/violations.txt

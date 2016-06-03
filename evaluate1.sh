@@ -5,8 +5,12 @@ set -e
 mochaUrl="git@github.com:mochajs/mocha.git"
 
 outdir="$1"
-tag="$2"
-violations="$outdir/violations-tag-$tag.txt"
+seq="$(echo $2 | cut -d, -f 1)"
+# 0-pad seq
+printf -v seq "%05d" $seq
+
+tag="$(echo $2 | cut -d, -f 2)"
+violations="$outdir/violations-seq-$seq.txt"
 
 tooldir=$(pwd)
 tmpdir=$(mktemp -d)
