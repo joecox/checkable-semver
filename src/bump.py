@@ -47,7 +47,7 @@ def main():
         error("Must be on the master branch")
 
     if args.outdir:
-        outf = open(os.path.join(args.outdir, 'out.log'), 'w')
+        outf = open(os.path.join(args.outdir, 'out.log'), 'a')
         
     repo_dir = os.getcwd()
     

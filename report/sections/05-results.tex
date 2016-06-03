@@ -1,4 +1,5 @@
 \section{Results}
+\subsection{User Study Results}
 We used the test suite of mocha as our subject program. The developers
 identify the 'jsapi' test suite, comprising 66 tests, as their
 ``interface tests''. Some of these test methods that are annotated
@@ -43,7 +44,7 @@ the failure (SemVer violation or exposed secret), and in the cases of
 exposed secrets, the fix required for the test to conform to our
 discipline.
 
-\subsection{Failure 1: API test makes assertions about API secrets.}
+\subsubsection{Failure 1: API test makes assertions about API secrets.}
 {\bf Test description: } {\em Suite .beforeAll() wraps the passed in
 function in a Hook adds it to \_beforeAll}
 
@@ -92,7 +93,7 @@ be applied in two places; refactoring test code can make it more
 complex, which might limit its benefit as a specification to client
 developers.
 
-\subsection{Failure 2: Error changes.}
+\subsubsection{Failure 2: Error changes.}
 {\bf Test description: }
 %
 {\em Runnable(title, fn) .run(fn) when async when the callback is
@@ -119,7 +120,7 @@ test description, which mentions only the number of error events that
 should be delivered. Therefore, we considered {\em which} error event
 is delivered to be secret information, and removed it from the test.
 
-\subsection{Failure 3: SemVer violation.}
+\subsubsection{Failure 3: SemVer violation.}
 
 {\bf Test description:}
 %
@@ -141,18 +142,28 @@ a patch version, and thus is a SemVer violation. We note that the {\tt
   Runner.failHook} method is annotated ``@api private'', so this test
 may not actually be part of the API specification.
 
-\subsection{Confounding Factors}
-\begin{itemize}
-\item These tests were identified by the mocha developers as the
-  ``Javascript API tests''. We assume that this consistently means the
-  API between mocha and its client. However, this may not always be
-  the case. In practice, this test suite tests internal interfaces as
-  well as the external client-facing interface. 
-\item Small sample size: only refactored one test suite version of one
-  library. Mocha's test suite may not be representative of other test
-  suites.
-\item Refactoring assertions about API secrets out of API tests can
-  result in duplicated testing code. This might be avoided by using a
-  more complex test design, but that could reducing the readability of
-  test, making them less useful as specifications.
-\end{itemize}
+\subsubsection{Confounding Factors}
+We identify three confounding factors with our user study. First, it
+is still unclear that the ``jsapi'' tests should be used as mocha's
+interface specification. These tests were identified by the mocha
+developers as the ``Javascript API tests'', and among the Javascript
+libraries we considered for our subject program, seemed to be the most
+reasonable test suite to use as a specification. We assume that what
+the mocha developers mean by ``API'' is the API between mocha and its
+client. However, this may not always be the case. In practice, this
+test suite tests internal interfaces as well as the external
+client-facing interface.
+
+A second confounding factor is the small sample size of our study:
+only refactored one test suite version of one library. The scope was
+limited by the effort required to get good cross-version test
+results. Given more time, we would like to examine and refactor more
+cross-version testing failures from Mocha other libraries.
+
+A third confounding factor is that the quality of Mocha's test suite
+is likely to be quite good compared with the average Javascript test
+suite. This is to be expected, since Mocha itself is a test suite, so
+its developers would be expected to be more ``pro-test'' than the
+average developer. For this reason, Mocha's test suite may not be
+representative of other test suites.
+

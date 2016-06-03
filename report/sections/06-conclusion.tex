@@ -1,1 +1,13 @@
-\section{Conculsion}
+\section{Conculsion} 
+
+\subsection{Limitations and Future Work}
+One limitation of our approach is that refactoring assertions about
+API secrets out of API tests can result in duplicated testing
+code. This might be avoided by using a more complex test design, but
+that could reducing the readability of test, making them less useful
+as specifications.
+
+We expected to find some interface tests that could not be effectively
+refactored to remove API secrets. We did not find any such tests, but
+the small scope of our study prevents us from making any conclusions
+about the likelyhood of this scenario in practice. 
