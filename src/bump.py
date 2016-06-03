@@ -122,12 +122,12 @@ def dv(prev_v, v):
     runner = runtests.TestRunner(args.dir, repodir=repo_dir, verbose=args.verbose)
     for patch_v in in_minor_v:
         with runner:
-            for violation in runner.run(v, patch_v):
+            for violation in runner.run(patch_v, v):
                 yield violation
    
     for minor_v in in_major_v:
         with runner:
-            for violation in runner.run(minor_v, v):
+            for violation in runner.run(v, minor_v):
                 yield violation
 
 
