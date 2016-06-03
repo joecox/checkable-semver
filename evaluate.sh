@@ -2,18 +2,6 @@
 
 set -e
 
-mochaUrl="git@github.com:mochajs/mocha.git"
-
-tooldir=`pwd`
-
-tmpdir=`mktemp -d`
-
-git clone $mochaUrl $tmpdir
-
-cd $tmpdir
-
-tags=`git tag --list`
-
 versions=" \
 1.0.1 \
 1.0.2 \
@@ -88,20 +76,19 @@ v2.5.1 \
 v2.5.2 \
 v2.5.3"
 
+tooldir=`pwd`
 outdir=results/eval
 mkdir -p $outdir
 
-violations=$tooldir/$outdir/violations.txt
-echo "" > $violations
+runner="xargs"
+if [ "$1" = "parallel" ]
+then
+    runner="parallel"
+fi
 
 for tag in $versions
 do
-    echo "--------------------------------------------------"
-    echo "Testing version $tag"
-    echo "--------------------------------------------------"
+    echo $tag
+done | $runner -n1 ./evaluate1.sh $tooldir/$outdir {}
 
-    cd $tmpdir
-
-    $tooldir/bump -d test $tag | tee -a "$violations"
-done
-
+cat $tooldir/$outdir/violations-tag-*.txt > $tooldir/$outdir/violations.txt
