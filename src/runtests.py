@@ -11,10 +11,7 @@ import git
 
 class TestRunner:
 
-    def __init__(self, implv, testv, testdir,
-                 verbose=False, repodir=None):
-        self.implv = implv
-        self.testv = testv
+    def __init__(self, testdir, verbose=False, repodir=None):
         self.testdir = testdir
         self.verbose = verbose
         if not repodir:
@@ -30,9 +27,9 @@ class TestRunner:
         os.chdir(self.repodir)
         shutil.rmtree(self.wdir)
 
-    def run(self):
+    def run(self, implv, testv):
         if self.verbose:
-            print "Testing implv: " + self.implv + ", testv: " + self.testv
+            print "Testing implv: " + implv + ", testv: " + testv
             
         with open(os.devnull, 'w') as FNULL:
             # Clone into work dir
@@ -41,7 +38,7 @@ class TestRunner:
             os.chdir(self.wdir)
         
             # Reset to implv
-            git.reset_hard(self.implv)
+            git.reset_hard(implv)
 
             # Check for the "json" tool
             ret = call(["which", "json"], stdout=FNULL, stderr=FNULL)
@@ -50,7 +47,7 @@ class TestRunner:
                 exit(1)
                 
             # Get devDeps from test package.json
-            git.co_by_tag(self.testv, "package.json")
+            git.co_by_tag(testv, "package.json")
             
             p = Popen(["json", "-f", "package.json", "devDependencies"], stdout=PIPE, stderr=PIPE)
             devDeps, _ = p.communicate()
@@ -58,7 +55,7 @@ class TestRunner:
             devDeps = devDeps.replace('"', '\"')
             
             # Put test devDeps into impl devDeps
-            git.co_by_tag(self.implv, "package.json")
+            git.co_by_tag(implv, "package.json")
 
             call(["json", "-I", "-f", "package.json", "-e", "this.devDependencies="+devDeps],
                  stdout=FNULL, stderr=FNULL)
@@ -74,22 +71,21 @@ class TestRunner:
             call(["npm", "install"], stdout=FNULL, stderr=FNULL)
 
             # checkout test dir from testv
-            git.co_by_tag(self.testv, self.testdir)
+            git.co_by_tag(testv, self.testdir)
 
             # Run tests (assume make test-jsapi at the moment)
             p = Popen(["make", "test-jsapi"], stdout=PIPE, stderr=PIPE, universal_newlines=True)
             o, e = p.communicate()
 
             # Parse stderr for errors
-            errpat = "\d*\) (?P<err>.*):"
+            errpat = "\d*\) (?P<err>.*):\s*$"
             m = re.findall(errpat, e, re.MULTILINE)
 
-            if m:
+            if m and self.verbose:
                 for viol in m:
-                    if self.verbose:
-                        print "Found violation: " + viol
+                    print "Found violation: " + viol
 
-            return m
+            return [(implv, testv, v) for v in m]
 
 def main():
     p = argparse.ArgumentParser()
@@ -111,9 +107,8 @@ def main():
     else:
         repodir = os.getcwd()
         
-    with TestRunner(args.impl, args.test, args.test_dir,
-                    repodir=repodir, verbose=args.verbose) as tr:
-        tr.run()
+    with TestRunner(args.test_dir, repodir=repodir, verbose=args.verbose) as tr:
+        tr.run(args.impl, args.test)
 
 
 if __name__ == "__main__":

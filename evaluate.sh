@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 mochaUrl="git@github.com:mochajs/mocha.git"
 
 tooldir=`pwd`
@@ -88,12 +90,9 @@ v2.5.3"
 
 outdir=results/eval
 mkdir -p $outdir
-touch $tooldir/$outdir/tags.txt
-touch $tooldir/$outdir/violations.txt
-touch $tooldir/$outdir/violations-verbose.txt
 
-echo "" > $tooldir/$outdir/violations.txt
-echo "" > $tooldir/$outdir/violations-verbose.txt
+violations=$tooldir/$outdir/violations.txt
+echo "" > $violations
 
 for tag in $versions
 do
@@ -103,19 +102,6 @@ do
 
     cd $tmpdir
 
-    $tooldir/bump -d test --test-script "make test-jsapi" $tag -o $tooldir/$outdir/ --report-violations -v
-
-    cat $tooldir/$outdir/violations-short.txt >> $tooldir/$outdir/violations.txt
-    cat $tooldir/$outdir/violations-long.txt >> $tooldir/$outdir/violations-verbose.txt
-    
-#    echo "" > $tooldir/$outdir/tags.txt
-#    echo "Actual tag: $tag, suggested tag: $suggested_tag" >> $tooldir/$outdir/tags.txt
-
-#    echo "is: $tag should: $suggested_tag"
+    $tooldir/bump -d test $tag | tee -a "$violations"
 done
 
-rm $tooldir/$outdir/violations-short.txt
-
-
-    
-    
