@@ -19,6 +19,6 @@ set style line 2 lc rgb '#5e9c36' pt 6 ps 1 lt 1 lw 2 # --- green
 set ylabel 'Violations' font "Times,10"
 set xlabel 'Version'  font "Times,10"
 
-plot "graphics/violations.txt" using 4:xtic(1) with boxes ls 1 title "Breaking Changes", \
-     "" u 2:xtic(1) with boxes ls 2 title "Added Features"
+plot "graphics/violations.txt" using 4:xtic(1) with boxes ls 2 title "Added Features", \
+     "" u 2:xtic(1) with boxes ls 1 title "Breaking Changes"
 
