@@ -79,13 +79,15 @@ v2.5.3"
 outfolder=./report/graphics/
 
 outfile=$outfolder/violations.txt
+culfile=$outfolder/cumulative.txt
 
-rm -f $outfile
+rm -f $outfile $culfile
 
-#collector=`mktemp -t coll`
+
+collector=`mktemp -t coll`
 for version in $versions
 do
-#    collectorNext=`mktemp -t coll`
+    collectorNext=`mktemp -t coll`
     violations=`mktemp -t viol-$version`
     breaking=`mktemp -t breaking-$version`
     features=`mktemp -t features-$version`
@@ -98,12 +100,13 @@ do
     # breaking_viol=`wc -l "$breaking" | awk '{print $1}'`
     # features_viol=`wc -l "$features" | awk '{print $1}'`
     
-    #sort -m "$violations" "$collector" | uniq >"$collectorNext"
-    #uniqcul=`cat "$collectorNext" | uniq | wc -l | awk '{print $1}'`
-    #collector="$collectorNext"
+    sort -m "$breaking" "$features" "$collector" | uniq >"$collectorNext"
+    cumulative=`cat "$collectorNext" | uniq | wc -l | awk '{print $1}'`
+    collector="$collectorNext"
     
     uniq_breaking_viol=`uniq "$breaking" | wc -l | awk '{print $1}'`
     uniq_feature_viol=`uniq "$features" | wc -l | awk '{print $1}'`
 
     echo "$version $uniq_breaking_viol $uniq_feature_viol $((uniq_feature_viol + uniq_breaking_viol))" >> $outfile
+    echo "$version $cumulative" >> "$culfile"
 done
