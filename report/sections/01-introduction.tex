@@ -1,39 +1,94 @@
 \section{Introduction}
 
+% Problem setup / Motivation
 It has always been difficult to rigorously specify library interfaces.
 Interfaces are often defined with text, which is often incomplete and not
-machine checkable, or, for some programming languages, with types, which are
+machine checkable, or, for some programming languages with types, which are
 often incomplete. Machine checkability is important as it prevents
-documentation from going stale. Completeness is important if the API is the
-only means of communication between the library and the client. And this is
-only for one version of the API. When looking at the evolution of an API, it is
-harder still to ensure that the API does not introduce a breaking change
-unexpectedly.  Semantic Version, or SemVer, helps library authors define the
-scope of their changes solely through the version number.  However, authors can
-and often do violate SemVer. For example, an author may make a backwards
-incompatible change but only increment the minor version.  Library consumers
-observing the version number will not expect the change and systems will break.
+documentation from going stale. Completeness is important, as incompleteness
+will lead to ambiguity and ambiguity leads to losses; either in the terms of
+wrong assumptions made by the client, or some features goes unused. These
+problems are only taking one version of the interface into account. When
+looking at the evolution of an interface, it is harder still to ensure that the
+interface does not introduce a breaking change unexpectedly. Semantic Version, or
+SemVer, helps library authors define the scope of their changes solely through
+the version number. However, authors can and often do violate SemVer. For
+example, an author may make a backwards incompatible change but only increment
+the minor version. Library consumers observing the version number will not
+expect the change and systems will break. 
 
-In this paper we define the scope of an interface test, and describe a
-discipline for how to write and maintain the tests. We have designed a tool
-that will use these tests to detect violations to SemVer, which will allow
-library developers to give stronger guarantees to their clients. 
+% Motivating examples
+Sass is a widely used style language which compiles to Css. The project
+contains of two side running targets Sass and LibSass. LibSass is a 
+faster C++ implementation of Sass, and is supposed to conform to Sass. The
+problem happened when LibSass rolled back a feature in a minor version (3.5). 
+They felt that they could do this because it was a bug in Sass. Many people 
+viewed this as breaking change, and Sass ended up to apologies. This situation
+would not have happened if the interface where testable, as LibSass would have
+been forced to adhered with the same specification as Sass\cite{libsass}. 
+%
 
-Many libraries have unit tests, regression tests, integration tests, and more.
+% Motivation of solution
+A better way of defining interfaces is needed. Even though specification
+languages do exist, they have not gained traction in the real world. A very
+practical way of giving guarantees in dynamic languages is testing.  Many
+libraries have unit tests, regression tests, integration tests, and more.
 However, any given test may test the library interface, internal
 implementation, or both.  The tests that test only the library interface are
-interface tests.  In most libraries, they will be hiding among other tests.
+interface tests. In most libraries, they will be hiding among other tests.  Our
+solution is to use test to specify the interface, and explicitly hold them
+separated from the other tests. These tests both will have dual purpose. They
+give clear examples to the clients of expected usage, and they grantee that
+library upholds interface. We define that the test specification is a complete
+specification. If the specification differ from the library's developers idea,
+the developer is wrong.  A library succeeding the interface specification does
+therefor by definition not contain bugs, only undocumented features. This
+distinction will enable us to give stronger guarantees about the library, but
+will also lead to some confounding factors which we discuss in detail.
 
-We create a tool that can identify SemVer violations given a code
-repository, its testing framework, and a version history.  Our tool will apply
-tests appearing in each version of a repository to later versions of the code.
-Tests that succeed in an earlier version but fail in a later version are
-candidates for SemVer violations.  We will manually identify tests that are
-interface tests and the tool will further compare test behavior against
-versioning.  For example, if an interface test succeeds in an earlier version
-but fails in a subsequent minor update, then SemVer has been violated.  
+% Contribution
+The goal of this paper is to solve the problem of incoherent and
+incomplete interfaces. To that end we have defined an interface specification
+as the collection of tests that only tests the interface of the library. We have
+shown that we can give valuable guarantees, both to the user of the library and
+the library developers them selves, not only in one version of the library but 
+over a history of releases. To give a direct application of the interfaces 
+specifications, we have created a tool that given a history of releases can
+predict if a release contains SemVer violations. 
+\todo{Describe the results of evaluation}
 
-Thus, a library author can use our tool to detect potential SemVer violations
-by testing previous versions tests against the code the author is about to
-commit. Our tool will detect any SemVer violations and give the author the
-choice to either revert the API changes or push a major update.
+% Layout of the report. 
+The rest of the article is parted into 6 sections. Besides the introduction, we
+have; 
+\begin{itemize}
+
+    \item a related work section that covers the state of the art in in terms
+    of interface specifications, and version history mining; 
+
+    \item an approach section, which defines how to use tests to specify
+    interfaces and how to use these interfaces to detect SemVer violations;
+
+    \item an evaluation, which describes the empirical studies we have
+    performed to address some of confounding factors;
+
+    \item the results section, which contains the results of the studies and a
+    overall discussion of confounding factors;
+
+    \item and lastly a conclusion, wrapping up the paper and presenting the
+    lessons learned.
+
+\end{itemize}
+
+%We create a tool that can identify SemVer violations given a code
+%repository, its testing framework, and a version history.  Our tool will apply
+%tests appearing in each version of a repository to later versions of the code.
+%Tests that succeed in an earlier version but fail in a later version are
+%candidates for SemVer violations.  We will manually identify tests that are
+%interface tests and the tool will further compare test behavior against
+%versioning.  For example, if an interface test succeeds in an earlier version
+%but fails in a subsequent minor update, then SemVer has been violated.  
+%
+%Thus, a library author can use our tool to detect potential SemVer violations
+%by testing previous versions tests against the code the author is about to
+%commit. Our tool will detect any SemVer violations and give the author the
+%choice to either revert the API changes or push a major update.
