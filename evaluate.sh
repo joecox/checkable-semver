@@ -93,6 +93,6 @@ do
     # the right order
     echo "$N,$tag"
     N=$((N+1))
-done | $runner -n1 ./evaluate1.sh $tooldir/$outdir {}
+done | $runner -n1 ./evaluate1.sh $tooldir/$outdir 
 
 cat $tooldir/$outdir/violations-seq-*.txt > $tooldir/$outdir/violations.txt
