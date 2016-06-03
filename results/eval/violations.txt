@@ -1,4 +1,3 @@
-
 V1.0.2,1.0.0,1.0.2,'Suite .eachTest(fn) when there are no nested suites or tests should return 0'
 V1.0.2,1.0.0,1.0.2,'Suite .eachTest(fn) when there are several tests in the suite should return the number'
 V1.0.2,1.0.0,1.0.2,'Suite .eachTest(fn) when there are several levels of nested suites should return the number'
