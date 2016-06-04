@@ -79,7 +79,7 @@ class TestRunner:
 
             # Parse stderr for errors
             errpat = "\d*\) (?P<err>.*):\s*$"
-            m = re.findall(errpat, e, re.MULTILINE)
+            m = re.findall(errpat, o, re.MULTILINE) + re.findall(errpat, e, re.MULTILINE)
 
             if m and self.verbose:
                 for viol in m:
