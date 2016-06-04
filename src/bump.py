@@ -81,15 +81,22 @@ def main():
         repo=repo, 
         cache=os.path.abspath(args.cache)
     )
-    if args.setup_only:
+
+    tests = list(cvt(runner, tags, args.test_version))
+
+    if args.cache:
+        if not os.path.isdir(args.cache):
+            os.makedirs(args.cache)
+    
         # in parrallel
         from multiprocessing import Pool
         pool = Pool()
 
-        for i in pool.imap_unordered(setup_test, cvt(runner, tags, args.test_version)):
+        for i in pool.imap_unordered(setup_test, tests):
             print "Setup", i
-    else: 
-        for (runner, impl, test) in cvt(runner, tags, args.test_version):
+
+    if not args.setup_only:
+        for (runner, impl, test) in tests:
             for violation in runner.run(impl, test, args.test_suite):
                 print "V{},{},{},{!r}".format(args.test_version, *violation)
 
