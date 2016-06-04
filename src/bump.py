@@ -37,6 +37,9 @@ def main():
                    help="Run with verbose output.")
     p.add_argument("--report-violations", action="store_true",
                    help="Report violation information")
+    p.add_argument("--test-suite", "-s", choices=["all", "unit", "jsapi"],
+                   required=True,
+                   help="The test suite to run")
     
     args = p.parse_args()
 
@@ -122,12 +125,12 @@ def dv(prev_v, v):
     runner = runtests.TestRunner(args.dir, repodir=repo_dir, verbose=args.verbose)
     for patch_v in in_minor_v:
         with runner:
-            for violation in runner.run(patch_v, v):
+            for violation in runner.run(patch_v, v, args.test_suite):
                 yield violation
    
     for minor_v in in_major_v:
         with runner:
-            for violation in runner.run(v, minor_v):
+            for violation in runner.run(v, minor_v, args.test_suite):
                 yield violation
 
 

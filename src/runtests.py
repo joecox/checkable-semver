@@ -27,9 +27,10 @@ class TestRunner:
         os.chdir(self.repodir)
         shutil.rmtree(self.wdir)
 
-    def run(self, implv, testv):
+    def run(self, implv, testv, testsuite):
         if self.verbose:
-            print "Testing implv: " + implv + ", testv: " + testv
+            print "Testing implv: " + implv + ", testv: " + testv + \
+                ", on suite \"" + testsuite + "\""
             
         with open(os.devnull, 'w') as FNULL:
             # Clone into work dir
@@ -74,12 +75,14 @@ class TestRunner:
             git.co_by_tag(testv, self.testdir)
 
             # Run tests (assume make test-jsapi at the moment)
-            p = Popen(["make", "test-jsapi"], stdout=PIPE, stderr=PIPE, universal_newlines=True)
+            p = Popen(["make", "-k", "test-" + testsuite], stdout=PIPE, stderr=PIPE, universal_newlines=True)
             o, e = p.communicate()
 
             # Parse stderr for errors
             errpat = "\d*\) (?P<err>.*):\s*$"
             m = re.findall(errpat, o, re.MULTILINE) + re.findall(errpat, e, re.MULTILINE)
+
+            m = list(set(m))
 
             if m and self.verbose:
                 for viol in m:
@@ -99,6 +102,9 @@ def main():
                    help="The directory containing the repository")
     p.add_argument("--verbose", "-v", action="store_true",
                    help="Print verbose output")
+    p.add_argument("--test-suite", "-s", choices=["all", "unit", "jsapi"],
+                   required=True,
+                   help="Test suite to run")
 
     args = p.parse_args()
 
@@ -108,7 +114,7 @@ def main():
         repodir = os.getcwd()
         
     with TestRunner(args.test_dir, repodir=repodir, verbose=args.verbose) as tr:
-        tr.run(args.impl, args.test)
+        tr.run(args.impl, args.test, args.test_suite)
 
 
 if __name__ == "__main__":

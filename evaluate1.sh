@@ -19,7 +19,7 @@ git clone $mochaUrl $tmpdir
 echo "Testing version $tag in $tmpdir"
 
 pushd $tmpdir
-$tooldir/bump -d test $tag | tee -a "$violations"
+$tooldir/bump -d test $tag -s all | tee -a "$violations"
 popd
 
 rm -rf $tmpdir
