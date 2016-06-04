@@ -96,3 +96,4 @@ do
 done | $runner -n1 ./evaluate1.sh $tooldir/$outdir 
 
 cat $tooldir/$outdir/violations-seq-*.txt > $tooldir/$outdir/violations.txt
+rm $tooldir/$outdir/violations-seq-*.txt
