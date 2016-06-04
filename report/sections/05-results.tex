@@ -186,3 +186,14 @@ its developers would be expected to be more ``pro-test'' than the
 average developer. For this reason, Mocha's test suite may not be
 representative of other test suites.
 
+\todo{Mocha `test-all` runs many tests multiple times. Runs all
+  categories, individual tests are included in more than one
+  category. Remove duplicate test titles from total and failing
+  tests. On the other hand, some distinct mocha tests have the same
+  titles, so when we remove duplicate titles, we lose some of that
+  information. There are fewer duplicate titles than tests that are
+  re-run though, so we choose the thing that minimizes the error.}
+
+
+\todo{Hypothesis: density of violations in test-jsapi should be less
+  than the density in test-all. Confirm or reject in evaluation.}
