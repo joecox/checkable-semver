@@ -6,33 +6,47 @@
 \caption{Violations per version}
 \end{figure}
 
-\begin{figure*}
-\centering
-\includegraphics[height=50ex]{violations-plt}
-\caption{Violations per version}
-\end{figure*}
-
-\begin{figure*}
-\centering
-\includegraphics[height=50ex]{graphics/cumulative-plt}
-\caption{Violations per version}
-\end{figure*}
-
-
-% \begin{figure*}
-% \centering
-% \includegraphics[height=50ex]{wisdom_of_the_ancients}
-% \caption{A sample black and white graphic
-% that needs to span two columns of text.}
-% \end{figure*}
-
 In this section, we report on our evaluation of the practicality of
 our discipline. 
 
 \subsection{Quantitative Evaluation}
 
-{\bf RQ1.} Under the assumption of an idealized API test suite, does
-our tool detect SemVer violations?
+Our first evaluation is a quantitative analysis of running our tool on a
+an existing repostory. In doing so we hope to answer a question:
+
+{\bf RQ1.} Does our tool detect SemVer violations?
+
+We know from the proof that if the interface is fully specified, we can
+truthfully detect SemVer violations. The statement does contain
+inherent confounding factors, are test expressive enough to detect
+violations, and are tests might too fragile to specifying
+an interface.
+
+The first confounding factor can easily be related to the problem of 
+test coverage. Test can be too specific to correctly cover all features
+of the program. It is therefor reasonable to ask if an incomplete
+specification can still can report errors. We have decided to test our
+tool on an existing library, mocha\cite{mocha}. Mocha is an testing
+library, and was ideal because it had many versions, and was well
+tested. Mocha contained 3 test targets,``test-all'' runs all tests,
+``test-unit'' runs all unit-tests, and ``test-jsapi'' tests an internal
+API\@. These tests were of cause not designed to follow our discipline,
+but it enable to answer if we are able to find any violations at all
+assuming that they were. We ran the tool for each release in the library
+and collecting the breaking change and added feature for each release. 
+
+The second confounding factor, whether too many violations would be
+reported, is the most controversial. Many developers has claimed that
+merely adhering to SemVer given their internal definition of the 
+interface would force them to bump the mayor version every
+update\cite{backbone-2888,crawford-not-semver}. This problem could be
+more pronounced, if the interface was clearly specified using tests,
+and SemVer was checked with a non-compromising tool. To address this
+factor, we will simulate running the bump tool for each release in the 
+history of the mocha tool. The new version history would then be a
+worst-case scenario, where the developers did not expect their tests
+describe their interface and was not warned about violations before
+releasing.
 
 \subsection{User Study Evaluation}
 Our second evaluation is a user study of the efficacy of our

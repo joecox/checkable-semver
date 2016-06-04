@@ -1,6 +1,5 @@
 #!/bin/bash
 
-file=./results/eval/violations.txt
 
 versions=" \
 1.0.1 \
@@ -76,37 +75,43 @@ v2.5.1 \
 v2.5.2 \
 v2.5.3"
 
-outfolder=./report/graphics/
+outfolder=./report/data/
 
-outfile=$outfolder/violations.txt
-culfile=$outfolder/cumulative.txt
+
+for target in jsapi all unit 
+do 
+
+file=./results/eval/violations-$target.txt
+
+outfile=$outfolder/violations-$target.txt
+culfile=$outfolder/cumulative-$target.txt
 
 rm -f $outfile $culfile
-
-
 collector=`mktemp -t coll`
-for version in $versions
-do
-    collectorNext=`mktemp -t coll`
-    violations=`mktemp -t viol-$version`
-    breaking=`mktemp -t breaking-$version`
-    features=`mktemp -t features-$version`
 
-    grep "V$version" "$file" > "$violations"
+    for version in $versions
+    do
+        collectorNext=`mktemp -t coll`
+        violations=`mktemp -t viol-$version`
+        breaking=`mktemp -t breaking-$version`
+        features=`mktemp -t features-$version`
 
-    grep -E "^[^,]+,[^,]+,$version" "$violations" | sed "s/^[^'\"]*,//" | sort > "$features"
-    grep -E "^[^,]+,$version" "$violations" | sed "s/^[^'\"]*,//" | sort > "$breaking"
+        grep "V$version" "$file" > "$violations"
 
-    # breaking_viol=`wc -l "$breaking" | awk '{print $1}'`
-    # features_viol=`wc -l "$features" | awk '{print $1}'`
-    
-    sort -m "$breaking" "$features" "$collector" | uniq >"$collectorNext"
-    cumulative=`cat "$collectorNext" | uniq | wc -l | awk '{print $1}'`
-    collector="$collectorNext"
-    
-    uniq_breaking_viol=`uniq "$breaking" | wc -l | awk '{print $1}'`
-    uniq_feature_viol=`uniq "$features" | wc -l | awk '{print $1}'`
+        grep -E "^[^,]+,[^,]+,$version" "$violations" | sed "s/^[^'\"]*,//" | sort > "$features"
+        grep -E "^[^,]+,$version" "$violations" | sed "s/^[^'\"]*,//" | sort > "$breaking"
 
-    echo "$version $uniq_breaking_viol $uniq_feature_viol $((uniq_feature_viol + uniq_breaking_viol))" >> $outfile
-    echo "$version $cumulative" >> "$culfile"
+        # breaking_viol=`wc -l "$breaking" | awk '{print $1}'`
+        # features_viol=`wc -l "$features" | awk '{print $1}'`
+        
+        sort -m "$breaking" "$features" "$collector" | uniq >"$collectorNext"
+        cumulative=`cat "$collectorNext" | uniq | wc -l | awk '{print $1}'`
+        collector="$collectorNext"
+        
+        uniq_breaking_viol=`uniq "$breaking" | wc -l | awk '{print $1}'`
+        uniq_feature_viol=`uniq "$features" | wc -l | awk '{print $1}'`
+
+        echo "$version $uniq_breaking_viol $uniq_feature_viol $((uniq_feature_viol + uniq_breaking_viol))" >> $outfile
+        echo "$version $cumulative" >> "$culfile"
+    done
 done
