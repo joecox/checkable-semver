@@ -90,6 +90,29 @@ possible. Whenever multiple interpretations were possible, we gave
 Mocha developers the benefit of the doubt, choosing the interpretation
 that would minimize SemVer violations.
 
+
+\subsection{Violation Density Hypothesis}
+We hypothesize that the density of violations, defined as the average
+number of violations per test, will be lower for the {\em jsapi} tests
+than for all tests. We expect this to be true because even though the
+mocha developers don't follow our testing discipline, they do follow
+SemVer and identify the {\em jsapi} test suite as their interface
+tests. Therefore, we expect {\em jsapi} to be more consistent across
+versions than average.
+
+\todo{Confirm or reject in evaluation.}
+
+Confounding factors:
+\begin{itemize}
+\item Matt's manual inspection showed that {\em jsapi} contains unit
+  (secret) tests. There may be others, since Matt only inspected
+  failing test cases. This could skew the results. Still, our density
+  hypothesis should be robust against this, since the hypothesis is
+  that there are fewer secret tests in {\em jsapi} than average, not
+  that there are {\em no} secret tests in {\em jsapi}.
+\end{itemize}
+
+
 \subsection{Other stuff we learned}
 \todo{Where to put this? Approach?}
 \begin{itemize}
