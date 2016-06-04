@@ -1,0 +1,13 @@
+
+/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/mocha.js
+  88:23  error  Expected '!==' and instead saw '!='  eqeqeq
+
+/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/reporters/base.js
+  404:17  error  Expected '!==' and instead saw '!='  eqeqeq
+
+/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js
+  389:10  warning  Expected a conditional expression and instead saw an assignment  no-cond-assign
+
+✖ 3 problems (2 errors, 1 warning)
+
+make: *** [lint] Error 1

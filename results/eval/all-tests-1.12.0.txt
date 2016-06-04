@@ -1,0 +1,286 @@
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..4
+ok 1 Array indexOf() should return -1 when the value is not present
+ok 2 Array indexOf() should return the correct index when the value is present
+ok 3 Array pop() should remove and return the last value
+ok 4 Array has a length property
+# tests 4
+# pass 4
+# fail 0
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..4
+ok 1 Array indexOf() should return -1 when the value is not present
+ok 2 Array indexOf() should return the correct index when the value is present
+ok 3 Array indexOf() should skip this test # SKIP -
+ok 4 Array indexOf() should skip this suite should skip this test # SKIP -
+# tests 2
+# pass 2
+# fail 0
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..3
+ok 1 Array length
+ok 2 Array indexOf()
+ok 3 String length
+# tests 3
+# pass 3
+# fail 0
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..2
+ok 1 Array indexOf() should return -1 when the value is not present
+ok 2 Array indexOf() should return the correct index when the value is present
+# tests 2
+# pass 2
+# fail 0
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..111
+ok 1  should work
+ok 2 Context nested should work
+ok 3 diffs should display a word diff for small strings
+ok 4 diffs should display a word diff for medium strings
+ok 5 diffs should display a word diff for large strings
+ok 6 diffs should work with objects
+ok 7 durations when slow should highlight in red
+ok 8 durations when reasonable should highlight in yellow
+ok 9 durations when fast should highlight in green
+ok 10 fs.readFile() when the file exists should succeed
+ok 11 fs.readFile() when the file does not exist should fail
+ok 12 global leaks should cause tests to fail
+ok 13 global leaks should pass when accepted
+ok 14 global leaks should pass with wildcard
+ok 15 global leaks should pass when prefixed "mocha-"
+not ok 16 http should provide an example
+  TypeError: res.should.have.status is not a function
+      at ClientRequest.<anonymous> (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/acceptance/http.js:13:23)
+      at ClientRequest.g (events.js:273:16)
+      at emitOne (events.js:90:13)
+      at ClientRequest.emit (events.js:182:7)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:458:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:103:23)
+      at Socket.socketOnData (_http_client.js:348:20)
+      at emitOne (events.js:90:13)
+      at Socket.emit (events.js:182:7)
+      at readableAddChunk (_stream_readable.js:153:18)
+      at Socket.Readable.push (_stream_readable.js:111:10)
+      at TCP.onread (net.js:529:20)
+ok 17 multiple calls to done() should fail in a test-case
+ok 18 pending should be allowed # SKIP -
+ok 19 root should be a valid suite
+ok 20 timeouts should error on timeout
+ok 21 timeouts should allow overriding per-test
+ok 22 uncaught should report properly
+ok 23 Mocha "grep" option should add a RegExp to the mocha.options object
+ok 24 Mocha "grep" option should convert grep string to a RegExp
+ok 25 Mocha .grep() should add a RegExp to the mocha.options object
+ok 26 Mocha .grep() should convert grep string to a RegExp
+ok 27 Mocha .grep() should return it's parent Mocha object for chainability
+ok 28 Mocha "invert" option should add a Boolean to the mocha.options object
+ok 29 async hooks one
+ok 30 async hooks two
+ok 31 async hooks three
+ok 32 serial hooks one
+ok 33 serial hooks two
+ok 34 serial hooks three
+ok 35 serial nested foo
+ok 36 serial nested bar
+ok 37 serial nested hooks one
+ok 38 serial nested hooks two
+not ok 39 http server GET / should respond with "hello"
+  TypeError: res.should.have.status is not a function
+      at ClientRequest.<anonymous> (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/http.meta.2.js:32:23)
+      at ClientRequest.g (events.js:273:16)
+      at emitOne (events.js:90:13)
+      at ClientRequest.emit (events.js:182:7)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:458:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:103:23)
+      at Socket.socketOnData (_http_client.js:348:20)
+      at emitOne (events.js:90:13)
+      at Socket.emit (events.js:182:7)
+      at readableAddChunk (_stream_readable.js:153:18)
+      at Socket.Readable.push (_stream_readable.js:111:10)
+      at TCP.onread (net.js:529:20)
+not ok 40 http server GET /users should respond with "tobi, loki, jane"
+  TypeError: res.should.have.status is not a function
+      at ClientRequest.<anonymous> (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/http.meta.2.js:32:23)
+      at ClientRequest.g (events.js:273:16)
+      at emitOne (events.js:90:13)
+      at ClientRequest.emit (events.js:182:7)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:458:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:103:23)
+      at Socket.socketOnData (_http_client.js:348:20)
+      at emitOne (events.js:90:13)
+      at Socket.emit (events.js:182:7)
+      at readableAddChunk (_stream_readable.js:153:18)
+      at Socket.Readable.push (_stream_readable.js:111:10)
+      at TCP.onread (net.js:529:20)
+not ok 41 http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]"
+  TypeError: res.should.have.status is not a function
+      at ClientRequest.<anonymous> (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/http.meta.2.js:32:23)
+      at ClientRequest.g (events.js:273:16)
+      at emitOne (events.js:90:13)
+      at ClientRequest.emit (events.js:182:7)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:458:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:103:23)
+      at Socket.socketOnData (_http_client.js:348:20)
+      at emitOne (events.js:90:13)
+      at Socket.emit (events.js:182:7)
+      at readableAddChunk (_stream_readable.js:153:18)
+      at Socket.Readable.push (_stream_readable.js:111:10)
+      at TCP.onread (net.js:529:20)
+not ok 42 http requests GET / should respond with hello
+  TypeError: res.should.have.status is not a function
+      at ClientRequest.<anonymous> (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/http.meta.js:28:23)
+      at ClientRequest.g (events.js:273:16)
+      at emitOne (events.js:90:13)
+      at ClientRequest.emit (events.js:182:7)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:458:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:103:23)
+      at Socket.socketOnData (_http_client.js:348:20)
+      at emitOne (events.js:90:13)
+      at Socket.emit (events.js:182:7)
+      at readableAddChunk (_stream_readable.js:153:18)
+      at Socket.Readable.push (_stream_readable.js:111:10)
+      at TCP.onread (net.js:529:20)
+not ok 43 http requests GET /users should respond with users
+  TypeError: res.should.have.status is not a function
+      at ClientRequest.<anonymous> (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/http.meta.js:28:23)
+      at ClientRequest.g (events.js:273:16)
+      at emitOne (events.js:90:13)
+      at ClientRequest.emit (events.js:182:7)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:458:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:103:23)
+      at Socket.socketOnData (_http_client.js:348:20)
+      at emitOne (events.js:90:13)
+      at Socket.emit (events.js:182:7)
+      at readableAddChunk (_stream_readable.js:153:18)
+      at Socket.Readable.push (_stream_readable.js:111:10)
+      at TCP.onread (net.js:529:20)
+not ok 44 http requests GET /users should respond with users
+  TypeError: res.should.have.status is not a function
+      at ClientRequest.<anonymous> (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/http.meta.js:28:23)
+      at ClientRequest.g (events.js:273:16)
+      at emitOne (events.js:90:13)
+      at ClientRequest.emit (events.js:182:7)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:458:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:103:23)
+      at Socket.socketOnData (_http_client.js:348:20)
+      at emitOne (events.js:90:13)
+      at Socket.emit (events.js:182:7)
+      at readableAddChunk (_stream_readable.js:153:18)
+      at Socket.Readable.push (_stream_readable.js:111:10)
+      at TCP.onread (net.js:529:20)
+ok 45 Runnable(title, fn) timeout(ms) should set the timeout
+ok 46 Runnable(title, fn) slow(ms) should set the slow threshold
+ok 47 Runnable(title, fn) .title should be present
+ok 48 Runnable(title, fn) when arity >= 1 should be .async
+ok 49 Runnable(title, fn) when arity == 0 should be .sync
+ok 50 Runnable(title, fn) .run(fn) when .pending should not invoke the callback
+not ok 51 Runnable(title, fn) .run(fn) when sync without error should invoke the callback
+  TypeError: test.duration.should.be.a is not a function
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/runnable.js:96:37
+      at Runnable.run (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runnable.js:215:5)
+      at Context.<anonymous> (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/runnable.js:94:16)
+      at Test.Runnable.run (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runnable.js:194:15)
+      at Runner.runTest (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:355:10)
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:401:12
+      at next (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:281:14)
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:290:7
+      at next (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:234:23)
+      at Immediate._onImmediate (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:258:5)
+      at processImmediate [as _immediateCallback] (timers.js:383:17)
+ok 52 Runnable(title, fn) .run(fn) when sync when an exception is thrown should invoke the callback
+not ok 53 Runnable(title, fn) .run(fn) when async should allow updating the timeout
+  TypeError: err.message.should.include is not a function
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/runnable.js:220:30
+      at done (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runnable.js:185:5)
+      at Runnable.run (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runnable.js:200:7)
+      at Context.<anonymous> (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/runnable.js:219:14)
+      at Test.Runnable.run (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runnable.js:194:15)
+      at Runner.runTest (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:355:10)
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:401:12
+      at next (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:281:14)
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:290:7
+      at next (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:234:23)
+      at Immediate._onImmediate (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:258:5)
+      at processImmediate [as _immediateCallback] (timers.js:383:17)
+ok 54 Runnable(title, fn) .run(fn) when async should allow a timeout of 0 # SKIP -
+ok 55 Runnable(title, fn) .run(fn) when async without error should invoke the callback
+ok 56 Runnable(title, fn) .run(fn) when async when the callback is invoked several times without an error should emit a single "error" event
+ok 57 Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+ok 58 Runnable(title, fn) .run(fn) when async when an exception is thrown should invoke the callback
+ok 59 Runnable(title, fn) .run(fn) when async when an error is passed should invoke the callback
+ok 60 Runner .grep() should update the runner.total with number of matched tests
+ok 61 Runner .grep() should update the runner.total with number of matched tests when inverted
+ok 62 Runner .grepTotal() should return the total number of matched tests
+ok 63 Runner .grepTotal() should return the total number of matched tests when inverted
+not ok 64 Runner .globalProps() should include common non enumerable globals
+  TypeError: props.should.include is not a function
+      at Context.<anonymous> (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/runner.js:56:20)
+      at Test.Runnable.run (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runnable.js:211:32)
+      at Runner.runTest (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:355:10)
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:401:12
+      at next (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:281:14)
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:290:7
+      at next (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:234:23)
+      at Immediate._onImmediate (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:258:5)
+      at processImmediate [as _immediateCallback] (timers.js:383:17)
+ok 65 Runner .globals() should default to the known globals
+not ok 66 Runner .globals() should white-list globals
+  TypeError: runner.globals(...).should.include is not a function
+      at Context.<anonymous> (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/runner.js:72:31)
+      at Test.Runnable.run (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runnable.js:211:32)
+      at Runner.runTest (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:355:10)
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:401:12
+      at next (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:281:14)
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:290:7
+      at next (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:234:23)
+      at Immediate._onImmediate (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:258:5)
+      at processImmediate [as _immediateCallback] (timers.js:383:17)
+ok 67 Runner .checkGlobals(test) should allow variables that match a wildcard
+ok 68 Runner .checkGlobals(test) should emit "fail" when a new global is introduced
+ok 69 Runner .checkGlobals(test) should not fail when a new common global is introduced
+ok 70 Runner .checkGlobals(test) should pluralize the error message when several are introduced
+ok 71 Runner .fail(test, err) should increment .failures
+ok 72 Runner .fail(test, err) should set test.state to "failed"
+ok 73 Runner .fail(test, err) should emit "fail"
+ok 74 Runner .failHook(hoot, err) should increment .failures
+ok 75 Runner .failHook(hoot, err) should emit "fail"
+ok 76 Runner .failHook(hoot, err) should emit "end"
+ok 77 Suite .clone() should copy the title
+ok 78 Suite .clone() should copy the timeout value
+ok 79 Suite .clone() should copy the slow value
+ok 80 Suite .clone() should copy the bail value
+ok 81 Suite .clone() should not copy the values from the suites array
+ok 82 Suite .clone() should not copy the values from the tests array
+ok 83 Suite .clone() should not copy the values from the _beforeEach array
+ok 84 Suite .clone() should not copy the values from the _beforeAll array
+ok 85 Suite .clone() should not copy the values from the _afterEach array
+ok 86 Suite .clone() should not copy the values from the _afterAll array
+ok 87 Suite .timeout() when no argument is passed should return the timeout value
+ok 88 Suite .timeout() when argument is passed should return the Suite object
+ok 89 Suite .slow() when given a string should parse it
+ok 90 Suite .slow() when no argument is passed should return the slow value
+ok 91 Suite .slow() when argument is passed should return the Suite object
+ok 92 Suite .bail() when no argument is passed should return the bail value
+ok 93 Suite .bail() when argument is passed should return the Suite object
+ok 94 Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll
+ok 95 Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll
+ok 96 Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach
+ok 97 Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach
+ok 98 Suite .addSuite() sets the parent on the added Suite
+ok 99 Suite .addSuite() copies the timeout value
+ok 100 Suite .addSuite() copies the slow value
+ok 101 Suite .addSuite() adds the suite to the suites collection
+ok 102 Suite .fullTitle() when there is no parent returns the suite title
+ok 103 Suite .fullTitle() when there is a parent returns the combination of parent's and suite's title
+ok 104 Suite .total() when there are no nested suites or tests should return 0
+ok 105 Suite .total() when there are several tests in the suite should return the number
+ok 106 Suite .eachTest(fn) when there are no nested suites or tests should return 0
+ok 107 Suite .eachTest(fn) when there are several tests in the suite should return the number
+ok 108 Suite .eachTest(fn) when there are several levels of nested suites should return the number
+ok 109 utils .clean() should remove the wrapping function declaration
+ok 110 utils .clean() should remove space character indentation from the function body
+ok 111 utils .clean() should remove tab character indentation from the function body
+# tests 109
+# pass 98
+# fail 11
+make: *** [test-unit] Error 11
