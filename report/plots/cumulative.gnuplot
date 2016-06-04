@@ -1,6 +1,6 @@
 set terminal pdfcairo size 5,2 font "Times,6"
 
-set title data
+set title title font "Times,10"
 
 set output outputfile
 
@@ -18,15 +18,15 @@ set tics nomirror
 set boxwidth 0.5
 set style fill solid
 
-set xtics rotate by -50 font "Times,6"
+set xtics rotate by -50 font "Times,5"
 
 set style line 1 lc rgb '#8b1a0e' pt 0 ps 1 lt 1 lw 2 # --- red
 set style line 2 lc rgb '#5e9c36' pt 6 ps 1 lt 1 lw 2 # --- green
 
 set style fill solid 0.2
 
-set ylabel 'Cumulative Violations' font "Times,10"
-set xlabel 'Version'  font "Times,10"
+set ylabel 'Cumulative Violations' font "Times,7"
+set xlabel 'Version'  font "Times,7"
 
 plot data using 2:xticlabel(1) with filledcurves above x1 linestyle 1
 

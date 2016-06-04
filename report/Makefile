@@ -15,11 +15,15 @@ plots := $(patsubst data/%.txt,graphics/%-plt.pdf,$(wildcard data/*.txt))
 graphics: $(plots)
 	@echo $(plots)
 
+
+graphics/combined-violations-plt.pdf: data/combined-violations.txt plots/combined-violations.gnuplot
+	gnuplot -e "data='$<'; outputfile='$@'; title='Combined Violations'" plots/combined-violations.gnuplot
+
 graphics/violations-%-plt.pdf: data/violations-%.txt plots/violations.gnuplot
-	gnuplot -e "data='$<'; outputfile='$@'" plots/violations.gnuplot
+	gnuplot -e "data='$<'; outputfile='$@'; title='test-$*'" plots/violations.gnuplot
 
 graphics/cumulative-%-plt.pdf: data/cumulative-%.txt plots/cumulative.gnuplot
-	gnuplot -e "data='$<'; outputfile='$@'" plots/cumulative.gnuplot
+	gnuplot -e "data='$<'; outputfile='$@'; title='test-$*'" plots/cumulative.gnuplot
 
 .PHONY: clean clean-aux
 clean:

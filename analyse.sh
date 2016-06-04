@@ -78,16 +78,15 @@ v2.5.3"
 outfolder=./report/data/
 
 
-for target in jsapi all unit 
+for target in jsapi all
 do 
+    file=./results/eval/violations-$target.txt
 
-file=./results/eval/violations-$target.txt
+    outfile=$outfolder/violations-$target.txt
+    culfile=$outfolder/cumulative-$target.txt
 
-outfile=$outfolder/violations-$target.txt
-culfile=$outfolder/cumulative-$target.txt
-
-rm -f $outfile $culfile
-collector=`mktemp -t coll`
+    rm -f $outfile $culfile
+    collector=`mktemp -t coll`
 
     for version in $versions
     do
@@ -101,17 +100,23 @@ collector=`mktemp -t coll`
         grep -E "^[^,]+,[^,]+,$version" "$violations" | sed "s/^[^'\"]*,//" | sort > "$features"
         grep -E "^[^,]+,$version" "$violations" | sed "s/^[^'\"]*,//" | sort > "$breaking"
 
-        # breaking_viol=`wc -l "$breaking" | awk '{print $1}'`
-        # features_viol=`wc -l "$features" | awk '{print $1}'`
+        breaking_viol=`wc -l "$breaking" | awk '{print $1}'`
+        features_viol=`wc -l "$features" | awk '{print $1}'`
         
         sort -m "$breaking" "$features" "$collector" | uniq >"$collectorNext"
         cumulative=`cat "$collectorNext" | uniq | wc -l | awk '{print $1}'`
         collector="$collectorNext"
         
-        uniq_breaking_viol=`uniq "$breaking" | wc -l | awk '{print $1}'`
-        uniq_feature_viol=`uniq "$features" | wc -l | awk '{print $1}'`
+        #uniq_breaking_viol=`uniq "$breaking" | wc -l | awk '{print $1}'`
+        #uniq_feature_viol=`uniq "$features" | wc -l | awk '{print $1}'`
 
-        echo "$version $uniq_breaking_viol $uniq_feature_viol $((uniq_feature_viol + uniq_breaking_viol))" >> $outfile
+        echo "$version $breaking_viol $features_viol $((features_viol + breaking_viol))" >> $outfile
         echo "$version $cumulative" >> "$culfile"
     done
 done
+
+join $outfolder/violations-jsapi.txt \
+    $outfolder/violations-all.txt \
+    >$outfolder/combined-violations.txt
+
+
