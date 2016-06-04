@@ -13,18 +13,20 @@ import git
 import semver
 import runtests
 
-def dv(runner, suite, history, v):
+
+def cvt(runner, history, v):
     in_minor_v = semver.get_prev_in_minor(history, v)
     in_major_v = semver.get_prev_in_major(history, v)
-        
+    
     for patch_v in in_minor_v:
-        for violation in runner.run(patch_v, v, suite):
-            yield violation
+        yield (runner, patch_v, v)
    
     for minor_v in in_major_v:
-        for violation in runner.run(v, minor_v, suite):
-            yield violation
+        yield (runner, v, minor_v)
 
+def setup_test(t):
+    runner, impl, test = t
+    return runner.setup(impl, test).directory
 
 def main():
     p = argparse.ArgumentParser()
@@ -36,6 +38,10 @@ def main():
                    help="Path to repository on the system, default is CWD")
     p.add_argument("--cache", "-c",
                    help="A cache of results")
+    p.add_argument("--setup-only",
+                action="store_true",
+                help="if cache has been set, this method will run the setup only"
+                )
     p.add_argument("--verbose", "-v", action="count",
                    help="Run with verbose output.")
     p.add_argument("--test-suite", "-s", choices=["all", "unit", "jsapi"],
@@ -74,8 +80,24 @@ def main():
         repo=repo, 
         cache=args.cache
     )
-    for violation in dv(runner, args.test_suite, tags, args.version):
-        print "V{},{},{},{!r}".format(args.version, *violation)
+
+    tests = list(cvt(runner, tags, args.test_version))
+
+    if args.cache:
+        if not os.path.isdir(args.cache):
+            os.makedirs(args.cache)
+    
+        # in parallel
+        from multiprocessing import Pool
+        pool = Pool()
+
+        for i in pool.imap_unordered(setup_test, tests):
+            print "Setup", i
+
+    if not args.setup_only:
+        for (runner, impl, test) in tests:
+            for violation in runner.run(impl, test, args.test_suite):
+                print "V{},{},{},{!r}".format(args.test_version, *violation)
 
 def error(msg=None):
     if msg:

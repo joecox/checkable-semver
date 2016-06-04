@@ -32,7 +32,7 @@ class TestRunner:
     def get_workdir(self, implv, testv):
         if self.cache:
             if not os.path.isdir(self.cache):
-                os.mkdir(self.cache)
+                os.makedirs(self.cache)
             return os.path.join(self.cache, "i{}-t{}".format(implv, testv))
         else:
             return tempfile.mkdtemp()
