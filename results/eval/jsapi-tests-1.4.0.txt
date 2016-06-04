@@ -1,0 +1,99 @@
+1..75
+ok 1 Suite .clone() should copy the title
+ok 2 Suite .clone() should copy the timeout value
+ok 3 Suite .clone() should copy the bail value
+ok 4 Suite .clone() should not copy the values from the suites array
+ok 5 Suite .clone() should not copy the values from the tests array
+ok 6 Suite .clone() should not copy the values from the _beforeEach array
+ok 7 Suite .clone() should not copy the values from the _beforeAll array
+ok 8 Suite .clone() should not copy the values from the _afterEach array
+ok 9 Suite .clone() should not copy the values from the _afterAll array
+ok 10 Suite .timeout() when no argument is passed should return the timeout value
+ok 11 Suite .timeout() when argument is passed should return the Suite object
+ok 12 Suite .bail() when no argument is passed should return the bail value
+ok 13 Suite .bail() when argument is passed should return the Suite object
+ok 14 Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll
+ok 15 Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll
+ok 16 Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach
+ok 17 Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach
+ok 18 Suite .addSuite() sets the parent on the added Suite
+ok 19 Suite .addSuite() copies the timeout value
+ok 20 Suite .addSuite() adds the suite to the suites collection
+ok 21 Suite .fullTitle() when there is no parent returns the suite title
+ok 22 Suite .fullTitle() when there is a parent returns the combination of parent's and suite's title
+ok 23 Suite .total() when there are no nested suites or tests should return 0
+ok 24 Suite .total() when there are several tests in the suite should return the number
+ok 25 Suite .eachTest(fn) when there are no nested suites or tests should return 0
+ok 26 Suite .eachTest(fn) when there are several tests in the suite should return the number
+ok 27 Suite .eachTest(fn) when there are several levels of nested suites should return the number
+ok 28 Runner .grep() should update the runner.total with number of matched tests
+ok 29 Runner .grep() should update the runner.total with number of matched tests when inverted
+ok 30 Runner .grepTotal() should return the total number of matched tests
+ok 31 Runner .grepTotal() should return the total number of matched tests when inverted
+ok 32 Runner .globals() should default to the known globals
+not ok 33 Runner .globals() should white-list globals
+  TypeError: runner.globals(...).should.include is not a function
+      at Context.<anonymous> (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/runner.js:60:31)
+      at Test.Runnable.run (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runnable.js:184:32)
+      at Runner.runTest (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:300:10)
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:346:12
+      at next (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:228:14)
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:237:7
+      at next (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:185:23)
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:205:5
+      at _combinedTickCallback (node.js:370:9)
+      at process._tickCallback (node.js:401:11)
+ok 34 Runner .checkGlobals(test) should allow variables that match a wildcard
+ok 35 Runner .checkGlobals(test) should emit "fail" when a new global is introduced
+ok 36 Runner .checkGlobals(test) should pluralize the error message when several are introduced
+ok 37 Runner .fail(test, err) should increment .failures
+ok 38 Runner .fail(test, err) should set test.state to "failed"
+ok 39 Runner .fail(test, err) should emit "fail"
+ok 40 Runner .failHook(hoot, err) should increment .failures
+ok 41 Runner .failHook(hoot, err) should emit "fail"
+ok 42 Runner .failHook(hoot, err) should emit "end"
+ok 43 Runnable(title, fn) timeout(ms) should set the timeout
+ok 44 Runnable(title, fn) .title should be present
+ok 45 Runnable(title, fn) when arity >= 1 should be .async
+ok 46 Runnable(title, fn) when arity == 0 should be .sync
+ok 47 Runnable(title, fn) .run(fn) when .pending should not invoke the callback
+not ok 48 Runnable(title, fn) .run(fn) when sync without error should invoke the callback
+  TypeError: test.duration.should.be.a is not a function
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/runnable.js:88:37
+      at Runnable.run (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runnable.js:188:5)
+      at Context.<anonymous> (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/test/runnable.js:86:16)
+      at Test.Runnable.run (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runnable.js:171:15)
+      at Runner.runTest (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:300:10)
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:346:12
+      at next (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:228:14)
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:237:7
+      at next (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:185:23)
+      at /Users/matt/Documents/classes/cs230/checkable-semver/mocha/lib/runner.js:205:5
+ok 49 Runnable(title, fn) .run(fn) when sync when an exception is thrown should invoke the callback
+ok 50 Runnable(title, fn) .run(fn) when async without error should invoke the callback
+ok 51 Runnable(title, fn) .run(fn) when async when the callback is invoked several times without an error should emit a single "error" event
+ok 52 Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+ok 53 Runnable(title, fn) .run(fn) when async when an exception is thrown should invoke the callback
+ok 54 Runnable(title, fn) .run(fn) when async when an error is passed should invoke the callback
+ok 55 serial hooks one
+ok 56 serial hooks two
+ok 57 serial hooks three
+ok 58 serial nested foo
+ok 59 serial nested bar
+ok 60 serial nested hooks one
+ok 61 serial nested hooks two
+ok 62 async hooks one
+ok 63 async hooks two
+ok 64 async hooks three
+ok 65 durations when slow should highlight in red
+ok 66 durations when reasonable should highlight in yellow
+ok 67 durations when fast should highlight in green
+ok 68 fs.readFile() when the file exists should succeed
+ok 69 fs.readFile() when the file does not exist should fail
+ok 70 global leaks should cause tests to fail
+ok 71 global leaks should pass when accepted
+ok 72 global leaks should pass with wildcard
+ok 73 pending should be allowed # SKIP -
+ok 74 timeouts should error on timeout
+ok 75 timeouts should allow overriding per-test
+done

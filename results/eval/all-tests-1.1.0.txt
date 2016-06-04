@@ -1,0 +1,17 @@
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+/Users/matt/Documents/classes/cs230/checkable-semver/mocha/bin/_mocha:127
+  var abs = path.existsSync(mod)
+                 ^
+
+TypeError: path.existsSync is not a function
+    at Command.<anonymous> (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/bin/_mocha:127:18)
+    at emitOne (events.js:95:20)
+    at Command.emit (events.js:182:7)
+    at Command.parseOptions (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/node_modules/commander/lib/commander.js:475:14)
+    at Command.parse (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/node_modules/commander/lib/commander.js:347:21)
+    at Object.<anonymous> (/Users/matt/Documents/classes/cs230/checkable-semver/mocha/bin/_mocha:150:9)
+    at Module._compile (module.js:413:34)
+    at Object.Module._extensions..js (module.js:422:10)
+    at Module.load (module.js:357:32)
+    at Function.Module._load (module.js:314:12)
+make: *** [test-bdd] Error 1

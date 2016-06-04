@@ -1,0 +1,129 @@
+1..124
+ok 1 Suite .clone() should copy the title
+ok 2 Suite .clone() should copy the timeout value
+ok 3 Suite .clone() should copy the slow value
+ok 4 Suite .clone() should copy the bail value
+ok 5 Suite .clone() should not copy the values from the suites array
+ok 6 Suite .clone() should not copy the values from the tests array
+ok 7 Suite .clone() should not copy the values from the _beforeEach array
+ok 8 Suite .clone() should not copy the values from the _beforeAll array
+ok 9 Suite .clone() should not copy the values from the _afterEach array
+ok 10 Suite .clone() should not copy the values from the _afterAll array
+ok 11 Suite .timeout() when no argument is passed should return the timeout value
+ok 12 Suite .timeout() when argument is passed should return the Suite object
+ok 13 Suite .slow() when given a string should parse it
+ok 14 Suite .slow() when no argument is passed should return the slow value
+ok 15 Suite .slow() when argument is passed should return the Suite object
+ok 16 Suite .bail() when no argument is passed should return the bail value
+ok 17 Suite .bail() when argument is passed should return the Suite object
+ok 18 Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll
+ok 19 Suite .beforeAll() wraps the passed in function in a Hook appends title to hook
+ok 20 Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll
+ok 21 Suite .afterAll() wraps the passed in function in a Hook appends title to hook
+ok 22 Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach
+ok 23 Suite .beforeEach() wraps the passed in function in a Hook appends title to hook
+ok 24 Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach
+ok 25 Suite .afterEach() wraps the passed in function in a Hook appends title to hook
+ok 26 Suite .addSuite() sets the parent on the added Suite
+ok 27 Suite .addSuite() copies the timeout value
+ok 28 Suite .addSuite() copies the slow value
+ok 29 Suite .addSuite() adds the suite to the suites collection
+ok 30 Suite .fullTitle() when there is no parent returns the suite title
+ok 31 Suite .fullTitle() when there is a parent returns the combination of parent's and suite's title
+ok 32 Suite .total() when there are no nested suites or tests should return 0
+ok 33 Suite .total() when there are several tests in the suite should return the number
+ok 34 Suite .eachTest(fn) when there are no nested suites or tests should return 0
+ok 35 Suite .eachTest(fn) when there are several tests in the suite should return the number
+ok 36 Suite .eachTest(fn) when there are several levels of nested suites should return the number
+ok 37 Runner .grep() should update the runner.total with number of matched tests
+ok 38 Runner .grep() should update the runner.total with number of matched tests when inverted
+ok 39 Runner .grepTotal() should return the total number of matched tests
+ok 40 Runner .grepTotal() should return the total number of matched tests when inverted
+ok 41 Runner .globalProps() should include common non enumerable globals
+ok 42 Runner .globals() should default to the known globals
+ok 43 Runner .globals() should white-list globals
+ok 44 Runner .checkGlobals(test) should allow variables that match a wildcard
+ok 45 Runner .checkGlobals(test) should emit "fail" when a new global is introduced
+ok 46 Runner .checkGlobals(test) should emit "fail" when a single new disallowed global is introduced after a single extra global is allowed
+ok 47 Runner .checkGlobals(test) should not fail when a new common global is introduced
+ok 48 Runner .checkGlobals(test) should pluralize the error message when several are introduced
+ok 49 Runner .checkGlobals(test) should respect per test whitelisted globals
+ok 50 Runner .checkGlobals(test) should respect per test whitelisted globals but still detect other leaks
+ok 51 Runner .hook(name, fn) should execute hooks after failed test if suite bail is true
+ok 52 Runner .fail(test, err) should increment .failures
+ok 53 Runner .fail(test, err) should set test.state to "failed"
+ok 54 Runner .fail(test, err) should emit "fail"
+ok 55 Runner .fail(test, err) should emit a helpful message when failed with a string
+ok 56 Runner .fail(test, err) should emit a the error when failed with an Error
+ok 57 Runner .fail(test, err) should emit a helpful message when failed with an Object
+ok 58 Runner .fail(test, err) should emit a helpful message when failed with an Array
+ok 59 Runner .failHook(hook, err) should increment .failures
+ok 60 Runner .failHook(hook, err) should emit "fail"
+ok 61 Runner .failHook(hook, err) should emit "end" if suite bail is true
+ok 62 Runner .failHook(hook, err) should not emit "end" if suite bail is not true
+ok 63 Runnable(title, fn) timeout(ms) should set the timeout
+ok 64 Runnable(title, fn) enableTimeouts(enabled) should set enabled
+ok 65 Runnable(title, fn) slow(ms) should set the slow threshold
+ok 66 Runnable(title, fn) .title should be present
+ok 67 Runnable(title, fn) when arity >= 1 should be .async
+ok 68 Runnable(title, fn) when arity == 0 should be .sync
+ok 69 Runnable(title, fn) globals should allow for whitelisting globals
+ok 70 Runnable(title, fn) .run(fn) when .pending should not invoke the callback
+ok 71 Runnable(title, fn) .run(fn) when sync without error should invoke the callback
+ok 72 Runnable(title, fn) .run(fn) when sync when an exception is thrown should invoke the callback
+ok 73 Runnable(title, fn) .run(fn) when timeouts are disabled should not error with timeout
+ok 74 Runnable(title, fn) .run(fn) when async should allow updating the timeout
+ok 75 Runnable(title, fn) .run(fn) when async should allow a timeout of 0 # SKIP -
+ok 76 Runnable(title, fn) .run(fn) when async without error should invoke the callback
+ok 77 Runnable(title, fn) .run(fn) when async when the callback is invoked several times without an error should emit a single "error" event
+ok 78 Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+ok 79 Runnable(title, fn) .run(fn) when async when an exception is thrown should invoke the callback
+ok 80 Runnable(title, fn) .run(fn) when async when an exception is thrown should not throw its own exception if passed a non-object
+ok 81 Runnable(title, fn) .run(fn) when async when an error is passed should invoke the callback
+ok 82 Runnable(title, fn) .run(fn) when async when done() is invoked with a non-Error object should invoke the callback
+ok 83 Runnable(title, fn) .run(fn) when async when done() is invoked with a string should invoke the callback
+ok 84 Runnable(title, fn) .run(fn) when fn returns a promise when the promise is fulfilled with no value should invoke the callback
+ok 85 Runnable(title, fn) .run(fn) when fn returns a promise when the promise is fulfilled with a value should invoke the callback
+ok 86 Runnable(title, fn) .run(fn) when fn returns a promise when the promise is rejected should invoke the callback
+ok 87 Runnable(title, fn) .run(fn) when fn returns a promise when the promise is rejected without a reason should invoke the callback
+ok 88 Runnable(title, fn) .run(fn) when fn returns a promise when the promise takes too long to settle should give the timeout error
+ok 89 Runnable(title, fn) .run(fn) when fn returns a non-promise should invoke the callback
+ok 90 serial hooks one
+ok 91 serial hooks two
+ok 92 serial hooks three
+ok 93 serial nested foo
+ok 94 serial nested bar
+ok 95 serial nested hooks one
+ok 96 serial nested hooks two
+ok 97 async hooks one
+ok 98 async hooks two
+ok 99 async hooks three
+ok 100 durations when slow should highlight in red
+ok 101 durations when reasonable should highlight in yellow
+ok 102 durations when fast should highlight in green
+ok 103 fs.readFile() when the file exists should succeed
+ok 104 fs.readFile() when the file does not exist should fail
+ok 105 global leaks should cause tests to fail
+ok 106 global leaks should pass when accepted
+ok 107 global leaks should pass with wildcard
+ok 108 global leaks should pass when prefixed "mocha-"
+ok 109 pending should be allowed # SKIP -
+ok 110 skip in test should skip immediately # SKIP -
+ok 111 skip in test should run other tests in the suite
+ok 112 skip in before should never run this test # SKIP -
+ok 113 skip in before should never run this test # SKIP -
+ok 114 skip in beforeEach should never run this test # SKIP -
+ok 115 skip in beforeEach should never run this test # SKIP -
+ok 116 timeouts should error on timeout
+ok 117 timeouts should allow overriding per-test
+ok 118 timeouts disabling should allow overriding per-test
+ok 119 timeouts disabling should work with timeout(0)
+ok 120 timeouts disabling using beforeEach should work with timeout(0)
+ok 121 timeouts disabling using before should work with timeout(0)
+ok 122 timeouts disabling using enableTimeouts(false) should suppress timeout(4)
+ok 123 timeouts disabling suite-level should work with timeout(0)
+ok 124 timeouts disabling suite-level nested suite should work with timeout(0)
+# tests 117
+# pass 117
+# fail 0
+done

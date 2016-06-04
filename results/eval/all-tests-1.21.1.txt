@@ -1,0 +1,478 @@
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..4
+ok 1 Array indexOf() should return -1 when the value is not present
+ok 2 Array indexOf() should return the correct index when the value is present
+ok 3 Array pop() should remove and return the last value
+ok 4 Array has a length property
+# tests 4
+# pass 4
+# fail 0
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..4
+ok 1 Array indexOf() should return -1 when the value is not present
+ok 2 Array indexOf() should return the correct index when the value is present
+ok 3 Array indexOf() should skip this test # SKIP -
+ok 4 Array indexOf() should skip this suite should skip this test # SKIP -
+# tests 2
+# pass 2
+# fail 0
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..3
+ok 1 Array length
+ok 2 Array indexOf()
+ok 3 String length
+# tests 3
+# pass 3
+# fail 0
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..2
+ok 1 Array indexOf() should return -1 when the value is not present
+ok 2 Array indexOf() should return the correct index when the value is present
+# tests 2
+# pass 2
+# fail 0
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..172
+ok 1  should work
+ok 2 Context nested should work
+ok 3 Context Siblings sequestered sibling should work
+ok 4 Context Siblings sibling verifiction should not have value set within a sibling describe
+ok 5 Context Siblings sibling verifiction should allow test siblings to modify shared context
+ok 6 Context Siblings sibling verifiction should have reset this.calls before describe
+ok 7 diffs should display a diff for small strings
+ok 8 diffs should display a diff of canonicalized objects
+ok 9 diffs should display a diff for medium strings
+ok 10 diffs should display a diff for entire object dumps
+ok 11 diffs should display a diff for multi-line strings
+ok 12 diffs should display a diff for entire object dumps
+ok 13 diffs should display a full-comparison with escaped special characters
+ok 14 diffs should display a word diff for large strings
+ok 15 diffs should work with objects
+ok 16 diffs should show value diffs and not be affected by commas
+ok 17 durations when slow should highlight in red
+ok 18 durations when reasonable should highlight in yellow
+ok 19 durations when fast should highlight in green
+ok 20 fs.readFile() when the file exists should succeed
+ok 21 fs.readFile() when the file does not exist should fail
+ok 22 global leaks should cause tests to fail
+ok 23 global leaks should pass when accepted
+ok 24 global leaks should pass with wildcard
+ok 25 global leaks should pass when prefixed "mocha-"
+ok 26 http should provide an example
+ok 27 multiple calls to done() should fail in a test-case
+ok 28 pending should be allowed # SKIP -
+ok 29 using imported describe using imported it
+ok 30 root should be a valid suite
+ok 31 timeouts should error on timeout
+ok 32 timeouts should allow overriding per-test
+ok 33 timeouts disabling should allow overriding per-test
+ok 34 uncaught should report properly
+ok 35 lib/utils clean should format a single line test function
+ok 36 lib/utils clean should format a multi line test indented with spaces
+ok 37 lib/utils clean should format a multi line test indented with tabs
+ok 38 lib/utils clean should format functions saved in windows style - spaces
+ok 39 lib/utils clean should format functions saved in windows style - tabs
+ok 40 lib/utils clean should format es6 arrow functions
+ok 41 lib/utils clean should format es6 arrow functions with implicit return
+ok 42 lib/utils stringify should canoncalize the object
+ok 43 lib/utils stringify should handle circular structures
+ok 44 Mocha "grep" option should add a RegExp to the mocha.options object
+ok 45 Mocha "grep" option should convert grep string to a RegExp
+ok 46 Mocha .grep() should add a RegExp to the mocha.options object
+ok 47 Mocha .grep() should convert grep string to a RegExp
+ok 48 Mocha .grep() should return it's parent Mocha object for chainability
+ok 49 Mocha "invert" option should add a Boolean to the mocha.options object
+ok 50 async hooks one
+ok 51 async hooks two
+ok 52 async hooks three
+ok 53 hook error handling before hook error spec 1 should not be called because of error in before hook
+ok 54 hook error handling before hook error spec 1 spec 1 nested should not be called, because hook error was in a parent suite
+ok 55 hook error handling before hook error spec 2 should be called, because hook error was in a sibling suite
+ok 56 hook error handling before each hook error spec 1 should not be called because of error in before each hook
+ok 57 hook error handling before each hook error spec 1 spec 1 nested should not be called, because hook error was in a parent suite
+ok 58 hook error handling before each hook error spec 2 should be called, because hook error was in a sibling suite
+ok 59 hook error handling after hook error spec 1 should be called because error is in after hook
+ok 60 hook error handling after hook error spec 1 spec 1 nested should be called, because hook error will happen after parent suite
+ok 61 hook error handling after hook error spec 2 should be called, because hook error was in a sibling suite
+ok 62 hook error handling after each hook error spec 1 should be called because error is in after each hook, and this is the first test
+ok 63 hook error handling after each hook error spec 1 should not be called because error is in after each hook, and this is the second test
+ok 64 hook error handling after each hook error spec 1 spec 1 nested should not be called, because hook error has already happened in parent suite
+ok 65 hook error handling after each hook error spec 2 should be called, because hook error was in a sibling suite
+ok 66 hook error handling multiple hook errors 1 1.1 1.1 test 1
+ok 67 hook error handling multiple hook errors 1 1.1 1.1 test 2
+ok 68 hook error handling multiple hook errors 1 1.2 1.2 test 1
+ok 69 hook error handling multiple hook errors 1 1.2 1.2 test 2
+ok 70 hook error handling multiple hook errors 2 2.1 2.1 test 1
+ok 71 hook error handling multiple hook errors 2 2.1 2.1 test 2
+ok 72 hook error handling multiple hook errors 2 2.2 2.2 test 1
+ok 73 hook error handling multiple hook errors 2 2.2 2.2 test 2
+ok 74 serial hooks one
+ok 75 serial hooks two
+ok 76 serial hooks three
+ok 77 serial nested foo
+ok 78 serial nested bar
+ok 79 serial nested hooks one
+ok 80 serial nested hooks two
+ok 81 http server GET / should respond with "hello"
+ok 82 http server GET /users should respond with "tobi, loki, jane"
+ok 83 http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]"
+ok 84 http requests GET / should respond with hello
+ok 85 http requests GET /users should respond with users
+ok 86 http requests GET /users should respond with users
+ok 87 Runnable(title, fn) timeout(ms) should set the timeout
+ok 88 Runnable(title, fn) enableTimeouts(enabled) should set enabled
+ok 89 Runnable(title, fn) slow(ms) should set the slow threshold
+ok 90 Runnable(title, fn) .title should be present
+ok 91 Runnable(title, fn) when arity >= 1 should be .async
+ok 92 Runnable(title, fn) when arity == 0 should be .sync
+ok 93 Runnable(title, fn) globals should allow for whitelisting globals
+ok 94 Runnable(title, fn) .run(fn) when .pending should not invoke the callback
+ok 95 Runnable(title, fn) .run(fn) when sync without error should invoke the callback
+ok 96 Runnable(title, fn) .run(fn) when sync when an exception is thrown should invoke the callback
+ok 97 Runnable(title, fn) .run(fn) when timeouts are disabled should not error with timeout
+ok 98 Runnable(title, fn) .run(fn) when async should allow updating the timeout
+ok 99 Runnable(title, fn) .run(fn) when async should allow a timeout of 0 # SKIP -
+ok 100 Runnable(title, fn) .run(fn) when async without error should invoke the callback
+ok 101 Runnable(title, fn) .run(fn) when async when the callback is invoked several times without an error should emit a single "error" event
+ok 102 Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+ok 103 Runnable(title, fn) .run(fn) when async when an exception is thrown should invoke the callback
+ok 104 Runnable(title, fn) .run(fn) when async when an error is passed should invoke the callback
+ok 105 Runnable(title, fn) .run(fn) when async when done() is invoked with a non-Error object should invoke the callback
+ok 106 Runnable(title, fn) .run(fn) when async when done() is invoked with a string should invoke the callback
+ok 107 Runnable(title, fn) .run(fn) when fn returns a promise when the promise is fulfilled with no value should invoke the callback
+ok 108 Runnable(title, fn) .run(fn) when fn returns a promise when the promise is fulfilled with a value should invoke the callback
+ok 109 Runnable(title, fn) .run(fn) when fn returns a promise when the promise is rejected should invoke the callback
+ok 110 Runnable(title, fn) .run(fn) when fn returns a promise when the promise is rejected without a reason should invoke the callback
+ok 111 Runnable(title, fn) .run(fn) when fn returns a promise when the promise takes too long to settle should give the timeout error
+ok 112 Runnable(title, fn) .run(fn) when fn returns a non-promise should invoke the callback
+ok 113 Runner .grep() should update the runner.total with number of matched tests
+ok 114 Runner .grep() should update the runner.total with number of matched tests when inverted
+ok 115 Runner .grepTotal() should return the total number of matched tests
+ok 116 Runner .grepTotal() should return the total number of matched tests when inverted
+ok 117 Runner .globalProps() should include common non enumerable globals
+ok 118 Runner .globals() should default to the known globals
+ok 119 Runner .globals() should white-list globals
+ok 120 Runner .checkGlobals(test) should allow variables that match a wildcard
+ok 121 Runner .checkGlobals(test) should emit "fail" when a new global is introduced
+ok 122 Runner .checkGlobals(test) should emit "fail" when a single new disallowed global is introduced after a single extra global is allowed
+ok 123 Runner .checkGlobals(test) should not fail when a new common global is introduced
+ok 124 Runner .checkGlobals(test) should pluralize the error message when several are introduced
+ok 125 Runner .checkGlobals(test) should respect per test whitelisted globals
+ok 126 Runner .checkGlobals(test) should respect per test whitelisted globals but still detect other leaks
+ok 127 Runner .fail(test, err) should increment .failures
+ok 128 Runner .fail(test, err) should set test.state to "failed"
+ok 129 Runner .fail(test, err) should emit "fail"
+ok 130 Runner .failHook(hook, err) should increment .failures
+ok 131 Runner .failHook(hook, err) should emit "fail"
+ok 132 Runner .failHook(hook, err) should emit "end" if suite bail is true
+ok 133 Runner .failHook(hook, err) should not emit "end" if suite bail is not true
+ok 134 Suite .clone() should copy the title
+ok 135 Suite .clone() should copy the timeout value
+ok 136 Suite .clone() should copy the slow value
+ok 137 Suite .clone() should copy the bail value
+ok 138 Suite .clone() should not copy the values from the suites array
+ok 139 Suite .clone() should not copy the values from the tests array
+ok 140 Suite .clone() should not copy the values from the _beforeEach array
+ok 141 Suite .clone() should not copy the values from the _beforeAll array
+ok 142 Suite .clone() should not copy the values from the _afterEach array
+ok 143 Suite .clone() should not copy the values from the _afterAll array
+ok 144 Suite .timeout() when no argument is passed should return the timeout value
+ok 145 Suite .timeout() when argument is passed should return the Suite object
+ok 146 Suite .slow() when given a string should parse it
+ok 147 Suite .slow() when no argument is passed should return the slow value
+ok 148 Suite .slow() when argument is passed should return the Suite object
+ok 149 Suite .bail() when no argument is passed should return the bail value
+ok 150 Suite .bail() when argument is passed should return the Suite object
+ok 151 Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll
+ok 152 Suite .beforeAll() wraps the passed in function in a Hook appends title to hook
+ok 153 Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll
+ok 154 Suite .afterAll() wraps the passed in function in a Hook appends title to hook
+ok 155 Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach
+ok 156 Suite .beforeEach() wraps the passed in function in a Hook appends title to hook
+ok 157 Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach
+ok 158 Suite .afterEach() wraps the passed in function in a Hook appends title to hook
+ok 159 Suite .addSuite() sets the parent on the added Suite
+ok 160 Suite .addSuite() copies the timeout value
+ok 161 Suite .addSuite() copies the slow value
+ok 162 Suite .addSuite() adds the suite to the suites collection
+ok 163 Suite .fullTitle() when there is no parent returns the suite title
+ok 164 Suite .fullTitle() when there is a parent returns the combination of parent's and suite's title
+ok 165 Suite .total() when there are no nested suites or tests should return 0
+ok 166 Suite .total() when there are several tests in the suite should return the number
+ok 167 Suite .eachTest(fn) when there are no nested suites or tests should return 0
+ok 168 Suite .eachTest(fn) when there are several tests in the suite should return the number
+ok 169 Suite .eachTest(fn) when there are several levels of nested suites should return the number
+ok 170 utils .clean() should remove the wrapping function declaration
+ok 171 utils .clean() should remove space character indentation from the function body
+ok 172 utils .clean() should remove tab character indentation from the function body
+# tests 170
+# pass 170
+# fail 0
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..2
+ok 1 grep fast should run fast
+ok 2 grep fast should run fast again
+# tests 2
+# pass 2
+# fail 0
+
+[0m[0m
+[0m  Suite[0m
+[0m    .clone()[0m
+    [32m  ✓[0m[90m should copy the title [0m
+    [32m  ✓[0m[90m should copy the timeout value [0m
+    [32m  ✓[0m[90m should copy the slow value [0m
+    [32m  ✓[0m[90m should copy the bail value [0m
+    [32m  ✓[0m[90m should not copy the values from the suites array [0m
+    [32m  ✓[0m[90m should not copy the values from the tests array [0m
+    [32m  ✓[0m[90m should not copy the values from the _beforeEach array [0m
+    [32m  ✓[0m[90m should not copy the values from the _beforeAll array [0m
+    [32m  ✓[0m[90m should not copy the values from the _afterEach array [0m
+    [32m  ✓[0m[90m should not copy the values from the _afterAll array [0m
+[0m    .timeout()[0m
+[0m      when no argument is passed[0m
+      [32m  ✓[0m[90m should return the timeout value [0m
+[0m      when argument is passed[0m
+      [32m  ✓[0m[90m should return the Suite object [0m
+[0m    .slow()[0m
+[0m      when given a string[0m
+      [32m  ✓[0m[90m should parse it [0m
+[0m      when no argument is passed[0m
+      [32m  ✓[0m[90m should return the slow value [0m
+[0m      when argument is passed[0m
+      [32m  ✓[0m[90m should return the Suite object [0m
+[0m    .bail()[0m
+[0m      when no argument is passed[0m
+      [32m  ✓[0m[90m should return the bail value [0m
+[0m      when argument is passed[0m
+      [32m  ✓[0m[90m should return the Suite object [0m
+[0m    .beforeAll()[0m
+[0m      wraps the passed in function in a Hook[0m
+      [32m  ✓[0m[90m adds it to _beforeAll [0m
+      [32m  ✓[0m[90m appends title to hook [0m
+[0m    .afterAll()[0m
+[0m      wraps the passed in function in a Hook[0m
+      [32m  ✓[0m[90m adds it to _afterAll [0m
+      [32m  ✓[0m[90m appends title to hook [0m
+[0m    .beforeEach()[0m
+[0m      wraps the passed in function in a Hook[0m
+      [32m  ✓[0m[90m adds it to _beforeEach [0m
+      [32m  ✓[0m[90m appends title to hook [0m
+[0m    .afterEach()[0m
+[0m      wraps the passed in function in a Hook[0m
+      [32m  ✓[0m[90m adds it to _afterEach [0m
+      [32m  ✓[0m[90m appends title to hook [0m
+[0m    .addSuite()[0m
+    [32m  ✓[0m[90m sets the parent on the added Suite [0m
+    [32m  ✓[0m[90m copies the timeout value [0m
+    [32m  ✓[0m[90m copies the slow value [0m
+    [32m  ✓[0m[90m adds the suite to the suites collection [0m
+[0m    .fullTitle()[0m
+[0m      when there is no parent[0m
+      [32m  ✓[0m[90m returns the suite title [0m
+[0m      when there is a parent[0m
+      [32m  ✓[0m[90m returns the combination of parent's and suite's title [0m
+[0m    .total()[0m
+[0m      when there are no nested suites or tests[0m
+      [32m  ✓[0m[90m should return 0 [0m
+[0m      when there are several tests in the suite[0m
+      [32m  ✓[0m[90m should return the number [0m
+[0m    .eachTest(fn)[0m
+[0m      when there are no nested suites or tests[0m
+      [32m  ✓[0m[90m should return 0 [0m
+[0m      when there are several tests in the suite[0m
+      [32m  ✓[0m[90m should return the number [0m
+[0m      when there are several levels of nested suites[0m
+      [32m  ✓[0m[90m should return the number [0m
+
+[0m  Runner[0m
+[0m    .grep()[0m
+    [32m  ✓[0m[90m should update the runner.total with number of matched tests [0m
+    [32m  ✓[0m[90m should update the runner.total with number of matched tests when inverted [0m
+[0m    .grepTotal()[0m
+    [32m  ✓[0m[90m should return the total number of matched tests [0m
+    [32m  ✓[0m[90m should return the total number of matched tests when inverted [0m
+[0m    .globalProps()[0m
+    [32m  ✓[0m[90m should include common non enumerable globals [0m
+[0m    .globals()[0m
+    [32m  ✓[0m[90m should default to the known globals [0m
+    [32m  ✓[0m[90m should white-list globals [0m
+[0m    .checkGlobals(test)[0m
+    [32m  ✓[0m[90m should allow variables that match a wildcard [0m
+    [32m  ✓[0m[90m should emit "fail" when a new global is introduced [0m
+    [32m  ✓[0m[90m should emit "fail" when a single new disallowed global is introduced after a single extra global is allowed [0m
+    [32m  ✓[0m[90m should not fail when a new common global is introduced [0m
+    [32m  ✓[0m[90m should pluralize the error message when several are introduced [0m
+    [32m  ✓[0m[90m should respect per test whitelisted globals [0m
+    [32m  ✓[0m[90m should respect per test whitelisted globals but still detect other leaks [0m
+[0m    .fail(test, err)[0m
+    [32m  ✓[0m[90m should increment .failures [0m
+    [32m  ✓[0m[90m should set test.state to "failed" [0m
+    [32m  ✓[0m[90m should emit "fail" [0m
+[0m    .failHook(hook, err)[0m
+    [32m  ✓[0m[90m should increment .failures [0m
+    [32m  ✓[0m[90m should emit "fail" [0m
+    [32m  ✓[0m[90m should emit "end" if suite bail is true [0m
+    [32m  ✓[0m[90m should not emit "end" if suite bail is not true [0m
+
+[0m  Runnable(title, fn)[0m
+[0m    #timeout(ms)[0m
+    [32m  ✓[0m[90m should set the timeout [0m
+[0m    #enableTimeouts(enabled)[0m
+    [32m  ✓[0m[90m should set enabled [0m
+[0m    #slow(ms)[0m
+    [32m  ✓[0m[90m should set the slow threshold [0m
+[0m    .title[0m
+    [32m  ✓[0m[90m should be present [0m
+[0m    when arity >= 1[0m
+    [32m  ✓[0m[90m should be .async [0m
+[0m    when arity == 0[0m
+    [32m  ✓[0m[90m should be .sync [0m
+[0m    #globals[0m
+    [32m  ✓[0m[90m should allow for whitelisting globals [0m
+[0m    .run(fn)[0m
+[0m      when .pending[0m
+      [32m  ✓[0m[90m should not invoke the callback [0m
+[0m      when sync[0m
+[0m        without error[0m
+        [32m  ✓[0m[90m should invoke the callback [0m
+[0m        when an exception is thrown[0m
+        [32m  ✓[0m[90m should invoke the callback [0m
+[0m      when timeouts are disabled[0m
+      [32m  ✓[0m[90m should not error with timeout [0m
+[0m      when async[0m
+      [32m  ✓[0m[90m should allow updating the timeout [0m
+      [36m  - should allow a timeout of 0[0m
+[0m        without error[0m
+        [32m  ✓[0m[90m should invoke the callback [0m
+[0m        when the callback is invoked several times[0m
+[0m          without an error[0m
+          [32m  ✓[0m[90m should emit a single "error" event [0m
+[0m          with an error[0m
+          [32m  ✓[0m[90m should emit a single "error" event [0m
+[0m        when an exception is thrown[0m
+        [32m  ✓[0m[90m should invoke the callback [0m
+[0m        when an error is passed[0m
+        [32m  ✓[0m[90m should invoke the callback [0m
+[0m        when done() is invoked with a non-Error object[0m
+        [32m  ✓[0m[90m should invoke the callback [0m
+[0m        when done() is invoked with a string[0m
+        [32m  ✓[0m[90m should invoke the callback [0m
+[0m      when fn returns a promise[0m
+[0m        when the promise is fulfilled with no value[0m
+        [32m  ✓[0m[90m should invoke the callback [0m
+[0m        when the promise is fulfilled with a value[0m
+        [32m  ✓[0m[90m should invoke the callback [0m
+[0m        when the promise is rejected[0m
+        [32m  ✓[0m[90m should invoke the callback [0m
+[0m        when the promise is rejected without a reason[0m
+        [32m  ✓[0m[90m should invoke the callback [0m
+[0m        when the promise takes too long to settle[0m
+        [32m  ✓[0m[90m should give the timeout error [0m
+[0m      when fn returns a non-promise[0m
+      [32m  ✓[0m[90m should invoke the callback [0m
+
+[0m  serial[0m
+[0m    hooks[0m
+    [32m  ✓[0m[90m one [0m
+    [32m  ✓[0m[90m two [0m
+    [32m  ✓[0m[90m three [0m
+
+[0m  serial[0m
+[0m    nested[0m
+    [32m  ✓[0m[90m foo [0m
+    [32m  ✓[0m[90m bar [0m
+[0m      hooks[0m
+      [32m  ✓[0m[90m one [0m
+      [32m  ✓[0m[90m two [0m
+
+[0m  async[0m
+[0m    hooks[0m
+    [32m  ✓[0m[90m one [0m
+    [32m  ✓[0m[90m two [0m
+    [32m  ✓[0m[90m three [0m
+
+[0m  durations[0m
+[0m    when slow[0m
+    [32m  ✓[0m[90m should highlight in red [0m[31m(105ms)[0m
+[0m    when reasonable[0m
+    [32m  ✓[0m[90m should highlight in yellow [0m[33m(55ms)[0m
+[0m    when fast[0m
+    [32m  ✓[0m[90m should highlight in green [0m
+
+[0m  fs.readFile()[0m
+[0m    when the file exists[0m
+    [32m  ✓[0m[90m should succeed [0m
+[0m    when the file does not exist[0m
+    [32m  ✓[0m[90m should fail [0m
+
+[0m  global leaks[0m
+  [32m  ✓[0m[90m should cause tests to fail [0m
+  [32m  ✓[0m[90m should pass when accepted [0m
+  [32m  ✓[0m[90m should pass with wildcard [0m
+  [32m  ✓[0m[90m should pass when prefixed "mocha-" [0m
+
+[0m  pending[0m
+  [36m  - should be allowed[0m
+
+[0m  timeouts[0m
+  [32m  ✓[0m[90m should error on timeout [0m
+  [32m  ✓[0m[90m should allow overriding per-test [0m[31m(306ms)[0m
+[0m    disabling[0m
+    [32m  ✓[0m[90m should allow overriding per-test [0m
+
+
+[92m [0m[32m 104 passing[0m[90m (590ms)[0m
+[36m [0m[36m 2 pending[0m
+
+done
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..2
+ok 1 coffeescript should work
+ok 2 custom compiler should work
+# tests 2
+# pass 2
+# fail 0
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..2
+ok 1 alpha should be executed first
+ok 2 beta should be executed second
+# tests 2
+# pass 2
+# fail 0
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+Glob-test passed.
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..1
+ok 1 require test should require args in order
+# tests 1
+# pass 1
+# fail 0
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..4
+ok 1 nyan face nyan face:(x .x) when "failures" at least one
+ok 2 nyan face expected nyan face:(x .x) when "peinding" at least one and no failing
+ok 3 nyan face expected nyan face:(^ .^) when "passing" only
+ok 4 nyan face nyan face:(- .-) when otherwise
+# tests 4
+# pass 4
+# fail 0
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..1
+ok 1 should only run .only test in this tdd suite should run this test
+# tests 1
+# pass 1
+# fail 0
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..1
+ok 1 should only run .only test in this bdd suite should run this test
+# tests 1
+# pass 1
+# fail 0
+(node) child_process: options.customFds option is deprecated. Use options.stdio instead.
+1..1
+ok 1 should only run .only test in this qunit suite should run this test
+# tests 1
+# pass 1
+# fail 0
