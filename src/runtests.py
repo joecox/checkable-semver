@@ -56,7 +56,7 @@ class TestRunner:
                 self.fix_developer_dependencies(deps)
                 logging.info("Fixing developer dependencies [Done]")
                 
-                logging.debug("Installing npm dependencies")
+                logging.info("Installing npm dependencies")
                 silent_do(["npm", "install"])
                 logging.info("Installing npm dependencies [Done]")
 
@@ -85,15 +85,16 @@ class TestRunner:
     
     def run(self, implv, testv, testsuite):
         self.check_deps();
-        logging.debug("Testing implv: %s, testv: %s, on suite \"%s\"", 
-                implv, testv, testsuite)
+        # logging.debug("Testing implv: %s, testv: %s, on suite \"%s\"", 
+        #         implv, testv, testsuite)
         
         repo = self.setup(implv, testv) 
 
         with repo.in_context():
             logging.debug("In %s", os.getcwd())
-            # Run tests (assume make test-jsapi at the moment)
-            logging.info("Running tests")
+            # Run tests
+            logging.info("Run tests: implv %s, testv %s, suite \"%s\"",
+                         implv, testv, testsuite)
             p = Popen(
                 ["make", "-k", "test-" + testsuite], 
                 stdout=PIPE, 
@@ -104,18 +105,19 @@ class TestRunner:
             logging.debug(o)
             logging.debug("error:")
             logging.debug(e)
-            logging.info("Running tests [Done]")
+            logging.info("Run tests [Done]")
 
             # Parse stderr for errors
             errpat = "\d*\) (?P<err>.*):\s*$"
             violations = re.findall(errpat, o, re.MULTILINE) + re.findall(errpat, e, re.MULTILINE)
 
             unique_violations = sorted(set(violations))
-                
-            logging.info("Found violations:")
-            for viol in unique_violations:
-                logging.info(viol)
-            logging.info("Found violations [Done]")
+
+            if unique_violations:
+                logging.info("Found violations:")
+                for viol in unique_violations:
+                    logging.info(viol)
+                logging.info("Found violations [Done]")
 
             return [(implv, testv, violation) for violation in unique_violations]
 

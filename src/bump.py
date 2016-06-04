@@ -28,20 +28,16 @@ def dv(runner, suite, history, v):
 
 def main():
     p = argparse.ArgumentParser()
+    p.add_argument("version",
+                   help="A version to test bumping to.")
     p.add_argument("--test-dir", "-d", required=True,
                    help="The folder in which the api tests reside.")
-    p.add_argument("test_version",
-                   help="A version to test bumping to.")
     p.add_argument("--repository", "-r",
                    help="Path to repository on the system, default is CWD")
     p.add_argument("--cache", "-c",
                    help="A cache of results")
-    # p.add_argument("--test-script", "-t",
-    #                help="Shell script to run tests.")
     p.add_argument("--verbose", "-v", action="count",
                    help="Run with verbose output.")
-    # p.add_argument("--report-violations", action="store_true",
-    #                help="Report violation information")
     p.add_argument("--test-suite", "-s", choices=["all", "unit", "jsapi"],
                    required=True,
                    help="The test suite to run")
@@ -64,19 +60,22 @@ def main():
     
     tags = semver.sort(repo.get_tags())
 
-    if not semver.valid(args.test_version):
-        error(args.test_version + ' is not valid SemVer')
+    if not semver.valid(args.version):
+        error(args.version + ' is not valid SemVer')
     
-    if args.test_version not in tags:
-        error('Version ' + args.test_version + ' not in history')
-    
+    if args.version not in tags:
+        error('Version ' + args.version + ' not in history')
+
+    if args.cache:
+        args.cache = os.path.abspath(args.cache)
+        
     runner = runtests.TestRunner(
         args.test_dir, 
         repo=repo, 
-        cache=os.path.abspath(args.cache)
+        cache=args.cache
     )
-    for violation in dv(runner, args.test_suite, tags, args.test_version):
-        print "V{},{},{},{!r}".format(args.test_version, *violation)
+    for violation in dv(runner, args.test_suite, tags, args.version):
+        print "V{},{},{},{!r}".format(args.version, *violation)
 
 def error(msg=None):
     if msg:
