@@ -19,7 +19,8 @@ an existing repostory. In doing so we hope to answer a question:
 We know from the proof that if the interface is fully specified, we can
 truthfully detect SemVer violations. The statement does contain 
 inherent confounding factors, are test expressive enough to detect
-violations, and are tests too strict to specify an interface.
+violations, and are tests too strict, and would therefor over-approximate 
+the interface.
 
 The first confounding factor can easily be related to the problem of
 test coverage. Test can be too specific to correctly cover all features
@@ -35,21 +36,28 @@ ran the tool for each release in the library and collect the breaking
 change and added feature violations for each release. For each version
 we report the number violated tests, If one test is in multiple versions
 it might be counted multiple times, but that also emphasises the
-stability of the test.
-
+importance of the test, since it survived for multiple releases.
 
 The second confounding factor, whether too many violations would be
 reported, is the most controversial. Many developers has claimed that
-merely adhering to SemVer given their internal definition of the 
+merely adhering to SemVer given their internal definition of the
 interface would force them to bump the mayor version every
-update\cite{backbone-2888,crawford-not-semver}. This problem could be
-more pronounced, if the interface was clearly specified using tests,
-and SemVer was checked with a non-compromising tool. To address this
-factor, we will simulate running the bump tool for each release in the 
-history of the mocha tool. The new version history would then be a
-worst-case scenario, where the developers did not expect their tests
-describe their interface and was not warned about violations before
-releasing.
+update\cite{backbone-2888,exoplayer-1382,crawford-not-semver}. This problem could be
+more pronounced, if the interface was clearly specified using tests, and
+SemVer was checked with a non-compromising tool. To address this factor,
+we have simulate running the bump tool for each release in the history
+of the mocha tool. The new version history is then be a worst-case
+scenario, where the developers did not expect their tests to describe
+the interface and was not warned about violations before releasing.
+
+Lastly we did some background analysis on the framework to better
+understand the composition of the library. To do this we did a
+cumulation of names of tests violations and compared it to the
+cumulative test names of each version.  That enables us to detect the
+density of the violations in the library. This density is interesting
+when making conclusions about the two factors, and will help us better
+make determine whether the findings of this library applies to other 
+libraries.
 
 \subsection{User Study Evaluation}
 Our second evaluation is a user study of the efficacy of our

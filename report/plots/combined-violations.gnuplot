@@ -1,7 +1,5 @@
 set terminal pdfcairo size 5,2 font "Times,6"
 
-set title title font "Times,10"
-
 set output outputfile
 
 set style line 11 lc rgb '#808080' lt 1
