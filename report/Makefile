@@ -9,19 +9,23 @@ all: report.tex graphics
 auto: report.tex
 	latexmk -pdf -pdflatex="$(LATEX)" -use-make -pvc report.tex
 
-plots := $(patsubst %.gnuplot,%-plt.pdf,$(wildcard graphics/*.gnuplot))
+plots := $(patsubst data/%.txt,graphics/%-plt.pdf,$(wildcard data/*.txt))
 
 .PHONY: graphics
 graphics: $(plots)
 	@echo $(plots)
 
-%-plt.pdf: %.gnuplot %.txt 
-	gnuplot $< > $@
+graphics/violations-%-plt.pdf: data/violations-%.txt plots/violations.gnuplot
+	gnuplot -e "data='$<'; outputfile='$@'" plots/violations.gnuplot
+
+graphics/cumulative-%-plt.pdf: data/cumulative-%.txt plots/cumulative.gnuplot
+	gnuplot -e "data='$<'; outputfile='$@'" plots/cumulative.gnuplot
 
 .PHONY: clean clean-aux
 clean:
 	rm -f report.pdf *.aux *.bbl *bcf *.blg *.log *.out *.tdo *.toc *.xdv *.synctex.gz *.fdb_latexmk *.fls *.run.xml *.lpc *.upa *.upb; \
 	rm -f **/*.aux
+	rm -f $(plots)
 
 clean-aux:
 	rm -f *.aux *.bbl *bcf *.blg *.log *.out *.tdo *.toc *.xdv *.synctex.gz *.fdb_latexmk *.fls *.run.xml *.lpc *.upa *.upb; \

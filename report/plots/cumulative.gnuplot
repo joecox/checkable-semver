@@ -1,5 +1,9 @@
 set terminal pdfcairo size 5,2 font "Times,6"
 
+set title data
+
+set output outputfile
+
 set style line 11 lc rgb '#808080' lt 1
 set border 3 back ls 11
 
@@ -24,5 +28,5 @@ set style fill solid 0.2
 set ylabel 'Cumulative Violations' font "Times,10"
 set xlabel 'Version'  font "Times,10"
 
-plot "graphics/cumulative.txt" using 2:xticlabel(1) with filledcurves above x1 linestyle 1
+plot data using 2:xticlabel(1) with filledcurves above x1 linestyle 1
 
