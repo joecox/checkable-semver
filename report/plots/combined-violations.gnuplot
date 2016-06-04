@@ -13,6 +13,7 @@ set tics nomirror
 set boxwidth 0.5
 set style fill solid
 
+set logscale y
 set xtics rotate by -50 font "Times,5"
 
 set style line 1 lc rgb '#FF6E00' pt 0 ps 1 lt 1 lw 2 # --- red
