@@ -1,10 +1,66 @@
 import os
 from subprocess import call, Popen, PIPE
+import logging
 
 import semver
 
+def silent_do(args):
+    with open(os.devnull, 'wb') as FNULL:
+        return not call(args, stdout=FNULL, stderr=FNULL)
+
+class Context:
+
+    def __init__(self, directory):
+        self.directory = directory
+
+    def __enter__(self):
+        self.context = os.path.abspath(os.getcwd())
+        os.chdir(self.directory)
+        logging.debug("Changed directory %s", os.getcwd())
+        return self
+
+    def __exit__(self, *args, **kwargs):
+        os.chdir(self.context)
+        logging.debug("Returned to %s", os.getcwd())
+
+
+class Repository: 
+
+    def __init__(self, directory):
+        self.directory = os.path.abspath(directory);
+
+    def in_context(self):
+        return Context(self.directory)
+
+    def do(self, *args):
+        with self.in_context():
+            cmd = ["git"]
+            cmd.extend(args)
+            logging.debug("Ran %s on %s ", cmd, self.directory)
+            return silent_do(cmd)
+
+    def reset(self, ref, hard=False):
+        cmd = ["reset"]
+        if hard:
+            cmd.append("--hard")
+        cmd.append(ref)
+        return self.do(*cmd)
+
+    def checkout(self, ref, files=[]):
+        cmd = ["checkout", ref]
+        if files:
+            cmd.extend(["--"] + files)
+        return self.do(*cmd)
+
+    def is_repo(self):
+        return self.do("rev-parse", "--git-dir")
+
+    def clone(self, dest):
+        clone(self.directory, dest);
+        return Repository(dest)
+
 def clone(src, dest):
-    call(["git", "clone", "--quiet", src, dest])
+    silent_do(["git", "clone", "--quiet", src, dest])
 
 def is_repo():
     dir = os.getcwd()
