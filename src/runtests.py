@@ -24,7 +24,7 @@ def stdout(args):
 
 class TestRunner:
 
-    def __init__(self, testdir, verbose=False, repo=None, cache=None):
+    def __init__(self, testdir, repo=None, cache=None):
         self.testdir = testdir
         self.cache = cache
         self.baserepo = repo or git.Repository(os.getcwd()) 
@@ -112,8 +112,10 @@ class TestRunner:
 
             unique_violations = sorted(set(violations))
                 
+            logging.info("Found violations:")
             for viol in unique_violations:
-                logging.info("Found violations: %s", viol)
+                logging.info(viol)
+            logging.info("Found violations [Done]")
 
             return [(implv, testv, violation) for violation in unique_violations]
 
@@ -125,7 +127,7 @@ def main():
                    help="Test version")
     p.add_argument("--test-dir", "-d", required=True,
                    help="The test directory name")
-    p.add_argument("--repo-dir", "-r",
+    p.add_argument("--repository", "-r",
                    help="The directory containing the repository")
     p.add_argument("--cache", "-c",
                    help="A cache folder, which can contain diferent versions of the file")

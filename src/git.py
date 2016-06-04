@@ -8,6 +8,12 @@ def silent_do(args):
     with open(os.devnull, 'wb') as FNULL:
         return not call(args, stdout=FNULL, stderr=FNULL)
 
+def stdout(args):
+    with open(os.devnull, 'wb') as FNULL:
+        p = Popen(args, stdout=PIPE, stderr=FNULL)
+        stdout, stderr = p.communicate()
+    return stdout
+
 class Context:
 
     def __init__(self, directory):
@@ -26,8 +32,8 @@ class Context:
 
 class Repository: 
 
-    def __init__(self, directory):
-        self.directory = os.path.abspath(directory);
+    def __init__(self, directory=None):
+        self.directory = os.path.abspath(directory or os.getcwd());
 
     def in_context(self):
         return Context(self.directory)
@@ -38,6 +44,16 @@ class Repository:
             cmd.extend(args)
             logging.debug("Ran %s on %s ", cmd, self.directory)
             return silent_do(cmd)
+
+    def query(self, *args):
+        with self.in_context():
+            cmd = ["git"]
+            cmd.extend(args)
+            logging.debug("Queried %s on %s ", cmd, self.directory)
+            val = stdout(cmd)
+            logging.debug(val)
+            logging.debug("Query [Done]");
+            return val
 
     def reset(self, ref, hard=False):
         cmd = ["reset"]
@@ -58,6 +74,14 @@ class Repository:
     def clone(self, dest):
         clone(self.directory, dest);
         return Repository(dest)
+
+    def current_branch(self):
+        return self.query("rev-parse", "--abbrev-ref", "HEAD").strip()
+
+    def get_tags(self):
+        """ Returns a list of tags """
+        return [ tag.strip() for tag in self.query("tag", "-l").strip().split("\n") ]
+
 
 def clone(src, dest):
     silent_do(["git", "clone", "--quiet", src, dest])
