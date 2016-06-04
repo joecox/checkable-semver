@@ -75,7 +75,7 @@ v2.5.1 \
 v2.5.2 \
 v2.5.3"
 
-outfolder=./report/graphics/
+outfolder=./report/data/
 
 
 for target in jsapi all unit 
