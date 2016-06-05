@@ -20,19 +20,15 @@ def main():
             actual = m.group("actual")
             sim = m.group("sim")
 
-            # Parse into decimal
-            m_actual = semver.parse(actual)
-            m_sim = semver.parse(sim)
+            actual_data.append(actual)
+            sim_data.append(sim)
 
-            f_actual = float(".{0:02d}{1:02d}{2:02d}".format(*m_actual))
-            f_sim = float(".{0:02d}{1:02d}{2:02d}".format(*m_sim))
-
-            actual_data.append(f_actual)
-            sim_data.append(f_sim)
-            
+    all_data = semver.sort(list(set(actual_data + sim_data)))
+    
     with open(args.output_file, 'w') as fo:
         for i in range(len(sim_data)):
-            fo.write("{} {} {}\n".format(actual_data[i], actual_data[i], sim_data[i]))
+            # fo.write("{} {} {}\n".format(i, all_data.index(actual_data[i]), all_data.index(sim_data[i])))
+            fo.write("{} {} {} {} {}\n".format(all_data.index(actual_data[i]), all_data.index(actual_data[i]), all_data.index(sim_data[i]), all_data[i], sim_data[i]))
 
 if __name__ == "__main__":
     main()

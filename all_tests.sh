@@ -85,6 +85,9 @@ cd mocha
 
 for tag in $versions
 do
+    if [ ! -e $tooldir/$outdir/jsapi-tests-$tag.txt ] || [ ! -e $tooldir/$outdir/all-tests-$tag.txt ]
+    then
+    
     # append sequence number so we can aggregate results in
     # the right order
     echo "$tag"
@@ -102,6 +105,7 @@ do
     sed -i "s/require('should');/mocha.reporter('tap'); require('should');/" test/jsapi/index.js    
     make test-jsapi &> $tooldir/$outdir/jsapi-tests-$tag.txt
     git reset --hard
+    fi
 done
 
 echo $tooldir/$outdir
