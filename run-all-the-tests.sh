@@ -83,7 +83,7 @@ function go {
     if [ ! -e $log ]
     then
         tmp=$(mktemp)
-        ./bump $version -r mocha -d test -s $suite --cache cache/$version |\
+        ./detect $version -r mocha -d test -s $suite --cache cache/$version |\
             grep -v '^Setup' > $tmp
         mv $tmp $log
     fi
