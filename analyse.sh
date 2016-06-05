@@ -97,6 +97,8 @@ do
 
         grep "V$version" "$file" > "$violations"
 
+        echo "$version $violations"
+
         grep -E "^[^,]+,[^,]+,$version" "$violations" | sed "s/^[^'\"]*,//" | sort > "$features"
         grep -E "^[^,]+,$version" "$violations" | sed "s/^[^'\"]*,//" | sort > "$breaking"
 
