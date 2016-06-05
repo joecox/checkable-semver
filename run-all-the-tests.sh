@@ -75,18 +75,17 @@ v2.5.1 \
 v2.5.2 \
 v2.5.3"
 
-cat /dev/null > results/eval/violations-jsapi.txt
-cat /dev/null > results/eval/violations-all.txt
-
+N=0
 for version in $versions
 do
+    printf -v NStr "%03d" $N
     if [ -e cache/$version ]
     then
         echo "test baby test baby $version"
         ./bump $version -r mocha -d test -s jsapi --cache cache/$version |\
-            grep -v '^Setup' >> results/eval/violations-jsapi.txt
+            grep -v '^Setup' > results/eval/violations-jsapi-$NStr-$version.txt
         ./bump $version -r mocha -d test -s all --cache cache/$version |\
-            grep -v '^Setup' >> results/eval/violations-all.txt
-        echo "all i wanna do is zooma zoom zoom zoom and a boom boom"
+            grep -v '^Setup' > results/eval/violations-all-$NStr-$version.txt
     fi
+    N=$((N+1))
 done
