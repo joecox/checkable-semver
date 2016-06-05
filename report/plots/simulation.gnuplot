@@ -33,5 +33,6 @@ set output outputfile
 # set xtics ("1.0.0" 1, "2.0.0" 1) #, "3.0.0" 0.03, "4.0.0" 0.04, "5.0.0" 0.05, "6.0.0" 0.06)
 set ytics ("1.0.0" 1, "2.0.0" 2, "3.0.0" 3, "4.0.0" 4, "5.0.0" 5, "6.0.0" 6)
 
-plot data using 2 title "Actual" with linespoints pointtype 5 pointsize 0.2, \
-     "" using 3 title "Simulated" with linespoints pointtype 6 pointsize 0.2
+plot data using 1 title "Actual" with linespoints pointtype 5 pointsize 0.2, \
+     "" using 2 title "Simulated" with linespoints pointtype 6 pointsize 0.2 # , \
+#     "" using 3 title "Simulated Ignore" with linespoints pointtype 6 pointsize 0.2     
