@@ -290,3 +290,51 @@ Here we discuss some high-level requirements that should be followed.
     package.json} of the library each time we ran a cross-version
   test.
 \end{itemize}
+
+\subsection{Tool Implementation}
+To support the approach we create two tools: {\tt detect} and {\tt
+  simulate}. The {\tt detect} tool is given a version tag and
+produces SemVer violations associated with trying to bump to that
+tag. The {\tt simulate} tool is given a version tag and simulates a
+version history starting at that tag by using our approach.
+
+The purpose of the {\tt detect} tool is to determine how many SemVer
+violations the Mocha authors committed by publishing each version. To
+that end, the tool takes a version tag, such as {\tt 1.0.1} or {\tt
+  2.3.0}, as an argument and calls a {\tt cvt} module to compute the
+violations.
+
+The {\tt cvt} module, given a version tag and a version history,
+generates a set of pairs of implementation versions and test
+versions. For each pair, {\tt cvt} will checkout the specified
+implementation, checkout the specified test suite, and run the test
+suite. Some of the pairs represent Added Feature Tests and some
+represent Breaking Change Tests.
+
+\begin{itemize}
+\item For those that represent Added Feature Tests, the test version
+  is the given version tag, and the implementation version is a
+  previous tag within the minor version. For example, running test
+  version {\tt 2.3.4} against implementation version {\tt 2.3.0} is
+  testing for added features. Failures in the test suite mean that
+  features have been added since the last minor version update.
+\item For those that represent Breaking Change Tests, the
+  implementation version is the given version tag, and the test
+  version is a previous tag within the major version. For example,
+  running test version {\tt 2.0.0} against implementation version
+  {\tt 2.3.4} is testing for breaking changes. Failures in the test
+  suite mean that there has been a breaking change in the interface
+  since the last major version update.
+\end{itemize}
+
+The purpose of the {\tt simulate} tool is to test how our approach
+would fare if used in a real library. The {\tt simulate} tool
+generates a simulated version history. Given a starting version, the
+tool will iteratively propose new SemVer tags by running Added
+Feature tests and Breaking Change tests against the growing simulated
+version history. The tests are run using a modified version of the
+{\tt cvt} module. The {\tt cvt} module determines which Added Feature
+and Breaking Change tests to run from the simulated version history,
+but must map the simulated tags back to the actual revisions they
+represent in the repository, else the module may check out an
+incorrect version.
