@@ -186,6 +186,42 @@ its developers would be expected to be more ``pro-test'' than the
 average developer. For this reason, Mocha's test suite may not be
 representative of other test suites.
 
+\begin{figure*}
+\begin{lstlisting}
+describe('Runnable(title, fn)', function(){
+  describe('.run(fn)', function(){
+    describe('when async', function(){
+      describe('when the callback is invoked several times', function(){
+        describe('with an error', function(){
+          it('should emit a single "error" event', function(done){
+            var calls = 0;
+            var errCalls = 0;
+
+            var test = new Runnable('foo', function(done){
+              done(new Error('fail'));
+              process.nextTick(done);
+              done(new Error('fail'));
+              process.nextTick(done);
+              process.nextTick(done);
+            });
+
+            test.on('error', function(err){
+              ++errCalls;
+              err.message.should.equal('done() called multiple times');
+              calls.should.equal(1);
+              errCalls.should.equal(1);
+              done();
+            });
+
+            test.run(function(){
+              ++calls;
+            });
+          })
+        })
+\end{lstlisting}
+\caption{A failing mocha jsapi test}
+\end{figure*}
+
 \todo{Mocha `test-all` runs many tests multiple times. Runs all
   categories, individual tests are included in more than one
   category. Remove duplicate test titles from total and failing
