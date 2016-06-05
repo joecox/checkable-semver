@@ -170,23 +170,6 @@ equivalence of specifications. \marktodo{Probably need to say more
 \item The implementation of a release must meet the specification of
   that release;
   $$ Refl(r) = \{(s, i)\} \text{ where } ((x,y,z), i, s) = r $$
-    
-\item \marktodo{There is as yet no mention of a ``new'' release, or of
-    ``previous'' releases.}{} the new release version must be greater
-  than all previous versions, as described in the semantic versioning
-  (Reflective Test);
-    \begin{align*}
-        \forall r' \in rs. & ((x,y,z), \_,\_) = r \\ 
-                           & \land ((x',y',z'), \_, \_) = r' \\ 
-                           & \land \bigvee
-        \begin{cases}
-            x' < x \\
-            x' = x \land y' < y \\
-            x' = x \land y = y' \land z' < z
-        \end{cases}
-    \end{align*}
-    
-    \marktodo{Also, $r$ is a free variable. where is it supposed to be quantified?}{}
 
     \item all previous implementations with versions in same minor version as the
     new release, must meet new specification without violations (Added Feature
@@ -214,7 +197,7 @@ equivalence of specifications. \marktodo{Probably need to say more
 
 If all the steps are passed, the release is following SemVer. Assuming that the 
 second point is uphold, we can write down the expression for cross version testing. 
-$$ CVT(r, rs) = Refl(r) \cup BCT(r, rs) \cup AFT(r, rs) $$
+$$ CVT(r, rs) = Refl(r) \cup AFT(r, rs) \cup BCT(r, rs) $$
 
 \begin{theorem}[Soundness]
 Given a release and a release history, our algorithm will reject the release if
@@ -222,22 +205,20 @@ and if it violates SemVer in relation to the release history.
 \end{theorem}
 
 \begin{proof}[sketch]
-If a release is rejected, it must have failed in one of the 4 conditions. 
+If a release is rejected, it must have failed in one of the 3 conditions. 
 \begin{itemize}
-  \item If the first condition failed, the release is invalid, and semantic
-      version does not apply to broken releases. 
-  \item If the second condition failed, then the patch did not follow the
-      monotonic requirement of SemVer. 
-  \item If the third requirement failed, some previous release, in the same
-      minor version, have an implementation which violates something the specs
-      of the current version. This means that the specs must be testing a new
-      feature or have a breaking change, and this violates the first rule of
-      SemVer.
-  \item If the third requirement failed, some previous release, in the same
-      major version,  must have a spec which is violated by the current
-      implementation. This means that something which was guaranteed has been
-      broken; which makes this a breaking change. Since the new release is at
-      most a minor release compared, this violates the second rule of SemVer.
+\item If the first condition failed, the release is invalid, and semantic
+  versioning does not apply to broken releases. 
+\item If the second requirement failed, then the implementation of
+  some previous release with the same major and minor version does
+  not meet the specication of the current version. This means that
+  the current version specification includes either a new feature
+  or a breaking change, which violates the first rule of SemVer.
+\item If the third requirement failed, some previous release, in the same
+  major version,  must have a spec which is violated by the current
+  implementation. This means that something which was guaranteed has been
+  broken; which makes this a breaking change. Since the new release is at
+  most a minor release compared, this violates the second rule of SemVer.
 \end{itemize}
 Because all possible failed cases is the result of a SemVer violation, the
 algorithm is guaranteed to only reject a release if SemVer is violated.
