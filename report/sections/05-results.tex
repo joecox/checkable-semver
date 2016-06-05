@@ -119,17 +119,55 @@ developers.
   invoked several times with an error should emit a single "error"
   event }
 
-This test defines part of the behavior of mocha's asynchronous test
-runner, that when two asyncronous error events are triggered, only one
-is delivered to the error callback. This is important in tests that
-allocate resources like database connections that need to be released
-exactly once.
+\begin{figure*}
+\begin{lstlisting}
+describe('Runnable(title, fn)', function(){
+  describe('.run(fn)', function(){
+    describe('when async', function(){
+      describe('when the callback is invoked several times', function(){
+        describe('with an error', function(){
+          it('should emit a single "error" event', function(done){
+            var calls = 0;
+            var errCalls = 0;
+
+            var test = new Runnable('foo', function(done){
+              done(new Error('fail'));
+              process.nextTick(done);
+              done(new Error('fail'));
+              process.nextTick(done);
+              process.nextTick(done);
+            });
+
+            test.on('error', function(err){
+              ++errCalls;
+              err.message.should.equal('done() called multiple times');
+              calls.should.equal(1);
+              errCalls.should.equal(1);
+              done();
+            });
+
+            test.run(function(){
+              ++calls;
+            });
+          })
+        })
+\end{lstlisting}
+\caption{A failing mocha jsapi test}
+\label{fig:failing-test}
+\end{figure*}
+
+This test is shown in Figure \ref{fig:failing-test}. The test defines
+part of the behavior of mocha's asynchronous test runner, that when
+two asyncronous error events are triggered, only one is delivered to
+the error callback. This is important in tests that allocate resources
+like database connections that need to be released exactly once.
 
 In addition to testing that only a single error event is delivered,
 the version 1.0.0 test also tests {\em which} error event is
-delivered. The behavior changes at version 1.3.0, from delivering an
-error created by mocha that indicates improper usage of its API, to
-one of the errors passed by the client to the callback.  
+delivered. In particular, line 20 tests that the error message is a
+particular string. The behavior changes at version 1.3.0, from
+delivering an error created by mocha that indicates improper usage of
+its API, to one of the errors passed by the client to the callback.
 
 It is this case a breaking change, a new feature, or something else?
 We might consider that the exceptions thrown by mocha to its clients
@@ -137,7 +175,8 @@ are part of the API, and so this should be considered a breaking
 change.  Given that the test author's intent is unclear, we follow the
 test description, which mentions only the number of error events that
 should be delivered. Therefore, we considered {\em which} error event
-is delivered to be secret information, and removed it from the test.
+is delivered to be secret information, and removed it from the test
+simply by deleting line 20.
 
 \subsubsection{Failure 3: SemVer violation.}
 
@@ -186,41 +225,6 @@ its developers would be expected to be more ``pro-test'' than the
 average developer. For this reason, Mocha's test suite may not be
 representative of other test suites.
 
-\begin{figure*}
-\begin{lstlisting}
-describe('Runnable(title, fn)', function(){
-  describe('.run(fn)', function(){
-    describe('when async', function(){
-      describe('when the callback is invoked several times', function(){
-        describe('with an error', function(){
-          it('should emit a single "error" event', function(done){
-            var calls = 0;
-            var errCalls = 0;
-
-            var test = new Runnable('foo', function(done){
-              done(new Error('fail'));
-              process.nextTick(done);
-              done(new Error('fail'));
-              process.nextTick(done);
-              process.nextTick(done);
-            });
-
-            test.on('error', function(err){
-              ++errCalls;
-              err.message.should.equal('done() called multiple times');
-              calls.should.equal(1);
-              errCalls.should.equal(1);
-              done();
-            });
-
-            test.run(function(){
-              ++calls;
-            });
-          })
-        })
-\end{lstlisting}
-\caption{A failing mocha jsapi test}
-\end{figure*}
 
 \todo{Mocha `test-all` runs many tests multiple times. Runs all
   categories, individual tests are included in more than one
