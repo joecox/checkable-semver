@@ -15,6 +15,8 @@ plots := $(patsubst data/%.txt,graphics/%-plt.pdf,$(wildcard data/*.txt))
 graphics: $(plots)
 	@echo $(plots)
 
+graphics/combined-cumulative-plt.pdf: data/combined-cumulative.txt plots/combined-cumulative.gnuplot
+	gnuplot -e "data='$<'; outputfile='$@'; title='Combined Violations'" plots/combined-cumulative.gnuplot
 
 graphics/combined-violations-plt.pdf: data/combined-violations.txt plots/combined-violations.gnuplot
 	gnuplot -e "data='$<'; outputfile='$@'; title='Combined Violations'" plots/combined-violations.gnuplot

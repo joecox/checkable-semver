@@ -1,0 +1,5 @@
+import sys
+from ast import literal_eval
+for line in sys.stdin:
+    if line:
+        print literal_eval(line[:-1])

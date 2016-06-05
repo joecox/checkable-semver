@@ -1,0 +1,22 @@
+Runnable(title, fn) .run(fn) when async should allow updating the timeout
+Runnable(title, fn) .run(fn) when async when an exception is thrown should not throw its own exception if passed a non-object
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+Runner .checkGlobals(test) should emit "fail" when a single new disallowed global is introduced after a single extra global is allowed
+Runner .failHook(hoot, err) should emit "end"
+Runner .globalProps() should include common non enumerable globals
+Runner .globals() should white-list globals
+Runner .grep() should update the runner.total with number of matched tests
+Runner .grepTotal() should return the total number of matched tests
+Runner stackTrace shortStackTrace should prettify the stack-trace
+Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll
+Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach
+Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll
+Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach
+Suite .eachTest(fn) when there are no nested suites or tests should return 0
+Suite .eachTest(fn) when there are several levels of nested suites should return the number
+Suite .eachTest(fn) when there are several tests in the suite should return the number
+serial hooks "after all" hook
+timeouts disabling should work with timeout(0)
+timeouts disabling suite-level nested suite should work with timeout(0)
+timeouts disabling suite-level should work with timeout(0)
+timeouts disabling using enableTimeouts(false) should suppress timeout(4)

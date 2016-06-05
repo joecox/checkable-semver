@@ -1,0 +1,81 @@
+Array "after all" hook
+Base reporter Getting two strings should show strings diff as is
+Base reporter does not show diffs when showDiff property set
+Base reporter should not modify stack if it does not contain message
+Base reporter should not show diffs when showDiff property set
+Base reporter should not stringify strings
+Base reporter should show string diff as raw data
+Base reporter should use the inspect() property if `message` is not set
+Base reporter showDiff should show diffs by default
+Mocha should not output colors to pipe
+Runnable(title, fn) .run(fn) when async should allow updating the timeout
+Runnable(title, fn) .run(fn) when async when an exception is thrown should not throw its own exception if passed a non-object
+Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+Runner .checkGlobals(test) should emit "fail" when a single new disallowed global is introduced after a single extra global is allowed
+Runner .failHook(hoot, err) should emit "end"
+Runner .globalProps() should include common non enumerable globals
+Runner .globals() should white-list globals
+Runner .grep() should update the runner.total with number of matched tests
+Runner .grepTotal() should return the total number of matched tests
+Runner stackTrace shortStackTrace should prettify the stack-trace
+Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll
+Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach
+Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll
+Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach
+Suite .eachTest(fn) when there are no nested suites or tests should return 0
+Suite .eachTest(fn) when there are several levels of nested suites should return the number
+Suite .eachTest(fn) when there are several tests in the suite should return the number
+Test .clone() should copy the enableTimeouts value
+Test .clone() should copy the globals value
+diffs should display a diff for entire object dumps
+diffs should display a diff for medium strings
+diffs should display a diff for multi-line strings
+diffs should display a diff for small strings
+diffs should display a diff of canonicalized objects
+diffs should display a full-comparison with escaped special characters
+diffs should display a word diff for large strings
+diffs should display diff by data and not like an objects
+diffs should show value diffs and not be affected by commas
+diffs should work with objects
+http requests GET / should respond with hello
+http requests GET /users should respond with users
+http server GET / should respond with "hello"
+http server GET /users should respond with "tobi, loki, jane"
+http server GET /users when given Accept: application/json should respond with "["tobi","loki","jane"]"
+http should provide an example
+json reporter should have 1 test failure
+json reporter should have 1 test pending
+lib/utils lookupFiles should not choke on symlinks
+lib/utils stringify might get confusing
+lib/utils stringify should handle circular structures in arrays
+lib/utils stringify should handle circular structures in functions
+lib/utils stringify should handle circular structures in objects
+lib/utils stringify should handle circular structures
+lib/utils stringify should handle empty functions (with no properties)
+lib/utils stringify should handle functions
+lib/utils stringify should handle undefined values
+lib/utils stringify should handle various non-undefined, non-null, non-object, non-array, non-date, and non-function values
+lib/utils stringify should not freak out if it sees a primitive twice
+lib/utils stringify should return invalid Date object with .toString() + string prefix
+lib/utils stringify should stringify dates
+multiple calls to done() from a before hook correctly attributes the error
+multiple calls to done() from a before hook results in a failure
+multiple calls to done() from a beforeEach hook correctly attributes the errors
+multiple calls to done() from a beforeEach hook results in a failure
+options --bail should stop after the first error
+options --delay should throw an error if the test suite failed to run
+regressions should not duplicate mocha.opts args in process.argv
+reporters markdown contains spec src
+reporters markdown does not exceed maximum callstack (issue: 1875)
+reporters xunit prints test cases with --reporter-options output (issue: 1864)
+serial hooks "after all" hook
+test title
+timeout() should return the timeout
+timeouts disabling should work with timeout(0)
+timeouts disabling suite-level nested suite should work with timeout(0)
+timeouts disabling suite-level should work with timeout(0)
+timeouts disabling using enableTimeouts(false) should suppress timeout(4)
+title
+utils .stackTraceFilter() on browser does not strip out other bower_components and components
+utils .stackTraceFilter() on browser should strip out bower and components too
+utils .stackTraceFilter() on node should get a stack-trace as a string and prettify it

@@ -113,10 +113,17 @@ do
         echo "$version $breaking_viol $features_viol $((features_viol + breaking_viol))" >> $outfile
         echo "$version $cumulative" >> "$culfile"
     done
+
+    python2.7 unwrapper <$collector >results/cumulative-$target.txt
+
 done
+
 
 join $outfolder/violations-jsapi.txt \
     $outfolder/violations-all.txt \
     >$outfolder/combined-violations.txt
 
+join $outfolder/cumulative-jsapi.txt \
+    $outfolder/cumulative-all.txt \
+    >$outfolder/combined-cumulative.txt
 
