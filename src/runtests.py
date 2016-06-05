@@ -146,7 +146,7 @@ def main():
     if args.verbose == 2:
         logging.basicConfig(level=logging.DEBUG)
 
-    repo = git.Repository(args.repo_dir or os.getcwd())
+    repo = git.Repository(args.repository or os.getcwd())
     tr = TestRunner(args.test_dir, repo=repo, cache=args.cache) 
     deps = tr.run(args.impl, args.test, args.test_suite)
 
