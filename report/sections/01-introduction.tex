@@ -92,3 +92,27 @@ have;
 %by testing previous versions tests against the code the author is about to
 %commit. Our tool will detect any SemVer violations and give the author the
 %choice to either revert the API changes or push a major update.
+
+\begin{figure*}
+\begin{lstlisting}[language=javascript]
+describe('Runner', function(){
+  var suite, runner;
+
+  describe('.globals()', function(){
+    it('should default to the known globals', function(){
+      runner.globals().length.should.be.above(10);
+    })
+
+    it('should white-list globals', function(){
+      runner.globals(['foo', 'bar']);
+      runner.globals().should.include('foo');
+      runner.globals().should.include('bar');
+    })
+  })
+
+  ...
+})
+\end{lstlisting}
+
+\caption{Example API tests from mocha.js}
+\end{figure*}
