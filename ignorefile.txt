@@ -1,0 +1,3 @@
+Runner .globalProps() should include common non enumerable globals
+Runner .globals() should white-list globals
+Runnable(title, fn) .run(fn) when sync without error should invoke the callback
