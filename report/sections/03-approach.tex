@@ -76,19 +76,50 @@ $$ \text{Version} : \mathbb{N} \times \mathbb{N} \times \mathbb{N} $$
 
 \end{definition}
 
-We have chosen semantic versioning, because it is widely used in \emph{npm}, and
-\emph{bower} to describe package dependencies. \marktodo{Both package managers depend 
-heavily that dependencies follow the SemVer policy}{check this}. The problem is that
-currently is semantic versioning, based solely on the intuition of the library
-developers.  But developers can be wrong, and not assume that changes they have
-made is violating the interface. We can give some guarantees, that the
-implementation is following an interface which in turn is related to a semantic
-version. 
+We have chosen semantic versioning because it is a widely used
+convention for managing dependencies that evolve independently of
+their clients.
+%
+It is also encouraged and supported by package managers like
+\emph{npm}, and \emph{bower}.
+%
+\marktodo{Both package managers depend heavily on that dependencies
+  follow the SemVer policy}{check this. Matt's unsure about this.}.
+%
+There are several shortcomings with the current state of the
+practice. 
+%
+First, developers choose version numbers for a new release primarily
+based on intuition, which can be error-prone. What they consider to be
+a bugfix might actually change the behavior that their clients rely
+on.
+%
+A second problem can be seen as a consequence of the first. Clients
+are often suspicious of upgrades to some or all of their dependencies,
+and put strict constraints on them to prevent their package manager
+from installing untested dependencies. 
+%
+In systems containing many independently-maintained modules, this can
+lead to ``dependency hell''\cite{hell}, in which two modules depend on
+incompatible versions of a third module. \todo{A figure depicting dep
+  hell would be nice here. Something like ``Program contains modules A
+  and B. A depends on C version 1.X, B depends on C version 2.X''}{}
+%
+The root cause of these problems is an informal and often implicit
+descriptions of what ``the interface'' is, i.e. what the clients can
+depend over time.
+%
+Our approach solves this problem by using tests to describe an
+interface. Tests are expressive enough to specify behavioral contracts
+that are difficult or impossible to express in traditional
+specifications languages or type systems. They also allow us to build
+tools that can automatically check SemVer compliance, or recommend
+version numbers for new releases.
 
 Semantic versions talk about the relations between different releases of the
 same library. So to verify a semantic version, we have to associate it with an
-implementation and a specification. A release is  a tuple of a semantic
-version, an implementation and a specification.
+implementation and a specification. A release is a tuple of a version number,
+an implementation and a specification.
 $$ \text{Release} : \text{Ver} \times \text{Impl} \times \text{Spec} $$
 
 A release can only be validated in the context of a release history. A
