@@ -25,6 +25,9 @@ graphics/violations-%-plt.pdf: data/violations-%.txt plots/violations.gnuplot
 graphics/cumulative-%-plt.pdf: data/cumulative-%.txt plots/cumulative.gnuplot
 	gnuplot -e "data='$<'; outputfile='$@'; title='test-$*'" plots/cumulative.gnuplot
 
+graphics/simulation-plt.pdf: data/simulation.txt plots/simulation.gnuplot
+	gnuplot -e "data='$<'; outputfile='$@'; title='Simulation'" plots/simulation.gnuplot
+
 .PHONY: clean clean-aux
 clean:
 	rm -f report.pdf *.aux *.bbl *bcf *.blg *.log *.out *.tdo *.toc *.xdv *.synctex.gz *.fdb_latexmk *.fls *.run.xml *.lpc *.upa *.upb; \

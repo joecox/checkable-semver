@@ -1,0 +1,4 @@
+#!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+python2.7 "$DIR/src/analyse-sim.py" "$DIR/results/sim/simulation.txt" "$DIR/report/data/simulation.txt"
+
