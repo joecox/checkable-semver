@@ -82,10 +82,11 @@ for version in $versions
 do
     if [ -e cache/$version ]
     then
-        echo "bump baby 1 baby $version, yo"
+        echo "test baby test baby $version"
         ./bump $version -r mocha -d test -s jsapi --cache cache/$version |\
             grep -v '^Setup' >> results/eval/violations-jsapi.txt
         ./bump $version -r mocha -d test -s all --cache cache/$version |\
             grep -v '^Setup' >> results/eval/violations-all.txt
+        echo "all i wanna do is zooma zoom zoom zoom and a boom boom"
     fi
 done
