@@ -1,6 +1,6 @@
 import argparse
 import re
-
+import itertools
 import semver
 
 def main():
@@ -24,15 +24,28 @@ def main():
             m_actual = semver.parse(actual)
             m_sim = semver.parse(sim)
 
-            f_actual = float(".{0:02d}{1:02d}{2:02d}".format(*m_actual))
-            f_sim = float(".{0:02d}{1:02d}{2:02d}".format(*m_sim))
+            actual_data.append(m_actual)
+            sim_data.append(m_sim)
 
-            actual_data.append(f_actual)
-            sim_data.append(f_sim)
+    max_minor = {}
+    for v in (sim_data + actual_data):
+        old_max = max_minor.get(v[0], 0)
+        max_minor[v[0]] = max(v[1],old_max)
             
     with open(args.output_file, 'w') as fo:
         for i in range(len(sim_data)):
-            fo.write("{} {} {}\n".format(actual_data[i], actual_data[i], sim_data[i]))
+            simV = sim_data[i]
+            actV = actual_data[i]
+
+            simMinor = int(100 * float(simV[1])/(max_minor[simV[0]] + 1))
+            actMinor = int(100 * float(actV[1])/(max_minor[actV[0]] + 1))
+
+            f_actual = float("%02d.%02d" % (actV[0], actMinor))
+            f_sim = float("%02d.%02d" % (simV[0], simMinor))
+
+            print "SimVersion = %s, f_sim = %s, ActVersion = %s, f_actual = %s" % (simV, f_sim, actV, f_actual)
+            
+            fo.write("{} {} {}\n".format(f_actual, f_actual, f_sim))
 
 if __name__ == "__main__":
     main()
