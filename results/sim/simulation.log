@@ -1,0 +1,3012 @@
+INFO:root:Actual tag: 1.0.1
+INFO:root:Test sim: impl 1.0.0, test 1.0.1
+INFO:root:Run tests: implv 1.0.0, testv 1.0.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.0.1, test 1.0.0
+INFO:root:Run tests: implv 1.0.1, testv 1.0.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 1.0.1
+INFO:root:Actual tag: 1.0.2
+INFO:root:Test sim: impl 1.0.0, test 1.0.2
+INFO:root:Run tests: implv 1.0.0, testv 1.0.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.0.1, test 1.0.2
+INFO:root:Run tests: implv 1.0.1, testv 1.0.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.0.2, test 1.0.0
+INFO:root:Run tests: implv 1.0.2, testv 1.0.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.0.2, test 1.0.1
+INFO:root:Run tests: implv 1.0.2, testv 1.0.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 1.0.2
+INFO:root:Actual tag: 1.0.3
+INFO:root:Test sim: impl 1.0.0, test 1.0.3
+INFO:root:Run tests: implv 1.0.0, testv 1.0.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .grep() should update the runner.total with number of matched tests
+INFO:root:Runner .grepTotal() should return the total number of matched tests
+INFO:root:Suite .eachTest(fn) when there are no nested suites or tests should return 0
+INFO:root:Suite .eachTest(fn) when there are several levels of nested suites should return the number
+INFO:root:Suite .eachTest(fn) when there are several tests in the suite should return the number
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 1.0.1, test 1.0.3
+INFO:root:Run tests: implv 1.0.1, testv 1.0.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .grep() should update the runner.total with number of matched tests
+INFO:root:Runner .grepTotal() should return the total number of matched tests
+INFO:root:Suite .eachTest(fn) when there are no nested suites or tests should return 0
+INFO:root:Suite .eachTest(fn) when there are several levels of nested suites should return the number
+INFO:root:Suite .eachTest(fn) when there are several tests in the suite should return the number
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 1.0.2, test 1.0.3
+INFO:root:Run tests: implv 1.0.2, testv 1.0.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.0.3, test 1.0.0
+INFO:root:Run tests: implv 1.0.3, testv 1.0.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.0.3, test 1.0.1
+INFO:root:Run tests: implv 1.0.3, testv 1.0.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.0.3, test 1.0.2
+INFO:root:Run tests: implv 1.0.3, testv 1.0.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 1.1.0
+INFO:root:Actual tag: 1.1.0
+INFO:root:Test sim: impl 1.1.0, test 1.1.1
+INFO:root:Run tests: implv 1.0.3, testv 1.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.1, test 1.0.0
+INFO:root:Run tests: implv 1.1.0, testv 1.0.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.1, test 1.0.1
+INFO:root:Run tests: implv 1.1.0, testv 1.0.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.1, test 1.0.2
+INFO:root:Run tests: implv 1.1.0, testv 1.0.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.1, test 1.1.0
+INFO:root:Run tests: implv 1.1.0, testv 1.0.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 1.1.1
+INFO:root:Actual tag: 1.2.0
+INFO:root:Test sim: impl 1.1.0, test 1.1.2
+INFO:root:Run tests: implv 1.0.3, testv 1.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.1, test 1.1.2
+INFO:root:Run tests: implv 1.1.0, testv 1.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.2, test 1.0.0
+INFO:root:Run tests: implv 1.2.0, testv 1.0.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.2, test 1.0.1
+INFO:root:Run tests: implv 1.2.0, testv 1.0.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.2, test 1.0.2
+INFO:root:Run tests: implv 1.2.0, testv 1.0.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.2, test 1.1.0
+INFO:root:Run tests: implv 1.2.0, testv 1.0.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.2, test 1.1.1
+INFO:root:Run tests: implv 1.2.0, testv 1.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 1.1.2
+INFO:root:Actual tag: 1.2.1
+INFO:root:Test sim: impl 1.1.0, test 1.1.3
+INFO:root:Run tests: implv 1.0.3, testv 1.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when .pending should not invoke the callback
+INFO:root:Runnable(title, fn) .run(fn) when async when an error is passed should invoke the callback
+INFO:root:Runnable(title, fn) .run(fn) when async when an exception is thrown should invoke the callback
+INFO:root:Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+INFO:root:Runnable(title, fn) .run(fn) when async when the callback is invoked several times without an error should emit a single "error" event
+INFO:root:Runnable(title, fn) .run(fn) when async without error should invoke the callback
+INFO:root:Runnable(title, fn) .run(fn) when sync when an exception is thrown should invoke the callback
+INFO:root:Runnable(title, fn) .run(fn) when sync without error should invoke the callback
+INFO:root:Runner .checkGlobals(test) should allow variables that match a wildcard
+INFO:root:Runner .checkGlobals(test) should emit "fail" when a new global is introduced
+INFO:root:Runner .checkGlobals(test) should pluralize the error message when several are introduced
+INFO:root:global leaks should pass with wildcard
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 1.1.1, test 1.1.3
+INFO:root:Run tests: implv 1.1.0, testv 1.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .checkGlobals(test) should allow variables that match a wildcard
+INFO:root:Runner .checkGlobals(test) should emit "fail" when a new global is introduced
+INFO:root:Runner .checkGlobals(test) should pluralize the error message when several are introduced
+INFO:root:global leaks should pass with wildcard
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 1.1.2, test 1.1.3
+INFO:root:Run tests: implv 1.2.0, testv 1.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.3, test 1.0.0
+INFO:root:Run tests: implv 1.2.1, testv 1.0.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.3, test 1.0.1
+INFO:root:Run tests: implv 1.2.1, testv 1.0.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.3, test 1.0.2
+INFO:root:Run tests: implv 1.2.1, testv 1.0.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.3, test 1.1.0
+INFO:root:Run tests: implv 1.2.1, testv 1.0.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.3, test 1.1.1
+INFO:root:Run tests: implv 1.2.1, testv 1.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.1.3, test 1.1.2
+INFO:root:Run tests: implv 1.2.1, testv 1.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 1.2.0
+INFO:root:Actual tag: 1.2.2
+INFO:root:Test sim: impl 1.2.0, test 1.2.1
+INFO:root:Run tests: implv 1.2.1, testv 1.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.2.1, test 1.0.0
+INFO:root:Run tests: implv 1.2.2, testv 1.0.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.2.1, test 1.0.1
+INFO:root:Run tests: implv 1.2.2, testv 1.0.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.2.1, test 1.0.2
+INFO:root:Run tests: implv 1.2.2, testv 1.0.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.2.1, test 1.1.0
+INFO:root:Run tests: implv 1.2.2, testv 1.0.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.2.1, test 1.1.1
+INFO:root:Run tests: implv 1.2.2, testv 1.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.2.1, test 1.1.2
+INFO:root:Run tests: implv 1.2.2, testv 1.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 1.2.1, test 1.2.0
+INFO:root:Run tests: implv 1.2.2, testv 1.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 1.2.1
+INFO:root:Actual tag: 1.3.0
+INFO:root:Test sim: impl 1.2.0, test 1.2.2
+INFO:root:Run tests: implv 1.2.1, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+INFO:root:Runner .grep() should update the runner.total with number of matched tests when inverted
+INFO:root:Runner .grepTotal() should return the total number of matched tests when inverted
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 1.2.1, test 1.2.2
+INFO:root:Run tests: implv 1.2.2, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+INFO:root:Runner .grep() should update the runner.total with number of matched tests when inverted
+INFO:root:Runner .grepTotal() should return the total number of matched tests when inverted
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 1.2.2, test 1.0.0
+INFO:root:Run tests: implv 1.3.0, testv 1.0.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 1.2.2, test 1.0.1
+INFO:root:Run tests: implv 1.3.0, testv 1.0.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 1.2.2, test 1.0.2
+INFO:root:Run tests: implv 1.3.0, testv 1.0.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 1.2.2, test 1.1.0
+INFO:root:Run tests: implv 1.3.0, testv 1.0.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 1.2.2, test 1.1.1
+INFO:root:Run tests: implv 1.3.0, testv 1.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 1.2.2, test 1.1.2
+INFO:root:Run tests: implv 1.3.0, testv 1.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 1.2.2, test 1.2.0
+INFO:root:Run tests: implv 1.3.0, testv 1.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 1.2.2, test 1.2.1
+INFO:root:Run tests: implv 1.3.0, testv 1.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event
+INFO:root:Found violations [Done]
+INFO:root:Next tag: 2.0.0
+INFO:root:Actual tag: 1.3.1
+INFO:root:Test sim: impl 2.0.0, test 2.0.1
+INFO:root:Run tests: implv 1.3.0, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.1, test 2.0.0
+INFO:root:Run tests: implv 1.3.1, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.0.1
+INFO:root:Actual tag: 1.3.2
+INFO:root:Test sim: impl 2.0.0, test 2.0.2
+INFO:root:Run tests: implv 1.3.0, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.1, test 2.0.2
+INFO:root:Run tests: implv 1.3.1, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.2, test 2.0.0
+INFO:root:Run tests: implv 1.3.2, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.2, test 2.0.1
+INFO:root:Run tests: implv 1.3.2, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.0.2
+INFO:root:Actual tag: 1.4.0
+INFO:root:Test sim: impl 2.0.0, test 2.0.3
+INFO:root:Run tests: implv 1.3.0, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.1, test 2.0.3
+INFO:root:Run tests: implv 1.3.1, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.2, test 2.0.3
+INFO:root:Run tests: implv 1.3.2, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.3, test 2.0.0
+INFO:root:Run tests: implv 1.4.0, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.3, test 2.0.1
+INFO:root:Run tests: implv 1.4.0, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.3, test 2.0.2
+INFO:root:Run tests: implv 1.4.0, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.0.3
+INFO:root:Actual tag: 1.4.1
+INFO:root:Test sim: impl 2.0.0, test 2.0.4
+INFO:root:Run tests: implv 1.3.0, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.1, test 2.0.4
+INFO:root:Run tests: implv 1.3.1, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.2, test 2.0.4
+INFO:root:Run tests: implv 1.3.2, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.3, test 2.0.4
+INFO:root:Run tests: implv 1.4.0, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.4, test 2.0.0
+INFO:root:Run tests: implv 1.4.1, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.4, test 2.0.1
+INFO:root:Run tests: implv 1.4.1, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.4, test 2.0.2
+INFO:root:Run tests: implv 1.4.1, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.4, test 2.0.3
+INFO:root:Run tests: implv 1.4.1, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.0.4
+INFO:root:Actual tag: 1.4.2
+INFO:root:Test sim: impl 2.0.0, test 2.0.5
+INFO:root:Run tests: implv 1.3.0, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.1, test 2.0.5
+INFO:root:Run tests: implv 1.3.1, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.2, test 2.0.5
+INFO:root:Run tests: implv 1.3.2, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.3, test 2.0.5
+INFO:root:Run tests: implv 1.4.0, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.4, test 2.0.5
+INFO:root:Run tests: implv 1.4.1, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.5, test 2.0.0
+INFO:root:Run tests: implv 1.4.2, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.5, test 2.0.1
+INFO:root:Run tests: implv 1.4.2, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.5, test 2.0.2
+INFO:root:Run tests: implv 1.4.2, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.5, test 2.0.3
+INFO:root:Run tests: implv 1.4.2, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.5, test 2.0.4
+INFO:root:Run tests: implv 1.4.2, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.0.5
+INFO:root:Actual tag: 1.5.0
+INFO:root:Test sim: impl 2.0.0, test 2.0.6
+INFO:root:Run tests: implv 1.3.0, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Suite .addSuite() "before each" hook
+INFO:root:Suite .clone() should copy the slow value
+INFO:root:Suite .slow() when argument is passed should return the Suite object
+INFO:root:Suite .slow() when given a string should parse it
+INFO:root:Suite .slow() when no argument is passed should return the slow value
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.0.1, test 2.0.6
+INFO:root:Run tests: implv 1.3.1, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Suite .addSuite() "before each" hook
+INFO:root:Suite .clone() should copy the slow value
+INFO:root:Suite .slow() when argument is passed should return the Suite object
+INFO:root:Suite .slow() when given a string should parse it
+INFO:root:Suite .slow() when no argument is passed should return the slow value
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.0.2, test 2.0.6
+INFO:root:Run tests: implv 1.3.2, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Suite .addSuite() "before each" hook
+INFO:root:Suite .clone() should copy the slow value
+INFO:root:Suite .slow() when argument is passed should return the Suite object
+INFO:root:Suite .slow() when given a string should parse it
+INFO:root:Suite .slow() when no argument is passed should return the slow value
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.0.3, test 2.0.6
+INFO:root:Run tests: implv 1.4.0, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Suite .addSuite() "before each" hook
+INFO:root:Suite .clone() should copy the slow value
+INFO:root:Suite .slow() when argument is passed should return the Suite object
+INFO:root:Suite .slow() when given a string should parse it
+INFO:root:Suite .slow() when no argument is passed should return the slow value
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.0.4, test 2.0.6
+INFO:root:Run tests: implv 1.4.1, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Suite .addSuite() "before each" hook
+INFO:root:Suite .clone() should copy the slow value
+INFO:root:Suite .slow() when argument is passed should return the Suite object
+INFO:root:Suite .slow() when given a string should parse it
+INFO:root:Suite .slow() when no argument is passed should return the slow value
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.0.5, test 2.0.6
+INFO:root:Run tests: implv 1.4.2, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Suite .addSuite() "before each" hook
+INFO:root:Suite .clone() should copy the slow value
+INFO:root:Suite .slow() when argument is passed should return the Suite object
+INFO:root:Suite .slow() when given a string should parse it
+INFO:root:Suite .slow() when no argument is passed should return the slow value
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.0.6, test 2.0.0
+INFO:root:Run tests: implv 1.5.0, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.6, test 2.0.1
+INFO:root:Run tests: implv 1.5.0, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.6, test 2.0.2
+INFO:root:Run tests: implv 1.5.0, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.6, test 2.0.3
+INFO:root:Run tests: implv 1.5.0, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.6, test 2.0.4
+INFO:root:Run tests: implv 1.5.0, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.0.6, test 2.0.5
+INFO:root:Run tests: implv 1.5.0, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.1.0
+INFO:root:Actual tag: 1.6.0
+INFO:root:Test sim: impl 2.1.0, test 2.1.1
+INFO:root:Run tests: implv 1.5.0, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.1.1, test 2.0.0
+INFO:root:Run tests: implv 1.6.0, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.1.1, test 2.0.1
+INFO:root:Run tests: implv 1.6.0, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.1.1, test 2.0.2
+INFO:root:Run tests: implv 1.6.0, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.1.1, test 2.0.3
+INFO:root:Run tests: implv 1.6.0, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.1.1, test 2.0.4
+INFO:root:Run tests: implv 1.6.0, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.1.1, test 2.0.5
+INFO:root:Run tests: implv 1.6.0, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.1.1, test 2.1.0
+INFO:root:Run tests: implv 1.6.0, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.1.1
+INFO:root:Actual tag: 1.7.0
+INFO:root:Test sim: impl 2.1.0, test 2.1.2
+INFO:root:Run tests: implv 1.5.0, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:global leaks should pass when prefixed "mocha-"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.1.1, test 2.1.2
+INFO:root:Run tests: implv 1.6.0, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:global leaks should pass when prefixed "mocha-"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.1.2, test 2.0.0
+INFO:root:Run tests: implv 1.7.0, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.1.2, test 2.0.1
+INFO:root:Run tests: implv 1.7.0, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.1.2, test 2.0.2
+INFO:root:Run tests: implv 1.7.0, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.1.2, test 2.0.3
+INFO:root:Run tests: implv 1.7.0, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.1.2, test 2.0.4
+INFO:root:Run tests: implv 1.7.0, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.1.2, test 2.0.5
+INFO:root:Run tests: implv 1.7.0, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.1.2, test 2.1.0
+INFO:root:Run tests: implv 1.7.0, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.1.2, test 2.1.1
+INFO:root:Run tests: implv 1.7.0, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.2.0
+INFO:root:Actual tag: 1.7.1
+INFO:root:Test sim: impl 2.2.0, test 2.2.1
+INFO:root:Run tests: implv 1.7.0, testv 1.7.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.0.0
+INFO:root:Run tests: implv 1.7.1, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.0.1
+INFO:root:Run tests: implv 1.7.1, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.0.2
+INFO:root:Run tests: implv 1.7.1, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.0.3
+INFO:root:Run tests: implv 1.7.1, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.0.4
+INFO:root:Run tests: implv 1.7.1, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.0.5
+INFO:root:Run tests: implv 1.7.1, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.1.0
+INFO:root:Run tests: implv 1.7.1, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.1.1
+INFO:root:Run tests: implv 1.7.1, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.2.0
+INFO:root:Run tests: implv 1.7.1, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.2.1
+INFO:root:Actual tag: 1.7.2
+INFO:root:Test sim: impl 2.2.0, test 2.2.2
+INFO:root:Run tests: implv 1.7.0, testv 1.7.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.2.2
+INFO:root:Run tests: implv 1.7.1, testv 1.7.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.0.0
+INFO:root:Run tests: implv 1.7.2, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.0.1
+INFO:root:Run tests: implv 1.7.2, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.0.2
+INFO:root:Run tests: implv 1.7.2, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.0.3
+INFO:root:Run tests: implv 1.7.2, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.0.4
+INFO:root:Run tests: implv 1.7.2, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.0.5
+INFO:root:Run tests: implv 1.7.2, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.1.0
+INFO:root:Run tests: implv 1.7.2, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.1.1
+INFO:root:Run tests: implv 1.7.2, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.2.0
+INFO:root:Run tests: implv 1.7.2, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.2.1
+INFO:root:Run tests: implv 1.7.2, testv 1.7.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.2.2
+INFO:root:Actual tag: 1.7.3
+INFO:root:Test sim: impl 2.2.0, test 2.2.3
+INFO:root:Run tests: implv 1.7.0, testv 1.7.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.2.3
+INFO:root:Run tests: implv 1.7.1, testv 1.7.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.2.3
+INFO:root:Run tests: implv 1.7.2, testv 1.7.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.0.0
+INFO:root:Run tests: implv 1.7.3, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.0.1
+INFO:root:Run tests: implv 1.7.3, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.0.2
+INFO:root:Run tests: implv 1.7.3, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.0.3
+INFO:root:Run tests: implv 1.7.3, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.0.4
+INFO:root:Run tests: implv 1.7.3, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.0.5
+INFO:root:Run tests: implv 1.7.3, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.1.0
+INFO:root:Run tests: implv 1.7.3, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.1.1
+INFO:root:Run tests: implv 1.7.3, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.2.0
+INFO:root:Run tests: implv 1.7.3, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.2.1
+INFO:root:Run tests: implv 1.7.3, testv 1.7.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.2.2
+INFO:root:Run tests: implv 1.7.3, testv 1.7.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.2.3
+INFO:root:Actual tag: 1.7.4
+INFO:root:Test sim: impl 2.2.0, test 2.2.4
+INFO:root:Run tests: implv 1.7.0, testv 1.7.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.2.4
+INFO:root:Run tests: implv 1.7.1, testv 1.7.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.2.4
+INFO:root:Run tests: implv 1.7.2, testv 1.7.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.2.4
+INFO:root:Run tests: implv 1.7.3, testv 1.7.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.0.0
+INFO:root:Run tests: implv 1.7.4, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.0.1
+INFO:root:Run tests: implv 1.7.4, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.0.2
+INFO:root:Run tests: implv 1.7.4, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.0.3
+INFO:root:Run tests: implv 1.7.4, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.0.4
+INFO:root:Run tests: implv 1.7.4, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.0.5
+INFO:root:Run tests: implv 1.7.4, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.1.0
+INFO:root:Run tests: implv 1.7.4, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.1.1
+INFO:root:Run tests: implv 1.7.4, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.2.0
+INFO:root:Run tests: implv 1.7.4, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.2.1
+INFO:root:Run tests: implv 1.7.4, testv 1.7.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.2.2
+INFO:root:Run tests: implv 1.7.4, testv 1.7.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.2.3
+INFO:root:Run tests: implv 1.7.4, testv 1.7.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.2.4
+INFO:root:Actual tag: 1.8.0
+INFO:root:Test sim: impl 2.2.0, test 2.2.5
+INFO:root:Run tests: implv 1.7.0, testv 1.8.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.2.5
+INFO:root:Run tests: implv 1.7.1, testv 1.8.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.2.5
+INFO:root:Run tests: implv 1.7.2, testv 1.8.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.2.5
+INFO:root:Run tests: implv 1.7.3, testv 1.8.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.2.5
+INFO:root:Run tests: implv 1.7.4, testv 1.8.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.0.0
+INFO:root:Run tests: implv 1.8.0, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.0.1
+INFO:root:Run tests: implv 1.8.0, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.0.2
+INFO:root:Run tests: implv 1.8.0, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.0.3
+INFO:root:Run tests: implv 1.8.0, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.0.4
+INFO:root:Run tests: implv 1.8.0, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.0.5
+INFO:root:Run tests: implv 1.8.0, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.1.0
+INFO:root:Run tests: implv 1.8.0, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.1.1
+INFO:root:Run tests: implv 1.8.0, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.2.0
+INFO:root:Run tests: implv 1.8.0, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.2.1
+INFO:root:Run tests: implv 1.8.0, testv 1.7.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.2.2
+INFO:root:Run tests: implv 1.8.0, testv 1.7.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.2.3
+INFO:root:Run tests: implv 1.8.0, testv 1.7.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.2.4
+INFO:root:Run tests: implv 1.8.0, testv 1.7.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.2.5
+INFO:root:Actual tag: 1.8.1
+INFO:root:Test sim: impl 2.2.0, test 2.2.6
+INFO:root:Run tests: implv 1.7.0, testv 1.8.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.2.6
+INFO:root:Run tests: implv 1.7.1, testv 1.8.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.2.6
+INFO:root:Run tests: implv 1.7.2, testv 1.8.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.2.6
+INFO:root:Run tests: implv 1.7.3, testv 1.8.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.2.6
+INFO:root:Run tests: implv 1.7.4, testv 1.8.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.2.6
+INFO:root:Run tests: implv 1.8.0, testv 1.8.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.0.0
+INFO:root:Run tests: implv 1.8.1, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.0.1
+INFO:root:Run tests: implv 1.8.1, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.0.2
+INFO:root:Run tests: implv 1.8.1, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.0.3
+INFO:root:Run tests: implv 1.8.1, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.0.4
+INFO:root:Run tests: implv 1.8.1, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.0.5
+INFO:root:Run tests: implv 1.8.1, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.1.0
+INFO:root:Run tests: implv 1.8.1, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.1.1
+INFO:root:Run tests: implv 1.8.1, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.2.0
+INFO:root:Run tests: implv 1.8.1, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.2.1
+INFO:root:Run tests: implv 1.8.1, testv 1.7.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.2.2
+INFO:root:Run tests: implv 1.8.1, testv 1.7.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.2.3
+INFO:root:Run tests: implv 1.8.1, testv 1.7.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.2.4
+INFO:root:Run tests: implv 1.8.1, testv 1.7.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.2.5
+INFO:root:Run tests: implv 1.8.1, testv 1.8.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.2.6
+INFO:root:Actual tag: 1.8.2
+INFO:root:Test sim: impl 2.2.0, test 2.2.7
+INFO:root:Run tests: implv 1.7.0, testv 1.8.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.2.7
+INFO:root:Run tests: implv 1.7.1, testv 1.8.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.2.7
+INFO:root:Run tests: implv 1.7.2, testv 1.8.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.2.7
+INFO:root:Run tests: implv 1.7.3, testv 1.8.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.2.7
+INFO:root:Run tests: implv 1.7.4, testv 1.8.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.2.7
+INFO:root:Run tests: implv 1.8.0, testv 1.8.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.2.7
+INFO:root:Run tests: implv 1.8.1, testv 1.8.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.0.0
+INFO:root:Run tests: implv 1.8.2, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.0.1
+INFO:root:Run tests: implv 1.8.2, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.0.2
+INFO:root:Run tests: implv 1.8.2, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.0.3
+INFO:root:Run tests: implv 1.8.2, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.0.4
+INFO:root:Run tests: implv 1.8.2, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.0.5
+INFO:root:Run tests: implv 1.8.2, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.1.0
+INFO:root:Run tests: implv 1.8.2, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.1.1
+INFO:root:Run tests: implv 1.8.2, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.2.0
+INFO:root:Run tests: implv 1.8.2, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.2.1
+INFO:root:Run tests: implv 1.8.2, testv 1.7.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.2.2
+INFO:root:Run tests: implv 1.8.2, testv 1.7.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.2.3
+INFO:root:Run tests: implv 1.8.2, testv 1.7.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.2.4
+INFO:root:Run tests: implv 1.8.2, testv 1.7.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.2.5
+INFO:root:Run tests: implv 1.8.2, testv 1.8.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.2.6
+INFO:root:Run tests: implv 1.8.2, testv 1.8.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.2.7
+INFO:root:Actual tag: 1.9.0
+INFO:root:Test sim: impl 2.2.0, test 2.2.8
+INFO:root:Run tests: implv 1.7.0, testv 1.9.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.2.8
+INFO:root:Run tests: implv 1.7.1, testv 1.9.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.2.8
+INFO:root:Run tests: implv 1.7.2, testv 1.9.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.2.8
+INFO:root:Run tests: implv 1.7.3, testv 1.9.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.2.8
+INFO:root:Run tests: implv 1.7.4, testv 1.9.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.2.8
+INFO:root:Run tests: implv 1.8.0, testv 1.9.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.2.8
+INFO:root:Run tests: implv 1.8.1, testv 1.9.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.2.8
+INFO:root:Run tests: implv 1.8.2, testv 1.9.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.0.0
+INFO:root:Run tests: implv 1.9.0, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.0.1
+INFO:root:Run tests: implv 1.9.0, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.0.2
+INFO:root:Run tests: implv 1.9.0, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.0.3
+INFO:root:Run tests: implv 1.9.0, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.0.4
+INFO:root:Run tests: implv 1.9.0, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.0.5
+INFO:root:Run tests: implv 1.9.0, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.1.0
+INFO:root:Run tests: implv 1.9.0, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.1.1
+INFO:root:Run tests: implv 1.9.0, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.2.0
+INFO:root:Run tests: implv 1.9.0, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.2.1
+INFO:root:Run tests: implv 1.9.0, testv 1.7.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.2.2
+INFO:root:Run tests: implv 1.9.0, testv 1.7.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.2.3
+INFO:root:Run tests: implv 1.9.0, testv 1.7.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.2.4
+INFO:root:Run tests: implv 1.9.0, testv 1.7.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.2.5
+INFO:root:Run tests: implv 1.9.0, testv 1.8.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.2.6
+INFO:root:Run tests: implv 1.9.0, testv 1.8.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.2.7
+INFO:root:Run tests: implv 1.9.0, testv 1.8.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.2.8
+INFO:root:Actual tag: 1.10.0
+INFO:root:Test sim: impl 2.2.0, test 2.2.9
+INFO:root:Run tests: implv 1.7.0, testv 1.10.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.2.9
+INFO:root:Run tests: implv 1.7.1, testv 1.10.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.2.9
+INFO:root:Run tests: implv 1.7.2, testv 1.10.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.2.9
+INFO:root:Run tests: implv 1.7.3, testv 1.10.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.2.9
+INFO:root:Run tests: implv 1.7.4, testv 1.10.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.2.9
+INFO:root:Run tests: implv 1.8.0, testv 1.10.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.2.9
+INFO:root:Run tests: implv 1.8.1, testv 1.10.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.2.9
+INFO:root:Run tests: implv 1.8.2, testv 1.10.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.2.9
+INFO:root:Run tests: implv 1.9.0, testv 1.10.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.0.0
+INFO:root:Run tests: implv 1.10.0, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.0.1
+INFO:root:Run tests: implv 1.10.0, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.0.2
+INFO:root:Run tests: implv 1.10.0, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.0.3
+INFO:root:Run tests: implv 1.10.0, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.0.4
+INFO:root:Run tests: implv 1.10.0, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.0.5
+INFO:root:Run tests: implv 1.10.0, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.1.0
+INFO:root:Run tests: implv 1.10.0, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.1.1
+INFO:root:Run tests: implv 1.10.0, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.2.0
+INFO:root:Run tests: implv 1.10.0, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.2.1
+INFO:root:Run tests: implv 1.10.0, testv 1.7.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.2.2
+INFO:root:Run tests: implv 1.10.0, testv 1.7.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.2.3
+INFO:root:Run tests: implv 1.10.0, testv 1.7.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.2.4
+INFO:root:Run tests: implv 1.10.0, testv 1.7.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.2.5
+INFO:root:Run tests: implv 1.10.0, testv 1.8.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.2.6
+INFO:root:Run tests: implv 1.10.0, testv 1.8.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.2.7
+INFO:root:Run tests: implv 1.10.0, testv 1.8.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.2.8
+INFO:root:Run tests: implv 1.10.0, testv 1.9.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.2.9
+INFO:root:Actual tag: 1.11.0
+INFO:root:Test sim: impl 2.2.0, test 2.2.10
+INFO:root:Run tests: implv 1.7.0, testv 1.11.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.2.10
+INFO:root:Run tests: implv 1.7.1, testv 1.11.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.2.10
+INFO:root:Run tests: implv 1.7.2, testv 1.11.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.2.10
+INFO:root:Run tests: implv 1.7.3, testv 1.11.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.2.10
+INFO:root:Run tests: implv 1.7.4, testv 1.11.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.2.10
+INFO:root:Run tests: implv 1.8.0, testv 1.11.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.2.10
+INFO:root:Run tests: implv 1.8.1, testv 1.11.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.2.10
+INFO:root:Run tests: implv 1.8.2, testv 1.11.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.2.10
+INFO:root:Run tests: implv 1.9.0, testv 1.11.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.2.10
+INFO:root:Run tests: implv 1.10.0, testv 1.11.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.0.0
+INFO:root:Run tests: implv 1.11.0, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.0.1
+INFO:root:Run tests: implv 1.11.0, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.0.2
+INFO:root:Run tests: implv 1.11.0, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.0.3
+INFO:root:Run tests: implv 1.11.0, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.0.4
+INFO:root:Run tests: implv 1.11.0, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.0.5
+INFO:root:Run tests: implv 1.11.0, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.1.0
+INFO:root:Run tests: implv 1.11.0, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.1.1
+INFO:root:Run tests: implv 1.11.0, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.2.0
+INFO:root:Run tests: implv 1.11.0, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.2.1
+INFO:root:Run tests: implv 1.11.0, testv 1.7.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.2.2
+INFO:root:Run tests: implv 1.11.0, testv 1.7.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.2.3
+INFO:root:Run tests: implv 1.11.0, testv 1.7.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.2.4
+INFO:root:Run tests: implv 1.11.0, testv 1.7.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.2.5
+INFO:root:Run tests: implv 1.11.0, testv 1.8.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.2.6
+INFO:root:Run tests: implv 1.11.0, testv 1.8.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.2.7
+INFO:root:Run tests: implv 1.11.0, testv 1.8.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.2.8
+INFO:root:Run tests: implv 1.11.0, testv 1.9.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.2.9
+INFO:root:Run tests: implv 1.11.0, testv 1.10.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.2.10
+INFO:root:Actual tag: 1.12.0
+INFO:root:Test sim: impl 2.2.0, test 2.2.11
+INFO:root:Run tests: implv 1.7.0, testv 1.12.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:serial hooks "after all" hook
+INFO:root:serial hooks one
+INFO:root:serial hooks three
+INFO:root:serial hooks two
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.2.1, test 2.2.11
+INFO:root:Run tests: implv 1.7.1, testv 1.12.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:serial hooks "after all" hook
+INFO:root:serial hooks one
+INFO:root:serial hooks three
+INFO:root:serial hooks two
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.2.2, test 2.2.11
+INFO:root:Run tests: implv 1.7.2, testv 1.12.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:serial hooks "after all" hook
+INFO:root:serial hooks one
+INFO:root:serial hooks three
+INFO:root:serial hooks two
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.2.3, test 2.2.11
+INFO:root:Run tests: implv 1.7.3, testv 1.12.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:serial hooks "after all" hook
+INFO:root:serial hooks one
+INFO:root:serial hooks three
+INFO:root:serial hooks two
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.2.4, test 2.2.11
+INFO:root:Run tests: implv 1.7.4, testv 1.12.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:serial hooks "after all" hook
+INFO:root:serial hooks one
+INFO:root:serial hooks three
+INFO:root:serial hooks two
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.2.5, test 2.2.11
+INFO:root:Run tests: implv 1.8.0, testv 1.12.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:serial hooks "after all" hook
+INFO:root:serial hooks one
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.2.6, test 2.2.11
+INFO:root:Run tests: implv 1.8.1, testv 1.12.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:serial hooks "after all" hook
+INFO:root:serial hooks one
+INFO:root:serial hooks three
+INFO:root:serial hooks two
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.2.7, test 2.2.11
+INFO:root:Run tests: implv 1.8.2, testv 1.12.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:serial hooks "after all" hook
+INFO:root:serial hooks one
+INFO:root:serial hooks three
+INFO:root:serial hooks two
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.2.8, test 2.2.11
+INFO:root:Run tests: implv 1.9.0, testv 1.12.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:serial hooks "after all" hook
+INFO:root:serial hooks one
+INFO:root:serial hooks three
+INFO:root:serial hooks two
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.2.9, test 2.2.11
+INFO:root:Run tests: implv 1.10.0, testv 1.12.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.10, test 2.2.11
+INFO:root:Run tests: implv 1.11.0, testv 1.12.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.0.0
+INFO:root:Run tests: implv 1.12.0, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.0.1
+INFO:root:Run tests: implv 1.12.0, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.0.2
+INFO:root:Run tests: implv 1.12.0, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.0.3
+INFO:root:Run tests: implv 1.12.0, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.0.4
+INFO:root:Run tests: implv 1.12.0, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.0.5
+INFO:root:Run tests: implv 1.12.0, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.1.0
+INFO:root:Run tests: implv 1.12.0, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.1.1
+INFO:root:Run tests: implv 1.12.0, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.2.0
+INFO:root:Run tests: implv 1.12.0, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.2.1
+INFO:root:Run tests: implv 1.12.0, testv 1.7.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.2.2
+INFO:root:Run tests: implv 1.12.0, testv 1.7.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.2.3
+INFO:root:Run tests: implv 1.12.0, testv 1.7.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.2.4
+INFO:root:Run tests: implv 1.12.0, testv 1.7.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.2.5
+INFO:root:Run tests: implv 1.12.0, testv 1.8.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.2.6
+INFO:root:Run tests: implv 1.12.0, testv 1.8.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.2.7
+INFO:root:Run tests: implv 1.12.0, testv 1.8.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.2.8
+INFO:root:Run tests: implv 1.12.0, testv 1.9.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.2.9
+INFO:root:Run tests: implv 1.12.0, testv 1.10.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.2.11, test 2.2.10
+INFO:root:Run tests: implv 1.12.0, testv 1.11.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.3.0
+INFO:root:Actual tag: 1.12.1
+INFO:root:Test sim: impl 2.3.0, test 2.3.1
+INFO:root:Run tests: implv 1.12.0, testv 1.12.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.0.0
+INFO:root:Run tests: implv 1.12.1, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.0.1
+INFO:root:Run tests: implv 1.12.1, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.0.2
+INFO:root:Run tests: implv 1.12.1, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.0.3
+INFO:root:Run tests: implv 1.12.1, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.0.4
+INFO:root:Run tests: implv 1.12.1, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.0.5
+INFO:root:Run tests: implv 1.12.1, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.1.0
+INFO:root:Run tests: implv 1.12.1, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.1.1
+INFO:root:Run tests: implv 1.12.1, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.2.0
+INFO:root:Run tests: implv 1.12.1, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.2.1
+INFO:root:Run tests: implv 1.12.1, testv 1.7.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.2.2
+INFO:root:Run tests: implv 1.12.1, testv 1.7.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.2.3
+INFO:root:Run tests: implv 1.12.1, testv 1.7.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.2.4
+INFO:root:Run tests: implv 1.12.1, testv 1.7.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.2.5
+INFO:root:Run tests: implv 1.12.1, testv 1.8.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.2.6
+INFO:root:Run tests: implv 1.12.1, testv 1.8.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.2.7
+INFO:root:Run tests: implv 1.12.1, testv 1.8.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.2.8
+INFO:root:Run tests: implv 1.12.1, testv 1.9.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.2.9
+INFO:root:Run tests: implv 1.12.1, testv 1.10.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.2.10
+INFO:root:Run tests: implv 1.12.1, testv 1.11.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.3.0
+INFO:root:Run tests: implv 1.12.1, testv 1.12.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.3.1
+INFO:root:Actual tag: 1.13.0
+INFO:root:Test sim: impl 2.3.0, test 2.3.2
+INFO:root:Run tests: implv 1.12.0, testv 1.13.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.3.2
+INFO:root:Run tests: implv 1.12.1, testv 1.13.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.0.0
+INFO:root:Run tests: implv 1.13.0, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.0.1
+INFO:root:Run tests: implv 1.13.0, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.0.2
+INFO:root:Run tests: implv 1.13.0, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.0.3
+INFO:root:Run tests: implv 1.13.0, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.0.4
+INFO:root:Run tests: implv 1.13.0, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.0.5
+INFO:root:Run tests: implv 1.13.0, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.1.0
+INFO:root:Run tests: implv 1.13.0, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.1.1
+INFO:root:Run tests: implv 1.13.0, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.2.0
+INFO:root:Run tests: implv 1.13.0, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.2.1
+INFO:root:Run tests: implv 1.13.0, testv 1.7.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.2.2
+INFO:root:Run tests: implv 1.13.0, testv 1.7.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.2.3
+INFO:root:Run tests: implv 1.13.0, testv 1.7.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.2.4
+INFO:root:Run tests: implv 1.13.0, testv 1.7.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.2.5
+INFO:root:Run tests: implv 1.13.0, testv 1.8.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.2.6
+INFO:root:Run tests: implv 1.13.0, testv 1.8.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.2.7
+INFO:root:Run tests: implv 1.13.0, testv 1.8.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.2.8
+INFO:root:Run tests: implv 1.13.0, testv 1.9.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.2.9
+INFO:root:Run tests: implv 1.13.0, testv 1.10.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.2.10
+INFO:root:Run tests: implv 1.13.0, testv 1.11.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.3.0
+INFO:root:Run tests: implv 1.13.0, testv 1.12.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.3.1
+INFO:root:Run tests: implv 1.13.0, testv 1.12.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.3.2
+INFO:root:Actual tag: 1.14.0
+INFO:root:Test sim: impl 2.3.0, test 2.3.3
+INFO:root:Run tests: implv 1.12.0, testv 1.14.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async should allow updating the timeout
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.3.1, test 2.3.3
+INFO:root:Run tests: implv 1.12.1, testv 1.14.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async should allow updating the timeout
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.3.2, test 2.3.3
+INFO:root:Run tests: implv 1.13.0, testv 1.14.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async should allow updating the timeout
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.0.0
+INFO:root:Run tests: implv 1.14.0, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.0.1
+INFO:root:Run tests: implv 1.14.0, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.0.2
+INFO:root:Run tests: implv 1.14.0, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.0.3
+INFO:root:Run tests: implv 1.14.0, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.0.4
+INFO:root:Run tests: implv 1.14.0, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.0.5
+INFO:root:Run tests: implv 1.14.0, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.1.0
+INFO:root:Run tests: implv 1.14.0, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.1.1
+INFO:root:Run tests: implv 1.14.0, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.2.0
+INFO:root:Run tests: implv 1.14.0, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.2.1
+INFO:root:Run tests: implv 1.14.0, testv 1.7.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.2.2
+INFO:root:Run tests: implv 1.14.0, testv 1.7.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.2.3
+INFO:root:Run tests: implv 1.14.0, testv 1.7.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.2.4
+INFO:root:Run tests: implv 1.14.0, testv 1.7.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.2.5
+INFO:root:Run tests: implv 1.14.0, testv 1.8.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.2.6
+INFO:root:Run tests: implv 1.14.0, testv 1.8.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.2.7
+INFO:root:Run tests: implv 1.14.0, testv 1.8.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.2.8
+INFO:root:Run tests: implv 1.14.0, testv 1.9.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.2.9
+INFO:root:Run tests: implv 1.14.0, testv 1.10.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.2.10
+INFO:root:Run tests: implv 1.14.0, testv 1.11.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.3.0
+INFO:root:Run tests: implv 1.14.0, testv 1.12.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.3.1
+INFO:root:Run tests: implv 1.14.0, testv 1.12.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 2.3.3, test 2.3.2
+INFO:root:Run tests: implv 1.14.0, testv 1.13.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 2.4.0
+INFO:root:Actual tag: 1.15.0
+INFO:root:Test sim: impl 2.4.0, test 2.4.1
+INFO:root:Run tests: implv 1.14.0, testv 1.15.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hook, err) should not emit "end" if suite bail is not true
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.0.0
+INFO:root:Run tests: implv 1.15.0, testv 1.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.0.1
+INFO:root:Run tests: implv 1.15.0, testv 1.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.0.2
+INFO:root:Run tests: implv 1.15.0, testv 1.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.0.3
+INFO:root:Run tests: implv 1.15.0, testv 1.4.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.0.4
+INFO:root:Run tests: implv 1.15.0, testv 1.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.0.5
+INFO:root:Run tests: implv 1.15.0, testv 1.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.1.0
+INFO:root:Run tests: implv 1.15.0, testv 1.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.1.1
+INFO:root:Run tests: implv 1.15.0, testv 1.6.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.2.0
+INFO:root:Run tests: implv 1.15.0, testv 1.7.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.2.1
+INFO:root:Run tests: implv 1.15.0, testv 1.7.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.2.2
+INFO:root:Run tests: implv 1.15.0, testv 1.7.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.2.3
+INFO:root:Run tests: implv 1.15.0, testv 1.7.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.2.4
+INFO:root:Run tests: implv 1.15.0, testv 1.7.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.2.5
+INFO:root:Run tests: implv 1.15.0, testv 1.8.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.2.6
+INFO:root:Run tests: implv 1.15.0, testv 1.8.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.2.7
+INFO:root:Run tests: implv 1.15.0, testv 1.8.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.2.8
+INFO:root:Run tests: implv 1.15.0, testv 1.9.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.2.9
+INFO:root:Run tests: implv 1.15.0, testv 1.10.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.2.10
+INFO:root:Run tests: implv 1.15.0, testv 1.11.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.3.0
+INFO:root:Run tests: implv 1.15.0, testv 1.12.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.3.1
+INFO:root:Run tests: implv 1.15.0, testv 1.12.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.3.2
+INFO:root:Run tests: implv 1.15.0, testv 1.13.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 2.4.1, test 2.4.0
+INFO:root:Run tests: implv 1.15.0, testv 1.14.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async should allow updating the timeout
+INFO:root:Runner .failHook(hoot, err) should emit "end"
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Next tag: 3.0.0
+INFO:root:Actual tag: 1.15.1
+INFO:root:Test sim: impl 3.0.0, test 3.0.1
+INFO:root:Run tests: implv 1.15.0, testv 1.15.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 3.0.1, test 3.0.0
+INFO:root:Run tests: implv 1.15.1, testv 1.15.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Next tag: 4.0.0
+INFO:root:Actual tag: 1.16.0
+INFO:root:Test sim: impl 4.0.0, test 4.0.1
+INFO:root:Run tests: implv 1.15.1, testv 1.16.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) #globals should allow for whitelisting globals
+INFO:root:Runner .checkGlobals(test) should respect per test whitelisted globals
+INFO:root:Runner .checkGlobals(test) should respect per test whitelisted globals but still detect other leaks
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 4.0.1, test 4.0.0
+INFO:root:Run tests: implv 1.16.0, testv 1.15.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Next tag: 5.0.0
+INFO:root:Actual tag: 1.16.1
+INFO:root:Test sim: impl 5.0.0, test 5.0.1
+INFO:root:Run tests: implv 1.16.0, testv 1.16.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 5.0.1, test 5.0.0
+INFO:root:Run tests: implv 1.16.1, testv 1.16.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Next tag: 6.0.0
+INFO:root:Actual tag: 1.16.2
+INFO:root:Test sim: impl 6.0.0, test 6.0.1
+INFO:root:Run tests: implv 1.16.1, testv 1.16.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 6.0.1, test 6.0.0
+INFO:root:Run tests: implv 1.16.2, testv 1.16.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Next tag: 7.0.0
+INFO:root:Actual tag: 1.17.0
+INFO:root:Test sim: impl 7.0.0, test 7.0.1
+INFO:root:Run tests: implv 1.16.2, testv 1.17.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 7.0.1, test 7.0.0
+INFO:root:Run tests: implv 1.17.0, testv 1.16.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Next tag: 8.0.0
+INFO:root:Actual tag: 1.17.1
+INFO:root:Test sim: impl 8.0.0, test 8.0.1
+INFO:root:Run tests: implv 1.17.0, testv 1.17.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .checkGlobals(test) should emit "fail" when a single new disallowed global is introduced after a single extra global is allowed
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 8.0.1, test 8.0.0
+INFO:root:Run tests: implv 1.17.1, testv 1.17.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Next tag: 9.0.0
+INFO:root:Actual tag: 1.18.0
+INFO:root:Test sim: impl 9.0.0, test 9.0.1
+INFO:root:Run tests: implv 1.17.1, testv 1.18.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when fn returns a promise when the promise is rejected should invoke the callback
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Suite .afterAll() wraps the passed in function in a Hook appends title to hook
+INFO:root:Suite .afterEach() wraps the passed in function in a Hook appends title to hook
+INFO:root:Suite .beforeAll() wraps the passed in function in a Hook appends title to hook
+INFO:root:Suite .beforeEach() wraps the passed in function in a Hook appends title to hook
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 9.0.1, test 9.0.0
+INFO:root:Run tests: implv 1.18.0, testv 1.17.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Suite .afterAll() wraps the passed in function in a Hook adds it to _afterAll
+INFO:root:Suite .afterEach() wraps the passed in function in a Hook adds it to _afterEach
+INFO:root:Suite .beforeAll() wraps the passed in function in a Hook adds it to _beforeAll
+INFO:root:Suite .beforeEach() wraps the passed in function in a Hook adds it to _beforeEach
+INFO:root:Found violations [Done]
+INFO:root:Next tag: 10.0.0
+INFO:root:Actual tag: 1.18.1
+INFO:root:Test sim: impl 10.0.0, test 10.0.1
+INFO:root:Run tests: implv 1.18.0, testv 1.18.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 10.0.1, test 10.0.0
+INFO:root:Run tests: implv 1.18.1, testv 1.18.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Next tag: 11.0.0
+INFO:root:Actual tag: 1.18.2
+INFO:root:Test sim: impl 11.0.0, test 11.0.1
+INFO:root:Run tests: implv 1.18.1, testv 1.18.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 11.0.1, test 11.0.0
+INFO:root:Run tests: implv 1.18.2, testv 1.18.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Next tag: 12.0.0
+INFO:root:Actual tag: 1.19.0
+INFO:root:Test sim: impl 12.0.0, test 12.0.1
+INFO:root:Run tests: implv 1.18.2, testv 1.19.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 12.0.1, test 12.0.0
+INFO:root:Run tests: implv 1.19.0, testv 1.18.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Next tag: 13.0.0
+INFO:root:Actual tag: 1.20.0
+INFO:root:Test sim: impl 13.0.0, test 13.0.1
+INFO:root:Run tests: implv 1.19.0, testv 1.20.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 13.0.1, test 13.0.0
+INFO:root:Run tests: implv 1.20.0, testv 1.19.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Next tag: 14.0.0
+INFO:root:Actual tag: 1.20.1
+INFO:root:Test sim: impl 14.0.0, test 14.0.1
+INFO:root:Run tests: implv 1.20.0, testv 1.20.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 14.0.1, test 14.0.0
+INFO:root:Run tests: implv 1.20.1, testv 1.20.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .globalProps() should include common non enumerable globals
+INFO:root:Runner .globals() should white-list globals
+INFO:root:Found violations [Done]
+INFO:root:Next tag: 15.0.0
+INFO:root:Actual tag: 1.21.0
+INFO:root:Test sim: impl 15.0.0, test 15.0.1
+INFO:root:Run tests: implv 1.20.1, testv 1.21.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) #enableTimeouts(enabled) should set enabled
+INFO:root:Runnable(title, fn) .run(fn) when async when done() is invoked with a non-Error object should invoke the callback
+INFO:root:Runnable(title, fn) .run(fn) when fn returns a promise when the promise is rejected without a reason should invoke the callback
+INFO:root:Runnable(title, fn) .run(fn) when timeouts are disabled should not error with timeout
+INFO:root:timeouts disabling should allow overriding per-test
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 15.0.1, test 15.0.0
+INFO:root:Run tests: implv 1.21.0, testv 1.20.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 15.1.0
+INFO:root:Actual tag: 1.21.1
+INFO:root:Test sim: impl 15.1.0, test 15.1.1
+INFO:root:Run tests: implv 1.21.0, testv 1.21.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.1, test 15.0.0
+INFO:root:Run tests: implv 1.21.1, testv 1.20.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.1, test 15.1.0
+INFO:root:Run tests: implv 1.21.1, testv 1.21.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 15.1.1
+INFO:root:Actual tag: 1.21.2
+INFO:root:Test sim: impl 15.1.0, test 15.1.2
+INFO:root:Run tests: implv 1.21.0, testv 1.21.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.1, test 15.1.2
+INFO:root:Run tests: implv 1.21.1, testv 1.21.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.2, test 15.0.0
+INFO:root:Run tests: implv 1.21.2, testv 1.20.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.2, test 15.1.0
+INFO:root:Run tests: implv 1.21.2, testv 1.21.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.2, test 15.1.1
+INFO:root:Run tests: implv 1.21.2, testv 1.21.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 15.1.2
+INFO:root:Actual tag: 1.21.3
+INFO:root:Test sim: impl 15.1.0, test 15.1.3
+INFO:root:Run tests: implv 1.21.0, testv 1.21.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.1, test 15.1.3
+INFO:root:Run tests: implv 1.21.1, testv 1.21.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.2, test 15.1.3
+INFO:root:Run tests: implv 1.21.2, testv 1.21.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.3, test 15.0.0
+INFO:root:Run tests: implv 1.21.3, testv 1.20.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.3, test 15.1.0
+INFO:root:Run tests: implv 1.21.3, testv 1.21.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.3, test 15.1.1
+INFO:root:Run tests: implv 1.21.3, testv 1.21.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.3, test 15.1.2
+INFO:root:Run tests: implv 1.21.3, testv 1.21.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 15.1.3
+INFO:root:Actual tag: 1.21.4
+INFO:root:Test sim: impl 15.1.0, test 15.1.4
+INFO:root:Run tests: implv 1.21.0, testv 1.21.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:timeouts disabling should work with timeout(0)
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 15.1.1, test 15.1.4
+INFO:root:Run tests: implv 1.21.1, testv 1.21.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:timeouts disabling should work with timeout(0)
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 15.1.2, test 15.1.4
+INFO:root:Run tests: implv 1.21.2, testv 1.21.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:timeouts disabling should work with timeout(0)
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 15.1.3, test 15.1.4
+INFO:root:Run tests: implv 1.21.3, testv 1.21.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:timeouts disabling should work with timeout(0)
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 15.1.4, test 15.0.0
+INFO:root:Run tests: implv 1.21.4, testv 1.20.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.4, test 15.1.0
+INFO:root:Run tests: implv 1.21.4, testv 1.21.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.4, test 15.1.1
+INFO:root:Run tests: implv 1.21.4, testv 1.21.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.4, test 15.1.2
+INFO:root:Run tests: implv 1.21.4, testv 1.21.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.1.4, test 15.1.3
+INFO:root:Run tests: implv 1.21.4, testv 1.21.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 15.2.0
+INFO:root:Actual tag: 1.21.5
+INFO:root:Test sim: impl 15.2.0, test 15.2.1
+INFO:root:Run tests: implv 1.21.4, testv 1.21.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:timeouts disabling suite-level nested suite should work with timeout(0)
+INFO:root:timeouts disabling suite-level should work with timeout(0)
+INFO:root:timeouts disabling using enableTimeouts(false) should suppress timeout(4)
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 15.2.1, test 15.0.0
+INFO:root:Run tests: implv 1.21.5, testv 1.20.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.2.1, test 15.1.0
+INFO:root:Run tests: implv 1.21.5, testv 1.21.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.2.1, test 15.1.1
+INFO:root:Run tests: implv 1.21.5, testv 1.21.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.2.1, test 15.1.2
+INFO:root:Run tests: implv 1.21.5, testv 1.21.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.2.1, test 15.1.3
+INFO:root:Run tests: implv 1.21.5, testv 1.21.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.2.1, test 15.2.0
+INFO:root:Run tests: implv 1.21.5, testv 1.21.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 15.3.0
+INFO:root:Actual tag: 2.0.0
+INFO:root:Test sim: impl 15.3.0, test 15.3.1
+INFO:root:Run tests: implv 1.21.5, testv 2.0.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.1, test 15.0.0
+INFO:root:Run tests: implv 2.0.0, testv 1.20.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.1, test 15.1.0
+INFO:root:Run tests: implv 2.0.0, testv 1.21.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.1, test 15.1.1
+INFO:root:Run tests: implv 2.0.0, testv 1.21.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.1, test 15.1.2
+INFO:root:Run tests: implv 2.0.0, testv 1.21.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.1, test 15.1.3
+INFO:root:Run tests: implv 2.0.0, testv 1.21.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.1, test 15.2.0
+INFO:root:Run tests: implv 2.0.0, testv 1.21.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.1, test 15.3.0
+INFO:root:Run tests: implv 2.0.0, testv 1.21.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 15.3.1
+INFO:root:Actual tag: 2.0.1
+INFO:root:Test sim: impl 15.3.0, test 15.3.2
+INFO:root:Run tests: implv 1.21.5, testv 2.0.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.1, test 15.3.2
+INFO:root:Run tests: implv 2.0.0, testv 2.0.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.2, test 15.0.0
+INFO:root:Run tests: implv 2.0.1, testv 1.20.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.2, test 15.1.0
+INFO:root:Run tests: implv 2.0.1, testv 1.21.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.2, test 15.1.1
+INFO:root:Run tests: implv 2.0.1, testv 1.21.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.2, test 15.1.2
+INFO:root:Run tests: implv 2.0.1, testv 1.21.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.2, test 15.1.3
+INFO:root:Run tests: implv 2.0.1, testv 1.21.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.2, test 15.2.0
+INFO:root:Run tests: implv 2.0.1, testv 1.21.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.2, test 15.3.0
+INFO:root:Run tests: implv 2.0.1, testv 1.21.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.2, test 15.3.1
+INFO:root:Run tests: implv 2.0.1, testv 2.0.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 15.3.2
+INFO:root:Actual tag: 2.1.0
+INFO:root:Test sim: impl 15.3.0, test 15.3.3
+INFO:root:Run tests: implv 1.21.5, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when an exception is thrown should not throw its own exception if passed a non-object
+INFO:root:Runner .hook(name, fn) should execute hooks after failed test if suite bail is true
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 15.3.1, test 15.3.3
+INFO:root:Run tests: implv 2.0.0, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when an exception is thrown should not throw its own exception if passed a non-object
+INFO:root:Runner .hook(name, fn) should execute hooks after failed test if suite bail is true
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 15.3.2, test 15.3.3
+INFO:root:Run tests: implv 2.0.1, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when an exception is thrown should not throw its own exception if passed a non-object
+INFO:root:Runner .hook(name, fn) should execute hooks after failed test if suite bail is true
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 15.3.3, test 15.0.0
+INFO:root:Run tests: implv 2.1.0, testv 1.20.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.3, test 15.1.0
+INFO:root:Run tests: implv 2.1.0, testv 1.21.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.3, test 15.1.1
+INFO:root:Run tests: implv 2.1.0, testv 1.21.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.3, test 15.1.2
+INFO:root:Run tests: implv 2.1.0, testv 1.21.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.3, test 15.1.3
+INFO:root:Run tests: implv 2.1.0, testv 1.21.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.3, test 15.2.0
+INFO:root:Run tests: implv 2.1.0, testv 1.21.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 15.3.3, test 15.3.0
+INFO:root:Run tests: implv 2.1.0, testv 1.21.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when an exception is thrown should not throw its own exception if passed a non-object
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 15.3.3, test 15.3.1
+INFO:root:Run tests: implv 2.1.0, testv 2.0.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when an exception is thrown should not throw its own exception if passed a non-object
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 15.3.3, test 15.3.2
+INFO:root:Run tests: implv 2.1.0, testv 2.0.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when an exception is thrown should not throw its own exception if passed a non-object
+INFO:root:Found violations [Done]
+INFO:root:Next tag: 16.0.0
+INFO:root:Actual tag: 2.2.0
+INFO:root:Test sim: impl 16.0.0, test 16.0.1
+INFO:root:Run tests: implv 2.1.0, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner .fail(test, err) should emit a helpful message when failed with an Array
+INFO:root:Runner .fail(test, err) should emit a helpful message when failed with an Object
+INFO:root:skip in before "before all" hook
+INFO:root:skip in beforeEach "before each" hook
+INFO:root:skip in test should skip immediately
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.0.1, test 16.0.0
+INFO:root:Run tests: implv 2.2.0, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.1.0
+INFO:root:Actual tag: 2.2.1
+INFO:root:Test sim: impl 16.1.0, test 16.1.1
+INFO:root:Run tests: implv 2.2.0, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.1.1, test 16.0.0
+INFO:root:Run tests: implv 2.2.1, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.1.1, test 16.1.0
+INFO:root:Run tests: implv 2.2.1, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.1.1
+INFO:root:Actual tag: 2.2.2
+INFO:root:Test sim: impl 16.1.0, test 16.1.2
+INFO:root:Run tests: implv 2.2.0, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner stackTrace shortStackTrace should prettify the stack-trace
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.1.1, test 16.1.2
+INFO:root:Run tests: implv 2.2.1, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runner stackTrace shortStackTrace should prettify the stack-trace
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.1.2, test 16.0.0
+INFO:root:Run tests: implv 2.2.2, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.1.2, test 16.1.0
+INFO:root:Run tests: implv 2.2.2, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.1.2, test 16.1.1
+INFO:root:Run tests: implv 2.2.2, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.2.0
+INFO:root:Actual tag: 2.2.3
+INFO:root:Test sim: impl 16.2.0, test 16.2.1
+INFO:root:Run tests: implv 2.2.2, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.1, test 16.0.0
+INFO:root:Run tests: implv 2.2.3, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.1, test 16.1.0
+INFO:root:Run tests: implv 2.2.3, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.1, test 16.1.1
+INFO:root:Run tests: implv 2.2.3, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.1, test 16.2.0
+INFO:root:Run tests: implv 2.2.3, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.2.1
+INFO:root:Actual tag: 2.2.4
+INFO:root:Test sim: impl 16.2.0, test 16.2.2
+INFO:root:Run tests: implv 2.2.2, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.1, test 16.2.2
+INFO:root:Run tests: implv 2.2.3, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.2, test 16.0.0
+INFO:root:Run tests: implv 2.2.4, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.2, test 16.1.0
+INFO:root:Run tests: implv 2.2.4, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.2, test 16.1.1
+INFO:root:Run tests: implv 2.2.4, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.2, test 16.2.0
+INFO:root:Run tests: implv 2.2.4, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.2, test 16.2.1
+INFO:root:Run tests: implv 2.2.4, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.2.2
+INFO:root:Actual tag: 2.2.5
+INFO:root:Test sim: impl 16.2.0, test 16.2.3
+INFO:root:Run tests: implv 2.2.2, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.1, test 16.2.3
+INFO:root:Run tests: implv 2.2.3, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.2, test 16.2.3
+INFO:root:Run tests: implv 2.2.4, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.3, test 16.0.0
+INFO:root:Run tests: implv 2.2.5, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.3, test 16.1.0
+INFO:root:Run tests: implv 2.2.5, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.3, test 16.1.1
+INFO:root:Run tests: implv 2.2.5, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.3, test 16.2.0
+INFO:root:Run tests: implv 2.2.5, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.3, test 16.2.1
+INFO:root:Run tests: implv 2.2.5, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.3, test 16.2.2
+INFO:root:Run tests: implv 2.2.5, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.2.3
+INFO:root:Actual tag: 2.3.0
+INFO:root:Test sim: impl 16.2.0, test 16.2.4
+INFO:root:Run tests: implv 2.2.2, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when an exception is thrown and is allowed to remain uncaught throws an error when it is allowed
+INFO:root:Runnable(title, fn) .run(fn) when sync when an exception is thrown and is allowed to remain uncaught throws an error when it is allowed
+INFO:root:Runner .fail(test, err) should emit the error when failed with an Error-like object
+INFO:root:Runner .failHook(hook, err) should augment hook title with current test title
+INFO:root:Runner allowUncaught should allow unhandled errors to propagate through
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.2.1, test 16.2.4
+INFO:root:Run tests: implv 2.2.3, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when an exception is thrown and is allowed to remain uncaught throws an error when it is allowed
+INFO:root:Runnable(title, fn) .run(fn) when sync when an exception is thrown and is allowed to remain uncaught throws an error when it is allowed
+INFO:root:Runner .fail(test, err) should emit the error when failed with an Error-like object
+INFO:root:Runner .failHook(hook, err) should augment hook title with current test title
+INFO:root:Runner allowUncaught should allow unhandled errors to propagate through
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.2.2, test 16.2.4
+INFO:root:Run tests: implv 2.2.4, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when an exception is thrown and is allowed to remain uncaught throws an error when it is allowed
+INFO:root:Runnable(title, fn) .run(fn) when sync when an exception is thrown and is allowed to remain uncaught throws an error when it is allowed
+INFO:root:Runner .fail(test, err) should emit the error when failed with an Error-like object
+INFO:root:Runner .failHook(hook, err) should augment hook title with current test title
+INFO:root:Runner allowUncaught should allow unhandled errors to propagate through
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.2.3, test 16.2.4
+INFO:root:Run tests: implv 2.2.5, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) .run(fn) when async when an exception is thrown and is allowed to remain uncaught throws an error when it is allowed
+INFO:root:Runnable(title, fn) .run(fn) when sync when an exception is thrown and is allowed to remain uncaught throws an error when it is allowed
+INFO:root:Runner .fail(test, err) should emit the error when failed with an Error-like object
+INFO:root:Runner .failHook(hook, err) should augment hook title with current test title
+INFO:root:Runner allowUncaught should allow unhandled errors to propagate through
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.2.4, test 16.0.0
+INFO:root:Run tests: implv 2.3.0, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.4, test 16.1.0
+INFO:root:Run tests: implv 2.3.0, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.4, test 16.1.1
+INFO:root:Run tests: implv 2.3.0, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.4, test 16.2.0
+INFO:root:Run tests: implv 2.3.0, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.4, test 16.2.1
+INFO:root:Run tests: implv 2.3.0, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.4, test 16.2.2
+INFO:root:Run tests: implv 2.3.0, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.2.4, test 16.2.3
+INFO:root:Run tests: implv 2.3.0, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.3.0
+INFO:root:Actual tag: v2.3.1
+INFO:root:Test sim: impl 16.3.0, test 16.3.1
+INFO:root:Run tests: implv 2.3.0, testv v2.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.1, test 16.0.0
+INFO:root:Run tests: implv v2.3.1, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.1, test 16.1.0
+INFO:root:Run tests: implv v2.3.1, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.1, test 16.1.1
+INFO:root:Run tests: implv v2.3.1, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.1, test 16.2.0
+INFO:root:Run tests: implv v2.3.1, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.1, test 16.2.1
+INFO:root:Run tests: implv v2.3.1, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.1, test 16.2.2
+INFO:root:Run tests: implv v2.3.1, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.1, test 16.2.3
+INFO:root:Run tests: implv v2.3.1, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.1, test 16.3.0
+INFO:root:Run tests: implv v2.3.1, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.3.1
+INFO:root:Actual tag: v2.3.2
+INFO:root:Test sim: impl 16.3.0, test 16.3.2
+INFO:root:Run tests: implv 2.3.0, testv v2.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.1, test 16.3.2
+INFO:root:Run tests: implv v2.3.1, testv v2.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.2, test 16.0.0
+INFO:root:Run tests: implv v2.3.2, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.2, test 16.1.0
+INFO:root:Run tests: implv v2.3.2, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.2, test 16.1.1
+INFO:root:Run tests: implv v2.3.2, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.2, test 16.2.0
+INFO:root:Run tests: implv v2.3.2, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.2, test 16.2.1
+INFO:root:Run tests: implv v2.3.2, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.2, test 16.2.2
+INFO:root:Run tests: implv v2.3.2, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.2, test 16.2.3
+INFO:root:Run tests: implv v2.3.2, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.2, test 16.3.0
+INFO:root:Run tests: implv v2.3.2, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.2, test 16.3.1
+INFO:root:Run tests: implv v2.3.2, testv v2.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.3.2
+INFO:root:Actual tag: v2.3.3
+INFO:root:Test sim: impl 16.3.0, test 16.3.3
+INFO:root:Run tests: implv 2.3.0, testv v2.3.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.1, test 16.3.3
+INFO:root:Run tests: implv v2.3.1, testv v2.3.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.2, test 16.3.3
+INFO:root:Run tests: implv v2.3.2, testv v2.3.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.3, test 16.0.0
+INFO:root:Run tests: implv v2.3.3, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.3, test 16.1.0
+INFO:root:Run tests: implv v2.3.3, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.3, test 16.1.1
+INFO:root:Run tests: implv v2.3.3, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.3, test 16.2.0
+INFO:root:Run tests: implv v2.3.3, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.3, test 16.2.1
+INFO:root:Run tests: implv v2.3.3, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.3, test 16.2.2
+INFO:root:Run tests: implv v2.3.3, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.3, test 16.2.3
+INFO:root:Run tests: implv v2.3.3, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.3, test 16.3.0
+INFO:root:Run tests: implv v2.3.3, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.3, test 16.3.1
+INFO:root:Run tests: implv v2.3.3, testv v2.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.3, test 16.3.2
+INFO:root:Run tests: implv v2.3.3, testv v2.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.3.3
+INFO:root:Actual tag: 2.3.4
+INFO:root:Test sim: impl 16.3.0, test 16.3.4
+INFO:root:Run tests: implv 2.3.0, testv 2.3.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.1, test 16.3.4
+INFO:root:Run tests: implv v2.3.1, testv 2.3.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.2, test 16.3.4
+INFO:root:Run tests: implv v2.3.2, testv 2.3.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.3, test 16.3.4
+INFO:root:Run tests: implv v2.3.3, testv 2.3.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.4, test 16.0.0
+INFO:root:Run tests: implv 2.3.4, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.4, test 16.1.0
+INFO:root:Run tests: implv 2.3.4, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.4, test 16.1.1
+INFO:root:Run tests: implv 2.3.4, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.4, test 16.2.0
+INFO:root:Run tests: implv 2.3.4, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.4, test 16.2.1
+INFO:root:Run tests: implv 2.3.4, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.4, test 16.2.2
+INFO:root:Run tests: implv 2.3.4, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.4, test 16.2.3
+INFO:root:Run tests: implv 2.3.4, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.4, test 16.3.0
+INFO:root:Run tests: implv 2.3.4, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.4, test 16.3.1
+INFO:root:Run tests: implv 2.3.4, testv v2.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.4, test 16.3.2
+INFO:root:Run tests: implv 2.3.4, testv v2.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.4, test 16.3.3
+INFO:root:Run tests: implv 2.3.4, testv v2.3.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.3.4
+INFO:root:Actual tag: v2.4.1
+INFO:root:Test sim: impl 16.3.0, test 16.3.5
+INFO:root:Run tests: implv 2.3.0, testv v2.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) #retries(n) should set the number of retries
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.3.1, test 16.3.5
+INFO:root:Run tests: implv v2.3.1, testv v2.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) #retries(n) should set the number of retries
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.3.2, test 16.3.5
+INFO:root:Run tests: implv v2.3.2, testv v2.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) #retries(n) should set the number of retries
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.3.3, test 16.3.5
+INFO:root:Run tests: implv v2.3.3, testv v2.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) #retries(n) should set the number of retries
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.3.4, test 16.3.5
+INFO:root:Run tests: implv 2.3.4, testv v2.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Runnable(title, fn) #retries(n) should set the number of retries
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.3.5, test 16.0.0
+INFO:root:Run tests: implv v2.4.1, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.5, test 16.1.0
+INFO:root:Run tests: implv v2.4.1, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.5, test 16.1.1
+INFO:root:Run tests: implv v2.4.1, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.5, test 16.2.0
+INFO:root:Run tests: implv v2.4.1, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.5, test 16.2.1
+INFO:root:Run tests: implv v2.4.1, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.5, test 16.2.2
+INFO:root:Run tests: implv v2.4.1, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.5, test 16.2.3
+INFO:root:Run tests: implv v2.4.1, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.5, test 16.3.0
+INFO:root:Run tests: implv v2.4.1, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.5, test 16.3.1
+INFO:root:Run tests: implv v2.4.1, testv v2.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.5, test 16.3.2
+INFO:root:Run tests: implv v2.4.1, testv v2.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.5, test 16.3.3
+INFO:root:Run tests: implv v2.4.1, testv v2.3.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.3.5, test 16.3.4
+INFO:root:Run tests: implv v2.4.1, testv 2.3.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.4.0
+INFO:root:Actual tag: v2.4.2
+INFO:root:Test sim: impl 16.4.0, test 16.4.1
+INFO:root:Run tests: implv v2.4.1, testv v2.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.0.0
+INFO:root:Run tests: implv v2.4.2, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.1.0
+INFO:root:Run tests: implv v2.4.2, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.1.1
+INFO:root:Run tests: implv v2.4.2, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.2.0
+INFO:root:Run tests: implv v2.4.2, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.2.1
+INFO:root:Run tests: implv v2.4.2, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.2.2
+INFO:root:Run tests: implv v2.4.2, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.2.3
+INFO:root:Run tests: implv v2.4.2, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.3.0
+INFO:root:Run tests: implv v2.4.2, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.3.1
+INFO:root:Run tests: implv v2.4.2, testv v2.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.3.2
+INFO:root:Run tests: implv v2.4.2, testv v2.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.3.3
+INFO:root:Run tests: implv v2.4.2, testv v2.3.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.3.4
+INFO:root:Run tests: implv v2.4.2, testv 2.3.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.4.0
+INFO:root:Run tests: implv v2.4.2, testv v2.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.4.1
+INFO:root:Actual tag: v2.4.3
+INFO:root:Test sim: impl 16.4.0, test 16.4.2
+INFO:root:Run tests: implv v2.4.1, testv v2.4.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.4.2
+INFO:root:Run tests: implv v2.4.2, testv v2.4.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.0.0
+INFO:root:Run tests: implv v2.4.3, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.1.0
+INFO:root:Run tests: implv v2.4.3, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.1.1
+INFO:root:Run tests: implv v2.4.3, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.2.0
+INFO:root:Run tests: implv v2.4.3, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.2.1
+INFO:root:Run tests: implv v2.4.3, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.2.2
+INFO:root:Run tests: implv v2.4.3, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.2.3
+INFO:root:Run tests: implv v2.4.3, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.3.0
+INFO:root:Run tests: implv v2.4.3, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.3.1
+INFO:root:Run tests: implv v2.4.3, testv v2.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.3.2
+INFO:root:Run tests: implv v2.4.3, testv v2.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.3.3
+INFO:root:Run tests: implv v2.4.3, testv v2.3.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.3.4
+INFO:root:Run tests: implv v2.4.3, testv 2.3.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.4.0
+INFO:root:Run tests: implv v2.4.3, testv v2.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.4.1
+INFO:root:Run tests: implv v2.4.3, testv v2.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.4.2
+INFO:root:Actual tag: v2.4.4
+INFO:root:Test sim: impl 16.4.0, test 16.4.3
+INFO:root:Run tests: implv v2.4.1, testv v2.4.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.4.3
+INFO:root:Run tests: implv v2.4.2, testv v2.4.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.4.3
+INFO:root:Run tests: implv v2.4.3, testv v2.4.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.0.0
+INFO:root:Run tests: implv v2.4.4, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.1.0
+INFO:root:Run tests: implv v2.4.4, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.1.1
+INFO:root:Run tests: implv v2.4.4, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.2.0
+INFO:root:Run tests: implv v2.4.4, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.2.1
+INFO:root:Run tests: implv v2.4.4, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.2.2
+INFO:root:Run tests: implv v2.4.4, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.2.3
+INFO:root:Run tests: implv v2.4.4, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.3.0
+INFO:root:Run tests: implv v2.4.4, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.3.1
+INFO:root:Run tests: implv v2.4.4, testv v2.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.3.2
+INFO:root:Run tests: implv v2.4.4, testv v2.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.3.3
+INFO:root:Run tests: implv v2.4.4, testv v2.3.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.3.4
+INFO:root:Run tests: implv v2.4.4, testv 2.3.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.4.0
+INFO:root:Run tests: implv v2.4.4, testv v2.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.4.1
+INFO:root:Run tests: implv v2.4.4, testv v2.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.4.2
+INFO:root:Run tests: implv v2.4.4, testv v2.4.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.4.3
+INFO:root:Actual tag: v2.4.5
+INFO:root:Test sim: impl 16.4.0, test 16.4.4
+INFO:root:Run tests: implv v2.4.1, testv v2.4.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.4.4
+INFO:root:Run tests: implv v2.4.2, testv v2.4.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.4.4
+INFO:root:Run tests: implv v2.4.3, testv v2.4.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.4.4
+INFO:root:Run tests: implv v2.4.4, testv v2.4.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.0.0
+INFO:root:Run tests: implv v2.4.5, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.1.0
+INFO:root:Run tests: implv v2.4.5, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.1.1
+INFO:root:Run tests: implv v2.4.5, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.2.0
+INFO:root:Run tests: implv v2.4.5, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.2.1
+INFO:root:Run tests: implv v2.4.5, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.2.2
+INFO:root:Run tests: implv v2.4.5, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.2.3
+INFO:root:Run tests: implv v2.4.5, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.3.0
+INFO:root:Run tests: implv v2.4.5, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.3.1
+INFO:root:Run tests: implv v2.4.5, testv v2.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.3.2
+INFO:root:Run tests: implv v2.4.5, testv v2.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.3.3
+INFO:root:Run tests: implv v2.4.5, testv v2.3.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.3.4
+INFO:root:Run tests: implv v2.4.5, testv 2.3.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.4.0
+INFO:root:Run tests: implv v2.4.5, testv v2.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.4.1
+INFO:root:Run tests: implv v2.4.5, testv v2.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.4.2
+INFO:root:Run tests: implv v2.4.5, testv v2.4.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.4.3
+INFO:root:Run tests: implv v2.4.5, testv v2.4.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.4.4
+INFO:root:Actual tag: v2.5.0
+INFO:root:Test sim: impl 16.4.0, test 16.4.5
+INFO:root:Run tests: implv v2.4.1, testv v2.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Suite .addSuite() treats suite as pending if its parent is pending
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.4.1, test 16.4.5
+INFO:root:Run tests: implv v2.4.2, testv v2.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Suite .addSuite() treats suite as pending if its parent is pending
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.4.2, test 16.4.5
+INFO:root:Run tests: implv v2.4.3, testv v2.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Suite .addSuite() treats suite as pending if its parent is pending
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.4.3, test 16.4.5
+INFO:root:Run tests: implv v2.4.4, testv v2.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Suite .addSuite() treats suite as pending if its parent is pending
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.4.4, test 16.4.5
+INFO:root:Run tests: implv v2.4.5, testv v2.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Found violations:
+INFO:root:Suite .addSuite() treats suite as pending if its parent is pending
+INFO:root:Found violations [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.0.0
+INFO:root:Run tests: implv v2.5.0, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.1.0
+INFO:root:Run tests: implv v2.5.0, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.1.1
+INFO:root:Run tests: implv v2.5.0, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.2.0
+INFO:root:Run tests: implv v2.5.0, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.2.1
+INFO:root:Run tests: implv v2.5.0, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.2.2
+INFO:root:Run tests: implv v2.5.0, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.2.3
+INFO:root:Run tests: implv v2.5.0, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.3.0
+INFO:root:Run tests: implv v2.5.0, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.3.1
+INFO:root:Run tests: implv v2.5.0, testv v2.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.3.2
+INFO:root:Run tests: implv v2.5.0, testv v2.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.3.3
+INFO:root:Run tests: implv v2.5.0, testv v2.3.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.3.4
+INFO:root:Run tests: implv v2.5.0, testv 2.3.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.4.0
+INFO:root:Run tests: implv v2.5.0, testv v2.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.4.1
+INFO:root:Run tests: implv v2.5.0, testv v2.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.4.2
+INFO:root:Run tests: implv v2.5.0, testv v2.4.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.4.3
+INFO:root:Run tests: implv v2.5.0, testv v2.4.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.4.5, test 16.4.4
+INFO:root:Run tests: implv v2.5.0, testv v2.4.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.5.0
+INFO:root:Actual tag: v2.5.1
+INFO:root:Test sim: impl 16.5.0, test 16.5.1
+INFO:root:Run tests: implv v2.5.0, testv v2.5.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.0.0
+INFO:root:Run tests: implv v2.5.1, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.1.0
+INFO:root:Run tests: implv v2.5.1, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.1.1
+INFO:root:Run tests: implv v2.5.1, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.2.0
+INFO:root:Run tests: implv v2.5.1, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.2.1
+INFO:root:Run tests: implv v2.5.1, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.2.2
+INFO:root:Run tests: implv v2.5.1, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.2.3
+INFO:root:Run tests: implv v2.5.1, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.3.0
+INFO:root:Run tests: implv v2.5.1, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.3.1
+INFO:root:Run tests: implv v2.5.1, testv v2.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.3.2
+INFO:root:Run tests: implv v2.5.1, testv v2.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.3.3
+INFO:root:Run tests: implv v2.5.1, testv v2.3.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.3.4
+INFO:root:Run tests: implv v2.5.1, testv 2.3.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.4.0
+INFO:root:Run tests: implv v2.5.1, testv v2.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.4.1
+INFO:root:Run tests: implv v2.5.1, testv v2.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.4.2
+INFO:root:Run tests: implv v2.5.1, testv v2.4.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.4.3
+INFO:root:Run tests: implv v2.5.1, testv v2.4.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.4.4
+INFO:root:Run tests: implv v2.5.1, testv v2.4.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.5.0
+INFO:root:Run tests: implv v2.5.1, testv v2.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.5.1
+INFO:root:Actual tag: v2.5.2
+INFO:root:Test sim: impl 16.5.0, test 16.5.2
+INFO:root:Run tests: implv v2.5.0, testv v2.5.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.5.2
+INFO:root:Run tests: implv v2.5.1, testv v2.5.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.0.0
+INFO:root:Run tests: implv v2.5.2, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.1.0
+INFO:root:Run tests: implv v2.5.2, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.1.1
+INFO:root:Run tests: implv v2.5.2, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.2.0
+INFO:root:Run tests: implv v2.5.2, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.2.1
+INFO:root:Run tests: implv v2.5.2, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.2.2
+INFO:root:Run tests: implv v2.5.2, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.2.3
+INFO:root:Run tests: implv v2.5.2, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.3.0
+INFO:root:Run tests: implv v2.5.2, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.3.1
+INFO:root:Run tests: implv v2.5.2, testv v2.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.3.2
+INFO:root:Run tests: implv v2.5.2, testv v2.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.3.3
+INFO:root:Run tests: implv v2.5.2, testv v2.3.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.3.4
+INFO:root:Run tests: implv v2.5.2, testv 2.3.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.4.0
+INFO:root:Run tests: implv v2.5.2, testv v2.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.4.1
+INFO:root:Run tests: implv v2.5.2, testv v2.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.4.2
+INFO:root:Run tests: implv v2.5.2, testv v2.4.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.4.3
+INFO:root:Run tests: implv v2.5.2, testv v2.4.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.4.4
+INFO:root:Run tests: implv v2.5.2, testv v2.4.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.5.0
+INFO:root:Run tests: implv v2.5.2, testv v2.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.5.1
+INFO:root:Run tests: implv v2.5.2, testv v2.5.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.5.2
+INFO:root:Actual tag: v2.5.3
+INFO:root:Test sim: impl 16.5.0, test 16.5.3
+INFO:root:Run tests: implv v2.5.0, testv v2.5.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.1, test 16.5.3
+INFO:root:Run tests: implv v2.5.1, testv v2.5.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.2, test 16.5.3
+INFO:root:Run tests: implv v2.5.2, testv v2.5.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.0.0
+INFO:root:Run tests: implv v2.5.3, testv 2.1.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.1.0
+INFO:root:Run tests: implv v2.5.3, testv 2.2.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.1.1
+INFO:root:Run tests: implv v2.5.3, testv 2.2.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.2.0
+INFO:root:Run tests: implv v2.5.3, testv 2.2.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.2.1
+INFO:root:Run tests: implv v2.5.3, testv 2.2.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.2.2
+INFO:root:Run tests: implv v2.5.3, testv 2.2.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.2.3
+INFO:root:Run tests: implv v2.5.3, testv 2.2.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.3.0
+INFO:root:Run tests: implv v2.5.3, testv 2.3.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.3.1
+INFO:root:Run tests: implv v2.5.3, testv v2.3.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.3.2
+INFO:root:Run tests: implv v2.5.3, testv v2.3.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.3.3
+INFO:root:Run tests: implv v2.5.3, testv v2.3.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.3.4
+INFO:root:Run tests: implv v2.5.3, testv 2.3.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.4.0
+INFO:root:Run tests: implv v2.5.3, testv v2.4.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.4.1
+INFO:root:Run tests: implv v2.5.3, testv v2.4.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.4.2
+INFO:root:Run tests: implv v2.5.3, testv v2.4.3, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.4.3
+INFO:root:Run tests: implv v2.5.3, testv v2.4.4, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.4.4
+INFO:root:Run tests: implv v2.5.3, testv v2.4.5, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.5.0
+INFO:root:Run tests: implv v2.5.3, testv v2.5.0, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.5.1
+INFO:root:Run tests: implv v2.5.3, testv v2.5.1, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Test sim: impl 16.5.3, test 16.5.2
+INFO:root:Run tests: implv v2.5.3, testv v2.5.2, suite "jsapi"
+INFO:root:Run tests [Done]
+INFO:root:Next tag: 16.5.3
+A1.0.1,S1.0.1
+A1.0.2,S1.0.2
+A1.0.3,S1.1.0
+A1.1.0,S1.1.1
+A1.2.0,S1.1.2
+A1.2.1,S1.2.0
+A1.2.2,S1.2.1
+A1.3.0,S2.0.0
+A1.3.1,S2.0.1
+A1.3.2,S2.0.2
+A1.4.0,S2.0.3
+A1.4.1,S2.0.4
+A1.4.2,S2.0.5
+A1.5.0,S2.1.0
+A1.6.0,S2.1.1
+A1.7.0,S2.2.0
+A1.7.1,S2.2.1
+A1.7.2,S2.2.2
+A1.7.3,S2.2.3
+A1.7.4,S2.2.4
+A1.8.0,S2.2.5
+A1.8.1,S2.2.6
+A1.8.2,S2.2.7
+A1.9.0,S2.2.8
+A1.10.0,S2.2.9
+A1.11.0,S2.2.10
+A1.12.0,S2.3.0
+A1.12.1,S2.3.1
+A1.13.0,S2.3.2
+A1.14.0,S2.4.0
+A1.15.0,S3.0.0
+A1.15.1,S4.0.0
+A1.16.0,S5.0.0
+A1.16.1,S6.0.0
+A1.16.2,S7.0.0
+A1.17.0,S8.0.0
+A1.17.1,S9.0.0
+A1.18.0,S10.0.0
+A1.18.1,S11.0.0
+A1.18.2,S12.0.0
+A1.19.0,S13.0.0
+A1.20.0,S14.0.0
+A1.20.1,S15.0.0
+A1.21.0,S15.1.0
+A1.21.1,S15.1.1
+A1.21.2,S15.1.2
+A1.21.3,S15.1.3
+A1.21.4,S15.2.0
+A1.21.5,S15.3.0
+A2.0.0,S15.3.1
+A2.0.1,S15.3.2
+A2.1.0,S16.0.0
+A2.2.0,S16.1.0
+A2.2.1,S16.1.1
+A2.2.2,S16.2.0
+A2.2.3,S16.2.1
+A2.2.4,S16.2.2
+A2.2.5,S16.2.3
+A2.3.0,S16.3.0
+Av2.3.1,S16.3.1
+Av2.3.2,S16.3.2
+Av2.3.3,S16.3.3
+A2.3.4,S16.3.4
+Av2.4.1,S16.4.0
+Av2.4.2,S16.4.1
+Av2.4.3,S16.4.2
+Av2.4.4,S16.4.3
+Av2.4.5,S16.4.4
+Av2.5.0,S16.5.0
+Av2.5.1,S16.5.1
+Av2.5.2,S16.5.2
+Av2.5.3,S16.5.3
