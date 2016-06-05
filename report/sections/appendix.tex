@@ -1,0 +1,45 @@
+\section{Appendix}
+This appendix describes how to run our tools to generate
+results. Please note that reproducing all the results is extremely
+CPU intensive and will take multiple hours.
+
+To download the code, clone the repository at
+\begin{center}
+  {\tt https://github.com/joecox/checkable-semver}
+\end{center}
+
+You will also need to clone Mocha at
+\begin{center}
+  {\tt https://github.com/mochajs/mocha}
+\end{center}
+
+\subsection{Running {\large {\tt detect}}}
+
+The {\tt detect} tool takes a number of options, including a version
+tag, the name of the test directory, the path to the repository you
+are testing, and the test suite to run. To find violations on version
+$v$, use the command
+
+\begin{center}
+  {\tt ./detect \$v -d test -r <mocha\_dir> -s jsapi}
+\end{center}
+where \$v is a variable assigned to a version tag, such as {\tt
+  1.2.0}. This will run the relevant Add Feature tests and Breaking
+Change tests and report any violations.
+
+If you wish to generate all violations (which provides the data for
+figures \ref{fig:violations} and \ref{fig:cumulative}), run the
+commands
+
+\begin{center}
+  {\tt ./setup-all-the-tests.sh}
+\end{center}
+\begin{center}
+  {\tt ./run-all-the-tests.sh}
+\end{center}
+Please note that this will take several hours and is both CPU and
+disk-intensive.
+
+\subsection{Running {\large {\tt simulate}}}
+
+The {\tt simulate} tool also takes a number options.

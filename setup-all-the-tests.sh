@@ -82,6 +82,6 @@ for version in $versions
 do
     if [ ! -e cache/$version ]
     then
-        ./bump $version -r mocha -d test -s jsapi --cache cache/$version --setup-only
+        ./detect $version -r mocha -d test -s jsapi --cache cache/$version --setup-only
     fi
 done
