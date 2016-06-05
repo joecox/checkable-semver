@@ -75,6 +75,20 @@ v2.5.1 \
 v2.5.2 \
 v2.5.3"
 
+function go {
+    version=$1
+    suite=$2
+    log=$3
+
+    if [ ! -e $log ]
+    then
+        tmp=$(mktemp)
+        ./bump $version -r mocha -d test -s $suite --cache cache/$version |\
+            grep -v '^Setup' > $tmp
+        mv $tmp $log
+    fi
+}
+
 N=0
 for version in $versions
 do
@@ -82,10 +96,11 @@ do
     if [ -e cache/$version ]
     then
         echo "test baby test baby $version"
-        ./bump $version -r mocha -d test -s jsapi --cache cache/$version |\
-            grep -v '^Setup' > results/eval/violations-jsapi-$NStr-$version.txt
-        ./bump $version -r mocha -d test -s all --cache cache/$version |\
-            grep -v '^Setup' > results/eval/violations-all-$NStr-$version.txt
+        go $version jsapi results/eval/violations-jsapi-$NStr-$version.txt
+        go $version all results/eval/violations-all-$NStr-$version.txt
     fi
     N=$((N+1))
 done
+
+cat results/eval/violations-jsapi-*.txt > results/eval/violations-jsapi.txt
+cat results/eval/violations-all-*.txt > results/eval/violations-all.txt
