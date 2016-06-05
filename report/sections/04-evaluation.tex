@@ -90,24 +90,53 @@ possible. Whenever multiple interpretations were possible, we gave
 Mocha developers the benefit of the doubt, choosing the interpretation
 that would minimize SemVer violations.
 
-
+\marktodo{Hey guys should we move this to our approach? Maybe, hey?}{I
+  think maybe, sure.}
 \subsection{Violation Density Hypothesis}
 We hypothesize that the density of violations, defined as the average
-number of violations per test, will be lower for the {\em jsapi} tests
-than for all tests. We expect this to be true because even though the
-mocha developers don't follow our testing discipline, they do follow
-SemVer and identify the {\em jsapi} test suite as their interface
-tests. Therefore, we expect {\em jsapi} to be more consistent across
-versions than average.
+number of violations per test, will be lower when cross-verstion
+testing the {\tt test-jsapi} suite than when cross-version testing the
+{\tt test-all} suite. We expect this to be true because even though
+the mocha developers don't follow our testing discipline, they do
+follow SemVer and identify the {\tt test-jsapi} test suite as their
+interface tests. Therefore, we expect {\tt test-jsapi} to be more
+consistent across versions than average. If the density of violations
+is much lower for {\tt test-jsapi} than for {\tt test-all}, it will
+give us some confidence that {\tt test-jsapi} is useful as a SemVer
+specification.
 
-\todo{Confirm or reject in evaluation.}
-
-Confounding factors:
+We evaluated the violation density hypothesis by computing the
+percentage of test cases that failed during cross-version testing of
+each of the two test suites, {\tt test-jsapi} and {\tt test-all}.  We
+identify several confounding factors with this approach:
 \begin{itemize}
-\item Matt's manual inspection showed that {\em jsapi} contains unit
-  (secret) tests. There may be others, since Matt only inspected
-  failing test cases. This could skew the results. Still, our density
-  hypothesis should be robust against this, since the hypothesis is
-  that there are fewer secret tests in {\em jsapi} than average, not
-  that there are {\em no} secret tests in {\em jsapi}.
+\item Manual inspection showed that {\tt test-jsapi} contains unit
+  (secret) tests. There may be others, since we only inspected failing
+  test cases of the version 1.0.0 {\tt test-jsapi} suite. This could
+  skew the results. Still, our density hypothesis should be robust
+  against this, since the hypothesis is that there are fewer secret
+  tests in {\tt test-jsapi} than average, not that there are {\em no}
+  secret tests in {\tt test-jsapi}.
+\item Cross-version testing with {\tt test-all} sometimes crashes, so
+  not all tests are run. This means we may be measuring too few
+  failing in {\tt test-all} tests, which can skew the average {\tt
+    test-all} failures downward.
+\item Early versions of mocha depend on an old (incompatible) version
+  of node.js. The incompatibility means that we cannot run {\tt
+    test-all} at all for these versions, though {\tt test-jsapi} still
+  works. In these cases, we under-count the number of cross-version
+  {\tt test-all} tests that should be run for a version. In extreme
+  cases, fewer {\tt test-all} tests are run than {\tt test-jsapi}
+  tests, though {\tt test-all} by definition includes {\tt
+    test-jsapi}. This can skew the average {\tt test-jsapi} failures
+  upward, so we filter such cases out.
 \end{itemize}
+
+Despite these confounding factors, we found that {\tt test-all}
+contains 46\% more failures than {\tt test-jsapi}, which indicates
+that even though mocha developers do not follow our discipline, the
+{\tt test-jsapi} is {\em more} compliant with our discipline than all
+tests, indicating that there is some validity in using it as an
+interface specification.  Further work is required to evaluate how
+effective failure density can be to bootstrap interface specs for
+projects that want to adopt our discipline.
