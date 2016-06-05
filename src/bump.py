@@ -92,7 +92,7 @@ def main():
         pool = Pool()
 
         for i in pool.imap_unordered(setup_test, tests):
-            logging.info("Setup " + i)
+            print "Setup ", i
 
     if not args.setup_only:
         for (runner, impl, test) in tests:
