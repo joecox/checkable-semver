@@ -1,0 +1,8 @@
+V1.7.3,1.7.3,1.0.0,'Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event'
+V1.7.3,1.7.3,1.0.1,'Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event'
+V1.7.3,1.7.3,1.0.2,'Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event'
+V1.7.3,1.7.3,1.0.3,'Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event'
+V1.7.3,1.7.3,1.1.0,'Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event'
+V1.7.3,1.7.3,1.2.0,'Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event'
+V1.7.3,1.7.3,1.2.1,'Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event'
+V1.7.3,1.7.3,1.2.2,'Runnable(title, fn) .run(fn) when async when the callback is invoked several times with an error should emit a single "error" event'

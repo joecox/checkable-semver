@@ -1,0 +1,2 @@
+Vv2.4.1,v2.4.1,2.0.0,'Runnable(title, fn) .run(fn) when async when an exception is thrown should not throw its own exception if passed a non-object'
+Vv2.4.1,v2.4.1,2.0.1,'Runnable(title, fn) .run(fn) when async when an exception is thrown should not throw its own exception if passed a non-object'
