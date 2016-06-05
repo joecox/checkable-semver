@@ -81,7 +81,7 @@ def main():
         cache=args.cache
     )
 
-    tests = list(cvt(runner, tags, args.test_version))
+    tests = list(cvt(runner, tags, args.version))
 
     if args.cache:
         if not os.path.isdir(args.cache):
@@ -92,12 +92,12 @@ def main():
         pool = Pool()
 
         for i in pool.imap_unordered(setup_test, tests):
-            print "Setup", i
+            logging.info("Setup " + i)
 
     if not args.setup_only:
         for (runner, impl, test) in tests:
             for violation in runner.run(impl, test, args.test_suite):
-                print "V{},{},{},{!r}".format(args.test_version, *violation)
+                print "V{},{},{},{!r}".format(args.version, *violation)
 
 def error(msg=None):
     if msg:
@@ -106,3 +106,4 @@ def error(msg=None):
 
 if __name__ == "__main__":
     main()
+ 
