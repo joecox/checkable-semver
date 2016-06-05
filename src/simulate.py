@@ -14,6 +14,7 @@ def main():
     p.add_argument("--repository", "-r",
                    help="Path to repository on the system.")
     p.add_argument("--verbose", "-v", action="count")
+    p.add_argument("--ignore-file")
 
     args = p.parse_args()
 
@@ -42,6 +43,12 @@ def main():
     if not repo.is_repo():
         error("Not currently in a git repository")
 
+    ignorelist = []
+    if args.ignore_file:
+        with open(args.ignore_file, 'r') as f:
+            for line in f:
+                ignorelist.append(line.strip())
+
     # actual2sim = { "1.0.0": "1.0.0" }
     sim2actual = { "1.0.0": "1.0.0" }
     
@@ -52,7 +59,7 @@ def main():
     
     for actual_tag in tags:
         logging.info("Actual tag: %s", actual_tag)
-        next_tag = simtag.next_tag(actual_tag, sim_tags, sim2actual, repo)
+        next_tag = simtag.next_tag(actual_tag, sim_tags, sim2actual, repo, ignorelist)
 
         if args.strict:
             if semver.cmp(actual_tag, next_tag) == 1: # v1 < v2
