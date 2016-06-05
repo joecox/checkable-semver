@@ -2,23 +2,6 @@
 
 \subsection{Quantitative Analysis}
 
-First we wanted to show that we could find any violations at all using
-test. Figure~\ref{fig:violations} is a plot of violations encounter in
-each version. The ``jsapi'' suite is a subset of the test run in ``all''.
-Since a SemVer violation is tied to a test and a implementation version, 
-the same test might be counted multiple times. From the figure we can
-read a lot of interesting things. The versions 1.3.0, 1.15.0 and 1.18.0 are
-especially interesting as they introduce new breaking changes in respect to
-``jsapi''.  The 1.3.0 increment is a single violation is analysed in depth in
-section~\ref{sec:failure2}. The 1.15.0 increment is mostly due the SemVer
-violation that we found in and described in section~\ref{sec:failure3}. The 
-1.18.0 is increment is not a semver violation, as it seams like the developers
-tested secrets in the jsapi. This has been described in detail in
-section~\ref{sec:failure1}. 
-
-
-
-
 \begin{figure*}
 \centering
 \includegraphics[height=50ex]{graphics/combined-violations-plt}
@@ -28,9 +11,42 @@ section~\ref{sec:failure1}.
 \label{fig:violations}
 \end{figure*}
 
+First we wanted to show that we could find any violations at all using
+test. Figure~\ref{fig:violations} is a plot of violations encounter in
+each version. The ``jsapi'' suite is a subset of the test run in ``all''.
+Since a SemVer violation is tied to a test and a implementation version, 
+the same test might be counted multiple times. From the figure we can
+read a lot of interesting things. The versions 1.3.0, 1.15.0 and 1.18.0 are
+especially interesting as they introduce new breaking changes in respect to
+``jsapi''.  The 1.3.0 increment is a single violation is analysed in depth in
+section~\ref{sec:failure2}. The 1.15.0 increment is mostly due the SemVer
+violation that we found in and described in section~\ref{sec:failure3}. The
+1.18.0 is increment is not a SemVer violation, as it seams like the developers
+tested secrets in the jsapi. This has been described in detail in
+section~\ref{sec:failure1}. The steep increase in breaking changes 1.21.5 could
+indicate that they were working on creating the new major release, and some of
+the new features; green and yellow, and some breaking changes might have
+sneaked in. It is interesting that after the major version 2, almost no breaking
+changes exist in ``jsapi''. This suggest that the API tests has matured, and
+are more stable. A funny anomaly happened in v2.5.0 where the npm stopped
+working on that package.
+
+This analysis shows that even with test not designed to be interface
+specifications, we can get real and relevant information about the progress in
+
+
+
 \begin{figure*}
 \centering
 \includegraphics[height=50ex]{graphics/combined-cumulative-plt}
+%\includegraphics[height=50ex]{graphics/cumulative-unit-plt}
+%\includegraphics[height=50ex]{graphics/cumulative-all-plt}
+\caption{Violations per version}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[height=50ex]{graphics/simulation-plt}
 %\includegraphics[height=50ex]{graphics/cumulative-unit-plt}
 %\includegraphics[height=50ex]{graphics/cumulative-all-plt}
 \caption{Violations per version}
