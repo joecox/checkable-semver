@@ -73,8 +73,8 @@ def main():
 
         last_actual_tag = actual_tag
         last_sim_tag = next_tag
-    
-    print sim_tags
+
+        print "A{},S{}".format(sim2actual[next_tag], next_tag)
     
 if __name__ == "__main__":
     main()
