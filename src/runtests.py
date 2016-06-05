@@ -90,6 +90,10 @@ class TestRunner:
         
         repo = self.setup(implv, testv) 
 
+        # version > 2.5 doesn't have test-all
+        if implv[0:4] == "v2.5" and testsuite == "all":
+            testsuite = "node"
+        
         with repo.in_context():
             logging.debug("In %s", os.getcwd())
             # Run tests (assume make test-jsapi at the moment)
