@@ -12,20 +12,23 @@ implementation and returns a list of interface violations.
 $$\text{Spec} : \text{Impl} \to \powerset{\text{Violation}}$$
 A violation is a identifier of a failed test. A specification
 \begin{enumerate}
-    \item does not test anything secret, e.i.\ something that is subject to change,
-    \item and do test everything that a client can rely on.  
+    \item Does not test anything secret, e.i.\ something that is subject to change.
+    \item Does test everything that a client can rely on.  
 \end{enumerate}
 \end{definition}
 
-The interface is a two sided contract. The library, denotes clearly what can be
-relied upon, but by using a library a client, commits to never rely on anything
-that is not tested.  Our interface specification is both sound and complete by
-definition.  Following the definition we have created a discipline of interface
-specification using tests. We use the RFC 2119\footnote{The key words ``MUST'',
-``MUST NOT'', ``REQUIRED'', ``SHALL'', ``SHALL NOT'', ``SHOULD'', ``SHOULD
-NOT'', ``RECOMMENDED'',  ``MAY'', and ``OPTIONAL'' in this document are to be
-interpreted as described in RFC 2119\cite{rfc2119}.} standard to describe the
-discipline.
+The interface is a two sided contract. One one side, the library
+clearly specifies what can be relied upon. On the other side, clients
+should not rely upon anything that is not specified in the interface
+tests.  Doing so would tightly couple the client to a particular
+library version, making upgrading the library unsafe. Our interface
+specification is both sound and complete by definition.  Following the
+definition we have created a discipline of interface specification
+using tests. We use the RFC 2119\footnote{The key words ``MUST'',
+  ``MUST NOT'', ``REQUIRED'', ``SHALL'', ``SHALL NOT'', ``SHOULD'',
+  ``SHOULD NOT'', ``RECOMMENDED'', ``MAY'', and ``OPTIONAL'' in this
+  document are to be interpreted as described in RFC
+  2119\cite{rfc2119}.} standard to describe the discipline.
 
 \begin{enumerate}
     \item The library MUST clearly separate implementation specifications from
@@ -37,16 +40,22 @@ discipline.
     \item A client MAY rely on any feature tested by the specification.
 \end{enumerate}
 
-This definition and discipline is flexible enough that can describe an
-interface, while still being machine checkable. Any specification is a trade
-between machine power and API expressed. This definition of cause has some
-limitations. A test \texttt{assert add (2, 3) == 5}, only provides the existence proof,
-that adding 2 and 3 equates 5. The client, can then violate our discipline and
-assume that 2 and 3 are representative for all integers or be safe and only use
-it with the arguments 2 and 3. Of cause different techniques as concolic
-testing~\cite{sen05-cute} or random testing might improve the expressiveness of test. The
-advantage of this approach is that the interface and its guarantees are
-concretely described. 
+This definition and discipline is flexible enough that it can describe
+an interface, while still being machine-checkable. \marktodo{Any
+  specification is a trade-off between machine power and API
+  expressed}{Matt does not understand this sentence}.
+
+\marktodo{Move this paragraph to section on limitations and future
+  work?}{} This definition of course has some limitations. For
+example, a test \texttt{assert add (2, 3) == 5} only checks that the
+sum of 2 and 3 is 5. The client may incorrectly interpret this as
+saying that the sum of any two numbers is 5, or even that the sum of
+any two objects is 5. We conjecture that such problems could be
+addressed by adding more tests, or by using techniques such as
+concolic testing~\cite{sen05-cute} or random
+testing~\cite{quickcheck}. The advantage of our approach is that the
+interface and its guarantees are concretely described and
+machine-checkable.
 
 \subsection{Semantic Versioning using Interface Specifications}
 
@@ -114,32 +123,58 @@ Our approach solves this problem by using tests to describe an
 interface. Tests are expressive enough to specify behavioral contracts
 that are difficult or impossible to express in traditional
 specifications languages or type systems. They also allow us to build
-tools that can automatically check SemVer compliance, or recommend
+tools that can automatically verify SemVer compliance, or recommend
 version numbers for new releases.
 
-Semantic versions talk about the relations between different releases of the
-same library. So to verify a semantic version, we have to associate it with an
-implementation and a specification. A release is a tuple of a version number,
-an implementation and a specification.
-$$ \text{Release} : \text{Ver} \times \text{Impl} \times \text{Spec} $$
+Semantic version numbers summarize the possible differences between
+releases of a library, in particular, the possible differences visible
+to a client. For example, a patch release can fix some buggy
+behaviors, but must not add new behavior or break any old behavior. A
+minor release can fix bugs and add new behavior, but must not break
+old behavior.
 
-A release can only be validated in the context of a release history. A
-release can only be accepted if our tool finds no violations. This method is 
-called \emph{Cross Version Testing}.
+To verify compliance to semantic versioning, we examine a series of
+releases.
+%
+We define a release as a tuple of a version number, an implementation
+and a specification.
+$$ \text{Release} : \text{Ver} \times \text{Impl} \times \text{Spec} $$
+%
+We apply a novel \emph{Cross-Version Testing} approach to ensure that
+each release satisfies the specifications of a range of release,
+according to the rules of Semantic Versioning. In particular, we test
+each release against the interface test suites of certain {\em other}
+releases. According to our specification scheme, any failing tests
+represent violations of Semantic Versioning.
+
+Given a release of interest and the complete set of releases, our
+cross-version testing tool will produce a set of implementations and
+specifications. A particular implementation and specification are
+included in the output set if SemVer requires that the implementation
+meet the specification, but this is not the case.
 $$
 CVT : \text{Release} \times \powerset{\text{Release}} \to \powerset{\text{Spec} \times \text{Impl}}
 $$
-Cross version testing can be described like this; given a new release with
-major version greater than 0 and a list of previous releases, the release has
-to pass the following checks.
+
+{\bf Why do we do this? Why is it a reasonable thing to do?}
+Cross-version testing allows developers to refactor their interface
+tests as needed, without introducing difficult problems surrounding
+equivalence of specifications. \marktodo{Probably need to say more
+  about this somewhere}{}.
+
+{\bf The rules:} \marktodo{Below needs to be updated. It's assuming
+  that the release is ``newer'' than the set of releases. In general,
+  it will be (any) one of them}{}.
 
 \begin{enumerate}
-    \item The new release specs has to have no violations on the new
-    implementation;
-    $$ Refl(r) = \{(s, i)\} \text{ where } ((x,y,z), i, s) = r $$
+\item The implementation of a release must meet the specification of
+  that release;
+  $$ Refl(r) = \{(s, i)\} \text{ where } ((x,y,z), i, s) = r $$
     
-    \item the new release version must be greater than all previous versions, as
-    described in the semantic versioning (Reflective Test);
+\item \marktodo{There is as yet no mention of a ``new'' release, or of
+    ``previous'' releases.}{} the new release version must be greater
+  than all previous versions, as described in the semantic versioning
+  (Reflective Test);
     \begin{align*}
         \forall r' \in rs. & ((x,y,z), \_,\_) = r \\ 
                            & \land ((x',y',z'), \_, \_) = r' \\ 
@@ -151,6 +186,8 @@ to pass the following checks.
         \end{cases}
     \end{align*}
     
+    \marktodo{Also, $r$ is a free variable. where is it supposed to be quantified?}{}
+
     \item all previous implementations with versions in same minor version as the
     new release, must meet new specification without violations (Added Feature
     Test);

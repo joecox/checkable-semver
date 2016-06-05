@@ -11,3 +11,14 @@ We expected to find some interface tests that could not be effectively
 refactored to remove API secrets. We did not find any such tests, but
 the small scope of our study prevents us from making any conclusions
 about the likelyhood of this scenario in practice. 
+
+Future work: we can use cross-version testing for other things. For
+example, library authors don't always choose the most precise version
+number. They might issue a major version release that includes no
+breaking changes or new features, in order to signal an increased
+maturity. In this case a patch release would have been possible, and
+in many ways preferable. Clients may not adopt the new version because
+they are wary of breaking changes. Our cross-version testing technique
+could detect that the new version still supports specification of the
+previous version. As a result, clients to adopt the new version more
+quickly and with less effort.
