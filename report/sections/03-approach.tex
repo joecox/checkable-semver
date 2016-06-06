@@ -198,7 +198,7 @@ Because all possible failed cases is the result of a SemVer violation, the
 algorithm is guaranteed to only reject a release if SemVer is violated.
 \end{proof}
 
-\begin{theorem}[Completness]
+\begin{theorem}[Completeness]
 Given a release and a release history, our algorithm will accept the release if
 and only if it adheres to SemVer in relation to the release history.
 \end{theorem}
@@ -227,24 +227,24 @@ SemVer, our tool can not accept a wrong release.
 \end{proof}
 
 \subsection{Pragmatics}
-What is required of library authors that want to adopt our approach?
-Here we discuss some high-level requirements that should be followed.
+Here we discuss some high-level requirements that should be followed
+by library authors who want to adopt our approach.
 
-\begin{itemize}
-\item A library should upper-bound their dependencies to stay within
-  the current major version, since updrading to the next major version
-  of a dependency may introduce a breaking change, which in turn could
-  cause a breaking change for the library itself. We found this
-  problem with mocha, and had to modify its {\tt package.json} file to
-  correct it.
-\item NPM packages specify a set of {\tt devDependencies} in the {\tt
-    package.json}, which are the dependencies needed by the test suite
-  but not the library itself. When cross-version testing, it is
-  important to use the {\tt devDependencies} of the tests, not those
-  of the library. Therefore, we found that we had to modify {\tt
-    package.json} of the library each time we ran a cross-version
-  test.
-\end{itemize}
+First, a library should upper-bound their dependencies to stay within
+the current major version, since updrading to the next major version
+of a dependency may introduce a breaking change, which in turn could
+cause a breaking change for the library itself. We found this problem
+with mocha, and had to modify its {\tt package.json} file to correct
+it.
+
+Second, {\tt npm} packages specify a set of {\tt devDependencies} in
+the {\tt package.json}, which are the dependencies needed by the test
+suite but not the library itself. When cross-version testing, it is
+important to use the {\tt devDependencies} of the tests, not those of
+the library. Therefore, we found that we had to modify {\tt
+  package.json} of the library each time we ran a cross-version test.
+Library authors should keep this in mind, and keep {\tt
+  devDependencies} consistent as much as possible.
 
 \subsection{Violation Density Hypothesis}
 We hypothesize that the density of violations, defined as the average
