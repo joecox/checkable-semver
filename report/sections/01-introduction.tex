@@ -16,7 +16,21 @@
 %   - Documentation: not machine readable/checkable; can go stale; no tool support.
 % - Lack of tool support. Developers go by intuition. Error prone.
 
-% 
+% What are our contributions?
+% - A discipline for writing API specifications as tests
+% - A novel technique called cross-version testing that can
+%   be used to check sem ver compliance when given API specifications for 
+%   each version
+% - A tool that implements CVT. Can check compliance or recommend semver-compliant
+%   version numbers for new releases
+
+% How do we evaluate our contributions?
+% - Subject program: Mocha. Developers identify a suite a API tests.
+% - Multi-faceted evaluation.
+% - detects semver violations.
+% - Infer a sequence of semver-compliant version numbers for Mocha's releases.
+% - User study to evaluate practicality and limitations of our approach
+
 
 % Problem setup / Motivation
 It has always been difficult to rigorously specify library interfaces.
