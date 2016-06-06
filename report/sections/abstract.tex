@@ -1,3 +1,35 @@
 \begin{abstract}
-Sweet abstract, bro.
+  Managing dependencies in systems composed of many
+  in\-dep\-endent\-ly-developed modules can be tedious and error-prone.
+%
+  It can be unclear whether a dependency should be updated to a new
+  version. On the one hand, the update could include important bug
+  fixes, enhancements and new features. On the other hand, the update
+  might also include subtle changes that introduce new bugs into the
+  system.
+%
+  The current state of the practice is to use the convention of
+  Semantic Versioning to communicate the possible differences between
+  two releases of a module.
+%
+  However, the state of the practice is limited by the absence of
+  clear module interface specifications.
+%
+  A client may mistakenly rely upon API secrets, or a module author
+  may accidentally use an incorrect version number for a new release.
+%
+  In either case, Semantic Versioning alone provides no help.
+
+  We fill this gap by devising a new test-based discipline for define
+  module interface specifications, along with a {\em cross-version
+    testing} approach that uses interface tests to detect Semantic
+  Versioning. 
+%
+  We realize our techniques in a tool for Node/JS libraries, and
+  evaluate them using the Mocha testing framework as our subject
+  program.
+%
+  Our results show promise for our techniques, but underscore that
+  there some investment is required from the module authors to adopt
+  our discipline. 
 \end{abstract}
