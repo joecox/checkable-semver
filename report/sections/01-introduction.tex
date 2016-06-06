@@ -1,29 +1,55 @@
 \section{Introduction}
 
-What is the problem that SemVer tries to solve? 
-\begin{itemize}
-\item Upgrading deps can cause bugs
-\item By being too conservative about upgrading deps, miss out on
-  bug fixes, performance enhancements, etc.
-\item Dependency hell
-\end{itemize}
+Software development in the internet age has become highly
+modularized, where a project typically contains many modules developed
+by independent teams, each with their own priorities and release
+schedules. Managing so many dependencies has become quite
+complicated. Tools like git and github have evolved to support
+distributed development over the internet. Package managers like {\tt
+  cpan}~\cite{cpan} for Perl, {\tt npm}~\cite{npm} for Node/JS, and
+{\tt Maven}~\cite{maven} for Java tackle logistical problems --
+distributing upgrades of a module to its users. A deeper problem
+remains: upgraded packages can introduce subtle changes that might
+introduce bugs in their clients. Often, these breaking changes might
+lurk undetected for some time, and can be quite difficult to debug. To
+guard against this, many developers {\em pin} their dependencies to a
+particular version or version range, which instructs their package
+manager to use only those versions that have been explicitly
+specified. Pinning is problematic for several reasons.
+%
+First, it can block important bugfixes and improvements that are
+perfectly compatible with the client code.
+%
+Worse, in systems containing many independently-maintained modules,
+this can lead to ``dependency hell''~\cite{hell}, in which two modules
+depend on incompatible versions of a third module.
 
-How does SemVer try to solve the problem?
-\begin{itemize}
-\item Establish a convention for version numbers that summarizes
-  the possible differences between two versions.
-\item SemVer is current state of the practice
-\end{itemize}
 
-Where does SemVer fall short? 
-\begin{itemize}
-\item Lack of clear specification. 
-\item Types: too imprecise. Can't describe API behaviors.
-\item Documentation: not machine readable/checkable; can go stale; no tool support.
-\item Lack of tool support. Developers go by intuition. Error prone.
-\end{itemize}
+%How does SemVer try to solve the problem?
+%\begin{itemize}
+%\item Establish a convention for version numbers that summarizes
+%  the possible differences between two versions.
+%\item SemVer is current state of the practice
+%\end{itemize}
 
-There are several shortcomings with the current state of the practice.
+Semantic Versioning (SemVer)~\cite{semver} is a version numbering
+convention that tries to solve these problems by giving a precise
+meaning to each version number. Given two releases, the SemVer version
+numbers summarize the possible differences between the two
+releases. SemVer has been widely adopted, and is now considered the
+current state of the practice.
+%
+%Where does SemVer fall short? 
+%\begin{itemize}
+%\item Lack of clear specification. 
+%\item Types: too imprecise. Can't describe API behaviors.
+%\item Documentation: not machine readable/checkable; can go stale; no tool support.
+%\item Lack of tool support. Developers go by intuition. Error prone.
+%\item Dependency hell is still common.
+%\end{itemize}
+%
+However, there are several shortcomings with SemVer as it is used
+today.
 %
 First, developers choose version numbers for a new release primarily
 based on intuition, which can be error-prone. What they consider to be
@@ -34,13 +60,6 @@ A second problem can be seen as a consequence of the first. Clients
 are often suspicious of upgrades to some or all of their dependencies,
 and put strict constraints on them to prevent their package manager
 from installing untested dependencies. 
-%
-In systems containing many independently-maintained modules, this can
-lead to ``dependency hell''\cite{hell}, in which two modules depend on
-incompatible versions of a third module. \marktodo{A figure depicting
-  dep hell would be nice here. Something like ``Program contains
-  modules A and B. A depends on C version 1.X, B depends on C version
-  2.X''}{}
 %
 The root cause of these problems is an informal and often implicit
 descriptions of what ``the interface'' is, i.e. what the clients can
@@ -72,68 +91,99 @@ problem happened when LibSass rolled back a feature in a minor version (3.5).
 They felt that they could do this because it was a bug in Sass. Many people 
 viewed this as breaking change, and Sass ended up to apologies. This situation
 would not have happened if the interface where testable, as LibSass would have
-been forced to adhered with the same specification as Sass\cite{libsass}. 
+been forced to adhered with the same specification as Sass~\cite{libsass}. 
 %
 
 
-{\bf What are our contributions?}
-\begin{itemize}
-\item A discipline for writing API specifications as tests
-\item A novel technique called cross-version testing that can be used
-  to check sem ver compliance when given API specifications for each
-  version
-\item A tool that implements CVT. Can check compliance or recommend
-  semver-compliant version numbers for new releases
-\end{itemize}
+%{\bf What are our contributions?}
+%\begin{itemize}
+%\item A tool that implements CVT. Can check compliance or recommend
+%  semver-compliant version numbers for new releases
+%\end{itemize}
 
-We address these problems by using a suite of interface tests to
-specify an interface. Tests are expressive enough to specify
-behavioral contracts that are difficult or impossible to express in
-traditional specifications languages or type systems. They can also be
-used as the basis for tools that can automatically verify SemVer
-compliance, or recommend version numbers for new releases.
+We address these problems by establishing a new testing discipline for
+specifying module interfaces using tests. Tests are expressive enough
+to specify behavioral contracts that are difficult or impossible to
+express in traditional specifications languages or type systems. They
+can also be used as the basis for tools that can automatically verify
+SemVer compliance, or recommend version numbers for new releases.
+
+Specification languages have been proposed for a variety of problem
+domains and languages~\cite{uml},
+though they have not gained traction in the main steam. 
+%
+Some of the reasons for this lack of adoption include the steep
+learning curve of the specification language, the often limited
+expressiveness, and lack of good tool support.
+%
+On the other hand, testing disciplines such as unit testing,
+regression testing, and integration testing have seen widespread
+adoption in recent years.
+%
+Test-based interface specification complements existing testing
+discipline, and does not require developers to learn a new
+language. Our discipline is lightweight and can work with any testing
+framework.
+
+We supplement our testing discipline with a novel \emph{Cross-Version
+  Testing} approach to ensure that each release satisfies the
+specifications of a range of releases, according to the rules of
+Semantic Versioning. In particular, we test each release against the
+interface test suites of certain {\em other} releases. According to
+our specification scheme, any failing tests represent violations of
+Semantic Versioning.
 
 % Motivation of solution
-A better way of defining interfaces is needed. Even though specification
-languages do exist, they have not gained traction in the real world. A very
-practical way of giving guarantees in dynamic languages is testing.  Many
-libraries have unit tests, regression tests, integration tests, and more.
-However, any given test may test the library interface, internal
-implementation, or both.  The tests that test only the library interface are
-interface tests. In most libraries, they will be hiding among other tests.  Our
-solution is to use test to specify the interface, and explicitly hold them
-separated from the other tests. These tests both will have dual purpose. They
-give clear examples to the clients of expected usage, and they grantee that
-library upholds interface. We define that the test specification is a complete
-specification. If the specification differ from the library's developers idea,
-the developer is wrong.  A library succeeding the interface specification does
-therefor by definition not contain bugs, only undocumented features. This
-distinction will enable us to give stronger guarantees about the library, but
-will also lead to some confounding factors which we discuss in detail.
 
 % Contribution
-The goal of this paper is to solve the problem of incoherent and
-incomplete interfaces. To that end we have defined an interface specification
-as the collection of tests that only tests the interface of the library. We have
-shown that we can give valuable guarantees, both to the user of the library and
-the library developers them selves, not only in one version of the library but 
-over a history of releases. To give a direct application of the interfaces 
-specifications, we have created a tool that given a history of releases can
-predict if a release contains SemVer violations. 
-\todo{Describe the results of evaluation}
+% The goal of this paper is to solve the problem of incoherent and
+% incomplete interfaces. To that end we have defined an interface specification
+% as the collection of tests that only tests the interface of the library. We have
+% shown that we can give valuable guarantees, both to the user of the library and
+% the library developers them selves, not only in one version of the library but 
+% over a history of releases. To give a direct application of the interfaces 
+% specifications, we have created a tool that given a history of releases can
+% predict if a release contains SemVer violations. 
+% \todo{Describe the results of evaluation}
 
+%{\bf How do we evaluate our contributions?}
+%\begin{itemize}
+%\item Subject program: Mocha. Developers identify a suite a API tests.
+%\item Multi-faceted evaluation.
+%\item detects semver violations.
+%\item Infer a sequence of semver-compliant version numbers for Mocha's
+%  releases.
+%\item User study to evaluate practicality and limitations of our
+%  testing discipline and approach
+%\end{itemize}
 
-{\bf How do we evaluate our contributions?}
-\begin{itemize}
-\item Subject program: Mocha. Developers identify a suite a API tests.
-\item Multi-faceted evaluation.
-\item detects semver violations.
-\item Infer a sequence of semver-compliant version numbers for Mocha's
-  releases.
-\item User study to evaluate practicality and limitations of our
-  approach
-\end{itemize}
-
+We have evaluated our techniques by implementing Cross-Version Testing
+in a tool, and conducting several experiments. 
+%
+Our tool works for Node/JS programs that use the node package manager
+{\tt npm}.
+%
+We conducted experiments using the Mocha testing framework as our
+subject program. We chose Mocha because it is a mature library with
+many versions, it uses Semantic Versioning, and its developers follow
+a principled testing discipline that is useful for our evaluation.
+%
+We first evaluate the quality of their interface tests based on a {\em
+  CVT failure density hypothesis} that cross-version test failures
+occur less frequently in interface tests than in all tests. This gives
+us some confidence in using their ``interface tests'' as
+specifications, even though they do not follow our discipline.
+%
+Using these tests as an interface specification, we detect SemVer
+violations throughout the evolutionary history of Mocha.
+%
+We also infer a sequence of SemVer-compliant version numbers for
+Mocha's releases, and compare with the version numbers chosen by
+Mocha's developers.
+%
+Finally, we evaluate the difficulty of adopting our testing discipline
+in Mocha, by manually inspecting several violations and refactors the
+failing tests to conform to our discipline.
 
 % Layout of the report. 
 The rest of this report is as follows: in Section 2 we discuss related
