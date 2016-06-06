@@ -61,10 +61,10 @@ evolution of library.
 \label{fig:simulation}
 \end{figure*}
 
-We used our tool to infer a correct version numbering based on Mocha's
+We used our tool to infer a correct version history based on Mocha's
 {\tt jsapi} test suite. The results are shown in
 Figure~\ref{fig:simulation}. The purple line shows the numbering
-chosen by the developers, and the green line is the {\tt simulated}
+chosen by the developers, and the green line is the simulated
 numbering inferred by our tool.  Our simulation ignored 3 of the 66
 {\tt jsapi} tests that caused failures in 12 consecutive versions. We
 diagnosed the cause of these failures to be a bad specification of
@@ -73,8 +73,8 @@ introduction.
 
 The key knowledge we can draw from Figure~\ref{fig:simulation} is
 that, even with this stricter sense of interface, we don't see the
-major version explosion, that critics\cite{crawford-not-semver,
-  backbone-2888, exoplayer-1382} of SemVer predicts. In fact the
+major version explosion that critics~\cite{crawford-not-semver,
+  backbone-2888, exoplayer-1382} of SemVer predict. In fact, the
 simulation ended up only on major version 5, compared to the actual
 major version 2. We contend that if the tests were written following
 our discipline and the developers had access to our tool before making
@@ -83,12 +83,13 @@ same numbering as used by devlopers. It is also interesting that even
 though our tool infers a major version for the 6$^{th}$ release, it
 recommends more patches from that release to the 30$^{th}$
 release. This might be because the developers felt they have added
-features, and therefore bumped the minor version unnecessarily. Either
-that or they did not write a test documenting the added features in
-{\tt jsapi}. From release 54 almost perfectly mimics the developers
-version. This suggests that at this point the test suite has naturally
-evolved to follow our discipline. We find this to be an encouraging
-indication that our discipline is reasonable.
+features, and therefore bumped the minor version
+unnecessarily. Either that or they did not write a test documenting
+the added features in {\tt jsapi}. From release 54 onward, our
+simulated history almost perfectly mimics the developers
+version. This suggests that at this point the test suite has
+naturally evolved to follow our discipline. We find this to be an
+encouraging indication that our discipline is reasonable.
 
 \begin{figure*}
 \centering
@@ -98,7 +99,7 @@ indication that our discipline is reasonable.
 \end{figure*}
 
 To address some of the confounding factors related to the library
-itself we collected the cumulative unique names of the violated test
+itself, we collected the cumulative unique names of violated tests
 for each version in Figure~\ref{fig:cumulative}. This accounts for the
 fact that two tests with the same name in different versions might in
 fact be the same.
@@ -125,55 +126,53 @@ library that would not be possible without cross version testing. The
 figures also show that our techniques are robust to some of the
 confounding factors. Cross-version testing can detect SemVer
 violations even without tests designed in accordance with our
-discipline. Also adhering to SemVer does not result in a major version
+discipline. Also, adhering to SemVer does not result in a major version
 explosion, even when based of a partial and possible incorrect
 specification.
 
 \subsubsection{Confounding Factors}
 
-The {\tt all} test suite runs many tests multiple times. Runs all
-categories, individual tests are included in more than one
-category. We could remove duplicate test titles from total and failing
-tests, but on the other hand, some distinct mocha tests have the same
-titles, so when we remove duplicate titles, we lose some of that
-information. There are fewer duplicate titles than tests that are
-re-run though, so we choose the thing that minimizes the error.
+The {\tt all} test suite runs some tests multiple times due to the
+way it is setup. To get more accurate results, we could remove
+duplicate test titles from total and failing tests, but on the other
+hand, some distinct Mocha tests have the same titles, so when we
+remove duplicate titles, we lose some of that information. 
 
-Because mocha has been developed for multiple years, that node itself
+Because Mocha has been developed for multiple years, and Node/JS itself
 has changed between releases, this makes cross version testing harder
-because some older releases might depend on older versions of node and
-of older libraries. Some of the violations might therefor be a product
-of a wrong version of node, and not an actual bug in the code. 
+because some older releases might depend on older versions of Node/JS and
+on older libraries. Some of the violations might therefore be a product
+of a wrong version of Node/JS, and not an actual bug in the code. 
 
-Because we test a testing framework with itself it is hard to clearly
+Because we test a testing framework on itself it is hard to clearly
 separate the tests from the implementation. Some violations might be 
-due to the combination of mocha specification and implementation and not
+due to conflicting Mocha specifications and implementations and not
 the test itself.
 
 \subsection{User Study Results}
-We used the test suite of mocha as our subject library. The developers
+We used the test suite of Mocha as our subject library. The developers
 identify the {\tt jsapi} test suite, comprising 66 tests, as their
-{\tt interface tests}. Some of these test methods that are annotated
+interface tests. Some of these test methods are annotated
 {\tt @api private}, which might indicate that these methods are not
 part of the client-facing API\@. However, judging from the
 documentation, it seems that these are treated more as advanced
 features that clients may want to use in rare cases, but most of the
 time can safely ignore. We decided to use all the {\tt jsapi} tests as the
 interface spec because 1) it is unclear which of the {\tt @api
-  private} methods are truly {\tt secrets}, and 2) inferring which
+  private} methods are truly secrets, and 2) inferring which
 method(s) an interface test is intended to describe is often difficult and
 outside the scope of this work.
 
-According to our discipline (assuming the mocha developers had adopted
-our discipline), the tests included with mocha version 1.0.0 would
+According to our discipline (assuming the Mocha developers had adopted
+our discipline), the tests included with Mocha version 1.0.0 would
 pass when run against every version in the 1.X.Y range. There are 50
-versions in this range. We found that 9\% of the jsapi tests from
+versions in this range. We found that 9\% of the {\tt jsapi} tests from
 version 1.0.0 (6 out of the 66) failed on subsequent versions.
 
-Since mocha developers are not using our discipline, we expect some of
-these failures to be due to not following the discipline; the test
+Since Mocha developers are not using our discipline, we expect that some of
+these failures are due to not following the discipline; the test
 depends (either explicitly or implicitly) upon interface secrets. These
-cases do not necessarily indicate SemVer violations, as long as the
+cases do not necessarily indicate SemVer violations, as long as
 removing the dependence on interface secrets makes the tests pass. We
 manually inspected each failing {\tt jsapi} test for interface secrets, and
 refactored the test to remove the secret. The failure in
@@ -186,7 +185,7 @@ there were 3 types of failure. Of the 3 failure types, 2 failed due to
 testing secrets as well as the interface, and the tests succeeded after
 removing the exposed secrets. Altogether, the classification and
 refactoring of these tests required 4 hours of manual effort of the
-authors, who was unfamiliar with mocha's internals. We did not find any
+authors, who were unfamiliar with Mocha's internals. We did not find any
 instances in which a test could not be refactored. This experience
 demonstrates that that adopting our discipline may not be too difficult.
 
@@ -212,7 +211,7 @@ registration method has its corresponding test case. The test case
 ensures that the correct metadata is created for each event hook, that
 the events are emitted in the correct order, etc.
 
-Part of the metadata for an event hook is a title used in mocha's
+Part of the metadata for an event hook is a title used in Mocha's
 output to the user. Each test asserts that the title is a particular
 string.
 
@@ -222,7 +221,7 @@ beforeAllItem.title.should.equal('"before all" hook');
 \end{verbatim}
 }
 
-Starting in version 1.15.0, mocha added a feature that allows the test
+Starting in version 1.15.0, Mocha added a feature that allows the test
 writer to optionally give a name to the hook, which is then included
 in the title. If a title is not given, the default is to use the name
 of the hook function. The test fails because the new default behavior
@@ -238,7 +237,7 @@ to an internal test.
 The problem is that the assertion is part of a complicated test
 framework, that mostly tests the interface. To separate the
 secret assertion from the interface tests, and in order to adopt our
-discipline, the mocha developers could duplicate the setup in two places,
+discipline, the Mocha developers could duplicate the setup in two places,
 first in the interface specification, and second in the
 internal test suite. The internal test suite could then to check secrets
 like that the title is constructed correctly. This would either require
@@ -294,7 +293,7 @@ describe('Runnable(title, fn)', function(){
 \end{figure*}
 
 The test, shown in Figure~\ref{fig:failing-test}, defines a
-part of the behavior of mocha's asynchronous test runner. The test 
+part of the behavior of Mocha's asynchronous test runner. The test 
 asserts that when two asynchronous error events are triggered, only one
 is delivered to the error callback. This is important in tests that
 allocate resources like database connections, which need to be released
@@ -304,11 +303,11 @@ In addition to testing that only a single error event is delivered,
 the version 1.0.0 test also tests {\em which} error event is
 delivered. In particular, line 20 tests that the error message is a
 particular string. The behavior changes at version 1.3.0, from
-delivering an error created by mocha that indicates improper usage of
+delivering an error created by Mocha that indicates improper usage of
 its API, to one of the errors passed by the client to the callback.
 
 Is this case a breaking change, a new feature, or something else?
-We might consider that the exceptions thrown by mocha to its clients
+We might consider that the exceptions thrown by Mocha to its clients
 are part of the interface, and so this should be considered a breaking
 change. Because that the test author's intent is unclear, we follow the
 test description, which mentions only the number of error events that
@@ -332,7 +331,7 @@ description of this test was changed to reflect this:
   true }
 
 The original test fails because the default value of suite.bail is
-{\tt false}, so if a client upgrades mocha to version 1.21.5, the
+{\tt false}, so if a client upgrades Mocha to version 1.21.5, the
 {\tt end} event will no longer be emitted. This is a breaking change in
 a patch version, and thus is a SemVer violation. We note that the {\tt
   Runner.failHook} method is annotated {\tt @api private}, so this test
@@ -340,12 +339,12 @@ may not actually be part of the interface specification.
 
 \subsubsection{Confounding Factors}
 We identify three confounding factors with our user study. First, it
-is still unclear that the {\tt jsapi} tests should be used as mocha's
-interface specification. These tests were identified by the mocha
+is still unclear that the {\tt jsapi} tests should be used as Mocha's
+interface specification. These tests were identified by the Mocha
 developers as the {\tt JavaScript API tests}, and among the JavaScript
 libraries we considered for our subject program, seemed to be the most
 reasonable test suite to use as a specification. We assume that what
-the mocha developers mean by {\tt API} is the interface between mocha and
+the Mocha developers mean by {\tt API} is the interface between Mocha and
 its client. However, this may not always be the case. In practice, this
 test suite tests internal interfaces as well as the external
 client-facing interface.
