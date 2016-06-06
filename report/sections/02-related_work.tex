@@ -1,7 +1,7 @@
 \section{Related Work}
 
-Parnas\cite{Parnas} proposed that systems should be decomposed into
-modules that support parallel development. This is counter to the
+Parnas proposed \cite{Parnas} that systems should be decomposed into
+modules that support parallel development. This runs counter to the
 intuitive idea of decomposing the system using ``separation of
 concerns'' as the only consideration (the so-called ``functional
 decomposition''). The guiding principle developers should use in
@@ -10,20 +10,17 @@ other modules can rely on behaving a particular way, from
 implementation ``secrets'', which the module author has the freedom
 the change. 
 
-\todo{rewrite} 
-%
-Semantic Versioning\cite{semver} is complementary to the ideas
+Semantic Versioning \cite{semver}, or SemVer, is complementary to the ideas
 proposed by Parnas.
 %
-Problem semver solves: one module may change in a way that breaks its
-client modules.
+SemVer, fully defined in section \ref{sec:semver}, solves a number of
+problems experienced by library authors and consumers, including how
+to handle breaking changes.
 %
-SemVer accounts for time and change in the modularization of a
-programs. This is particularly important when the program relies on
-libraries or modules developed by independent teams with separate
-goals and timelines. This is much more the state of the practice in
-today's era of open source libraries, package managers, etc. Parnas
-did not have to deal with this stuff.
+SemVer allows library consumers to better control which interface
+definitions they subscribe to. This is particularly important when
+client code relies on libraries or modules developed by independent
+teams with separate goals and timelines.
 %
 Semantic versioning strengthens Parnas' ideas by establishing a
 contract between the authors and clients of a module, which governs
@@ -37,52 +34,55 @@ code.
 Our project aims to strengthen this even further, by supporting SemVer
 with a testing discipline and tool support.
 
+A recent study from Carnegie Mellon University \cite{bogart15-break}
+consists of seven interviews with package maintainers of packages in
+CRAN (R) and Node.js (Javascript). A common problem discovered by the
+study is that breaking changes in package dependencies are too
+complicated to follow and too hard to integrate into the authors'
+packages. Even though Node.js has semantic versioning, a Node.js
+developer claims that the technique is not uniformly applied across
+Node packages. The study concludes that tools have to be created that
+are able to more concisely inform developers about breaking changes
+and let them reason about the stability of a library.
 
-A recent study from Carnegie Mellon University\cite{bogart15-break}, consists of seven interviews
-with package maintainers of packages in CRAN (R) and Node.js (Javascript). A
-joint problem seems to be that it is too complicated to follow breaking changes
-in dependent libraries. Even though that Node.js has semantic versioning, a
-Node.js developer claims the technique is not uniformly applied. The study
-concludes that tools has to be created that are able to, more concisely, inform
-developers about breaking changes, and let them reason about the stability of a
-library.
-
-Automatic semantic versioning has been efficiently used in Elm. Elm is
-a functional and static typed language which makes semantic versioning
-simple. In Elm the version numbers is defined like this: a patch is
-never changing the API, a minor version added stuff to the API, and
-major version changed or removed values in the API. API specifications
-in Elm are implicitly defined by the types of all exposed values,
-which includes both constants and functions, in all exposed
-modules. This provides some nice guarantees, for example that a
+Automatic semantic versioning has been efficiently used in Elm. Elm
+is a functional and statically typed language which makes semantic
+versioning simple. In Elm, version number updates follow a pattern
+similar to SemVer: a patch update changes nothing about the API, a
+minor version update adds features to the API, and a major version
+update changes or removes values in the API. API specifications in
+Elm are implicitly defined by the types of all exposed values, which
+include both constants and functions, in all exposed modules. This
+provides some nice guarantees, such as the assurance that a
 dependency to a particular version will not introduce any type
 errors. However, using types alone as API specifications has limited
 expressiveness: any behavior not reflected by the types alone is
 automatically considered an API secret. To cope with this limitation,
-the library authors often define a more complete API specification in
-documentation. The rules of Semantic Versioning should be followed
-with respect to the complete API specification including this
+library authors often define a more complete API specification in
+documentation. The rules of SemVer should be followed with respect to
+the complete API specification, including the portion found in
 documentation, but Elm's tool cannot enforce this. Users should not
-blindly trust Elm to enforce semantic versioning without some
+blindly trust Elm to enforce semantic versioning without an
 additional check of SemVer compliance. Our approach is one such
 additional check, and is complementary to Elm's approach.
 
-In his seminal work on Delta Debugging, Zeller writes ``The GDB people have done
-it again. The new release 4.17 of the GNU debugger brings several new features,
-languages, and platforms, but for some reason, it no longer integrates properly
-with my graphical front-end DDD: the arguments specified within DDD are not
-passed to the debugged program. Something has changed within GDB such that it
-no longer works for me. Something? Between the 4.16 and 4.17 releases, no less
-than 178,000 lines have changed. How can I isolate the change that caused the
-failure and make GDB work again?''
+In his seminal work on Delta Debugging, Zeller writes ``The new
+release 4.17 of the GNU debugger brings several new features,
+languages, and platforms, but for some reason, it no longer
+integrates properly with my graphical front-end DDD...Something has
+changed within GDB such that it no longer works for me. Something?
+Between the 4.16 and 4.17 releases, no less than 178,000 lines have
+changed. How can I isolate the change...''
 
-Delta Debugging aims to locate the change that caused the failure. If GDB is
-following semantic versioning, there are two possible explanations; It's GDB's
-fault: GDB published a minor version upgrade with a breaking change, violating
-SEMVER; or It's DDD's fault: DDD unwittingly relied on (unspecified) secrets of
-GDB. In either case, our tool would detect who was at fault and localize the
-error. Further, it would help the GDB developers avoid releasing breaking
-changes, and would help the DDD developers avoid relying on the secrets of GDB.
+Delta Debugging aims to locate the change that caused the failure. If
+GDB is following semantic versioning, there are two possible
+explanations. One explanation is that it's GDB's fault. GDB published
+a minor version upgrade with a breaking change, violating
+SemVer. Another explanation is that it's DDD's fault. DDD unwittingly
+relied on (unspecified) secrets of GDB. In either case, our tool
+would detect who was at fault and localize the error. Furthermore, it
+would help the GDB developers avoid releasing breaking changes and
+would help the DDD developers avoid relying on the secrets of GDB.
 
 Change-impact analysis (CIA) \cite{Chianti,FaultTracer,Stoerzer} can
 be used for regression-test selection or to help isolate the cause of
@@ -93,12 +93,12 @@ CIA can compliment our cross-version testing technique.
 When our cross-version testing approach detects a SemVer violation,
 the library authors will need to know which change(s) caused the
 violation. In such cases, we can apply change-impact analysis
-\cite{Stoerzer} to detect which changes from library version A induced
-failures in the cross-version tests. Stoerzer et al. \cite{Stoerzer}
-developed a change classification technique that classifies changes
-that affect a failing test by their likelyhood to have induced the
-failure. This would help developers focus their attention on the
-changes most likely to have caused the SemVer
+\cite{Stoerzer} to detect which changes from a specific library
+version induced failures in the cross-version tests. Stoerzer et
+al. \cite{Stoerzer} developed a change classification technique that
+classifies changes that affect a failing test by their likelyhood to
+have induced the failure. This would help developers focus their
+attention on the changes most likely to have caused the SemVer
 violation. Alternatively, it could help developers quickly factor out
 a SemVer-compliant release within their deadline.
 
