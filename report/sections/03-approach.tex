@@ -58,6 +58,23 @@ testing~\cite{quickcheck}. The advantage of our approach is that the
 interface and its guarantees are concretely described and
 machine-checkable.
 
+{\bf Spare text:}
+\begin{itemize}
+\item The tests that test only the library interface are interface tests. In
+most libraries, they will be hiding among other tests.
+\item Our solution is to use test to specify the interface, and explicitly
+hold them separated from the other tests. These tests both will have
+dual purpose. They give clear examples to the clients of expected
+usage, and they grantee that library upholds interface. We define that
+the test specification is a complete specification. If the
+specification differ from the library's developers idea, the developer
+is wrong.  A library succeeding the interface specification does
+therefor by definition not contain bugs, only undocumented
+features. This distinction will enable us to give stronger guarantees
+about the library, but will also lead to some confounding factors
+which we discuss in detail.
+
+\end{itemize}
 \subsection{Semantic Versioning}
 
 To show that the technique is useful in practice, we have chosen to implement
@@ -111,18 +128,14 @@ We define a release as a tuple of a version number, an implementation
 and a specification.
 $$ \text{Release} : \text{Ver} \times \text{Impl} \times \text{Spec} $$
 %
-We apply a novel \emph{Cross-Version Testing} approach to ensure that
-each release satisfies the specifications of a range of release,
-according to the rules of Semantic Versioning. In particular, we test
-each release against the interface test suites of certain {\em other}
-releases. According to our specification scheme, any failing tests
-represent violations of Semantic Versioning.
-
-Given a release of interest and the complete set of releases, our
-cross-version testing tool will produce a set of implementations and
-specifications. A particular implementation and specification are
-included in the output set if SemVer requires that the implementation
-meet the specification, but this is not the case.
+Our \emph{Cross-Version Testing} approach ensures that each release
+satisfies the specifications of particular other releases, as required
+by the rules of Semantic Versioning. Given a release of interest and
+the complete set of releases, our cross-version testing tool will
+produce a set of implementations and specifications. A particular
+implementation and specification are included in the output set if
+SemVer requires that the implementation meet the specification, but
+this is not the case.
 $$
 CVT : \text{Release} \times \powerset{\text{Release}} \to \powerset{\text{Spec} \times \text{Impl}}
 $$
