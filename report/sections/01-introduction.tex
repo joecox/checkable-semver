@@ -12,6 +12,7 @@ How does SemVer try to solve the problem?
 \begin{itemize}
 \item Establish a convention for version numbers that summarizes
   the possible differences between two versions.
+\item SemVer is current state of the practice
 \end{itemize}
 
 Where does SemVer fall short? 
@@ -22,6 +23,28 @@ Where does SemVer fall short?
 \item Lack of tool support. Developers go by intuition. Error prone.
 \end{itemize}
 
+There are several shortcomings with the current state of the practice.
+%
+First, developers choose version numbers for a new release primarily
+based on intuition, which can be error-prone. What they consider to be
+a bugfix might actually change the behavior that their clients rely
+on.
+%
+A second problem can be seen as a consequence of the first. Clients
+are often suspicious of upgrades to some or all of their dependencies,
+and put strict constraints on them to prevent their package manager
+from installing untested dependencies. 
+%
+In systems containing many independently-maintained modules, this can
+lead to ``dependency hell''\cite{hell}, in which two modules depend on
+incompatible versions of a third module. \marktodo{A figure depicting
+  dep hell would be nice here. Something like ``Program contains
+  modules A and B. A depends on C version 1.X, B depends on C version
+  2.X''}{}
+%
+The root cause of these problems is an informal and often implicit
+descriptions of what ``the interface'' is, i.e. what the clients can
+depend over time.
 
 
 % Problem setup / Motivation
@@ -62,6 +85,13 @@ been forced to adhered with the same specification as Sass\cite{libsass}.
 \item A tool that implements CVT. Can check compliance or recommend
   semver-compliant version numbers for new releases
 \end{itemize}
+
+We address these problems by using a suite of interface tests to
+specify an interface. Tests are expressive enough to specify
+behavioral contracts that are difficult or impossible to express in
+traditional specifications languages or type systems. They can also be
+used as the basis for tools that can automatically verify SemVer
+compliance, or recommend version numbers for new releases.
 
 % Motivation of solution
 A better way of defining interfaces is needed. Even though specification
