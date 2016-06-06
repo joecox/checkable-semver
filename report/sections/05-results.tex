@@ -46,9 +46,14 @@ Figure~\ref{fig:simulation} is a simulation of running our tool
 on the entire version history of mocha. The purple line is the 
 actual version numbers, and the green line is the version history
 needed to be without violations. For the simulated version, we used the
-``jsapi'' suite, and had 3 test ignored, which violated the interface in 12
-consecutive versions, and was mostly do to bad specification of dependencies.
-Using this
+``jsapi'' suite, and had 3 out of 66 test ignored, which violated the interface
+in 12 consecutive versions, and was mostly do to bad specification of
+dependencies.  The key knowledge we can draw from this graph is that, even with
+this stricter sense of interface, we don't see the major version explosion,
+that critics of SemVer predicts. In fact the simulation ended up only on major
+version 5, compared to the actual major version 2. We think that the tests if
+actually written as specifications and the developers where warned about SemVer
+violations, would have an even better major version history.
 
 \begin{figure*}
 \centering
@@ -56,6 +61,20 @@ Using this
 \caption{Cumulative names of violated tests} 
 \label{fig:cumulative}
 \end{figure*}
+
+To address some of the confounding factors related to the library itself we
+collected the cumulative unique names of the violated test for each version in
+figure~\ref{fig:cumulative}. We take the cumulative unique names, abstracting
+away test that changed or have the same name. Using this metric we under
+approximate see the number of non interface tests in each of the targets. In
+contrast to figure~\ref{fig:violations} this better show the separation of
+interface tests and internal tests. After version 2.0.0 there is an explosion
+of violated tests in the ``all'' suite, which have different names. This
+suggest that all contains more internal tests than the ``jsapi''. ``jsapi'' on
+the other hand seam to plateau, which means that its not violating any new
+tests. The breaks in 1.15.0, 1.18.1 and 1.21.0 are also clearly visible in this
+graph.
+
 
 \subsection{User Study Results}
 We used the test suite of mocha as our subject program. The developers
@@ -107,7 +126,7 @@ discipline.
 function in a Hook adds it to \_beforeAll}
 \label{sec:failure1}
 
-\/There are three other tests that are very similar. Together, these
+There are three other tests that are very similar. Together, these
 four tests describe the behavoir of event hook registration
 functions. The {\tt Suite} class signals events at different stages of
 executing a test suite: before running any tests (beforeAll), after
@@ -197,7 +216,7 @@ describe('Runnable(title, fn)', function(){
 \label{fig:failing-test}
 \end{figure*}
 
-This test is shown in Figure\~\ref{fig:failing-test}. The test defines
+This test is shown in Figure~\ref{fig:failing-test}. The test defines
 part of the behavior of mocha's asynchronous test runner, that when
 two asyncronous error events are triggered, only one is delivered to
 the error callback. This is important in tests that allocate resources
