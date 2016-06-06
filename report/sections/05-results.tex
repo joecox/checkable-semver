@@ -32,24 +32,28 @@ are more stable. A funny anomaly happened in v2.5.0 where the npm stopped
 working on that package.
 
 This analysis shows that even with test not designed to be interface
-specifications, we can get real and relevant information about the progress in
-
-
-
-\begin{figure*}
-\centering
-\includegraphics[height=50ex]{graphics/combined-cumulative-plt}
-%\includegraphics[height=50ex]{graphics/cumulative-unit-plt}
-%\includegraphics[height=50ex]{graphics/cumulative-all-plt}
-\caption{Violations per version}
-\end{figure*}
+specifications, we can get real and relevant information about a 
+version history by doing cross version testing.
 
 \begin{figure*}
 \centering
 \includegraphics[height=50ex]{graphics/simulation-plt}
-%\includegraphics[height=50ex]{graphics/cumulative-unit-plt}
-%\includegraphics[height=50ex]{graphics/cumulative-all-plt}
-\caption{Violations per version}
+\caption{Simulation of version histories}%
+\label{fig:simulation}
+\end{figure*}
+
+Figure~\ref{fig:simulation} is a simulation of running our tool 
+on the entire version history of mocha. The purple line is the 
+actual version numbers, and the green line is the version history
+needed to be without violations. For the simulated version, we used the
+``jsapi'' suite, and had 3 test ignored, which violated the interface in 12
+consecutive versions, and was mostly do to bad specification of dependencies.
+Using this
+
+\begin{figure*}
+\centering
+\includegraphics[height=50ex]{graphics/combined-cumulative-plt}
+\caption{Cumulative names of violated tests} 
 \label{fig:cumulative}
 \end{figure*}
 

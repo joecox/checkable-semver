@@ -5,8 +5,8 @@ set output outputfile
 set style line 11 lc rgb '#808080' lt 1
 set border 3 back ls 11
 
-set style line 12 lc rgb '#808080' lt 3 lw 1
-set grid front ls 12
+set style line 12 lc rgb '#808080' lt 0 lw 1
+set grid ytics front ls 12
 
 set tics nomirror
 
