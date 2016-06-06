@@ -12,7 +12,8 @@ implementation and returns a list of interface violations.
 $$\text{Spec} : \text{Impl} \to \powerset{\text{Violation}}$$
 A violation is a identifier of a failed test. A specification
 \begin{enumerate}
-    \item Does not test anything secret, e.i.\ something that is subject to change.
+\item Does not test any API secrets \cite{Parnas}, i.e.\ behaviors
+  that are subject to change.
     \item Does test everything that a client can rely on.  
 \end{enumerate}
 \end{definition}
@@ -95,37 +96,6 @@ It is also encouraged and supported by package managers like
 \marktodo{Both package managers depend heavily on that dependencies
   follow the SemVer policy}{check this. Matt's unsure about this.}.
 %
-There are several shortcomings with the current state of the
-practice. 
-%
-First, developers choose version numbers for a new release primarily
-based on intuition, which can be error-prone. What they consider to be
-a bugfix might actually change the behavior that their clients rely
-on.
-%
-A second problem can be seen as a consequence of the first. Clients
-are often suspicious of upgrades to some or all of their dependencies,
-and put strict constraints on them to prevent their package manager
-from installing untested dependencies. 
-%
-In systems containing many independently-maintained modules, this can
-lead to ``dependency hell''\cite{hell}, in which two modules depend on
-incompatible versions of a third module. \marktodo{A figure depicting
-  dep hell would be nice here. Something like ``Program contains
-  modules A and B. A depends on C version 1.X, B depends on C version
-  2.X''}{}
-%
-The root cause of these problems is an informal and often implicit
-descriptions of what ``the interface'' is, i.e. what the clients can
-depend over time.
-%
-Our approach solves this problem by using tests to describe an
-interface. Tests are expressive enough to specify behavioral contracts
-that are difficult or impossible to express in traditional
-specifications languages or type systems. They also allow us to build
-tools that can automatically verify SemVer compliance, or recommend
-version numbers for new releases.
-
 Semantic version numbers summarize the possible differences between
 releases of a library, in particular, the possible differences visible
 to a client. For example, a patch release can fix some buggy

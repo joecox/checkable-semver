@@ -1,22 +1,67 @@
 \section{Introduction}
 
-% What is the problem that SemVer tries to solve? 
-% - Upgrading deps can cause bugs
-% - By being too conservative about upgrading deps, miss out on
-%   bug fixes, performance enhancements, etc.
-% - Dependency hell.
+Software development in the internet age has become highly
+modularized, where a project typically contains many modules developed
+by independent teams, each with their own priorities and release
+schedules. Managing so many dependencies has become quite
+complicated. Tools like git and github have evolved to support
+distributed development over the internet. Package managers like {\tt
+  cpan} for Perl, {\tt npm} for Node/JS, and {\tt Maven} for Java
+tackle logicstical problems -- distributing upgrades of a module to
+its users. A deeper problem remains: upgraded packages can introduce
+subtle changes that might introduce bugs in their clients. Often,
+these breaking changes might lurk undetected for some time, and can be
+quite difficult to debug. To guard against this, many developers {\em
+  pin} their dependencies to a particular version or version range,
+which instructs their package manager to use only those versions that
+have been explicitly specified. Pinning is problematic for several
+reasons. 
+%
+First, it can block important bugfixes and improvements that are
+perfectly compatible with the client code.
+%
+Worse, in systems containing many independently-maintained modules,
+this can lead to ``dependency hell''\cite{hell}, in which two modules
+depend on incompatible versions of a third module.
 
-% How does SemVer try to solve the problem?
-% - Establish a convention for version numbers that summarizes
-%   the possible differences between two versions.
 
-% Where does SemVer fall short? 
-% - Lack of clear specification. 
-%   - Types: too imprecise. Can't describe API behaviors.
-%   - Documentation: not machine readable/checkable; can go stale; no tool support.
-% - Lack of tool support. Developers go by intuition. Error prone.
+How does SemVer try to solve the problem?
+\begin{itemize}
+\item Establish a convention for version numbers that summarizes
+  the possible differences between two versions.
+\item SemVer is current state of the practice
+\end{itemize}
 
-% 
+Where does SemVer fall short? 
+\begin{itemize}
+\item Lack of clear specification. 
+\item Types: too imprecise. Can't describe API behaviors.
+\item Documentation: not machine readable/checkable; can go stale; no tool support.
+\item Lack of tool support. Developers go by intuition. Error prone.
+\item Dependency hell is still common.
+\end{itemize}
+
+There are several shortcomings with the current state of the practice.
+%
+First, developers choose version numbers for a new release primarily
+based on intuition, which can be error-prone. What they consider to be
+a bugfix might actually change the behavior that their clients rely
+on.
+%
+A second problem can be seen as a consequence of the first. Clients
+are often suspicious of upgrades to some or all of their dependencies,
+and put strict constraints on them to prevent their package manager
+from installing untested dependencies. 
+%
+ \marktodo{A figure depicting
+  dep hell would be nice here. Something like ``Program contains
+  modules A and B. A depends on C version 1.X, B depends on C version
+  2.X''}{}
+%
+The root cause of these problems is an informal and often implicit
+descriptions of what ``the interface'' is, i.e. what the clients can
+depend over time.
+
 
 % Problem setup / Motivation
 It has always been difficult to rigorously specify library interfaces.
@@ -45,6 +90,24 @@ viewed this as breaking change, and Sass ended up to apologies. This situation
 would not have happened if the interface where testable, as LibSass would have
 been forced to adhered with the same specification as Sass\cite{libsass}. 
 %
+
+
+{\bf What are our contributions?}
+\begin{itemize}
+\item A discipline for writing API specifications as tests
+\item A novel technique called cross-version testing that can be used
+  to check sem ver compliance when given API specifications for each
+  version
+\item A tool that implements CVT. Can check compliance or recommend
+  semver-compliant version numbers for new releases
+\end{itemize}
+
+We address these problems by using a suite of interface tests to
+specify an interface. Tests are expressive enough to specify
+behavioral contracts that are difficult or impossible to express in
+traditional specifications languages or type systems. They can also be
+used as the basis for tools that can automatically verify SemVer
+compliance, or recommend version numbers for new releases.
 
 % Motivation of solution
 A better way of defining interfaces is needed. Even though specification
@@ -75,27 +138,46 @@ specifications, we have created a tool that given a history of releases can
 predict if a release contains SemVer violations. 
 \todo{Describe the results of evaluation}
 
-% Layout of the report. 
-The rest of the article is parted into 6 sections. Besides the introduction, we
-have; 
+
+{\bf How do we evaluate our contributions?}
 \begin{itemize}
-
-    \item a related work section that covers the state of the art in in terms
-    of interface specifications, and version history mining; 
-
-    \item an approach section, which defines how to use tests to specify
-    interfaces and how to use these interfaces to detect SemVer violations;
-
-    \item an evaluation, which describes the empirical studies we have
-    performed to address some of confounding factors;
-
-    \item the results section, which contains the results of the studies and a
-    overall discussion of confounding factors;
-
-    \item and lastly a conclusion, wrapping up the paper and presenting the
-    lessons learned.
-
+\item Subject program: Mocha. Developers identify a suite a API tests.
+\item Multi-faceted evaluation.
+\item detects semver violations.
+\item Infer a sequence of semver-compliant version numbers for Mocha's
+  releases.
+\item User study to evaluate practicality and limitations of our
+  approach
 \end{itemize}
+
+
+% Layout of the report. 
+The rest of this report is as follows: in Section 2 we discuss related
+work; in Section 3 we describe our approach; in Section 4 we discuss
+our multi-faceted evaluation; in Section 5 we present our results; and
+in Section 6 we conclude and discuss future work.
+
+%\begin{itemize}
+%\item in Section 2 we discuss related work;
+% that covers the state of
+%  the art in in terms of interface specifications, and version history
+%  mining;
+%
+%\item in Section 3 we describe our approach; 
+%an approach section,
+%  which defines how to use tests to specify interfaces and how to use
+%  these interfaces to detect SemVer violations;
+%
+%\item in Section 4 we discuss our multi-faceted evaluation;, which
+%  describes the empirical studies we have performed to address some of
+%  confounding factors;
+%
+%\item the results section, which contains the results of the studies
+%  and a overall discussion of confounding factors;
+%
+%\item and lastly a conclusion, wrapping up the paper and presenting
+%  the lessons learned.
+%\end{itemize}
 
 %We create a tool that can identify SemVer violations given a code
 %repository, its testing framework, and a version history.  Our tool will apply
