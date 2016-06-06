@@ -6,8 +6,8 @@ by independent teams, each with their own priorities and release
 schedules. Managing so many dependencies has become quite
 complicated. Tools like git and github have evolved to support
 distributed development over the internet. Package managers like {\tt
-  cpan} \marktodo{}{cite} for Perl, {\tt npm} for Node/JS \marktodo{}{cite},
-and {\tt Maven} for Java \marktodo{}{cite} tackle logistical problems --
+  cpan}~\cite{cpan} for Perl, {\tt npm}~\cite{npm} for Node/JS, and
+{\tt Maven}~\cite{maven} for Java tackle logistical problems --
 distributing upgrades of a module to its users. A deeper problem
 remains: upgraded packages can introduce subtle changes that might
 introduce bugs in their clients. Often, these breaking changes might
@@ -21,7 +21,7 @@ First, it can block important bugfixes and improvements that are
 perfectly compatible with the client code.
 %
 Worse, in systems containing many independently-maintained modules,
-this can lead to ``dependency hell''\cite{hell}, in which two modules
+this can lead to ``dependency hell''~\cite{hell}, in which two modules
 depend on incompatible versions of a third module.
 
 
@@ -161,7 +161,7 @@ We have evaluated our techniques by implementing Cross-Version Testing
 in a tool, and conducting several experiments. 
 %
 Our tool works for Node/JS programs that use the node package manager
-{\tt npm} \marktodo{cite npm}.
+{\tt npm}.
 %
 We conducted experiments using the Mocha testing framework as our
 subject program. We chose Mocha because it is a mature library with
