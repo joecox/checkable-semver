@@ -13,9 +13,9 @@ the change.
 Semantic Versioning \cite{semver}, or SemVer, is complementary to the ideas
 proposed by Parnas.
 %
-SemVer, fully defined in section \ref{sec:semver}, solves a number of
-problems experienced by library authors and consumers, including how
-to handle breaking changes.
+SemVer, fully defined in section \ref{sec:semver}, describes how a
+library evolves between releases -- whether each release includes bug
+fixes, new features, or breaking changes.
 %
 SemVer allows library consumers to better control which interface
 definitions they subscribe to. This is particularly important when
@@ -23,16 +23,16 @@ client code relies on libraries or modules developed by independent
 teams with separate goals and timelines.
 %
 Semantic versioning strengthens Parnas' ideas by establishing a
-contract between the authors and clients of a module, which governs
-the evolution of the module. 
+contract between the authors and clients of a module that governs its
+evolution.
 %
 It allows clients to safely incorporate new upgrades to their
 dependencies that may improve performance, fix bugs, or add new
 features, without worrying about whether the upgrade will break their
 code.
 %
-Our project aims to strengthen this even further, by supporting SemVer
-with a testing discipline and tool support.
+Our techniques strengthen this even further, by supporting SemVer with
+a testing discipline and tool support.
 
 A recent study from Carnegie Mellon University \cite{bogart15-break}
 consists of seven interviews with package maintainers of packages in
@@ -74,15 +74,15 @@ changed within GDB such that it no longer works for me. Something?
 Between the 4.16 and 4.17 releases, no less than 178,000 lines have
 changed. How can I isolate the change...''
 
-Delta Debugging aims to locate the change that caused the failure. If
-GDB is following semantic versioning, there are two possible
-explanations. One explanation is that it's GDB's fault. GDB published
-a minor version upgrade with a breaking change, violating
+Delta Debugging aims to locate the change that caused the failure, by
+running tests in a way that is similar to our cross-version testing
+technique. If GDB is following semantic versioning, there are two
+possible explanations. One explanation is that it's GDB's fault. GDB
+published a minor version upgrade with a breaking change, violating
 SemVer. Another explanation is that it's DDD's fault. DDD unwittingly
-relied on (unspecified) secrets of GDB. In either case, our tool
-would detect who was at fault and localize the error. Furthermore, it
-would help the GDB developers avoid releasing breaking changes and
-would help the DDD developers avoid relying on the secrets of GDB.
+relied on the secrets of GDB. In either case, our tool would detect
+who was at fault, and would help the GDB developers avoid releasing
+breaking changes.
 
 Change-impact analysis (CIA) \cite{Chianti,FaultTracer,Stoerzer} can
 be used for regression-test selection or to help isolate the cause of
