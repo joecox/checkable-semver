@@ -125,20 +125,15 @@ Our \emph{Cross-Version Testing} approach ensures that each release
 satisfies the specifications of particular other releases, as required
 by the rules of Semantic Versioning. Given a release of interest and
 the complete set of releases, our cross-version testing tool will
-produce a set of implementations and specifications. A particular
-implementation and specification are included in the output set if
-SemVer requires that the implementation meet the specification, but
-this is not the case.
+produce a set of tuples of implementations and specifications. A
+particular implementation and specification are included in the output
+set if SemVer requires that the implementation meet the specification,
+but this is not the case.
 $$
 CVT : \text{Release} \times \powerset{\text{Release}} \to \powerset{\text{Spec} \times \text{Impl}}
 $$
 
-{\bf Why do we do this? Why is it a reasonable thing to do?}
-Cross-version testing allows developers to refactor their interface
-tests as needed, without introducing difficult problems surrounding
-equivalence of specifications.
-
-{\bf The rules:} 
+The rules for collecting these candidates are defined like this:
 \begin{enumerate}
 \item The implementation of a release must meet the specification of
   that release;
@@ -169,82 +164,76 @@ equivalence of specifications.
     \right\}$$
 \end{enumerate}
 
-If all the steps are passed, the release is following SemVer. Assuming that the 
-second point is upheld, we can write down the expression for cross version testing. 
+We can write down the expression for cross version testing. 
 $$ CVT(r, rs) = Refl(r) \cup AFT(r, rs) \cup BCT(r, rs) $$
 
+Cross-version testing tries to be as lenient as possible, and therefore
+does not have a notion of individual tests, or equivalence between
+them. All this allows developers to refactor their interface tests as
+needed, without introducing difficult problems surrounding semantic
+equivalence of specifications. 
+
 \begin{theorem}[Soundness]
-Given a release and a release history, our algorithm will reject the release if
-and only if it violates SemVer in relation to the release history.
+Given a release and a release history, our algorithm will return a 
+violating candidate only if it violates SemVer in
+relation to the release history.
 \end{theorem}
 
 \begin{proof}[sketch]
-If a release is rejected, it must have failed in one of the 3 conditions. 
+If a candidate is violated, it must have produced in one of the 3 conditions. 
 \begin{itemize}
-\item If the first condition failed, the release is invalid, and semantic
+\item If produced by the first rule, the release is invalid, and semantic
   versioning does not apply to broken releases. 
-\item If the second requirement failed, then the implementation of
-  some previous release with the same major and minor version does
-  not meet the specication of the current version. This means that
-  the current version specification includes either a new feature
-  or a breaking change, which violates the first rule of SemVer.
-\item If the third requirement failed, some previous release, in the same
-  major version,  must have a spec which is violated by the current
-  implementation. This means that something which was guaranteed has been
-  broken; which makes this a breaking change. Since the new release is at
-  most a minor release compared, this violates the second rule of SemVer.
+\item If produced by then second rule, then the implementation of the
+  candidate must have originated from a release with the same major and 
+  minor version as the release. This means that the current version
+  specification includes either a new feature or a breaking change,
+  which violates the first rule of SemVer.
+\item If produced by the third rule, the specification of candidate must
+  have originated from a release with the same major version as the release
+  If the candidate is violated means that something which was guaranteed
+  in the same major version has been broken; which makes this a breaking
+  change. This violates the second rule of SemVer.
 \end{itemize}
-Because all possible failed cases is the result of a SemVer violation, the
-algorithm is guaranteed to only reject a release if SemVer is violated.
+Because all possible origins of the candidate results in a SemVer
+violation, the algorithm is guaranteed to only return violating
+candidates if SemVer is violated.
 \end{proof}
 
 \begin{theorem}[Completness]
-Given a release and a release history, our algorithm will accept the release if
-and only if it adheres to SemVer in relation to the release history.
+Given a release and a release history, our algorithm will accept a
+release, if it yielded only satisfying candidates, only if it adheres to
+SemVer in relation to the release history.
 \end{theorem}
 
 \begin{proof}[sketch]
-If a release is wrongly accepted it must have not satisfied any of the SemVer
-rules. 
+The only places that the release be accepted by our tool but not adhere
+to SemVer is in these situations: 
 
 \begin{itemize}
-    \item If the new release is a major release, there is no way to violate the
-    SemVer rules. If the new release is a minor release, it must contain a breaking
-    change to violate SemVer. 
-    \item If the new release is a minor release it would have been checked against all
-    previous specifications in the major version, and passed without violations.
-    This means that in respect to any previous version there is no breaking
-    changes. So the new release does not violate SemVer.\
-    \item If the new release is a patch release it would both have been checked against all 
-    previous specifications and run the current new specification on each
-    implementation with the same minor version. Nothing new has been added to the
-    specification, so no (documented) features have been added. This release has not
-    violated SemVer.
+
+    \item If the new release is a major release, there is no way to
+        violate the SemVer rules. If the new release is a minor release,
+        it must contain a breaking change to violate SemVer. 
+
+    \item If the new release is a minor release it would have been
+        checked against all previous specifications in the major
+        version, and passed without violations.  This means that in
+        respect to any previous version there is no breaking changes. So
+        the new release does not violate SemVer.
+
+    \item If the new release is a patch release it would both have been
+        checked against all previous specifications and run the current
+        new specification on each implementation with the same minor
+        version. Nothing new has been added to the specification, so no
+        (specified) features have been added. This release has not
+        violated SemVer.
 \end{itemize}
 
-Because any version release accepted, whether it is patch, minor, major will all be according to 
-SemVer, our tool can not accept a wrong release.
+Because any version release accepted, whether it is patch, minor, major
+will all be according to SemVer, our tool can not accept a violating
+release.
 \end{proof}
-
-\subsection{Pragmatics}
-What is required of library authors that want to adopt our approach?
-Here we discuss some high-level requirements that should be followed.
-
-\begin{itemize}
-\item A library should upper-bound their dependencies to stay within
-  the current major version, since updrading to the next major version
-  of a dependency may introduce a breaking change, which in turn could
-  cause a breaking change for the library itself. We found this
-  problem with mocha, and had to modify its {\tt package.json} file to
-  correct it.
-\item NPM packages specify a set of {\tt devDependencies} in the {\tt
-    package.json}, which are the dependencies needed by the test suite
-  but not the library itself. When cross-version testing, it is
-  important to use the {\tt devDependencies} of the tests, not those
-  of the library. Therefore, we found that we had to modify {\tt
-    package.json} of the library each time we ran a cross-version
-  test.
-\end{itemize}
 
 \subsection{Violation Density Hypothesis}
 We hypothesize that the density of violations, defined as the average
@@ -342,4 +331,26 @@ and Breaking Change tests to run from the simulated version history,
 but must map the simulated tags back to the actual revisions they
 represent in the repository, else the module may check out an
 incorrect version.
+
+\subsection{Pragmatics}
+What is required of library authors that want to adopt our approach?
+Here we discuss some high-level requirements that should be followed.
+
+\begin{itemize}
+\item A library should upper-bound their dependencies to stay within
+  the current major version, since upgrading to the next major version
+  of a dependency may introduce a breaking change, which in turn could
+  cause a breaking change for the library itself. We found this
+  problem with mocha, and had to modify its {\tt package.json} file to
+  correct it.
+\item {\tt npm} packages specify a set of {\tt devDependencies} in the {\tt
+    package.json}, which are the dependencies needed by the test suite
+  but not the library itself. When cross-version testing, it is
+  important to use the {\tt devDependencies} of the tests, not those
+  of the library. Therefore, we found that we had to modify {\tt
+    package.json} of the library each time we ran a cross-version
+  test.
+\end{itemize}
+
+
 
