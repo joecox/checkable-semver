@@ -25,6 +25,6 @@ set style fill solid 0.2
 set ylabel 'Cumulative Violations' font "Times,7"
 set xlabel 'Version'  font "Times,7"
 
-plot data using 3:xtic(1) with filledcurves above x1 linestyle 1 title "jsapi", \
-    "" using 2:xtic(1) with filledcurves above x1 ls 2 title "all"
+plot data using 3:xtic(1) with filledcurves above x1 linestyle 1 title "all", \
+    "" using 2:xtic(1) with filledcurves above x1 ls 2 title "jsapi"
 
