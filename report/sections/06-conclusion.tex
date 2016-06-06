@@ -1,12 +1,12 @@
 \section{Discussion}
 One limitation of our approach is that refactoring assertions about
-API secrets out of API tests can result in duplicated testing
+interface secrets out of interface tests can result in duplicated testing
 code. This might be avoided by using a more complex test design, but
 that could reducing the readability of test, making them less useful
 as specifications.
 
 We expected to find some interface tests that could not be effectively
-refactored to remove API secrets. We did not find any such tests, but
+refactored to remove interface secrets. We did not find any such tests, but
 the small scope of our study prevents us from making any conclusions
 about the likelyhood of this scenario in practice. 
 
@@ -21,7 +21,30 @@ testing~\cite{quickcheck}. The advantage of our approach is that the
 interface and its guarantees are concretely described and
 machine-checkable.
 
-Future work: we can use cross-version testing for other things. For
+\subsection{Threats to Validity}
+An external threat to validity is that our tools only apply to the
+Mocha testing framework. They do not function with other testing
+frameworks. However, we believe our idea and approach is applicable
+to any testing framework in any programming language, given some work
+to port the tools.
+
+A threat to internal validity is that the library we tested on was
+itself a testing framework; as such it is possible that the test
+suite is not representative of most library test suites. Therefore,
+we might underestimate the difficulty of adopting our discipline.
+
+A threat to conclusion validity is that we only tested our approach
+on a small library. Also, it is possible that we did not test our
+approach on a library with a large enough release history to have
+gotten a significant result.
+
+Another threat to conclusion validity of the violation density
+hypothesis is that the 46\% increase in failures in {\tt all} tests
+compared to {\tt jsapi} tests may not be significant given the small
+sample size of tests.
+
+\subsection{Future Work}
+We can use cross-version testing for other things. For
 example, library authors don't always choose the most precise version
 number. They might issue a major version release that includes no
 breaking changes or new features, in order to signal an increased
@@ -33,7 +56,7 @@ previous version. As a result, clients to adopt the new version more
 quickly and with less effort.
 
 
-\section{Conculsion} 
+\section{Conclusion} 
 We have presented a new testing discipline for writing module
 interface specifications, and a cross-version testing approach to
 detecting Semantic Versioning violations. We built a tool based on our
