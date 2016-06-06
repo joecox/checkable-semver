@@ -1,35 +1,27 @@
 \section{Introduction}
 
-% What is the problem that SemVer tries to solve? 
-% - Upgrading deps can cause bugs
-% - By being too conservative about upgrading deps, miss out on
-%   bug fixes, performance enhancements, etc.
-% - Dependency hell.
+What is the problem that SemVer tries to solve? 
+\begin{itemize}
+\item Upgrading deps can cause bugs
+\item By being too conservative about upgrading deps, miss out on
+  bug fixes, performance enhancements, etc.
+\item Dependency hell
+\end{itemize}
 
-% How does SemVer try to solve the problem?
-% - Establish a convention for version numbers that summarizes
-%   the possible differences between two versions.
+How does SemVer try to solve the problem?
+\begin{itemize}
+\item Establish a convention for version numbers that summarizes
+  the possible differences between two versions.
+\end{itemize}
 
-% Where does SemVer fall short? 
-% - Lack of clear specification. 
-%   - Types: too imprecise. Can't describe API behaviors.
-%   - Documentation: not machine readable/checkable; can go stale; no tool support.
-% - Lack of tool support. Developers go by intuition. Error prone.
+Where does SemVer fall short? 
+\begin{itemize}
+\item Lack of clear specification. 
+\item Types: too imprecise. Can't describe API behaviors.
+\item Documentation: not machine readable/checkable; can go stale; no tool support.
+\item Lack of tool support. Developers go by intuition. Error prone.
+\end{itemize}
 
-% What are our contributions?
-% - A discipline for writing API specifications as tests
-% - A novel technique called cross-version testing that can
-%   be used to check sem ver compliance when given API specifications for 
-%   each version
-% - A tool that implements CVT. Can check compliance or recommend semver-compliant
-%   version numbers for new releases
-
-% How do we evaluate our contributions?
-% - Subject program: Mocha. Developers identify a suite a API tests.
-% - Multi-faceted evaluation.
-% - detects semver violations.
-% - Infer a sequence of semver-compliant version numbers for Mocha's releases.
-% - User study to evaluate practicality and limitations of our approach
 
 
 % Problem setup / Motivation
@@ -60,6 +52,17 @@ would not have happened if the interface where testable, as LibSass would have
 been forced to adhered with the same specification as Sass\cite{libsass}. 
 %
 
+
+{\bf What are our contributions?}
+\begin{itemize}
+\item A discipline for writing API specifications as tests
+\item A novel technique called cross-version testing that can be used
+  to check sem ver compliance when given API specifications for each
+  version
+\item A tool that implements CVT. Can check compliance or recommend
+  semver-compliant version numbers for new releases
+\end{itemize}
+
 % Motivation of solution
 A better way of defining interfaces is needed. Even though specification
 languages do exist, they have not gained traction in the real world. A very
@@ -89,27 +92,46 @@ specifications, we have created a tool that given a history of releases can
 predict if a release contains SemVer violations. 
 \todo{Describe the results of evaluation}
 
-% Layout of the report. 
-The rest of the article is parted into 6 sections. Besides the introduction, we
-have; 
+
+{\bf How do we evaluate our contributions?}
 \begin{itemize}
-
-    \item a related work section that covers the state of the art in in terms
-    of interface specifications, and version history mining; 
-
-    \item an approach section, which defines how to use tests to specify
-    interfaces and how to use these interfaces to detect SemVer violations;
-
-    \item an evaluation, which describes the empirical studies we have
-    performed to address some of confounding factors;
-
-    \item the results section, which contains the results of the studies and a
-    overall discussion of confounding factors;
-
-    \item and lastly a conclusion, wrapping up the paper and presenting the
-    lessons learned.
-
+\item Subject program: Mocha. Developers identify a suite a API tests.
+\item Multi-faceted evaluation.
+\item detects semver violations.
+\item Infer a sequence of semver-compliant version numbers for Mocha's
+  releases.
+\item User study to evaluate practicality and limitations of our
+  approach
 \end{itemize}
+
+
+% Layout of the report. 
+The rest of this report is as follows: in Section 2 we discuss related
+work; in Section 3 we describe our approach; in Section 4 we discuss
+our multi-faceted evaluation; in Section 5 we present our results; and
+in Section 6 we conclude and discuss future work.
+
+%\begin{itemize}
+%\item in Section 2 we discuss related work;
+% that covers the state of
+%  the art in in terms of interface specifications, and version history
+%  mining;
+%
+%\item in Section 3 we describe our approach; 
+%an approach section,
+%  which defines how to use tests to specify interfaces and how to use
+%  these interfaces to detect SemVer violations;
+%
+%\item in Section 4 we discuss our multi-faceted evaluation;, which
+%  describes the empirical studies we have performed to address some of
+%  confounding factors;
+%
+%\item the results section, which contains the results of the studies
+%  and a overall discussion of confounding factors;
+%
+%\item and lastly a conclusion, wrapping up the paper and presenting
+%  the lessons learned.
+%\end{itemize}
 
 %We create a tool that can identify SemVer violations given a code
 %repository, its testing framework, and a version history.  Our tool will apply
