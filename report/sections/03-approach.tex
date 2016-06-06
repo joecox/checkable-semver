@@ -44,39 +44,41 @@ using tests. We use the RFC 2119\footnote{The key words ``MUST'',
 This definition and discipline is flexible enough that it can describe
 an interface, while still being machine-checkable.
 
-\begin{figure*}
-\begin{lstlisting}[language=javascript]
-describe('Runner', function(){
-  var suite, runner;
+%% \todo{describe test}
+%% \begin{figure*}
+%% \begin{lstlisting}[language=javascript]
+%% describe('Runner', function(){
+%%   var suite, runner;
 
-  describe('.globals()', function(){
-    it('should default to the known globals', function(){
-      runner.globals().length.should.be.above(10);
-    })
+%%   describe('.globals()', function(){
+%%     it('should default to the known globals', function(){
+%%       runner.globals().length.should.be.above(10);
+%%     })
 
-    it('should white-list globals', function(){
-      runner.globals(['foo', 'bar']);
-      runner.globals().should.include('foo');
-      runner.globals().should.include('bar');
-    })
-  })
+%%     it('should white-list globals', function(){
+%%       runner.globals(['foo', 'bar']);
+%%       runner.globals().should.include('foo');
+%%       runner.globals().should.include('bar');
+%%     })
+%%   })
 
-  ...
-})
-\end{lstlisting}
+%%   ...
+%% })
+%% \end{lstlisting}
 
-\caption{Example API tests from mocha.js}
-\label{fig:spec-example}
-\end{figure*}
+%% \caption{Example API tests from mocha.js}
+%% \label{fig:spec-example}
+%% \end{figure*}
 
 \subsection{Semantic Versioning} \label{sec:semver}
 
-To show that the technique is useful in practice, we have chosen to implement
-semantic versioning based of our interface specifications.
+To show that this specification is useful in practice, we have chosen
+to explicitly define semantic versioning based off our interface
+specifications.
 
 \begin{definition}\textit{Semantic Versioning} (SemVer) is a way of describing
 intention, and giving guarantees using version numbers\cite{semver}.
-Related to to the last version $X.Y.Z$, the next version has to
+In relation to to the last version $X.Y.Z$, the subsequent version has to be
 monotonically increasing, meaning that it has to satisfy one of the
 following rules.
 $$ \text{Version} : \mathbb{N} \times \mathbb{N} \times \mathbb{N} $$
@@ -101,18 +103,15 @@ We have chosen semantic versioning because it is a widely used
 convention for managing dependencies that evolve independently of
 their clients.
 %
-It is also encouraged and supported by package managers like
-\emph{npm}, and \emph{bower}.
-%
-\marktodo{Both package managers depend heavily on that dependencies
-  follow the SemVer policy}{check this. Matt's unsure about this.}.
+It is also explicitly required by package managers like
+{\tt npm} and {\tt bower}.
 %
 Semantic version numbers summarize the possible differences between
 releases of a library, in particular, the possible differences visible
 to a client. For example, a patch release can fix some buggy
 behaviors, but must not add new behavior or break any old behavior. A
 minor release can fix bugs and add new behavior, but must not break
-old behavior.
+old behavior. Major releases may change any behavior.
 
 \subsection{Cross-Version Testing} \label{sec:cvt}
 To verify compliance to semantic versioning, we examine a series of
@@ -137,21 +136,17 @@ $$
 {\bf Why do we do this? Why is it a reasonable thing to do?}
 Cross-version testing allows developers to refactor their interface
 tests as needed, without introducing difficult problems surrounding
-equivalence of specifications. \marktodo{Probably need to say more
-  about this somewhere}{}.
+equivalence of specifications.
 
-{\bf The rules:} \marktodo{Below needs to be updated. It's assuming
-  that the release is ``newer'' than the set of releases. In general,
-  it will be (any) one of them}{}.
-
+{\bf The rules:} 
 \begin{enumerate}
 \item The implementation of a release must meet the specification of
   that release;
   $$ Refl(r) = \{(s, i)\} \text{ where } ((x,y,z), i, s) = r $$
 
-    \item all previous implementations with versions in same minor version as the
-    new release, must meet new specification without violations (Added Feature
-    Test);
+    \item all previous implementations with versions in same minor
+      version as the release must adhere to the specification
+      without violations (Added Feature Test);
     $$AFT(r, rs) = \left\{ (s, i')\ \vline\ 
         \begin{matrix}
             r' \in rs \\
@@ -161,8 +156,9 @@ equivalence of specifications. \marktodo{Probably need to say more
         \end{matrix}
     \right\}$$
 
-    \item and the new implementation must meet all previous specifications in the same major version as the new
-        release, without violations (Breaking Change Test).
+    \item and the implementation must meet all previous
+      specifications in the same major version as the release,
+      without violations (Breaking Change Test).
     $$BCT(r, rs) = \left\{ (s', i)\ \vline\ 
         \begin{matrix}
             r' \in rs \\
@@ -174,12 +170,12 @@ equivalence of specifications. \marktodo{Probably need to say more
 \end{enumerate}
 
 If all the steps are passed, the release is following SemVer. Assuming that the 
-second point is uphold, we can write down the expression for cross version testing. 
+second point is upheld, we can write down the expression for cross version testing. 
 $$ CVT(r, rs) = Refl(r) \cup AFT(r, rs) \cup BCT(r, rs) $$
 
 \begin{theorem}[Soundness]
 Given a release and a release history, our algorithm will reject the release if
-and if it violates SemVer in relation to the release history.
+and only if it violates SemVer in relation to the release history.
 \end{theorem}
 
 \begin{proof}[sketch]
@@ -204,7 +200,7 @@ algorithm is guaranteed to only reject a release if SemVer is violated.
 
 \begin{theorem}[Completness]
 Given a release and a release history, our algorithm will accept the release if
-and if adheed to SemVer in relation to the release history.
+and only if it adheres to SemVer in relation to the release history.
 \end{theorem}
 
 \begin{proof}[sketch]
@@ -222,7 +218,7 @@ rules.
     \item If the new release is a patch release it would both have been checked against all 
     previous specifications and run the current new specification on each
     implementation with the same minor version. Nothing new has been added to the
-    specification, so no (documented) features has been added. This release has not
+    specification, so no (documented) features have been added. This release has not
     violated SemVer.
 \end{itemize}
 
