@@ -10,6 +10,17 @@ refactored to remove API secrets. We did not find any such tests, but
 the small scope of our study prevents us from making any conclusions
 about the likelyhood of this scenario in practice. 
 
+Another limitation relates to our definition of interface
+specification. As an example, a test \texttt{assert add (2, 3) == 5}
+only checks that the sum of 2 and 3 is 5. The client may incorrectly
+interpret this as saying that the sum of any two numbers is 5, or
+even that the sum of any two objects is 5. We conjecture that such
+problems could be addressed by adding more tests, or by using
+techniques such as concolic testing~\cite{sen05-cute} or random
+testing~\cite{quickcheck}. The advantage of our approach is that the
+interface and its guarantees are concretely described and
+machine-checkable.
+
 Future work: we can use cross-version testing for other things. For
 example, library authors don't always choose the most precise version
 number. They might issue a major version release that includes no
@@ -28,3 +39,6 @@ quickly and with less effort.
 \item Our experiments indicate that our discipline is natural, and
   test suites for mature libraries may naturally evolve to adhere it.
 \end{itemize}
+
+
+
