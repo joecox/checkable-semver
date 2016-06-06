@@ -15,12 +15,9 @@ factors, including whether tests are expressive enough to detect
 violations and whether tests are too strict, which would result in an
 over-approximation of the interface.
 
-We use the {\tt jsapi} test suite to find SemVer violations, despite
-the fact that these tests do not necessarily conform to our
-discipline. 
-%
-This will allow us to evaluate our tool and the cross-version testing
-that underlies it.
+We evaluate our tool and the cross-version testing that underlies it
+by using Mocha's {\tt jsapi} test suite as an interface specification
+to find SemVer violations.
 %
 We run our {\tt detect} tool on each release in the library and
 collect the Breaking Change and Added Feature violations for each
@@ -29,28 +26,37 @@ may be duplicated in the results if it appears is in multiple versions
 but this may emphasize the importance of the test, since it survived
 for multiple releases.
 
-The first confounding factor can easily be related to the problem of
-test coverage. Tests which are too specific may not fully cover all
+The are several confounding factors to this evaluation. First is the
+fact that these tests do not necessarily conform to our
+discipline. However, this does not affect the performance of the tool,
+only our ability to draw meaningful conclusions about potentional
+SemVer violations from its results. Still, our violation density
+analysis provides some justification in using {\tt jsapi} as an
+interface spec.
+
+Another confounding factor is related to the problem of test
+coverage. Tests which are too specific may not fully cover all
 features of a program. It is therefore reasonable to ask if an
 incomplete specification still can report meaningful errors.  We
 evaluate our tool using the Mocha test framework~\cite{mocha} as our
 subject library. Mocha is an ideal subject because it has many
 versions and is well tested.
 
-The second confounding factor is that too many violations may be
-reported, which reduces the practicality of our tool. This
-confounding factor is also the most controversial. Many developers
-have claimed that adhering to SemVer, given their internal definition
-of an interface, would force them to bump the major version on every
+A third confounding factor is that too many violations may be
+reported, which reduces the practicality of our tool. This confounding
+factor is also the most controversial. Many developers have claimed
+that adhering to SemVer, given their internal definition of an
+interface, would force them to bump the major version on every
 update~\cite{backbone-2888,exoplayer-1382,crawford-not-semver}. This
 problem would be even more pronounced if an interface was clearly
 specified using tests and SemVer compliance was checked with a strict
 and uncompromising tool. To address this factor, we have created a
 simulated version history of Mocha using our approach. This version
-history is evidence that following our discipline would not be an undue
-burden on library authors. It is also a worst-case scenario, where
-developers did not expect their tests to be used to describe a public
-interface and were not warned about violations before releasing.
+history is evidence that following our discipline would not be an
+undue burden on library authors. It is also a worst-case scenario,
+where developers did not expect their tests to be used to describe a
+public interface and were not warned about violations before
+releasing.
 
 \subsection{User Study Evaluation}
 Our second evaluation is a user study of the efficacy of our
