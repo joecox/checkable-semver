@@ -24,7 +24,6 @@ Worse, in systems containing many independently-maintained modules,
 this can lead to ``dependency hell''~\cite{hell}, in which two modules
 depend on incompatible versions of a third module.
 
-
 %How does SemVer try to solve the problem?
 %\begin{itemize}
 %\item Establish a convention for version numbers that summarizes
@@ -65,33 +64,35 @@ The root cause of these problems is an informal and often implicit
 descriptions of what ``the interface'' is, i.e. what the clients can
 depend over time.
 
-
 % Problem setup / Motivation
 It has always been difficult to rigorously specify library interfaces.
-Interfaces are often defined with text, which is often incomplete and not
-machine checkable, or, for some programming languages with types, which are
-often incomplete. Machine checkability is important as it prevents
-documentation from going stale. Completeness is important, as incompleteness
-will lead to ambiguity and ambiguity leads to losses; either in the terms of
-wrong assumptions made by the client, or some features goes unused. These
-problems are only taking one version of the interface into account. When
-looking at the evolution of an interface, it is harder still to ensure that the
-interface does not introduce a breaking change unexpectedly. Semantic Version, or
-SemVer, helps library authors define the scope of their changes solely through
-the version number. However, authors can and often do violate SemVer. For
-example, an author may make a backwards incompatible change but only increment
-the minor version. Library consumers observing the version number will not
-expect the change and systems will break. 
+Interfaces are often defined in documentation or, for some programming
+languages, defined with types. 
+%
+Documentation is often incomplete and not machine checkable. With no
+validity checks there is nothing to prevent document specifications from
+going stale or not follow the implementation at all. 
+%
+Types on the other hand is only as expressive as the type checker
+allows. Consequentially most type based specifications are incomplete. 
+This leads to ambiguity and ambiguity leads to losses; either in the terms of
+wrong assumptions made by the client, or some features which goes unused. 
+%
+These problems are only taking one version of the interface into
+account. When looking at the evolution of an interface, it is harder
+still, to ensure that the interface does not introduce a breaking change
+unexpectedly. 
 
 % Motivating examples
-Sass is a widely used style language which compiles to Css. The project
-contains of two side running targets Sass and LibSass. LibSass is a 
-faster C++ implementation of Sass, and is supposed to conform to Sass. The
-problem happened when LibSass rolled back a feature in a minor version (3.5). 
-They felt that they could do this because it was a bug in Sass. Many people 
-viewed this as breaking change, and Sass ended up to apologies. This situation
-would not have happened if the interface where testable, as LibSass would have
-been forced to adhered with the same specification as Sass~\cite{libsass}. 
+As an example, Sass is a widely used style language which compiles to
+Css. The project contains of two side running targets Sass and LibSass.
+LibSass is a faster C++ implementation of Sass, and is supposed to
+conform to Sass. The problem happened when LibSass rolled back a feature
+in a minor version (3.5). They felt that they could do this because it
+was not supported in Sass. Many people viewed this as breaking change,
+and Sass ended up to apologies. This situation would not have happened
+if the interface where testable, as LibSass would have been forced to
+adhered with the same specification as Sass~\cite{libsass}. 
 %
 
 
@@ -109,8 +110,8 @@ can also be used as the basis for tools that can automatically verify
 SemVer compliance, or recommend version numbers for new releases.
 
 Specification languages have been proposed for a variety of problem
-domains and languages~\cite{uml},
-though they have not gained traction in the main steam. 
+domains and languages~\cite{uml}, though they have not gained traction
+in the main steam. 
 %
 Some of the reasons for this lack of adoption include the steep
 learning curve of the specification language, the often limited
@@ -126,7 +127,7 @@ language. Our discipline is lightweight and can work with any testing
 framework.
 
 We supplement our testing discipline with a novel \emph{Cross-Version
-  Testing} approach to ensure that each release satisfies the
+Testing} approach to ensure that each release satisfies the
 specifications of a range of releases, according to the rules of
 Semantic Versioning. In particular, we test each release against the
 interface test suites of certain {\em other} releases. According to
@@ -164,7 +165,7 @@ Our tool works for Node/JS programs that use the node package manager
 {\tt npm}.
 %
 We conducted experiments using the Mocha testing framework as our
-subject program. We chose Mocha because it is a mature library with
+subject library. We chose Mocha because it is a mature library with
 many versions, it uses Semantic Versioning, and its developers follow
 a principled testing discipline that is useful for our evaluation.
 %
@@ -227,26 +228,3 @@ in Section 6 we conclude and discuss future work.
 %commit. Our tool will detect any SemVer violations and give the author the
 %choice to either revert the API changes or push a major update.
 
-\begin{figure*}
-\begin{lstlisting}[language=javascript]
-describe('Runner', function(){
-  var suite, runner;
-
-  describe('.globals()', function(){
-    it('should default to the known globals', function(){
-      runner.globals().length.should.be.above(10);
-    })
-
-    it('should white-list globals', function(){
-      runner.globals(['foo', 'bar']);
-      runner.globals().should.include('foo');
-      runner.globals().should.include('bar');
-    })
-  })
-
-  ...
-})
-\end{lstlisting}
-
-\caption{Example API tests from mocha.js}
-\end{figure*}

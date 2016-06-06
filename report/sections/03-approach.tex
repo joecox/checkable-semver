@@ -76,6 +76,33 @@ about the library, but will also lead to some confounding factors
 which we discuss in detail.
 
 \end{itemize}
+
+\todo{Describe Tests}
+\begin{figure*}
+\begin{lstlisting}[language=javascript]
+describe('Runner', function(){
+  var suite, runner;
+
+  describe('.globals()', function(){
+    it('should default to the known globals', function(){
+      runner.globals().length.should.be.above(10);
+    })
+
+    it('should white-list globals', function(){
+      runner.globals(['foo', 'bar']);
+      runner.globals().should.include('foo');
+      runner.globals().should.include('bar');
+    })
+  })
+
+  ...
+})
+\end{lstlisting}
+
+\caption{Example API tests from mocha.js}
+\label{fig:spec-example}
+\end{figure*}
+
 \subsection{Semantic Versioning} \label{sec:semver}
 
 To show that the technique is useful in practice, we have chosen to implement
