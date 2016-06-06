@@ -12,7 +12,8 @@ implementation and returns a list of interface violations.
 $$\text{Spec} : \text{Impl} \to \powerset{\text{Violation}}$$
 A violation is a identifier of a failed test. A specification
 \begin{enumerate}
-    \item Does not test anything secret, e.i.\ something that is subject to change.
+\item Does not test any API secrets \cite{Parnas}, i.e.\ behaviors
+  that are subject to change.
     \item Does test everything that a client can rely on.  
 \end{enumerate}
 \end{definition}
