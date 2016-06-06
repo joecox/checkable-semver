@@ -1,12 +1,29 @@
 \section{Introduction}
 
-What is the problem that SemVer tries to solve? 
-\begin{itemize}
-\item Upgrading deps can cause bugs
-\item By being too conservative about upgrading deps, miss out on
-  bug fixes, performance enhancements, etc.
-\item Dependency hell
-\end{itemize}
+Software development in the internet age has become highly
+modularized, where a project typically contains many modules developed
+by independent teams, each with their own priorities and release
+schedules. Managing so many dependencies has become quite
+complicated. Tools like git and github have evolved to support
+distributed development over the internet. Package managers like {\tt
+  cpan} for Perl, {\tt npm} for Node/JS, and {\tt Maven} for Java
+tackle logicstical problems -- distributing upgrades of a module to
+its users. A deeper problem remains: upgraded packages can introduce
+subtle changes that might introduce bugs in their clients. Often,
+these breaking changes might lurk undetected for some time, and can be
+quite difficult to debug. To guard against this, many developers {\em
+  pin} their dependencies to a particular version or version range,
+which instructs their package manager to use only those versions that
+have been explicitly specified. Pinning is problematic for several
+reasons. 
+%
+First, it can block important bugfixes and improvements that are
+perfectly compatible with the client code.
+%
+Worse, in systems containing many independently-maintained modules,
+this can lead to ``dependency hell''\cite{hell}, in which two modules
+depend on incompatible versions of a third module.
+
 
 How does SemVer try to solve the problem?
 \begin{itemize}
@@ -21,6 +38,7 @@ Where does SemVer fall short?
 \item Types: too imprecise. Can't describe API behaviors.
 \item Documentation: not machine readable/checkable; can go stale; no tool support.
 \item Lack of tool support. Developers go by intuition. Error prone.
+\item Dependency hell is still common.
 \end{itemize}
 
 There are several shortcomings with the current state of the practice.
@@ -35,9 +53,7 @@ are often suspicious of upgrades to some or all of their dependencies,
 and put strict constraints on them to prevent their package manager
 from installing untested dependencies. 
 %
-In systems containing many independently-maintained modules, this can
-lead to ``dependency hell''\cite{hell}, in which two modules depend on
-incompatible versions of a third module. \marktodo{A figure depicting
+ \marktodo{A figure depicting
   dep hell would be nice here. Something like ``Program contains
   modules A and B. A depends on C version 1.X, B depends on C version
   2.X''}{}
