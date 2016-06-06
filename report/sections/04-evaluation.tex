@@ -59,21 +59,21 @@ public interface and were not warned about violations before
 releasing.
 
 \subsection{User Study Evaluation}
-Our second evaluation is a user study of the efficacy of our
-approach. We attempt to answer: 
+Our second evaluation moethod is a user study of the efficacy of our
+approach. We attempt to answer:
 
-{\bf RQ2.} Without any assumptions about the test suite, does our tool
-detect SemVer violations?
+{\bf RQ2.} Can our tool detect SemVer violations without a interface
+test suite that adheres to our discipline?
 
 {\bf RQ3.} How difficult is it to adopt our discipline of writing interface
 tests?
 
-To answer {\bf RQ2}, we manually inspected the {\em possible} 
+To answer {\bf RQ2}, we manually inspected the {\em potential}
 violations reported by our tool in order to determine whether any of
-them represent true violations. In particular, we ask whether the test
-failure was due to an illegal change in the interface (in which case
-the failure is a true violation), due to non-adherence to our
-discipline, or for some other reason.
+them represent {\em actual} violations. In particular, we determine
+whether each test failure was due to an illegal change in the
+interface (in which case the failure is a true violation), due to
+non-adherence to our discipline, or for some other reason.
 
 While reviewing the violations for {\bf RQ2}, we refactored failing
 tests to adhere to our discipline whenever possible. To answer {\bf
