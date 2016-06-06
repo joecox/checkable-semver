@@ -73,26 +73,26 @@ Documentation is often incomplete and not machine checkable. With no
 validity checks there is nothing to prevent document specifications from
 going stale or not follow the implementation at all. 
 %
-Types on the other hand is only as expressive as the type checker
-allows. Consequentially most type based specifications are incomplete. 
+Types, on the other hand, are only as expressive as the type checker
+allows. Consequentially, most type based specifications are incomplete. 
 This leads to ambiguity and ambiguity leads to losses; either in the terms of
-wrong assumptions made by the client, or some features which goes unused. 
+wrong assumptions made by the client, or some features which go unused. 
 %
 These problems are only taking one version of the interface into
 account. When looking at the evolution of an interface, it is harder
-still, to ensure that the interface does not introduce a breaking change
+still to ensure that the interface does not introduce a breaking change
 unexpectedly. 
 
 % Motivating examples
 As an example, Sass is a widely used style language which compiles to
-Css. The project contains of two side running targets Sass and LibSass.
-LibSass is a faster C++ implementation of Sass, and is supposed to
-conform to Sass. The problem happened when LibSass rolled back a feature
-in a minor version (3.5). They felt that they could do this because it
-was not supported in Sass. Many people viewed this as breaking change,
-and Sass ended up to apologies. This situation would not have happened
-if the interface where testable, as LibSass would have been forced to
-adhered with the same specification as Sass~\cite{libsass}. 
+Css. The project contains of two side running targets Sass and
+LibSass.  LibSass is a faster C++ implementation of Sass, and is
+supposed to conform to Sass. In a minor version update (3.5), LibSass
+rolled back a feature, which they felt safe doing because it was not
+supported in Sass. In reality, this was a breaking change made in a
+wrong version update. This situation would not have happened if the
+interface was testable, as LibSass would have been forced to adhere
+with the same specification as Sass~\cite{libsass}.
 %
 
 
@@ -110,8 +110,8 @@ can also be used as the basis for tools that can automatically verify
 SemVer compliance, or recommend version numbers for new releases.
 
 Specification languages have been proposed for a variety of problem
-domains and languages~\cite{uml}, though they have not gained traction
-in the main steam. 
+domains and languages~\cite{uml}, though they have not achieved
+widespread usage.
 %
 Some of the reasons for this lack of adoption include the steep
 learning curve of the specification language, the often limited
