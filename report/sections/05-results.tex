@@ -1,5 +1,8 @@
 \section{Results}
 
+This is section is a discussion and presentation of the result of the
+evaluation.
+
 \subsection{Quantitative Analysis}
 
 \begin{figure*}
@@ -11,28 +14,29 @@
 \label{fig:violations}
 \end{figure*}
 
-First we wanted to show that we could find any violations at all using
-test. Figure~\ref{fig:violations} is a plot of violations encounter in
-each version. The ``jsapi'' suite is a subset of the test run in ``all''.
-Since a SemVer violation is tied to a test and a implementation version, 
-the same test might be counted multiple times. From the figure we can
-read a lot of interesting things. The versions 1.3.0, 1.15.0 and 1.18.0 are
-especially interesting as they introduce new breaking changes in respect to
-``jsapi''.  The 1.3.0 increment is a single violation is analysed in depth in
-section~\ref{sec:failure2}. The 1.15.0 increment is mostly due the SemVer
-violation that we found in and described in section~\ref{sec:failure3}. The
-1.18.0 is increment is not a SemVer violation, as it seams like the developers
-tested secrets in the jsapi. This has been described in detail in
-section~\ref{sec:failure1}. The steep increase in breaking changes 1.21.5 could
-indicate that they were working on creating the new major release, and some of
-the new features; green and yellow, and some breaking changes might have
-sneaked in. It is interesting that after the major version 2, almost no breaking
-changes exist in ``jsapi''. This suggest that the API tests has matured, and
-are more stable. A funny anomaly happened in v2.5.0 where the npm stopped
-working on that package.
+The first thing we wanted to show is that we could find violations using test.
+Figure~\ref{fig:violations} is a plot of violations encounter in each version.
+The ``jsapi'', blue and green, suite is a subset of the test run in ``all'', orange and
+yellow. Since a SemVer violation is tied to an implementation version and test version, the same test
+will be counted multiple times.
+
+The versions 1.3.0, 1.15.0 and 1.18.0 are especially interesting as they
+introduce new breaking changes in respect to ``jsapi''.  The 1.3.0 increment is
+a single violation is analysed in depth in section~\ref{sec:failure2}. The
+1.15.0 increment is mostly due the SemVer violation that we found in and
+described in section~\ref{sec:failure3}. The 1.18.0 increment is not a
+SemVer violation, the developers just tested secrets in the jsapi.
+The violation has been described in detail in section~\ref{sec:failure1}. The
+steep increase in breaking changes 1.21.5, could indicate that they were working
+on creating the new major release, and some of the new features; green and
+yellow, and some breaking changes might have sneaked in the last release in major
+version. It is interesting that after the major version 2, almost no breaking
+changes comes from ``jsapi''. This suggest that the interface tests has
+matured, and are more stable. A funny anomaly happened in v2.5.0 where the npm
+stopped working on that package.
 
 This analysis shows that even with test not designed to be interface
-specifications, we can get real and relevant information about a 
+specifications we can generate real and relevant information about a 
 version history by doing cross version testing.
 
 \begin{figure*}
@@ -43,17 +47,26 @@ version history by doing cross version testing.
 \end{figure*}
 
 Figure~\ref{fig:simulation} is a simulation of running our tool 
-on the entire version history of mocha. The purple line is the 
-actual version numbers, and the green line is the version history
-needed to be without violations. For the simulated version, we used the
-``jsapi'' suite, and had 3 out of 66 test ignored, which violated the interface
-in 12 consecutive versions, and was mostly do to bad specification of
-dependencies.  The key knowledge we can draw from this graph is that, even with
-this stricter sense of interface, we don't see the major version explosion,
-that critics of SemVer predicts. In fact the simulation ended up only on major
-version 5, compared to the actual major version 2. We think that the tests if
-actually written as specifications and the developers where warned about SemVer
+on the entire releases history of mocha. The purple line is the 
+actual version numbers chosen by the developers, and the green line is the
+version history chosen by our tool.  For the simulated version, we used the
+``jsapi'' suite, and had 3 out of \marktodo{66 test ignored}{Is this correct?},
+which violated the interface in 12 consecutive versions, and was mostly do to
+bad specification of dependencies. 
+
+The key knowledge we can draw from this graph is that, even with this stricter
+sense of interface, we don't see the major version explosion, that critics of
+SemVer predicts. In fact the simulation ended up only on major version 5,
+compared to the actual major version 2. We think that the tests if actually
+written as specifications and the developers where warned about SemVer
 violations, would have an even better major version history.
+Also it is interesting that even though version is bumped a major version
+already in release 6, the simulation is more liberal with patches from that 
+release to release 30. This might be because the developers felt they have added 
+features, and therefor bumped the minor version unnecessarily. Either that
+or they did not write a test documenting the added features in ``jsapi''. From 
+release 54 almost perfectly mimics the developers version. This is means that the
+developers ,without their knowledge, have adhered to our discipline. 
 
 \begin{figure*}
 \centering
@@ -64,17 +77,24 @@ violations, would have an even better major version history.
 
 To address some of the confounding factors related to the library itself we
 collected the cumulative unique names of the violated test for each version in
-figure~\ref{fig:cumulative}. We take the cumulative unique names, abstracting
-away test that changed or have the same name. Using this metric we under
-approximate see the number of non interface tests in each of the targets. In
-contrast to figure~\ref{fig:violations} this better show the separation of
-interface tests and internal tests. After version 2.0.0 there is an explosion
-of violated tests in the ``all'' suite, which have different names. This
-suggest that all contains more internal tests than the ``jsapi''. ``jsapi'' on
-the other hand seam to plateau, which means that its not violating any new
-tests. The breaks in 1.15.0, 1.18.1 and 1.21.0 are also clearly visible in this
-graph.
+figure~\ref{fig:cumulative}. We take the cumulative unique names, grouping test
+that changed or have the same name. Using this metric we under approximate see
+the number of non interface tests in each of the targets. In contrast to
+figure~\ref{fig:violations} this better show the separation of interface tests
+and internal tests. After version 2.0.0 there is an explosion of violated tests
+in the ``all'' suite, which have different names. This suggest that all
+contains more internal tests than the ``jsapi''. ``jsapi'' on the other hand
+seams to plateau, which means that there is no new tests, that is being
+violated. The breaks in 1.15.0, 1.18.1 and 1.21.0 are also clearly visible in
+this graph. 
 
+We feel like these figures yield nontrivial information about the stability
+of the library that would not be possible without cross version testing. The
+figures also manage to challenge some of the confounding factors, surrounding
+both SemVer and cross version testing. Cross version testing can detect SemVer
+violations, even though it work better with desiccated tests. Also adhering to
+SemVer does not result in a major version explosion, even when based of a 
+partial and possible incorrect specification.
 
 \subsection{User Study Results}
 We used the test suite of mocha as our subject program. The developers
