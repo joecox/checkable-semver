@@ -1,14 +1,14 @@
 \section{Approach}
 
 Our approach consists of defining an interface specification, which is a
-special kind of tests, and a new discipline for writing these tests, and a tool
+special kind of test, a new discipline for writing these tests, and a tool
 that is able to detect SemVer violations in a library.
 
 \subsection{Interface Specifications}
 
 \begin{definition}\textit{Interface Specification.}
-An interface specification is a collection of tests that given an
-implementation and returns a list of interface violations. 
+An interface specification is a collection of tests that, given an
+implementation version, returns a list of interface violations. 
 $$\text{Spec} : \text{Impl} \to \powerset{\text{Violation}}$$
 A violation is a identifier of a failed test. A specification
 \begin{enumerate}
@@ -18,13 +18,13 @@ A violation is a identifier of a failed test. A specification
 \end{enumerate}
 \end{definition}
 
-The interface is a two sided contract. One one side, the library
+The interface is a two sided contract. On one side, the library
 clearly specifies what can be relied upon. On the other side, clients
 should not rely upon anything that is not specified in the interface
 tests.  Doing so would tightly couple the client to a particular
 library version, making upgrading the library unsafe. Our interface
 specification is both sound and complete by definition.  Following the
-definition we have created a discipline of interface specification
+definition, we have created a discipline of interface specification
 using tests. We use the RFC 2119\footnote{The key words ``MUST'',
   ``MUST NOT'', ``REQUIRED'', ``SHALL'', ``SHALL NOT'', ``SHOULD'',
   ``SHOULD NOT'', ``RECOMMENDED'', ``MAY'', and ``OPTIONAL'' in this
@@ -42,42 +42,8 @@ using tests. We use the RFC 2119\footnote{The key words ``MUST'',
 \end{enumerate}
 
 This definition and discipline is flexible enough that it can describe
-an interface, while still being machine-checkable. \marktodo{Any
-  specification is a trade-off between machine power and API
-  expressed}{Matt does not understand this sentence}.
+an interface, while still being machine-checkable.
 
-\marktodo{Move this paragraph to section on limitations and future
-  work?}{} This definition of course has some limitations. For
-example, a test \texttt{assert add (2, 3) == 5} only checks that the
-sum of 2 and 3 is 5. The client may incorrectly interpret this as
-saying that the sum of any two numbers is 5, or even that the sum of
-any two objects is 5. We conjecture that such problems could be
-addressed by adding more tests, or by using techniques such as
-concolic testing~\cite{sen05-cute} or random
-testing~\cite{quickcheck}. The advantage of our approach is that the
-interface and its guarantees are concretely described and
-machine-checkable.
-
-
-{\bf Spare text:}
-\begin{itemize}
-\item The tests that test only the library interface are interface tests. In
-most libraries, they will be hiding among other tests.
-\item Our solution is to use test to specify the interface, and explicitly
-hold them separated from the other tests. These tests both will have
-dual purpose. They give clear examples to the clients of expected
-usage, and they grantee that library upholds interface. We define that
-the test specification is a complete specification. If the
-specification differ from the library's developers idea, the developer
-is wrong.  A library succeeding the interface specification does
-therefor by definition not contain bugs, only undocumented
-features. This distinction will enable us to give stronger guarantees
-about the library, but will also lead to some confounding factors
-which we discuss in detail.
-
-\end{itemize}
-
-\todo{Describe Tests}
 \begin{figure*}
 \begin{lstlisting}[language=javascript]
 describe('Runner', function(){
